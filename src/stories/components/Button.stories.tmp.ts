@@ -1,5 +1,5 @@
 import UiButton from '@src/components/button/UiButton.vue'
-import type { Meta, StoryObj } from '@storybook/vue3'
+import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import { computed } from 'vue'
 import type { ComponentProps } from 'vue-component-type-helpers'
 import { ButtonColors, ButtonSizes, ButtonTypes, ButtonVariants } from '../../components/button/Button.types'

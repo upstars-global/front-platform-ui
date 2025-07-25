@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/vue3'
+import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import { emitsObserver } from '@src/stories/utils/decorators.ts'
 import UiCheckbox from '@src/components/checkbox/UiCheckbox.vue'
 

@@ -1,6 +1,6 @@
-import type { Decorator } from '@storybook/vue3'
+import type { Decorator } from '@storybook/vue3-vite'
 import { h, ref } from 'vue'
-import { action, type HandlerFunction } from '@storybook/addon-actions'
+import { action, type HandlerFunction } from 'storybook/actions'
 
 export const emitsObserver: Decorator = (story, context) => ({
   setup(_, { attrs }) {

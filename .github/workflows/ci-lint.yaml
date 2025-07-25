@@ -1,6 +1,10 @@
 name: ci-linters
 
-on: [push]
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   lint:
@@ -22,11 +26,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
       - name: Install dependencies
-        run: yarn install
+        run: pnpm install
       - name: Eslint
-        run: yarn lint:eslint
+        run: pnpm lint:eslint
       - name: Prettier
-        run: yarn lint:prettier
+        run: pnpm lint:prettier
       - name: Types check
-        run: yarn lint:tsc
+        run: pnpm lint:tsc
