@@ -1,7 +1,7 @@
-import UiButton from './button/UiButton.vue'
 import UiIcon from './icon/UiIcon.vue'
 
-export { UiButton, UiIcon }
-export { addIcon, addIcons } from './icon/icons'
+export type { IconProps } from './icon/UiIcon.vue'
+export type { IconsFill, IconName, IconsNavigation, IconsOutline, IconsSocial } from './icon/config'
 
-export type { IconProps } from './icon/UiIcon.types.ts'
+export { addIcon, addIcons } from './icon/utils'
+export { UiIcon }

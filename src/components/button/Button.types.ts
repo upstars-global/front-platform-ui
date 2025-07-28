@@ -1,3 +1,5 @@
+import type { IconName } from '../icon/config'
+
 export enum ButtonColors {
   primary = 'primary',
   neutral = 'neutral',
@@ -41,9 +43,9 @@ export interface ButtonProps {
   fullWidth?: boolean
   fullWidthMobile?: boolean
 
-  leadingIcon?: string
-  trailingIcon?: string
-  icon?: string
+  leadingIcon?: IconName
+  trailingIcon?: IconName
+  icon?: IconName
 
   label?: string
   caption?: string

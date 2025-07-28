@@ -10,7 +10,7 @@ import eslintConfigPrettier from 'eslint-plugin-prettier/recommended'
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   { files: ['**/*.{js,mjs,cjs,ts,vue}'] },
-  { ignores: ['/node_modules/', 'dist/**/*.{js,mjs,ts}', '*.d.ts', 'storybook-static'] },
+  { ignores: ['/node_modules/', 'dist/**/*.{js,mjs,ts}', '*.d.ts', '**/*.d.ts', 'storybook-static'] },
   {
     languageOptions: {
       globals: globals.browser

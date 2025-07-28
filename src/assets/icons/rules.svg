@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48">
-  <path fill="currentColor" d="M20 16c-1.1 0-2-.9-2-2s.9-2 2-2h8c1.1 0 2 .9 2 2s-.9 2-2 2h-8Zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2h14c1.1 0 2 .9 2 2s-.9 2-2 2H20Z"/>
-  <path fill="currentColor0" fill-rule="evenodd" d="M12 5.953c.018-.68.436-1.953 2-1.953h26.047c.68.018 1.953.436 1.953 2v32c0 3.32-2.68 6-6 6H12c-3.32 0-6-2.68-6-6v-4c0-1.1.9-2 2-2h4V5.953ZM16 32V8h22v30c0 1.1-.9 2-2 2s-2-.9-2-2v-4c0-1.1-.9-2-2-2H16Zm-6 6c0 1.1.9 2 2 2h18v-4H10v2Z" clip-rule="evenodd"/>
-  <path fill="currentColor" d="M20 28h14c1.1 0 2-.9 2-2s-.9-2-2-2H20c-1.1 0-2 .9-2 2s.9 2 2 2Z"/>
-</svg>
