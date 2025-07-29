@@ -1,8 +1,24 @@
+<script lang="ts">
+import type { IconName } from './config'
+
+type IconSize = '16' | '20' | '24' | '32' | '40' | '48' | 'full'
+
+type IconSizes = {
+  height: IconSize
+  width: IconSize
+}
+
+export interface IconProps {
+  name?: IconName
+  src?: string
+  size?: IconSize
+}
+</script>
+
 <script setup lang="ts">
-import type { IconSize, IconSizes, IconProps } from './UiIcon.types'
 import { computed, useAttrs } from 'vue'
 import { twMerge } from 'tailwind-merge'
-import { icons } from './icons'
+import { icons } from './config'
 
 const SIZE_CLASSES_LIST: Record<IconSize, string> = {
   '16': 'w-4 h-4',
@@ -20,6 +36,8 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<IconProps>(), {
+  name: undefined,
+  src: undefined,
   size: '24'
 })
 const attrs = useAttrs()

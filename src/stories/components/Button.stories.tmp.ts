@@ -3,9 +3,9 @@ import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import { computed } from 'vue'
 import type { ComponentProps } from 'vue-component-type-helpers'
 import { ButtonColors, ButtonSizes, ButtonTypes, ButtonVariants } from '../../components/button/Button.types'
-import { ICONS } from '../config/icons'
+import { icons, type IconName } from '@src/components/icon/config'
 
-const names = Object.keys(ICONS)
+const names = Object.keys(icons).sort((a, b) => a.localeCompare(b)) as IconName[]
 
 type ButtonPropsAndCustomArgs = ComponentProps<typeof UiButton> & { icon?: string; leadingIcon?: string }
 
@@ -62,8 +62,6 @@ const meta = {
     variant: 'filled',
     size: 'md',
     type: 'standard',
-    leadingIcon: '',
-    trailingIcon: '',
     icon: names[0],
     label: 'Button',
     caption: '',

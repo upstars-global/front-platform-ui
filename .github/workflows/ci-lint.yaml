@@ -26,13 +26,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
       - name: Install dependencies
-        run: pnpm install
+        run: yarn install
       - name: Eslint
-        run: pnpm lint:eslint
+        run: yarn lint:eslint
       - name: Prettier
-        run: pnpm lint:prettier
+        run: yarn lint:prettier
       - name: Types check
-        run: pnpm lint:tsc
+        run: yarn lint:tsc

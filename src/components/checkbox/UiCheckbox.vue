@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { FormElementProps } from '../types.ts'
 import { ref } from 'vue'
+import type { IconName } from '../icon/config'
 import UiIcon from '../icon/UiIcon.vue'
 
 const model = defineModel<boolean>('modelValue', {
@@ -8,7 +9,7 @@ const model = defineModel<boolean>('modelValue', {
 })
 
 interface CheckboxProps extends FormElementProps {
-  icon?: string
+  icon?: IconName
   requiredMessage?: string
   error?: string
 }
@@ -52,7 +53,7 @@ const handleChange = (event: Event) => {
         <div
           class="ui-checkbox__checkmark w-5 h-5 self-baseline shrink-0 relative after:absolute after:w-6 after:h-6 after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2"
         >
-          <UiIcon v-show="isChecked" :name="icon || 'checkmark'" size="full" />
+          <UiIcon v-show="isChecked" :name="icon || 'check'" size="full" />
         </div>
       </slot>
       <slot name="label">
