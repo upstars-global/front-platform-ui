@@ -17,8 +17,8 @@ export interface IconProps {
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { icons } from './config'
 import { useComponentAttributes } from '../../composables/useUiClasses'
+import { icons } from './config'
 
 const SIZE_CLASSES_LIST: Record<IconSize, string> = {
   '16': 'w-4 h-4',
@@ -45,7 +45,6 @@ const { attributes, className } = useComponentAttributes(
   'ui-icon',
   computed(() => SIZE_CLASSES_LIST[props.size])
 )
-
 const iconRaw = computed(() => {
   if (!props.name) {
     return
