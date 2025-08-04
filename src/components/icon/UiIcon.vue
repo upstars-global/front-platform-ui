@@ -16,9 +16,9 @@ export interface IconProps {
 </script>
 
 <script setup lang="ts">
-import { computed, useAttrs } from 'vue'
-import { twMerge } from 'tailwind-merge'
+import { computed } from 'vue'
 import { icons } from './config'
+import { useComponentAttributes } from '../../composables/useUiClasses'
 
 const SIZE_CLASSES_LIST: Record<IconSize, string> = {
   '16': 'w-4 h-4',
@@ -40,7 +40,12 @@ const props = withDefaults(defineProps<IconProps>(), {
   src: undefined,
   size: '24'
 })
-const attrs = useAttrs()
+
+const { attributes, className } = useComponentAttributes(
+  'ui-icon',
+  computed(() => SIZE_CLASSES_LIST[props.size])
+)
+
 const iconRaw = computed(() => {
   if (!props.name) {
     return
@@ -50,29 +55,6 @@ const iconRaw = computed(() => {
 const iconSize = computed((): IconSizes => {
   return { height: props.size, width: props.size }
 })
-const attributes = computed(() => {
-  const result = { ...attrs }
-  delete result.class
-  return result
-})
-const classes = computed(() => {
-  let str = ''
-
-  if (!attrs.class) {
-    return str
-  }
-
-  if (Array.isArray(attrs.class)) {
-    str = attrs.class.join(' ')
-  } else if (typeof attrs.class === 'object') {
-    str = Object.keys(attrs.class)
-      .filter((key) => (attrs.class as Record<string, unknown>)[key])
-      .join(' ')
-  }
-
-  return str || (attrs.class as string)
-})
-const className = computed(() => twMerge('ui-icon', SIZE_CLASSES_LIST[props.size], classes.value))
 </script>
 
 <template>
