@@ -25,14 +25,9 @@ const meta = {
   args: {
     progress: 67,
     max: 100,
-    progressColor: '#676767',
-    trailColor: '#bfbfbf',
-    background: 'transparent',
     size: 80,
     progressWidth: 4,
-    startAngle: 90,
-    animationDuration: '0.5s',
-    rounded: true
+    startAngle: 90
   },
   render: (args) => ({
     name: 'Story',
@@ -55,6 +50,8 @@ export const SlotContent: SlotContentStory = {
   },
   args: {
     background: '#e0e0e0',
+    progressColor: '#676767',
+    trailColor: '#bfbfbf',
     progress: 43,
     iconName: 'support'
   },
@@ -80,7 +77,9 @@ export const VariousSizes: Story = {
   },
   args: {
     max: 160,
-    background: 'rgba(255, 255, 255, 0.13)'
+    background: 'rgba(255, 255, 255, 0.13)',
+    progressColor: '#676767',
+    trailColor: '#bfbfbf'
   },
   render: (args) => ({
     name: 'Story',

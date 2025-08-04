@@ -4,12 +4,12 @@ import { useComponentAttributes } from '../../composables/useUiClasses'
 
 interface CircleProgressBarProps {
   progress: number
+  progressWidth: number
   max?: number
   background?: string
   progressColor?: string
   trailColor?: string
   size?: number
-  progressWidth?: number
   startAngle?: number
   animationDuration?: string
   rounded?: boolean
@@ -24,14 +24,12 @@ const SPACING = 2
 
 const props = withDefaults(defineProps<CircleProgressBarProps>(), {
   max: 100,
-  background: 'transparent',
-  progressColor: '#676767',
-  trailColor: '#bfbfbf',
+  background: undefined,
+  progressColor: undefined,
+  trailColor: undefined,
   size: 100,
-  progressWidth: 1,
   startAngle: 90,
-  animationDuration: '0',
-  rounded: true
+  animationDuration: '0'
 })
 
 const { attributes, className } = useComponentAttributes(
@@ -49,27 +47,53 @@ const dashArray = computed(() => radius.value * Math.PI * 2)
 const dashOffset = computed(() => {
   return dashArray.value - (dashArray.value * currentProgress.value) / props.max
 })
+const isAnimation = computed(() => props.animationDuration && props.animationDuration !== '0')
+const customProperties = computed(() => {
+  const result: Record<string, string | number> = {
+    '--circle-progress-dasharray': dashArray.value,
+    '--circle-progress-dashoffset': dashOffset.value
+  }
+
+  if (props.progressColor) {
+    result['--circle-progress-line-color'] = props.progressColor
+  }
+
+  if (props.trailColor) {
+    result['--circle-progress-trail-color'] = props.trailColor
+  }
+
+  if (props.background) {
+    result['--circle-progress-bg-color'] = props.background
+  }
+
+  if (typeof props.rounded !== 'undefined') {
+    result['--circle-progress-stroke-linecap'] = props.rounded ? 'round' : 'butt'
+  }
+
+  if (isAnimation.value) {
+    result['--circle-progress-animation-duration'] = props.animationDuration
+  }
+
+  return result
+})
 </script>
 
 <template>
-  <div v-bind="attributes" :class="className" :style="{ width: `${size}px`, height: `${size}px` }">
+  <div v-bind="attributes" :class="className" :style="{ ...customProperties, width: `${size}px`, height: `${size}px` }">
     <svg class="relative w-full h-full z-10" :viewBox="viewBox">
       <circle
-        class="ui-circle-progress__line--back"
+        class="ui-circle-progress-bar"
         :r="radius"
         :cx="circleSize"
         :cy="circleSize"
-        :stroke="trailColor"
         :stroke-width="`${progressWidth}px`"
         stroke-dashoffset="0"
         fill="none"
       />
       <circle
-        class="ui-circle-progress__line--top"
-        :class="{ 'ui-circle-progress-line-butt': !rounded, 'ui-circle-progress-line-rounded': rounded }"
-        :style="{ strokeDashoffset: dashOffset, strokeDasharray: dashArray }"
+        class="ui-circle-progress-line"
+        :class="{ 'ui-circle-progress-animation': isAnimation }"
         :transform="`rotate(${startAngle} ${circleSize} ${circleSize})`"
-        :stroke="progressColor"
         :stroke-width="`${progressWidth}px`"
         :r="radius"
         :cx="circleSize"
@@ -78,39 +102,8 @@ const dashOffset = computed(() => {
       />
     </svg>
 
-    <div class="ui-circle-progress__content" :style="{ background }">
+    <div class="ui-circle-progress-bg absolute inset-0 flex items-center justify-center rounded-full">
       <slot :progress="progress" :max="max" />
     </div>
   </div>
 </template>
-
-<style>
-@keyframes filling {
-  from {
-    stroke-dashoffset: v-bind('dashArray');
-  }
-  to {
-    stroke-dashoffset: v-bind('dashOffset');
-  }
-}
-
-.ui-circle-progress__line--top {
-  animation-name: filling;
-  animation-duration: v-bind('props.animationDuration');
-  animation-timing-function: ease-in;
-  transition: 0.5s all;
-}
-
-.ui-circle-progress__content {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 100%;
-}
-</style>
