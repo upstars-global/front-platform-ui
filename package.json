@@ -1,49 +1,54 @@
 {
-  "name": "front-ui",
+  "name": "front-platfrom-ui",
   "version": "0.0.1",
   "license": "MIT",
   "author": "Upstars Global",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/upstars-global/front-ui.git"
+    "url": "git+https://github.com/upstars-global/front-platfrom-ui.git"
   },
   "bugs": {
-    "url": "https://github.com/upstars-global/front-ui/issues"
+    "url": "https://github.com/upstars-global/front-platfrom-ui/issues"
   },
-  "homepage": "https://github.com/upstars-global/front-ui#readme",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "homepage": "https://github.com/upstars-global/front-platfrom-ui#readme",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/types/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.js"
+      "types": "./src/types/index.d.ts",
+      "import": "./src/index.ts",
+      "require": "./src/index.ts"
     },
-    "./components/*": "./dist/components/*",
-    "./assets/*": "./dist/assets/*",
-    "./config": "./scripts/config/index.js"
+    "./components/*": "./src/components/*",
+    "./assets/*": "./src/assets/*"
   },
   "files": [
-    "dist/**/*",
+    "src/**/*",
     "README.md",
     "*.js",
     "*.d.ts",
     "!public/**/*",
-    "!script/**/*",
-    "!src/**/*"
+    "!script/**/*"
   ],
   "scripts": {
     "dev:storybook": "storybook dev -p 6006",
     "build:package": "vite build -c vite.lib.ts",
-    "build:lib": "pnpm build:package",
+    "build:types": "vue-tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json",
+    "build:dts": "yarn clean:types && yarn build:types",
     "build:storybook": "storybook build",
-    "build:chromatic": "chromatic --build-command='pnpm build:storybook' -o='storybook-static' --exit-zero-on-changes",
+    "build:chromatic": "chromatic --build-command='yarn build:storybook' -o='storybook-static' --exit-zero-on-changes",
+    "clean:types": "rimraf src/types",
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier . --check",
     "lint:tsc": "vue-tsc --noEmit",
     "lintfix": "eslint . --fix && prettier --write --list-different ."
+  },
+  "engines": {
+    "node": ">=22.12.0",
+    "npm": ">=10.5.0",
+    "yarn": ">=1.22.0"
   },
   "dependencies": {
     "tailwindcss": "~3.4.17",
@@ -73,6 +78,7 @@
     "postcss": "^8.5.6",
     "postcss-nested": "^7.0.2",
     "prettier": "^3.6.2",
+    "rimraf": "^6.0.1",
     "storybook": "^9.0.18",
     "tailwind-merge": "^2.6.0",
     "tsc-alias": "^1.8.16",
@@ -91,5 +97,5 @@
     "tailwindcss": "^3.4.x",
     "vue": "^3.5.x"
   },
-  "packageManager": "pnpm@10.13.1"
+  "packageManager": "yarn@1.22.22"
 }
