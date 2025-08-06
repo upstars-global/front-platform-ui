@@ -1,0 +1,6 @@
+:root {
+  --circle-progress-stroke-linecap: butt;
+  --circle-progress-line-color: #676767;
+  --circle-progress-trail-color: #bfbfbf;
+  --circle-progress-bg-color: transparent;
+}

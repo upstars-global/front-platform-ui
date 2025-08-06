@@ -3,6 +3,7 @@
 @import '_typography.css';
 @import '_button.css';
 @import '_checkbox.css';
+@import '_circle-progress.css';
 
 :root {
   --effects-filter-disable: brightness(0.8);
