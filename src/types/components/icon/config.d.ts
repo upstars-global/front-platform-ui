@@ -31,6 +31,7 @@ declare const iconsFill: {
     prize: string;
     rollUp: string;
     safety2: string;
+    shield: string;
     timer: string;
     user: string;
     visibilityOff: string;
@@ -72,6 +73,7 @@ declare const iconsOutline: {
     actions: string;
     quests: string;
     current: string;
+    vipEvents: string;
 };
 declare const iconsSocial: {
     facebook: string;
