@@ -102,8 +102,40 @@ const customProperties = computed(() => {
       />
     </svg>
 
-    <div class="ui-circle-progress-bg absolute inset-0 flex items-center justify-center rounded-full">
+    <div class="ui-circle-progress__content absolute inset-0 flex items-center justify-center rounded-full">
       <slot :progress="progress" :max="max" />
     </div>
   </div>
 </template>
+
+<style lang="postcss">
+@keyframes filling {
+  from {
+    stroke-dashoffset: var(--circle-progress-dasharray, 0);
+  }
+  to {
+    stroke-dashoffset: var(--circle-progress-dashoffset, 0);
+  }
+}
+
+.ui-circle-progress-bar {
+  stroke: var(--circle-progress-trail-color, currentColor);
+}
+
+.ui-circle-progress-line {
+  stroke: var(--circle-progress-line-color, currentColor);
+  stroke-linecap: var(--circle-progress-stroke-linecap, butt);
+  stroke-dashoffset: var(--circle-progress-dashoffset, 0);
+  stroke-dasharray: var(--circle-progress-dasharray, 0);
+}
+
+.ui-circle-progress-animation {
+  animation-name: var(--circle-progress-animation-name, filling);
+  animation-duration: var(--circle-progress-animation-duration, 0);
+  animation-timing-function: var(--circle-progress-animation-timing-function, ease-in);
+  transition: var(--circle-progress-transition, 0.5s all);
+}
+.ui-circle-progress__content {
+  background-color: var(--circle-progress-bg-color, transparent);
+}
+</style>
