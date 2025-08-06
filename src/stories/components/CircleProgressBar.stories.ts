@@ -19,7 +19,7 @@ const meta = {
     size: { control: 'number' },
     progressWidth: { control: 'number' },
     startAngle: { control: 'number' },
-    animationDuration: { control: 'text' },
+    isAnimation: { control: 'boolean' },
     rounded: { control: 'boolean' }
   },
   args: {
