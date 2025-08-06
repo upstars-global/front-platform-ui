@@ -70,6 +70,7 @@ import quests from '../../assets/icons/outline/quests.svg?raw'
 import search from '../../assets/icons/outline/search.svg?raw'
 import support from '../../assets/icons/outline/support.svg?raw'
 import tournaments from '../../assets/icons/outline/tournaments.svg?raw'
+import vipEvents from '../../assets/icons/outline/vipEvents.svg?raw'
 // social
 import facebook from '../../assets/icons/social/facebook.svg?raw'
 import instagram from '../../assets/icons/social/instagram.svg?raw'
@@ -149,7 +150,8 @@ const iconsOutline = {
   tournaments,
   actions,
   quests,
-  current
+  current,
+  vipEvents
 }
 const iconsSocial = {
   facebook,
