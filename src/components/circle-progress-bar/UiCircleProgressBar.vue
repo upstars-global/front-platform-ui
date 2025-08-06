@@ -11,7 +11,7 @@ interface CircleProgressBarProps {
   trailColor?: string
   size?: number
   startAngle?: number
-  animationDuration?: string
+  isAnimation?: boolean
   rounded?: boolean
 }
 
@@ -28,8 +28,7 @@ const props = withDefaults(defineProps<CircleProgressBarProps>(), {
   progressColor: undefined,
   trailColor: undefined,
   size: 100,
-  startAngle: 90,
-  animationDuration: '0'
+  startAngle: 90
 })
 
 const { attributes, className } = useComponentAttributes(
@@ -47,7 +46,6 @@ const dashArray = computed(() => radius.value * Math.PI * 2)
 const dashOffset = computed(() => {
   return dashArray.value - (dashArray.value * currentProgress.value) / props.max
 })
-const isAnimation = computed(() => props.animationDuration && props.animationDuration !== '0')
 const customProperties = computed(() => {
   const result: Record<string, string | number> = {
     '--circle-progress-dasharray': dashArray.value,
@@ -70,10 +68,6 @@ const customProperties = computed(() => {
     result['--circle-progress-stroke-linecap'] = props.rounded ? 'round' : 'butt'
   }
 
-  if (isAnimation.value) {
-    result['--circle-progress-animation-duration'] = props.animationDuration
-  }
-
   return result
 })
 </script>
@@ -92,9 +86,11 @@ const customProperties = computed(() => {
       />
       <circle
         class="ui-circle-progress-line"
-        :class="{ 'ui-circle-progress-animation': isAnimation }"
+        :class="{ 'ui-circle-progress-animation transition-all duration-500': isAnimation }"
         :transform="`rotate(${startAngle} ${circleSize} ${circleSize})`"
         :stroke-width="`${progressWidth}px`"
+        :stroke-dashoffset="dashOffset"
+        :stroke-dasharray="dashArray"
         :r="radius"
         :cx="circleSize"
         :cy="circleSize"
@@ -102,8 +98,37 @@ const customProperties = computed(() => {
       />
     </svg>
 
-    <div class="ui-circle-progress-bg absolute inset-0 flex items-center justify-center rounded-full">
+    <div class="ui-circle-progress__content absolute inset-0 flex items-center justify-center rounded-full">
       <slot :progress="progress" :max="max" />
     </div>
   </div>
 </template>
+
+<style lang="postcss">
+@keyframes filling {
+  from {
+    stroke-dashoffset: v-bind('dashArray');
+  }
+  to {
+    stroke-dashoffset: v-bind('dashOffset');
+  }
+}
+
+.ui-circle-progress-bar {
+  stroke: var(--circle-progress-trail-color, currentColor);
+}
+
+.ui-circle-progress-line {
+  stroke: var(--circle-progress-line-color, currentColor);
+  stroke-linecap: var(--circle-progress-stroke-linecap, butt);
+}
+
+.ui-circle-progress-animation {
+  animation-name: filling;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in;
+}
+.ui-circle-progress__content {
+  background-color: var(--circle-progress-bg-color, transparent);
+}
+</style>
