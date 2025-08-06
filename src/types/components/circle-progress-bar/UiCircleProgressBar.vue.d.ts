@@ -7,7 +7,7 @@ interface CircleProgressBarProps {
     trailColor?: string;
     size?: number;
     startAngle?: number;
-    animationDuration?: string;
+    isAnimation?: boolean;
     rounded?: boolean;
 }
 declare var __VLS_1: {
@@ -19,7 +19,6 @@ type __VLS_Slots = {} & {
 };
 declare const __VLS_component: import("vue").DefineComponent<CircleProgressBarProps, void, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CircleProgressBarProps> & Readonly<{}>, {
     max: number;
-    animationDuration: string;
     background: string;
     size: number;
     progressColor: string;

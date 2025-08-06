@@ -72,6 +72,7 @@ declare const iconsOutline: {
     actions: string;
     quests: string;
     current: string;
+    vipEvents: string;
 };
 declare const iconsSocial: {
     facebook: string;
