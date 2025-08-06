@@ -41,6 +41,7 @@ import radioButton from '../../assets/icons/fill/radioButton.svg?raw'
 import radioButtonActive from '../../assets/icons/fill/radioButtonActive.svg?raw'
 import rollUp from '../../assets/icons/fill/rollUp.svg?raw'
 import safety2 from '../../assets/icons/fill/safety_2.svg?raw'
+import shield from '../../assets/icons/fill/shield.svg?raw'
 import timer from '../../assets/icons/fill/timer.svg?raw'
 import user from '../../assets/icons/fill/user.svg?raw'
 import visibilityOff from '../../assets/icons/fill/visibilityOff.svg?raw'
@@ -110,6 +111,7 @@ const iconsFill = {
   prize,
   rollUp,
   safety2,
+  shield,
   timer,
   user,
   visibilityOff,

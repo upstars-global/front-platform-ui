@@ -31,6 +31,7 @@ declare const iconsFill: {
     prize: string;
     rollUp: string;
     safety2: string;
+    shield: string;
     timer: string;
     user: string;
     visibilityOff: string;
