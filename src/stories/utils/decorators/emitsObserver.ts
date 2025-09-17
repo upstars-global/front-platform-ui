@@ -11,9 +11,10 @@ export const emitsObserver: Decorator = (story, context) => ({
     const listeners = ref<Record<string, HandlerFunction>>({})
 
     emits.forEach((name) => {
-      listeners.value[name] = action(name)
+      const eventName = `on${name.charAt(0).toUpperCase() + name.slice(1)}`
+      listeners.value[eventName] = action(name)
     })
 
-    return () => h(story(), { ...attrs, listeners: listeners.value })
+    return () => h(story(), { ...attrs, ...listeners.value })
   }
 })

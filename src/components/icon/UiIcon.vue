@@ -8,7 +8,7 @@ type IconSizes = {
   width: IconSize
 }
 
-export interface IconProps {
+export interface UiIconProps {
   name?: IconName
   src?: string
   size?: IconSize
@@ -35,7 +35,7 @@ defineOptions({
   inheritAttrs: false
 })
 
-const props = withDefaults(defineProps<IconProps>(), {
+const props = withDefaults(defineProps<UiIconProps>(), {
   name: undefined,
   src: undefined,
   size: '24'

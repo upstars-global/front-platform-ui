@@ -33,7 +33,8 @@ const props = withDefaults(defineProps<CircleProgressBarProps>(), {
 
 const { attributes, className } = useComponentAttributes(
   'ui-circle-progress',
-  'relative flex justify-center items-center'
+  // TODO: add uiConfig support
+  computed(() => 'relative flex justify-center items-center')
 )
 
 const currentProgress = computed(() => (props.max <= props.progress ? props.max : props.progress))

@@ -1,9 +1,7 @@
-import { computed, useAttrs, type ComputedRef, type Ref } from 'vue'
-import { twMerge } from 'tailwind-merge'
+import { computed, useAttrs, type ComputedRef } from 'vue'
+import { twMerge, type ClassNameValue } from 'tailwind-merge'
 
-type ExtraClasses = string | string[] | Ref<string | string[]> | ComputedRef<string | string[]>
-
-export function useComponentAttributes(rootClassName: string, extraClasses?: ExtraClasses) {
+export function useComponentAttributes(rootClassName: ClassNameValue, baseClasses?: ComputedRef<ClassNameValue>) {
   const attrs = useAttrs()
 
   const attributes = computed(() => {
@@ -31,10 +29,7 @@ export function useComponentAttributes(rootClassName: string, extraClasses?: Ext
   })
 
   const className = computed(() => {
-    if (Array.isArray(extraClasses) || typeof extraClasses === 'string') {
-      return twMerge(rootClassName, extraClasses, classes.value)
-    }
-    return twMerge(rootClassName, extraClasses?.value, classes.value)
+    return twMerge(rootClassName, baseClasses?.value, classes.value)
   })
 
   return { attributes, className }
