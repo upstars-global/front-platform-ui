@@ -1,7 +1,7 @@
 import type { FormElementProps } from '../types.ts';
-import type { IconName } from '../icon/config';
+import type { UiIconName } from '../icon/config';
 interface CheckboxProps extends FormElementProps {
-    icon?: IconName;
+    icon?: UiIconName;
     requiredMessage?: string;
     error?: string;
 }

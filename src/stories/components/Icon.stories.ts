@@ -3,11 +3,11 @@ import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import { computed } from 'vue'
 import { ICONS_LIST } from '../config/icons'
 import UiIcon from '@src/components/icon/UiIcon.vue'
-import { icons, type IconName } from '@src/components/icon/config'
+import { icons, type UiIconName } from '@src/components/icon/config'
 
 type IconPropsAndCustomArgs = ComponentProps<typeof UiIcon> & { color?: string }
 
-const names = Object.keys(icons).sort((a, b) => a.localeCompare(b)) as IconName[]
+const names = Object.keys(icons).sort((a, b) => a.localeCompare(b)) as UiIconName[]
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {

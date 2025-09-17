@@ -1,3 +1,4 @@
+import type { UiIcons } from './icon/config'
 import type { LinkUi } from './link/theme'
 
 export type DeepPartial<T> = {
@@ -8,8 +9,8 @@ interface UiConfig {
   link?: DeepPartial<LinkUi>
 }
 
-// TODO: add icons property for add/override icons
 export interface AppConfig {
+  icons?: UiIcons
   ui?: UiConfig
 }
 

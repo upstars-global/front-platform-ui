@@ -1,4 +1,4 @@
-import type { IconName } from '../icon/config';
+import type { UiIconName } from '../icon/config';
 export declare enum ButtonColors {
     primary = "primary",
     neutral = "neutral",
@@ -35,9 +35,9 @@ export interface ButtonProps {
     loading?: boolean;
     fullWidth?: boolean;
     fullWidthMobile?: boolean;
-    leadingIcon?: IconName;
-    trailingIcon?: IconName;
-    icon?: IconName;
+    leadingIcon?: UiIconName;
+    trailingIcon?: UiIconName;
+    icon?: UiIconName;
     label?: string;
     caption?: string;
     uppercase?: boolean;

@@ -1,11 +1,14 @@
 import type { Plugin } from 'vue'
 import type { AppConfig } from '../components/types'
+import { defu } from 'defu'
 import { AppConfigSymbol } from '../config/injectionKeys'
+import { icons } from '../components/icon/config'
 
 const plugin: Plugin<AppConfig> = {
   install: (app, options) => {
     const config: AppConfig = {
-      ...options
+      ...options,
+      icons: defu(options?.icons ?? {}, icons)
     }
 
     app.provide(AppConfigSymbol, config)

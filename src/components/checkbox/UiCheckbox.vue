@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { FormElementProps } from '../types.ts'
 import { ref } from 'vue'
-import type { IconName } from '../icon/config'
+import type { UiIconName } from '../icon/config'
 import UiIcon from '../icon/UiIcon.vue'
 
 const model = defineModel<boolean>('modelValue', {
@@ -9,7 +9,7 @@ const model = defineModel<boolean>('modelValue', {
 })
 
 interface CheckboxProps extends FormElementProps {
-  icon?: IconName
+  icon?: UiIconName
   requiredMessage?: string
   error?: string
 }
