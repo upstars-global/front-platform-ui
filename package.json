@@ -22,8 +22,7 @@
       "require": "./src/index.ts"
     },
     "./components/*": "./src/components/*",
-    "./assets/*": "./src/assets/*",
-    "./plugins/*": "./src/plugins/*"
+    "./assets/*": "./src/assets/*"
   },
   "files": [
     "src/**/*",
