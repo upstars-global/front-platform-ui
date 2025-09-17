@@ -1,5 +1,5 @@
 <script lang="ts">
-import type { IconName } from './config'
+import type { UiIconName } from './config'
 
 type IconSize = '16' | '20' | '24' | '32' | '40' | '48' | 'full'
 
@@ -8,8 +8,8 @@ type IconSizes = {
   width: IconSize
 }
 
-export interface IconProps {
-  name?: IconName
+export interface UiIconProps {
+  name?: UiIconName
   src?: string
   size?: IconSize
 }
@@ -18,7 +18,7 @@ export interface IconProps {
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useComponentAttributes } from '../../composables/useUiClasses'
-import { icons } from './config'
+import { useAppConfig } from '../../composables/useAppConfig'
 
 const SIZE_CLASSES_LIST: Record<IconSize, string> = {
   '16': 'w-4 h-4',
@@ -35,12 +35,13 @@ defineOptions({
   inheritAttrs: false
 })
 
-const props = withDefaults(defineProps<IconProps>(), {
+const props = withDefaults(defineProps<UiIconProps>(), {
   name: undefined,
   src: undefined,
   size: '24'
 })
 
+const appConfig = useAppConfig()
 const { attributes, className } = useComponentAttributes(
   'ui-icon',
   computed(() => SIZE_CLASSES_LIST[props.size])
@@ -49,7 +50,7 @@ const iconRaw = computed(() => {
   if (!props.name) {
     return
   }
-  return icons[props.name]
+  return appConfig.icons?.[props.name]
 })
 const iconSize = computed((): IconSizes => {
   return { height: props.size, width: props.size }
