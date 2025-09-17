@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { FormElementProps } from '../types.ts'
+import type { FormElementProps } from '../types'
 import { ref } from 'vue'
 import type { UiIconName } from '../icon/config'
 import UiIcon from '../icon/UiIcon.vue'

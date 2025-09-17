@@ -21,7 +21,7 @@ export interface UiLinkEmits {
 import { computed, resolveComponent, useAttrs, type ConcreteComponent } from 'vue'
 import { twMerge } from 'tailwind-merge'
 import { isExternalUrl } from '../../helpers/externalUrl'
-import { useAppConfig } from '../../composables/useAppConfig.ts'
+import { useAppConfig } from '../../composables/useAppConfig'
 import { useComponentAttributes } from '../../composables/useUiClasses'
 import theme from './theme'
 

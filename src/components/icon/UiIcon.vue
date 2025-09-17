@@ -18,7 +18,7 @@ export interface UiIconProps {
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useComponentAttributes } from '../../composables/useUiClasses'
-import { useAppConfig } from '@src/composables/useAppConfig.ts'
+import { useAppConfig } from '../../composables/useAppConfig'
 
 const SIZE_CLASSES_LIST: Record<IconSize, string> = {
   '16': 'w-4 h-4',
