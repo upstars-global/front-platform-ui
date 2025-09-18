@@ -19,7 +19,7 @@ export interface UiLinkEmits {
 
 <script setup lang="ts">
 import { computed, resolveComponent, useAttrs, type ConcreteComponent } from 'vue'
-import { twMerge } from 'tailwind-merge'
+import { twMerge, twJoin } from 'tailwind-merge'
 import { isExternalUrl } from '../../helpers/externalUrl'
 import { useAppConfig } from '../../composables/useAppConfig'
 import { useComponentAttributes } from '../../composables/useUiClasses'
@@ -50,13 +50,6 @@ const { attributes, className } = useComponentAttributes(
   computed(() => {
     const baseClasses: ClassNameValue[] = [theme.base, appConfig?.ui?.link?.base, props.ui?.base]
 
-    // if (props.variant === 'unstyled') {
-    //   baseClasses.push([theme.variants.unstyled, appConfig?.ui?.link?.variants?.unstyled, props.ui?.variants?.unstyled])
-    // }
-    //
-    // if (props.variant === 'primary') {
-    //   baseClasses.push([theme.variants.primary, appConfig?.ui?.link?.variants?.primary, props.ui?.variants?.primary])
-    // }
     baseClasses.push([
       theme.variants[props.variant],
       appConfig?.ui?.link?.variants?.[props.variant],
@@ -137,7 +130,12 @@ const computedProps = computed(() => {
   }
 })
 function getClassName(isActive: boolean, isExactActive: boolean) {
-  return twMerge(className.value, isActive ? props.activeClass : '', isExactActive ? props.exactActiveClass : '')
+  const classList = [className.value, isActive ? props.activeClass : '', isExactActive ? props.exactActiveClass : '']
+  if (props.ui?.strategy === 'merge') {
+    return twMerge(classList)
+  }
+
+  return twJoin(classList)
 }
 </script>
 
