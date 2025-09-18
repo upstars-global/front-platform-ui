@@ -1,12 +1,14 @@
 import type { RouteLocationRaw } from 'vue-router';
-import type { DeepPartial } from '../types';
+import type { DeepPartial, Strategy } from '../types';
 import type { LinkUi } from './theme';
 export interface UiLinkProps {
     to?: RouteLocationRaw;
     activeClass?: string;
     exactActiveClass?: string;
     variant?: 'primary' | 'unstyled';
-    ui?: DeepPartial<LinkUi>;
+    ui?: DeepPartial<LinkUi> & {
+        strategy?: Strategy;
+    };
 }
 export interface UiLinkEmits {
     (event: 'click', value: MouseEvent): void;
@@ -18,9 +20,11 @@ declare const _default: __VLS_WithSlots<import("vue").DefineComponent<UiLinkProp
 }>, {
     variant: "primary" | "unstyled";
     to: RouteLocationRaw;
+    ui: DeepPartial<LinkUi> & {
+        strategy?: Strategy;
+    };
     activeClass: string;
     exactActiveClass: string;
-    ui: DeepPartial<LinkUi>;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
     default?: (props: {}) => any;
 } & {

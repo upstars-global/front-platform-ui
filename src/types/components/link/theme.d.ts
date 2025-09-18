@@ -1,6 +1,7 @@
 declare const link: {
     base: string;
     variants: {
+        unstyled: string;
         primary: string;
     };
 };
