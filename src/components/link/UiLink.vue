@@ -140,7 +140,13 @@ function getClassName(isActive: boolean, isExactActive: boolean) {
 </script>
 
 <template>
-  <component :is="component" v-if="isRouterLink" v-slot="{ href, isActive, isExactActive }" :to="url" custom>
+  <component
+    :is="component"
+    v-if="isRouterLink"
+    v-slot="{ href, isActive, isExactActive }"
+    v-bind="computedProps"
+    custom
+  >
     <a
       :href="href"
       v-bind="attributes"
