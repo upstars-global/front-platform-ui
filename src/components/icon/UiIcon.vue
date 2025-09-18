@@ -1,5 +1,6 @@
 <script lang="ts">
 import type { UiIconName } from './config'
+import type { Strategy } from '../types'
 
 type IconSize = '16' | '20' | '24' | '32' | '40' | '48' | 'full'
 
@@ -12,6 +13,9 @@ export interface UiIconProps {
   name?: UiIconName
   src?: string
   size?: IconSize
+  ui?: {
+    strategy?: Strategy
+  }
 }
 </script>
 
@@ -38,13 +42,15 @@ defineOptions({
 const props = withDefaults(defineProps<UiIconProps>(), {
   name: undefined,
   src: undefined,
-  size: '24'
+  size: '24',
+  ui: undefined
 })
 
 const appConfig = useAppConfig()
 const { attributes, className } = useComponentAttributes(
   'ui-icon',
-  computed(() => SIZE_CLASSES_LIST[props.size])
+  computed(() => SIZE_CLASSES_LIST[props.size]),
+  props.ui?.strategy
 )
 const iconRaw = computed(() => {
   if (!props.name) {

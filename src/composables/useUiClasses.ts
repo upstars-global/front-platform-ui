@@ -1,7 +1,12 @@
 import { computed, useAttrs, type ComputedRef } from 'vue'
-import { twMerge, type ClassNameValue } from 'tailwind-merge'
+import { twMerge, twJoin, type ClassNameValue } from 'tailwind-merge'
+import type { Strategy } from '../components/types'
 
-export function useComponentAttributes(rootClassName: ClassNameValue, baseClasses?: ComputedRef<ClassNameValue>) {
+export function useComponentAttributes(
+  rootClassName: ClassNameValue,
+  baseClasses?: ComputedRef<ClassNameValue>,
+  strategy: Strategy = 'join'
+) {
   const attrs = useAttrs()
 
   const attributes = computed(() => {
@@ -29,7 +34,12 @@ export function useComponentAttributes(rootClassName: ClassNameValue, baseClasse
   })
 
   const className = computed(() => {
-    return twMerge(rootClassName, baseClasses?.value, classes.value)
+    const classList = [rootClassName, baseClasses?.value, classes.value]
+    if (strategy === 'merge') {
+      return twMerge(classList)
+    }
+
+    return twJoin(classList)
   })
 
   return { attributes, className }

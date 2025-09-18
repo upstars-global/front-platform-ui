@@ -1,7 +1,7 @@
 <script lang="ts">
 import type { RouteLocationRaw } from 'vue-router'
 import type { ClassNameValue } from 'tailwind-merge'
-import type { DeepPartial } from '../types'
+import type { DeepPartial, Strategy } from '../types'
 import type { LinkUi } from './theme'
 
 export interface UiLinkProps {
@@ -9,7 +9,7 @@ export interface UiLinkProps {
   activeClass?: string
   exactActiveClass?: string
   variant?: 'primary' | 'unstyled'
-  ui?: DeepPartial<LinkUi>
+  ui?: DeepPartial<LinkUi> & { strategy?: Strategy }
 }
 
 export interface UiLinkEmits {
@@ -50,12 +50,22 @@ const { attributes, className } = useComponentAttributes(
   computed(() => {
     const baseClasses: ClassNameValue[] = [theme.base, appConfig?.ui?.link?.base, props.ui?.base]
 
-    if (props.variant === 'primary') {
-      baseClasses.push([theme.variants.primary, appConfig?.ui?.link?.variants?.primary, props.ui?.variants?.primary])
-    }
+    // if (props.variant === 'unstyled') {
+    //   baseClasses.push([theme.variants.unstyled, appConfig?.ui?.link?.variants?.unstyled, props.ui?.variants?.unstyled])
+    // }
+    //
+    // if (props.variant === 'primary') {
+    //   baseClasses.push([theme.variants.primary, appConfig?.ui?.link?.variants?.primary, props.ui?.variants?.primary])
+    // }
+    baseClasses.push([
+      theme.variants[props.variant],
+      appConfig?.ui?.link?.variants?.[props.variant],
+      props.ui?.variants?.[props.variant]
+    ])
 
     return baseClasses
-  })
+  }),
+  props.ui?.strategy
 )
 
 const isBelongsToCurrentDomain = computed(() => {
