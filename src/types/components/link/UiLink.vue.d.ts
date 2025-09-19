@@ -1,14 +1,13 @@
 import type { RouteLocationRaw } from 'vue-router';
-import type { DeepPartial, Strategy } from '../types';
+import type { ClassNameValue } from 'tailwind-merge';
+import type { UiProp } from '../types';
 import type { LinkUi } from './theme';
 export interface UiLinkProps {
     to?: RouteLocationRaw;
-    activeClass?: string;
-    exactActiveClass?: string;
+    activeClass?: ClassNameValue;
+    exactActiveClass?: ClassNameValue;
     variant?: 'primary' | 'unstyled';
-    ui?: DeepPartial<LinkUi> & {
-        strategy?: Strategy;
-    };
+    ui?: UiProp<LinkUi>;
 }
 export interface UiLinkEmits {
     (event: 'click', value: MouseEvent): void;
@@ -20,11 +19,9 @@ declare const _default: __VLS_WithSlots<import("vue").DefineComponent<UiLinkProp
 }>, {
     variant: "primary" | "unstyled";
     to: RouteLocationRaw;
-    ui: DeepPartial<LinkUi> & {
-        strategy?: Strategy;
-    };
-    activeClass: string;
-    exactActiveClass: string;
+    ui: UiProp<LinkUi>;
+    activeClass: string | false | 0 | 0n | ClassNameValue[] | null;
+    exactActiveClass: string | false | 0 | 0n | ClassNameValue[] | null;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
     default?: (props: {}) => any;
 } & {

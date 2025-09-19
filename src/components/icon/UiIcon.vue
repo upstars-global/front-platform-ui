@@ -50,7 +50,7 @@ const appConfig = useAppConfig()
 const { attributes, className } = useComponentAttributes(
   'ui-icon',
   computed(() => SIZE_CLASSES_LIST[props.size]),
-  props.ui?.strategy
+  appConfig?.ui?.icon?.strategy || props.ui?.strategy
 )
 const iconRaw = computed(() => {
   if (!props.name) {

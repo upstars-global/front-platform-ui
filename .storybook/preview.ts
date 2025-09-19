@@ -6,7 +6,9 @@ import '@src/assets/css/variables/index.css'
 
 setup(async (app) => {
   // added for testing
-  app.use(FrontPlatformUi, {})
+  app.use(FrontPlatformUi, {
+    ui: { icon: { strategy: 'merge' } }
+  })
 })
 
 const preview: Preview = {

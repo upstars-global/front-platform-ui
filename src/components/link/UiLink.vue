@@ -1,15 +1,15 @@
 <script lang="ts">
 import type { RouteLocationRaw } from 'vue-router'
 import type { ClassNameValue } from 'tailwind-merge'
-import type { DeepPartial, Strategy } from '../types'
+import type { UiProp } from '../types'
 import type { LinkUi } from './theme'
 
 export interface UiLinkProps {
   to?: RouteLocationRaw
-  activeClass?: string
-  exactActiveClass?: string
+  activeClass?: ClassNameValue
+  exactActiveClass?: ClassNameValue
   variant?: 'primary' | 'unstyled'
-  ui?: DeepPartial<LinkUi> & { strategy?: Strategy }
+  ui?: UiProp<LinkUi>
 }
 
 export interface UiLinkEmits {
@@ -58,7 +58,7 @@ const { attributes, className } = useComponentAttributes(
 
     return baseClasses
   }),
-  props.ui?.strategy
+  appConfig?.ui?.link?.strategy || props.ui?.strategy
 )
 
 const isBelongsToCurrentDomain = computed(() => {
