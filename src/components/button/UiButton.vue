@@ -13,6 +13,7 @@ export interface UiButtonProps {
   variant?: ButtonVariant
   disabled?: boolean
   fullWidth?: boolean
+  isActive?: boolean
   leadingIconName?: UiIconName
   leadingIconSize?: IconSize
   trailingIconName?: UiIconName
@@ -32,6 +33,7 @@ export interface UiButtonSlots {
 </script>
 <script setup lang="ts">
 import { computed } from 'vue'
+import { twMerge, twJoin } from 'tailwind-merge'
 import { useAppConfig } from '../../composables/useAppConfig'
 import { useComponentAttributes } from '../../composables/useUiClasses'
 import { prepareVariants } from '../../helpers/prepareClassNames'
@@ -71,6 +73,11 @@ const { attributes, className } = useComponentAttributes(
       appConfig: appConfig?.ui?.button?.variants,
       uiProp: props.ui?.variants
     })
+    const active = prepareVariants<ButtonUi['active']>({
+      theme: theme.active,
+      appConfig: appConfig?.ui?.button?.active,
+      uiProp: props.ui?.active
+    })
     const states = prepareVariants<ButtonUi['states']>({
       theme: theme.states,
       appConfig: appConfig?.ui?.button?.states,
@@ -79,6 +86,10 @@ const { attributes, className } = useComponentAttributes(
 
     commonClasses.push(sizes[props.size])
     commonClasses.push(variants[props.variant])
+
+    if (props.isActive) {
+      commonClasses.push(active[props.variant])
+    }
 
     if (props.disabled) {
       commonClasses.push(states.disabled)
@@ -92,16 +103,31 @@ const { attributes, className } = useComponentAttributes(
   }),
   appConfig?.ui?.button?.strategy || props.ui?.strategy
 )
+
+const leadingIconClasses = computed(() => {
+  if (props.ui?.strategy === 'merge') {
+    return twMerge(theme.leadingIcon, appConfig?.ui?.button?.leadingIcon, props.ui?.leadingIcon)
+  }
+
+  return twJoin(theme.leadingIcon, appConfig?.ui?.button?.leadingIcon, props.ui?.leadingIcon)
+})
+const trailingIconClasses = computed(() => {
+  if (props.ui?.strategy === 'merge') {
+    return twMerge(theme.trailingIcon, appConfig?.ui?.button?.trailingIcon, props.ui?.trailingIcon)
+  }
+
+  return twJoin(theme.trailingIcon, appConfig?.ui?.button?.trailingIcon, props.ui?.trailingIcon)
+})
 </script>
 
 <template>
   <button :class="className" v-bind="attributes" :disabled="disabled" @click="$emit('click', $event)">
     <slot name="leading">
-      <UiIcon v-if="leadingIconName" :name="leadingIconName" :size="leadingIconSize" />
+      <UiIcon v-if="leadingIconName" :name="leadingIconName" :size="leadingIconSize" :class="leadingIconClasses" />
     </slot>
     <slot />
     <slot name="trailing">
-      <UiIcon v-if="trailingIconName" :name="trailingIconName" :size="trailingIconSize" />
+      <UiIcon v-if="trailingIconName" :name="trailingIconName" :size="trailingIconSize" :class="trailingIconClasses" />
     </slot>
   </button>
 </template>

@@ -1,5 +1,5 @@
 {
-  "name": "front-platfrom-ui",
+  "name": "front-platform-ui",
   "version": "0.0.1",
   "license": "MIT",
   "author": "Upstars Global",
@@ -23,7 +23,7 @@
     },
     "./components/*": "./src/components/*",
     "./assets/*": "./src/assets/*",
-    "./tailwind-config": "./tailwind.config.js"
+    "./tailwind-config": "./tailwind.config.ts"
   },
   "files": [
     "src/**/*",

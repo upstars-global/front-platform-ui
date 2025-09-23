@@ -1,5 +1,5 @@
 const button = {
-  base: 'text-center cursor-pointer outline-0 border-0 font-bold rounded-6 transition',
+  base: 'flex gap-2 lg:gap-4 items-center justify-center cursor-pointer outline-none outline-0 border-0 font-bold rounded-6 transition',
   size: {
     default: '',
     sm: 'py-2 px-4',
@@ -12,10 +12,18 @@ const button = {
     secondary: '',
     tertiary: ''
   },
+  active: {
+    default: '',
+    primary: '',
+    secondary: '',
+    tertiary: ''
+  },
   states: {
     disabled: 'opacity-50 pointer-events-none cursor-not-allowed',
     full: 'w-full'
-  }
+  },
+  leadingIcon: '',
+  trailingIcon: ''
 }
 
 export type ButtonUi = typeof button

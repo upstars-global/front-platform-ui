@@ -21,6 +21,7 @@ const meta = {
     variant: { control: 'select', options: variantOptions },
     disabled: { control: 'boolean' },
     fullWidth: { control: 'boolean' },
+    isActive: { control: 'boolean' },
     leadingIconName: { control: 'select', options: iconNames },
     leadingIconSize: { control: 'select', options: ICON_SIZE_LIST },
     trailingIconName: { control: 'select', options: iconNames },

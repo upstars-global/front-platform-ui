@@ -1,7 +1,6 @@
-import defaultTheme from 'tailwindcss/defaultTheme'
+import type { Config } from 'tailwindcss'
 
-/** @type {import('tailwindcss').Config} */
-export default {
+export const config = {
   content: ['./src/**/*.{vue,ts,tsx,css}', './.storybook/**/*.{ts,css}'],
   theme: {
     extend: {
@@ -9,11 +8,8 @@ export default {
         button: 'inset 0 0 0 1px rgba(0, 0, 0, 0.3)'
       }
     },
-    fontFamily: {
-      sans: ['Inter', ...defaultTheme.fontFamily.sans]
-    },
     borderRadius: {
-      0: 0,
+      none: '0',
       0.5: '0.125rem', // 2px
       1: '0.25rem', // 4px
       1.5: '0.375rem', // 6px
@@ -28,4 +24,6 @@ export default {
       full: '9999px'
     }
   }
-}
+} satisfies Config
+
+export default config
