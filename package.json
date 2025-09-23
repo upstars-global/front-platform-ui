@@ -28,8 +28,8 @@
   "files": [
     "src/**/*",
     "README.md",
-    "*.js",
     "*.d.ts",
+    "tailwind.config.ts",
     "!public/**/*",
     "!script/**/*"
   ],
