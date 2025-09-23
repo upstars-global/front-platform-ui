@@ -22,7 +22,8 @@
       "require": "./src/index.ts"
     },
     "./components/*": "./src/components/*",
-    "./assets/*": "./src/assets/*"
+    "./assets/*": "./src/assets/*",
+    "./tailwind-config": "./tailwind.config.js"
   },
   "files": [
     "src/**/*",
@@ -33,7 +34,7 @@
     "!script/**/*"
   ],
   "scripts": {
-    "dev:storybook": "storybook dev -p 6006",
+    "dev:storybook": "storybook dev -p 6006 --no-open",
     "build:package": "vite build -c vite.lib.ts",
     "build:types": "vue-tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json",
     "build:dts": "yarn clean:types && yarn build:types",

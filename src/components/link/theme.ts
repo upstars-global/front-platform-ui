@@ -1,7 +1,7 @@
 const link = {
   base: 'cursor-pointer',
   variants: {
-    unstyled: 'no-underline',
+    default: 'no-underline',
     primary: 'underline font-bold'
   }
 }

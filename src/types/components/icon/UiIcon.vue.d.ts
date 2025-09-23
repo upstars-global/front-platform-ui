@@ -1,6 +1,6 @@
 import type { UiIconName } from './config';
 import type { Strategy } from '../types';
-type IconSize = '16' | '20' | '24' | '32' | '40' | '48' | 'full';
+export type IconSize = '16' | '20' | '24' | '32' | '40' | '48' | 'full';
 export interface UiIconProps {
     name?: UiIconName;
     src?: string;

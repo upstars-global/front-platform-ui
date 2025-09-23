@@ -1,142 +1,107 @@
+<script lang="ts">
+import type { ClassNameValue } from 'tailwind-merge'
+import type { UiProp } from '../types'
+import type { UiIconName } from '../icon/config'
+import type { IconSize } from '../icon/UiIcon.vue'
+import type { ButtonUi } from './theme'
+
+type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'default'
+type ButtonSize = 'sm' | 'md' | 'lg' | 'default'
+
+export interface UiButtonProps {
+  size?: ButtonSize
+  variant?: ButtonVariant
+  disabled?: boolean
+  fullWidth?: boolean
+  leadingIconName?: UiIconName
+  leadingIconSize?: IconSize
+  trailingIconName?: UiIconName
+  trailingIconSize?: IconSize
+  ui?: UiProp<ButtonUi>
+}
+
+export interface UiButtonEmits {
+  (event: 'click', value: MouseEvent): void
+}
+
+export interface UiButtonSlots {
+  leading(): unknown
+  default(): unknown
+  trailing(): unknown
+}
+</script>
 <script setup lang="ts">
-import UiIcon from '../icon/UiIcon.vue'
 import { computed } from 'vue'
-import {
-  ButtonColors,
-  ButtonSizes,
-  ButtonVariants,
-  ButtonTypes,
-  type ButtonEmits,
-  type ButtonProps,
-  type ButtonSlots,
-  type ButtonType
-} from './Button.types'
-import loader from '../../assets/icons/loader.svg'
+import { useAppConfig } from '../../composables/useAppConfig'
+import { useComponentAttributes } from '../../composables/useUiClasses'
+import { prepareVariants } from '../../helpers/prepareClassNames'
+import UiIcon from '../icon/UiIcon.vue'
+import theme from './theme'
 
 defineOptions({
-  name: 'UiButton'
+  name: 'UiButton',
+  inheritAttrs: false
 })
-const props = withDefaults(defineProps<ButtonProps>(), {
-  color: ButtonColors.primary,
-  variant: ButtonVariants.filled,
-  type: ButtonTypes.standard,
-  size: ButtonSizes.md,
-  buttonType: 'button'
+
+const props = withDefaults(defineProps<UiButtonProps>(), {
+  size: 'md',
+  variant: 'primary',
+  leadingIconName: undefined,
+  leadingIconSize: undefined,
+  trailingIconName: undefined,
+  trailingIconSize: undefined,
+  ui: undefined
 })
-defineSlots<ButtonSlots>()
-defineEmits<ButtonEmits>()
+defineEmits<UiButtonEmits>()
+defineSlots<UiButtonSlots>()
 
-const buttonClasses = computed(() => {
-  const canFullWidth = props.type !== ButtonTypes.action && props.type !== ButtonTypes.icon
-  const fullWidthClass = canFullWidth && props.fullWidth && 'w-full'
-  const fullWidthMobileClass = canFullWidth && props.fullWidthMobile && 'w-full md:w-auto'
-  const textCase = props.initialCase ? 'normal-case' : props.uppercase ? 'uppercase' : ''
-  const textOverflow = props.type === ButtonTypes.action ? 'whitespace-normal' : 'whitespace-nowrap'
-  const display = props.type === ButtonTypes.action && 'flex'
+const appConfig = useAppConfig()
+const { attributes, className } = useComponentAttributes(
+  'ui-button',
+  computed(() => {
+    const commonClasses: ClassNameValue[] = [theme.base, appConfig?.ui?.button?.base, props.ui?.base].filter(Boolean)
 
-  let fontClass = ''
-  if (props.type === ButtonTypes.standard) {
-    const sizeMap: Record<string, string> = {
-      [ButtonSizes.lg]: 'text-button-lg',
-      [ButtonSizes.md]: 'text-button-md',
-      [ButtonSizes.sm]: 'text-button-sm'
+    const sizes = prepareVariants<ButtonUi['size']>({
+      theme: theme.size,
+      appConfig: appConfig?.ui?.button?.size,
+      uiProp: props.ui?.size
+    })
+    const variants = prepareVariants<ButtonUi['variants']>({
+      theme: theme.variants,
+      appConfig: appConfig?.ui?.button?.variants,
+      uiProp: props.ui?.variants
+    })
+    const states = prepareVariants<ButtonUi['states']>({
+      theme: theme.states,
+      appConfig: appConfig?.ui?.button?.states,
+      uiProp: props.ui?.states
+    })
+
+    commonClasses.push(sizes[props.size])
+    commonClasses.push(variants[props.variant])
+
+    if (props.disabled) {
+      commonClasses.push(states.disabled)
     }
-    fontClass = sizeMap[props.size] ?? 'text-button-sm'
-  } else if (props.type === ButtonTypes.caption) {
-    const sizeMap: Record<string, string> = {
-      [ButtonSizes.lg]: 'text-button-xl',
-      [ButtonSizes.md]: 'text-button-md',
-      [ButtonSizes.sm]: 'text-button-sm'
+
+    if (props.fullWidth) {
+      commonClasses.push(states.full)
     }
-    fontClass = sizeMap[props.size] ?? 'text-button-sm'
-  } else {
-    fontClass = 'text-button-xs'
-  }
-  const disabled = props.disabled || props.loading ? 'disabled pointer-events-none' : ''
-  const loading = props.loading && 'loading'
 
-  return [
-    fullWidthClass,
-    fullWidthMobileClass,
-    textCase,
-    fontClass,
-    disabled,
-    loading,
-    props.type,
-    textOverflow,
-    display
-  ].filter(Boolean)
-})
-
-const contentClasses = computed(() => {
-  const types: Partial<Record<ButtonType, string[]>> = {
-    slab: ['flex-col'],
-    caption: ['flex-col'],
-    action: ['flex-col']
-  }
-
-  return [
-    'ui-button__content',
-    'outline-0',
-    props.color,
-    props.type,
-    props.variant,
-    props.size,
-    ...(types[props.type] || [])
-  ]
-})
-
-const canShowLabel = computed(() => {
-  return props.type !== ButtonTypes.icon
-})
-
-const canShowIcon = computed(() => {
-  return props.type === ButtonTypes.icon || props.type === ButtonTypes.action || props.type === ButtonTypes.slab
-})
+    return commonClasses
+  }),
+  appConfig?.ui?.button?.strategy || props.ui?.strategy
+)
 </script>
 
 <template>
-  <button
-    class="ui-button outline-0 box-border relative text-ellipsis select-none"
-    :class="buttonClasses"
-    :type="buttonType"
-    @click="$emit('click', $event)"
-  >
-    <div
-      class="flex justify-center items-center"
-      :class="[...(type !== ButtonTypes.action ? contentClasses : ['flex-col'])]"
-    >
-      <div
-        v-if="canShowIcon"
-        class="flex justify-center items-center"
-        :class="type === ButtonTypes.action && contentClasses"
-      >
-        <UiIcon :name="icon" size="24" class="shrink-0" />
-      </div>
-      <template v-if="canShowLabel">
-        <UiIcon v-if="leadingIcon && type === ButtonTypes.standard" :name="leadingIcon" size="24" class="shrink-0" />
-        <p class="label-text w-full overflow-hidden text-ellipsis">
-          <slot>
-            {{ label }}
-          </slot>
-        </p>
-        <UiIcon v-if="trailingIcon && type === ButtonTypes.standard" :name="trailingIcon" size="24" class="shrink-0" />
-      </template>
-      <span
-        v-if="caption && type === ButtonTypes.caption"
-        class="text-button-caption w-full overflow-hidden text-ellipsis"
-      >
-        <slot name="caption">{{ caption }}</slot>
-      </span>
-    </div>
-    <div
-      v-if="loading"
-      class="loading-spin absolute left-1/2 -translate-x-1/2 -translate-y-1/2"
-      :class="{
-        'top-1/2': type !== ButtonTypes.action
-      }"
-    >
-      <UiIcon :src="loader" size="24" class="animate-spin-reverse origin-center" />
-    </div>
+  <button :class="className" v-bind="attributes" :disabled="disabled" @click="$emit('click', $event)">
+    <slot name="leading">
+      <UiIcon v-if="leadingIconName" :name="leadingIconName" :size="leadingIconSize" />
+    </slot>
+    <slot />
+    <slot name="trailing">
+      <UiIcon v-if="trailingIconName" :name="trailingIconName" :size="trailingIconSize" />
+    </slot>
   </button>
 </template>

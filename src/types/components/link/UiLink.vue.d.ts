@@ -6,7 +6,7 @@ export interface UiLinkProps {
     to?: RouteLocationRaw;
     activeClass?: ClassNameValue;
     exactActiveClass?: ClassNameValue;
-    variant?: 'primary' | 'unstyled';
+    variant?: 'primary' | 'default';
     ui?: UiProp<LinkUi>;
 }
 export interface UiLinkEmits {
@@ -17,7 +17,7 @@ declare const _default: __VLS_WithSlots<import("vue").DefineComponent<UiLinkProp
 }, string, import("vue").PublicProps, Readonly<UiLinkProps> & Readonly<{
     onClick?: ((value: MouseEvent) => any) | undefined;
 }>, {
-    variant: "primary" | "unstyled";
+    variant: "primary" | "default";
     to: RouteLocationRaw;
     ui: UiProp<LinkUi>;
     activeClass: string | false | 0 | 0n | ClassNameValue[] | null;
