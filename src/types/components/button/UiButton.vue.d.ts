@@ -3,7 +3,7 @@ import type { UiIconName } from '../icon/config';
 import type { IconSize } from '../icon/UiIcon.vue';
 import type { ButtonUi } from './theme';
 type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'default';
-type ButtonSize = 'sm' | 'md' | 'lg' | 'default';
+type ButtonSize = 'xs' | 'sm' | 'md' | 'default';
 export interface UiButtonProps {
     size?: ButtonSize;
     variant?: ButtonVariant;

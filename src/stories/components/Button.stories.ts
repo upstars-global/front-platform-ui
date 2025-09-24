@@ -7,7 +7,7 @@ import { icons } from '@src/components/icon/config'
 import { ICON_SIZE_LIST } from '../config/icons'
 
 const variantOptions = ['primary', 'secondary', 'tertiary', 'ghost', 'default']
-const sizeOptions = ['sm', 'md', 'lg', 'default']
+const sizeOptions = ['xs', 'sm', 'md', 'default']
 
 const iconNames = Object.keys(icons).sort((a, b) => a.localeCompare(b)) as UiIconName[]
 
@@ -28,7 +28,7 @@ const meta = {
     trailingIconSize: { control: 'select', options: ICON_SIZE_LIST }
   },
   args: {
-    size: 'md'
+    size: 'sm'
   },
   render: (args) => ({
     name: 'Story',
@@ -71,7 +71,7 @@ export const Variants: Story = {
     components: { UiButton, UiIcon },
     setup: () => ({
       args,
-      options: ['icon', 'sm', 'md', 'lg'],
+      options: ['icon', 'xs', 'sm', 'md'],
       variantOptions
     }),
     template: `
