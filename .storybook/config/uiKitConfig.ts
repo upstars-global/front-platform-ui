@@ -4,9 +4,9 @@ export const uiKitConfig: AppConfig = {
   ui: {
     button: {
       size: {
-        sm: 'text-xs leading-4',
-        md: 'text-sm leading-[170%]',
-        lg: 'text-xl leading-[150%]'
+        xs: 'text-xs leading-4',
+        sm: 'text-sm leading-[170%]',
+        md: 'text-xl leading-[150%]'
       },
       variants: {
         primary: 'bg-sky-500 hover:bg-sky-400 active:bg-sky-600 text-white',

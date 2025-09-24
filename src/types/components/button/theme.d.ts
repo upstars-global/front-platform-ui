@@ -2,9 +2,9 @@ declare const button: {
     base: string;
     size: {
         default: string;
+        xs: string;
         sm: string;
         md: string;
-        lg: string;
     };
     variants: {
         default: string;
