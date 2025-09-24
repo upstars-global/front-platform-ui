@@ -9,7 +9,7 @@ export interface UiIconProps {
         strategy?: Strategy;
     };
 }
-declare const _default: import("vue").DefineComponent<UiIconProps, void, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<UiIconProps> & Readonly<{}>, {
+declare const _default: import("vue").DefineComponent<UiIconProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<UiIconProps> & Readonly<{}>, {
     name: UiIconName;
     size: IconSize;
     src: string;

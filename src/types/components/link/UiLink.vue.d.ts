@@ -12,7 +12,7 @@ export interface UiLinkProps {
 export interface UiLinkEmits {
     (event: 'click', value: MouseEvent): void;
 }
-declare const _default: __VLS_WithSlots<import("vue").DefineComponent<UiLinkProps, void, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
+declare const _default: __VLS_WithSlots<import("vue").DefineComponent<UiLinkProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
     click: (value: MouseEvent) => any;
 }, string, import("vue").PublicProps, Readonly<UiLinkProps> & Readonly<{
     onClick?: ((value: MouseEvent) => any) | undefined;

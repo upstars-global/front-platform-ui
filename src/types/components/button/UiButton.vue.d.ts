@@ -2,13 +2,14 @@ import type { UiProp } from '../types';
 import type { UiIconName } from '../icon/config';
 import type { IconSize } from '../icon/UiIcon.vue';
 import type { ButtonUi } from './theme';
-type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'default';
+type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'default';
 type ButtonSize = 'sm' | 'md' | 'lg' | 'default';
 export interface UiButtonProps {
     size?: ButtonSize;
     variant?: ButtonVariant;
     disabled?: boolean;
     fullWidth?: boolean;
+    isActive?: boolean;
     leadingIconName?: UiIconName;
     leadingIconSize?: IconSize;
     trailingIconName?: UiIconName;
@@ -23,7 +24,7 @@ export interface UiButtonSlots {
     default(): unknown;
     trailing(): unknown;
 }
-declare const _default: __VLS_WithSlots<import("vue").DefineComponent<UiButtonProps, void, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
+declare const _default: __VLS_WithSlots<import("vue").DefineComponent<UiButtonProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
     click: (value: MouseEvent) => any;
 }, string, import("vue").PublicProps, Readonly<UiButtonProps> & Readonly<{
     onClick?: ((value: MouseEvent) => any) | undefined;

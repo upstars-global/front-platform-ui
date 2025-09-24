@@ -17,7 +17,7 @@ declare var __VLS_1: {
 type __VLS_Slots = {} & {
     default?: (props: typeof __VLS_1) => any;
 };
-declare const __VLS_component: import("vue").DefineComponent<CircleProgressBarProps, void, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CircleProgressBarProps> & Readonly<{}>, {
+declare const __VLS_component: import("vue").DefineComponent<CircleProgressBarProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CircleProgressBarProps> & Readonly<{}>, {
     max: number;
     background: string;
     size: number;

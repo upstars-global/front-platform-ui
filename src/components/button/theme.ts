@@ -10,13 +10,15 @@ const button = {
     default: '',
     primary: '',
     secondary: '',
-    tertiary: ''
+    tertiary: '',
+    ghost: ''
   },
   active: {
     default: '',
     primary: '',
     secondary: '',
-    tertiary: ''
+    tertiary: '',
+    ghost: ''
   },
   states: {
     disabled: 'opacity-50 pointer-events-none cursor-not-allowed',

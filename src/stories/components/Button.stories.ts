@@ -6,7 +6,7 @@ import { emitsObserver } from '@src/stories/utils/decorators'
 import { icons } from '@src/components/icon/config'
 import { ICON_SIZE_LIST } from '../config/icons'
 
-const variantOptions = ['primary', 'secondary', 'tertiary', 'default']
+const variantOptions = ['primary', 'secondary', 'tertiary', 'ghost', 'default']
 const sizeOptions = ['sm', 'md', 'lg', 'default']
 
 const iconNames = Object.keys(icons).sort((a, b) => a.localeCompare(b)) as UiIconName[]
@@ -75,8 +75,8 @@ export const Variants: Story = {
       variantOptions
     }),
     template: `
-      <div class="grid grid-rows-5 gap-4">
-        <div v-for="option in options" :key="option" class="grid grid-cols-[2rem,_repeat(4,10rem)] gap-4 items-center">
+      <div class="grid grid-rows-6 gap-4">
+        <div v-for="option in options" :key="option" class="grid grid-cols-[2rem,_repeat(5,10rem)] gap-4 items-center">
           <p class="w-6">{{ option }}</p>
           <div v-for="variant in variantOptions" :key="variant">
             <UiButton v-if="option === 'icon'" v-bind="args" class="p-2 rounded-full" size="default" :variant="variant">

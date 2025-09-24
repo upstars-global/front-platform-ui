@@ -11,8 +11,8 @@ export const uiKitConfig: AppConfig = {
       variants: {
         primary: 'bg-sky-500 hover:bg-sky-400 active:bg-sky-600 text-white',
         secondary: 'bg-slate-300 hover:bg-slate-200 active:bg-slate-400 text-black',
-        tertiary:
-          'bg-transparent hover:bg-slate-200 active:bg-slate-400 shadow-button hover:shadow-none text-black has-[active]:bg-red-500'
+        tertiary: 'bg-transparent hover:bg-slate-200 active:bg-slate-400 shadow-button hover:shadow-none text-black',
+        ghost: 'bg-transparent text-black hover:bg-slate-200 active:bg-slate-400'
       }
     },
     icon: { strategy: 'merge' },

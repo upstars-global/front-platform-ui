@@ -19,7 +19,7 @@ type __VLS_Slots = {} & {
 } & {
     'required-message'?: (props: typeof __VLS_15) => any;
 };
-declare const __VLS_component: import("vue").DefineComponent<__VLS_PublicProps, void, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+declare const __VLS_component: import("vue").DefineComponent<__VLS_PublicProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
     "update:modelValue": (value: boolean) => any;
 } & {
     "update:modelValue": (value: boolean) => any;
