@@ -5,8 +5,8 @@ const checkbox = {
   checkbox: {
     container: 'shrink-0',
     inner: 'w-full h-full border-2 rounded-1',
-    checked: 'border-2 rounded-1',
-    invalid: 'border-2 rounded-1'
+    checked: '',
+    invalid: ''
   },
   error: 'flex gap-2',
   states: {

@@ -20,7 +20,7 @@ export const uiKitConfig: AppConfig = {
       checkbox: {
         container: 'p-px',
         inner: 'border-slate-500',
-        checked: 'border-slate-500 bg-slate-500 text-white',
+        checked: 'bg-slate-500 text-white',
         invalid: 'border-red-500'
       },
       error: 'text-xs text-red-500'
