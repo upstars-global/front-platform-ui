@@ -33,7 +33,6 @@ export interface UiButtonSlots {
 </script>
 <script setup lang="ts">
 import { computed } from 'vue'
-import { twMerge, twJoin } from 'tailwind-merge'
 import { useAppConfig } from '../../composables/useAppConfig'
 import { useComponentAttributes } from '../../composables/useUiClasses'
 import { prepareVariants } from '../../helpers/prepareClassNames'
