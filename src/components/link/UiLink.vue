@@ -19,7 +19,6 @@ export interface UiLinkEmits {
 
 <script setup lang="ts">
 import { computed, resolveComponent, useAttrs, type ConcreteComponent } from 'vue'
-import { twMerge, twJoin } from 'tailwind-merge'
 import { isExternalUrl } from '../../helpers/externalUrl'
 import { useAppConfig } from '../../composables/useAppConfig'
 import { useComponentAttributes } from '../../composables/useUiClasses'
@@ -124,43 +123,23 @@ const computedProps = computed(() => {
     }
   }
 
-  return {
+  const result: Record<string, unknown> = {
     ...attributes.value,
     ...url.value
   }
-})
-function getClassName(isActive: boolean, isExactActive: boolean) {
-  const classList = [className.value, isActive ? props.activeClass : '', isExactActive ? props.exactActiveClass : '']
-  if (props.ui?.strategy === 'merge') {
-    return twMerge(classList)
+
+  if (isRouterLink.value) {
+    result.activeClass = props.activeClass ?? ''
+    result.exactActiveClass = props.exactActiveClass ?? ''
   }
 
-  return twJoin(classList)
-}
+  return result
+})
 </script>
 
 <template>
   <component
     :is="component"
-    v-if="isRouterLink"
-    v-slot="{ href, isActive, isExactActive }"
-    v-bind="computedProps"
-    custom
-  >
-    <a
-      :href="href"
-      v-bind="attributes"
-      :class="getClassName(isActive, isExactActive)"
-      :target="targetAttribute"
-      :rel="relAttribute"
-      @click="$emit('click', $event)"
-    >
-      <slot />
-    </a>
-  </component>
-  <component
-    :is="component"
-    v-else
     :class="className"
     v-bind="computedProps"
     :target="targetAttribute"
