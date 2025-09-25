@@ -17,7 +17,7 @@ export const uiKitConfig: AppConfig = {
     },
     checkbox: {
       base: 'text-sm',
-      checkmark: {
+      checkbox: {
         container: 'p-px',
         inner: 'border-slate-500',
         checked: 'border-slate-500 bg-slate-500 text-white',

@@ -1,6 +1,7 @@
 import type { UiIcons } from './icon/config';
-import type { LinkUi } from './link/theme';
 import type { ButtonUi } from './button/theme';
+import type { CheckboxUi } from './checkbox/theme';
+import type { LinkUi } from './link/theme';
 export type Strategy = 'join' | 'merge';
 export type DeepPartial<T> = {
     [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P] | undefined;
@@ -10,6 +11,7 @@ export type UiProp<T> = DeepPartial<T> & {
 };
 interface UiConfig {
     button?: UiProp<ButtonUi>;
+    checkbox?: UiProp<CheckboxUi>;
     icon?: {
         strategy?: Strategy;
     };
