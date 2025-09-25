@@ -33,7 +33,6 @@ export interface UiButtonSlots {
 </script>
 <script setup lang="ts">
 import { computed } from 'vue'
-import { twMerge, twJoin } from 'tailwind-merge'
 import { useAppConfig } from '../../composables/useAppConfig'
 import { useComponentAttributes } from '../../composables/useUiClasses'
 import { prepareVariants } from '../../helpers/prepareClassNames'
@@ -58,7 +57,7 @@ defineEmits<UiButtonEmits>()
 defineSlots<UiButtonSlots>()
 
 const appConfig = useAppConfig()
-const { attributes, className } = useComponentAttributes(
+const { attributes, className, mergeClasses } = useComponentAttributes(
   'ui-button',
   computed(() => {
     const commonClasses: ClassNameValue[] = [theme.base, appConfig?.ui?.button?.base, props.ui?.base].filter(Boolean)
@@ -105,18 +104,10 @@ const { attributes, className } = useComponentAttributes(
 )
 
 const leadingIconClasses = computed(() => {
-  if (props.ui?.strategy === 'merge') {
-    return twMerge(theme.leadingIcon, appConfig?.ui?.button?.leadingIcon, props.ui?.leadingIcon)
-  }
-
-  return twJoin(theme.leadingIcon, appConfig?.ui?.button?.leadingIcon, props.ui?.leadingIcon)
+  return mergeClasses(theme.leadingIcon, appConfig?.ui?.button?.leadingIcon, props.ui?.leadingIcon)
 })
 const trailingIconClasses = computed(() => {
-  if (props.ui?.strategy === 'merge') {
-    return twMerge(theme.trailingIcon, appConfig?.ui?.button?.trailingIcon, props.ui?.trailingIcon)
-  }
-
-  return twJoin(theme.trailingIcon, appConfig?.ui?.button?.trailingIcon, props.ui?.trailingIcon)
+  return mergeClasses(theme.trailingIcon, appConfig?.ui?.button?.trailingIcon, props.ui?.trailingIcon)
 })
 </script>
 
