@@ -36,9 +36,9 @@
     "dev:storybook": "storybook dev -p 6006",
     "build:package": "vite build -c vite.lib.ts",
     "build:types": "vue-tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json",
-    "build:dts": "yarn clean:types && yarn build:types",
+    "build:dts": "pnpm run clean:types && pnpm run build:types",
     "build:storybook": "storybook build",
-    "build:chromatic": "chromatic --build-command='yarn build:storybook' -o='storybook-static' --exit-zero-on-changes",
+    "build:chromatic": "chromatic --build-command='pnpm run build:storybook' -o='storybook-static' --exit-zero-on-changes",
     "clean:types": "rimraf src/types",
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier . --check",
@@ -46,9 +46,7 @@
     "lintfix": "eslint . --fix && prettier --write --list-different ."
   },
   "engines": {
-    "node": ">=22.12.0",
-    "npm": ">=10.5.0",
-    "yarn": ">=1.22.0"
+    "node": ">=22.19.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.0.1",
@@ -99,5 +97,5 @@
     "vue": "^3.5.x",
     "vue-router": "^4.5.x"
   },
-  "packageManager": "yarn@1.22.22"
+  "packageManager": "pnpm@10.17.0"
 }
