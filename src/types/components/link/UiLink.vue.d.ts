@@ -24,8 +24,6 @@ declare const _default: __VLS_WithSlots<import("vue").DefineComponent<UiLinkProp
     exactActiveClass: string | false | 0 | 0n | ClassNameValue[] | null;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
     default?: (props: {}) => any;
-} & {
-    default?: (props: {}) => any;
 }>;
 export default _default;
 type __VLS_WithSlots<T, S> = T & {
