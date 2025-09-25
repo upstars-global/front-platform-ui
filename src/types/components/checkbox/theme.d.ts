@@ -2,7 +2,7 @@ declare const checkbox: {
     base: string;
     input: string;
     container: string;
-    checkbox: {
+    checkmark: {
         container: string;
         inner: string;
         checked: string;

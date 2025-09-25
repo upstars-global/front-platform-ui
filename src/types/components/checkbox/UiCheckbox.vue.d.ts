@@ -12,7 +12,7 @@ export interface UiCheckboxProps extends FormElementProps {
 export interface UiCheckboxEmits {
     (event: 'update:modelValue', value: boolean): void;
 }
-interface UiCheckboxSlots {
+export interface UiCheckboxSlots {
     checkmark(): unknown;
     default(): unknown;
     'error-message'(): unknown;

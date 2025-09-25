@@ -18,7 +18,7 @@ export interface UiCheckboxEmits {
   (event: 'update:modelValue', value: boolean): void
 }
 
-interface UiCheckboxSlots {
+export interface UiCheckboxSlots {
   checkmark(): unknown
   default(): unknown
   'error-message'(): unknown
@@ -64,7 +64,7 @@ const appConfig = useAppConfig()
 const { attributes, className, mergeClasses } = useComponentAttributes(
   'ui-checkbox',
   computed(() => {
-    const commonClasses: ClassNameValue[] = [theme.base, appConfig.ui?.checkbox?.base, props.ui?.base]
+    const commonClasses: ClassNameValue[] = [theme.base, appConfig.ui?.checkbox?.base, props.ui?.base].filter(Boolean)
 
     const states = prepareVariants<CheckboxUi['states']>({
       theme: theme.states,
@@ -84,32 +84,34 @@ const { attributes, className, mergeClasses } = useComponentAttributes(
 const isError = computed(() => props.error || slots['error-message'])
 
 const uiClasses = computed(() => {
-  const checkboxInner = [
-    mergeClasses(theme.checkbox.inner, appConfig.ui?.checkbox?.checkbox?.inner, props.ui?.checkbox?.inner)
-  ]
+  const checkboxInner = [theme.checkmark.inner, appConfig.ui?.checkbox?.checkmark?.inner, props.ui?.checkmark?.inner]
   if (isChecked.value) {
     checkboxInner.push(
-      mergeClasses(theme.checkbox.checked, appConfig.ui?.checkbox?.checkbox?.checked, props.ui?.checkbox?.checked)
+      theme.checkmark.checked,
+      appConfig.ui?.checkbox?.checkmark?.checked,
+      props.ui?.checkmark?.checked
     )
   }
 
   if (isError.value && !isChecked.value) {
     checkboxInner.push(
-      mergeClasses(theme.checkbox.invalid, appConfig.ui?.checkbox?.checkbox?.invalid, props.ui?.checkbox?.invalid)
+      theme.checkmark.invalid,
+      appConfig.ui?.checkbox?.checkmark?.invalid,
+      props.ui?.checkmark?.invalid
     )
   }
 
   return {
     input: mergeClasses(theme.input, appConfig.ui?.checkbox?.input, props.ui?.input),
     container: mergeClasses(theme.container, appConfig.ui?.checkbox?.container, props.ui?.container),
-    checkbox: {
+    checkmark: {
       container: mergeClasses(
-        theme.checkbox.container,
-        appConfig.ui?.checkbox?.checkbox?.container,
-        props.ui?.checkbox?.container,
+        theme.checkmark.container,
+        appConfig.ui?.checkbox?.checkmark?.container,
+        props.ui?.checkmark?.container,
         SIZE_CLASSES_LIST[props.checkboxSize]
       ),
-      inner: checkboxInner
+      inner: mergeClasses(checkboxInner.filter(Boolean))
     },
     error: mergeClasses(theme.error, appConfig.ui?.checkbox?.error, props.ui?.error)
   }
@@ -134,8 +136,8 @@ const handleChange = (event: Event) => {
     />
     <span :class="uiClasses.container">
       <slot name="checkmark">
-        <div :class="uiClasses.checkbox.container">
-          <div :class="uiClasses.checkbox.inner">
+        <div :class="uiClasses.checkmark.container">
+          <div :class="uiClasses.checkmark.inner">
             <UiIcon v-show="isChecked" :name="icon" size="full" />
           </div>
         </div>

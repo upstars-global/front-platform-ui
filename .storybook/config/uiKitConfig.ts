@@ -17,11 +17,11 @@ export const uiKitConfig: AppConfig = {
     },
     checkbox: {
       base: 'text-sm',
-      checkbox: {
+      checkmark: {
         container: 'p-px',
         inner: 'border-slate-500',
         checked: 'bg-slate-500 text-white',
-        invalid: 'border-red-500'
+        invalid: '!border-red-500'
       },
       error: 'text-xs text-red-500'
     },
