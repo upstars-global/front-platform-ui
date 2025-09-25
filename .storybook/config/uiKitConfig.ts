@@ -15,6 +15,16 @@ export const uiKitConfig: AppConfig = {
         ghost: 'bg-transparent text-black hover:bg-slate-200 active:bg-slate-400'
       }
     },
+    checkbox: {
+      base: 'text-sm',
+      checkmark: {
+        container: 'p-px',
+        inner: 'border-slate-500',
+        checked: 'border-slate-500 bg-slate-500 text-white',
+        invalid: 'border-red-500'
+      },
+      error: 'text-xs text-red-500'
+    },
     icon: { strategy: 'merge' },
     link: {
       variants: {
