@@ -47,7 +47,8 @@ const { attributes, className, mergeClasses } = useComponentAttributes(
   'ui-circle-progress',
   computed(() => {
     return [theme.base, appConfig.ui?.circleProgressBar?.base, props.ui?.base].filter(Boolean)
-  })
+  }),
+  appConfig?.ui?.circleProgressBar?.strategy || props.ui?.strategy
 )
 
 const uiClasses = computed(() => {
