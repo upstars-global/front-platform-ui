@@ -19,7 +19,7 @@ export interface UiCircleProgressBarSlots {
 </script>
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useAppConfig } from '@src/composables/useAppConfig'
+import { useAppConfig } from '../../composables/useAppConfig'
 import { useComponentAttributes } from '../../composables/useUiClasses'
 import theme from './theme'
 
