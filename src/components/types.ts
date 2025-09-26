@@ -1,3 +1,24 @@
+import type { UiIcons } from './icon/config'
+import type { LinkUi } from './link/theme'
+
+export type Strategy = 'join' | 'merge'
+
+export type DeepPartial<T> = {
+  [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P] | undefined
+}
+
+export type UiProp<T> = DeepPartial<T> & { strategy?: Strategy }
+
+interface UiConfig {
+  icon?: { strategy?: Strategy }
+  link?: UiProp<LinkUi>
+}
+
+export interface AppConfig {
+  icons?: UiIcons
+  ui?: UiConfig
+}
+
 export interface FormElementProps {
   name: string
   label?: string

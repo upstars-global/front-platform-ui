@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
-import { emitsObserver } from '@src/stories/utils/decorators.ts'
+import { emitsObserver } from '@src/stories/utils/decorators'
 import UiCheckbox from '@src/components/checkbox/UiCheckbox.vue'
 
 const meta = {
@@ -28,7 +28,7 @@ const meta = {
     name: 'Story',
     components: { UiCheckbox },
     setup: () => ({ args }),
-    template: `<UiCheckbox v-bind="args" v-on="$attrs.listeners" />`
+    template: `<UiCheckbox v-bind="args" />`
   })
 } satisfies Meta<typeof UiCheckbox>
 
@@ -67,7 +67,7 @@ export const CustomLabelSlot: Story = {
     name: 'Story',
     components: { UiCheckbox },
     setup: () => ({ args }),
-    template: `<UiCheckbox v-bind="args" v-on="$attrs.listeners">
+    template: `<UiCheckbox v-bind="args">
     <template #label>
       <span>Custom label via slot</span>
     </template>
@@ -83,7 +83,7 @@ export const CustomErrorSlot: Story = {
     name: 'Story',
     components: { UiCheckbox },
     setup: () => ({ args }),
-    template: `<UiCheckbox v-bind="args" v-on="$attrs.listeners">
+    template: `<UiCheckbox v-bind="args">
     <template #error-message>
       <span style="color: tomato; font-size: 10px;">Custom error message via slot</span>
     </template>

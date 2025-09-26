@@ -1,9 +1,9 @@
-import { type ComputedRef, type Ref } from 'vue';
-type ExtraClasses = string | string[] | Ref<string | string[]> | ComputedRef<string | string[]>;
-export declare function useComponentAttributes(rootClassName: string, extraClasses?: ExtraClasses): {
+import { type ComputedRef } from 'vue';
+import { type ClassNameValue } from 'tailwind-merge';
+import type { Strategy } from '../components/types';
+export declare function useComponentAttributes(rootClassName: ClassNameValue, baseClasses?: ComputedRef<ClassNameValue>, strategy?: Strategy): {
     attributes: ComputedRef<{
         [x: string]: unknown;
     }>;
     className: ComputedRef<string>;
 };
-export {};

@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import UiIcon from '@src/components/icon/UiIcon.vue'
 import UiCircleProgressBar from '@src/components/circle-progress-bar/UiCircleProgressBar.vue'
-import { icons, type IconName } from '@src/components/icon/config'
+import { icons, type UiIconName } from '@src/components/icon/config'
 import type { ComponentProps } from 'vue-component-type-helpers'
 
-const names = Object.keys(icons).sort((a, b) => a.localeCompare(b)) as IconName[]
+const names = Object.keys(icons).sort((a, b) => a.localeCompare(b)) as UiIconName[]
 
 const meta = {
   title: 'UI Kit/CircleProgressBar',
@@ -42,7 +42,7 @@ type Story = StoryObj<typeof meta>
 
 export const Common: Story = {}
 
-type SlotContent = ComponentProps<typeof UiCircleProgressBar> & { iconName?: IconName }
+type SlotContent = ComponentProps<typeof UiCircleProgressBar> & { iconName?: UiIconName }
 type SlotContentStory = StoryObj<Meta<SlotContent>>
 export const SlotContent: SlotContentStory = {
   argTypes: {

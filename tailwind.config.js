@@ -12,7 +12,7 @@ const uiPlugin = plugin((helpers) => {
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{vue,ts,tsx,css}'],
+  content: ['./src/**/*.{vue,ts,tsx,css}', './.storybook/**/*.{ts,css}'],
   theme: {
     extend: {
       animation: {

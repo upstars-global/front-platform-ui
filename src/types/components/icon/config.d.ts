@@ -81,10 +81,11 @@ declare const iconsSocial: {
     twitter: string;
     whatsapp: string;
 };
-export type IconsFill = keyof typeof iconsFill;
-export type IconsNavigation = keyof typeof iconsNavigation;
-export type IconsOutline = keyof typeof iconsOutline;
-export type IconsSocial = keyof typeof iconsSocial;
-export type IconName = IconsFill | IconsNavigation | IconsOutline | IconsSocial;
-export declare const icons: Record<string, string>;
+export type UiIconsFill = keyof typeof iconsFill;
+export type UiIconsNavigation = keyof typeof iconsNavigation;
+export type UiIconsOutline = keyof typeof iconsOutline;
+export type UiIconsSocial = keyof typeof iconsSocial;
+export type UiIconName = UiIconsFill | UiIconsNavigation | UiIconsOutline | UiIconsSocial;
+export type UiIcons = Record<string, string>;
+export declare const icons: UiIcons;
 export {};
