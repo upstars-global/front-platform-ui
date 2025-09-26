@@ -25,6 +25,12 @@ export const uiKitConfig: AppConfig = {
       },
       error: 'text-xs text-red-500'
     },
+    circleProgressBar: {
+      progress: {
+        trail: 'stroke-indigo-300',
+        line: 'stroke-indigo-500'
+      }
+    },
     icon: { strategy: 'merge' },
     link: {
       variants: {

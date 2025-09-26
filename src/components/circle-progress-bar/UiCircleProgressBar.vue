@@ -1,19 +1,27 @@
-<script setup lang="ts">
-import { computed } from 'vue'
-import { useComponentAttributes } from '../../composables/useUiClasses'
+<script lang="ts">
+import type { CircleProgressBarUi } from './theme.ts'
+import type { UiProp } from '../types'
 
-interface CircleProgressBarProps {
+export interface UiCircleProgressBarProps {
   progress: number
   progressWidth: number
   max?: number
-  background?: string
-  progressColor?: string
-  trailColor?: string
   size?: number
   startAngle?: number
   isAnimation?: boolean
   rounded?: boolean
+  ui?: UiProp<CircleProgressBarUi>
 }
+
+export interface UiCircleProgressBarSlots {
+  default(props?: { progress: number; max?: number }): unknown
+}
+</script>
+<script setup lang="ts">
+import { computed } from 'vue'
+import { useAppConfig } from '@src/composables/useAppConfig'
+import { useComponentAttributes } from '../../composables/useUiClasses'
+import theme from './theme'
 
 defineOptions({
   name: 'UiCircleProgressBar',
@@ -22,19 +30,40 @@ defineOptions({
 
 const SPACING = 2
 
-const props = withDefaults(defineProps<CircleProgressBarProps>(), {
+const props = withDefaults(defineProps<UiCircleProgressBarProps>(), {
   max: 100,
   background: undefined,
   progressColor: undefined,
   trailColor: undefined,
   size: 100,
-  startAngle: 90
+  startAngle: 90,
+  ui: undefined
 })
-// TODO: add uiConfig support
-const { attributes, className } = useComponentAttributes(
+
+defineSlots<UiCircleProgressBarSlots>()
+
+const appConfig = useAppConfig()
+const { attributes, className, mergeClasses } = useComponentAttributes(
   'ui-circle-progress',
-  computed(() => 'relative flex justify-center items-center')
+  computed(() => {
+    return [theme.base, appConfig.ui?.circleProgressBar?.base, props.ui?.base].filter(Boolean)
+  })
 )
+
+const uiClasses = computed(() => {
+  return {
+    svg: mergeClasses(theme.svg, appConfig.ui?.circleProgressBar?.svg, props.ui?.svg),
+    content: mergeClasses(theme.content, appConfig.ui?.circleProgressBar?.content, props.ui?.content),
+    progress: {
+      trail: mergeClasses(
+        theme.progress.trail,
+        appConfig.ui?.circleProgressBar?.progress?.trail,
+        props.ui?.progress?.trail
+      ),
+      line: mergeClasses(theme.progress.line, appConfig.ui?.circleProgressBar?.progress?.line, props.ui?.progress?.line)
+    }
+  }
+})
 
 const currentProgress = computed(() => (props.max <= props.progress ? props.max : props.progress))
 
@@ -47,36 +76,18 @@ const dashOffset = computed(() => {
   return dashArray.value - (dashArray.value * currentProgress.value) / props.max
 })
 const customProperties = computed(() => {
-  const result: Record<string, string | number> = {
+  return {
     '--circle-progress-dasharray': dashArray.value,
     '--circle-progress-dashoffset': dashOffset.value
   }
-
-  if (props.progressColor) {
-    result['--circle-progress-line-color'] = props.progressColor
-  }
-
-  if (props.trailColor) {
-    result['--circle-progress-trail-color'] = props.trailColor
-  }
-
-  if (props.background) {
-    result['--circle-progress-bg-color'] = props.background
-  }
-
-  if (typeof props.rounded !== 'undefined') {
-    result['--circle-progress-stroke-linecap'] = props.rounded ? 'round' : 'butt'
-  }
-
-  return result
 })
 </script>
 
 <template>
   <div v-bind="attributes" :class="className" :style="{ ...customProperties, width: `${size}px`, height: `${size}px` }">
-    <svg class="relative w-full h-full z-10" :viewBox="viewBox">
+    <svg :class="uiClasses.svg" :viewBox="viewBox">
       <circle
-        class="ui-circle-progress-bar"
+        :class="uiClasses.progress.trail"
         :r="radius"
         :cx="circleSize"
         :cy="circleSize"
@@ -85,12 +96,12 @@ const customProperties = computed(() => {
         fill="none"
       />
       <circle
-        class="ui-circle-progress-line"
-        :class="{ 'ui-circle-progress-animation transition-all duration-500': isAnimation }"
+        :class="[{ 'ui-circle-progress-animation': isAnimation }, uiClasses.progress.line]"
         :transform="`rotate(${startAngle} ${circleSize} ${circleSize})`"
         :stroke-width="`${progressWidth}px`"
         :stroke-dashoffset="dashOffset"
         :stroke-dasharray="dashArray"
+        :stroke-linecap="rounded ? 'round' : 'butt'"
         :r="radius"
         :cx="circleSize"
         :cy="circleSize"
@@ -98,7 +109,7 @@ const customProperties = computed(() => {
       />
     </svg>
 
-    <div class="ui-circle-progress__content absolute inset-0 flex items-center justify-center rounded-full">
+    <div :class="uiClasses.content">
       <slot :progress="progress" :max="max" />
     </div>
   </div>
@@ -107,28 +118,16 @@ const customProperties = computed(() => {
 <style lang="postcss">
 @keyframes filling {
   from {
-    stroke-dashoffset: v-bind('dashArray');
+    stroke-dashoffset: var(--circle-progress-dasharray);
   }
   to {
-    stroke-dashoffset: v-bind('dashOffset');
+    stroke-dashoffset: var(--circle-progress-dashoffset);
   }
-}
-
-.ui-circle-progress-bar {
-  stroke: var(--circle-progress-trail-color, currentColor);
-}
-
-.ui-circle-progress-line {
-  stroke: var(--circle-progress-line-color, currentColor);
-  stroke-linecap: var(--circle-progress-stroke-linecap, butt);
 }
 
 .ui-circle-progress-animation {
   animation-name: filling;
   animation-duration: 500ms;
   animation-timing-function: ease-in;
-}
-.ui-circle-progress__content {
-  background-color: var(--circle-progress-bg-color, transparent);
 }
 </style>
