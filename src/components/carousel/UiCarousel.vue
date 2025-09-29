@@ -411,7 +411,7 @@ function render() {
   }
 }
 
-.ui-scroll__list {
+.ui-carousel__list {
   -ms-overflow-style: none;
   scrollbar-width: none;
 
