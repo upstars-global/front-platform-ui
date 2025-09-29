@@ -8,7 +8,7 @@ export interface UiCarouselProps {
     showPagination?: boolean;
     showNavigation?: boolean;
     transparentBorder?: boolean;
-    isMobile: boolean;
+    isMobile?: boolean;
     navigation?: Navigation;
     ui?: UiProp<CarouselUi>;
 }
