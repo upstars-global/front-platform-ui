@@ -19,6 +19,7 @@ const meta = {
     ui: { control: 'object' }
   },
   args: {
+    isMobile: false,
     showNavigation: true,
     navigation: {
       iconPrev: 'dropdownLeft',
