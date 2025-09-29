@@ -15,6 +15,12 @@ export const uiKitConfig: AppConfig = {
         ghost: 'bg-transparent text-black hover:bg-slate-200 active:bg-slate-400'
       }
     },
+    carousel: {
+      pagination: {
+        item: 'bg-slate-300',
+        active: 'bg-sky-500'
+      }
+    },
     checkbox: {
       base: 'text-sm',
       checkmark: {

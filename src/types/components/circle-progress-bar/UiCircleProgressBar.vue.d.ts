@@ -1,4 +1,4 @@
-import type { CircleProgressBarUi } from './theme.ts';
+import type { CircleProgressBarUi } from './theme';
 import type { UiProp } from '../types';
 export interface UiCircleProgressBarProps {
     progress: number;
