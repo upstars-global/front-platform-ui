@@ -1,10 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import { emitsObserver } from '@src/stories/utils/decorators'
 import UiCarousel from '@src/components/carousel/UiCarousel.vue'
+import CarouselNavigation from '@src/components/carousel/components/CarouselNavigation.vue'
+import CarouselPagination from '@src/components/carousel/components/CarouselPagination.vue'
 
 const meta = {
   title: 'UI Kit/Carousel',
   component: UiCarousel,
+  subcomponents: { CarouselNavigation, CarouselPagination },
   decorators: [emitsObserver],
   tags: ['autodocs'],
   argTypes: {
