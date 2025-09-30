@@ -34,7 +34,6 @@
   ],
   "scripts": {
     "dev:storybook": "storybook dev -p 6006",
-    "build:package": "vite build -c vite.lib.ts",
     "build:types": "vue-tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json",
     "build:dts": "pnpm run clean:types && pnpm run build:types",
     "build:storybook": "storybook build",
