@@ -42,6 +42,9 @@ export const uiKitConfig: AppConfig = {
       variants: {
         primary: 'text-sky-500 hover:text-sky-600'
       }
+    },
+    skeleton: {
+      base: 'bg-slate-500'
     }
   }
 }
