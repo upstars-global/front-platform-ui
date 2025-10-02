@@ -18,7 +18,7 @@ export interface UiCarouselEmits {
 export interface UiCarouselSlots {
     default(): unknown;
 }
-declare const _default: __VLS_WithSlots<import("vue").DefineComponent<UiCarouselProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
+declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiCarouselProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
     "change:page": (value: number) => any;
 }, string, import("vue").PublicProps, Readonly<UiCarouselProps> & Readonly<{
     "onChange:page"?: ((value: number) => any) | undefined;
@@ -29,6 +29,7 @@ declare const _default: __VLS_WithSlots<import("vue").DefineComponent<UiCarousel
     showNavigation: boolean;
     navigation: Navigation;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiCarouselSlots>;
+declare const _default: typeof __VLS_export;
 export default _default;
 type __VLS_WithSlots<T, S> = T & {
     new (): {
