@@ -1,4 +1,10 @@
 import type { Config } from 'tailwindcss'
+import plugin from 'tailwindcss/plugin'
+import { carouselPlugin } from './src/components/carousel/tailwind.plugin'
+
+const uiPlugins = plugin((helpers) => {
+  carouselPlugin.handler(helpers)
+})
 
 export const config = {
   content: ['./src/**/*.{vue,ts,tsx,css}', './.storybook/**/*.{ts,css}'],
@@ -23,7 +29,8 @@ export const config = {
       8: '2rem', // 32px
       full: '9999px'
     }
-  }
+  },
+  plugins: [uiPlugins]
 } satisfies Config
 
 export default config

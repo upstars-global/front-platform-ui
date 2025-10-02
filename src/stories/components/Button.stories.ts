@@ -25,7 +25,8 @@ const meta = {
     leadingIconName: { control: 'select', options: iconNames },
     leadingIconSize: { control: 'select', options: ICON_SIZE_LIST },
     trailingIconName: { control: 'select', options: iconNames },
-    trailingIconSize: { control: 'select', options: ICON_SIZE_LIST }
+    trailingIconSize: { control: 'select', options: ICON_SIZE_LIST },
+    ui: { control: 'object' }
   },
   args: {
     size: 'sm'

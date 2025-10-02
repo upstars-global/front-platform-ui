@@ -13,14 +13,12 @@ const meta = {
   argTypes: {
     progress: { control: 'number' },
     max: { control: 'number' },
-    background: { control: 'color' },
-    progressColor: { control: 'color' },
-    trailColor: { control: 'color' },
     size: { control: 'number' },
     progressWidth: { control: 'number' },
     startAngle: { control: 'number' },
     isAnimation: { control: 'boolean' },
-    rounded: { control: 'boolean' }
+    rounded: { control: 'boolean' },
+    ui: { control: 'object' }
   },
   args: {
     progress: 67,
@@ -49,11 +47,11 @@ export const SlotContent: SlotContentStory = {
     iconName: { control: 'select', options: iconNames }
   },
   args: {
-    background: '#e0e0e0',
-    progressColor: '#676767',
-    trailColor: '#bfbfbf',
     progress: 43,
-    iconName: 'support'
+    iconName: 'support',
+    ui: {
+      content: 'bg-indigo-200/50'
+    }
   },
   render: (args) => ({
     name: 'Story',
@@ -77,9 +75,9 @@ export const VariousSizes: Story = {
   },
   args: {
     max: 160,
-    background: 'rgba(255, 255, 255, 0.13)',
-    progressColor: '#676767',
-    trailColor: '#bfbfbf'
+    ui: {
+      content: 'bg-indigo-200/50'
+    }
   },
   render: (args) => ({
     name: 'Story',
