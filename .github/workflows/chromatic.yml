@@ -1,13 +1,13 @@
 name: ci-chromatic
 
-#on:
-#  push:
-#    branches: [main]
-#  pull_request:
-#    branches: [main]
-#    paths:
-#      - docs/**
-#      - src/**
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    paths:
+      - docs/**
+      - src/**
 
 jobs:
   chromatic:
