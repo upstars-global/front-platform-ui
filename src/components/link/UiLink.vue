@@ -15,6 +15,10 @@ export interface UiLinkProps {
 export interface UiLinkEmits {
   (event: 'click', value: MouseEvent): void
 }
+
+export interface UiLinkSlots {
+  default: () => unknown
+}
 </script>
 
 <script setup lang="ts">
@@ -43,6 +47,7 @@ const props = withDefaults(defineProps<UiLinkProps>(), {
 const attrs = useAttrs()
 
 defineEmits<UiLinkEmits>()
+defineSlots<UiLinkSlots>()
 
 const appConfig = useAppConfig()
 const { attributes, className } = useComponentAttributes(

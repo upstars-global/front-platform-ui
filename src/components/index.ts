@@ -5,7 +5,7 @@ import UiLink from './link/UiLink.vue'
 
 export type { UiButtonProps, UiButtonEmits, UiButtonSlots } from './button/UiButton.vue'
 export type { UiIconProps } from './icon/UiIcon.vue'
-export type { UiLinkProps, UiLinkEmits } from './link/UiLink.vue'
+export type { UiLinkProps, UiLinkEmits, UiLinkSlots } from './link/UiLink.vue'
 export type { UiIconsFill, UiIconName, UiIconsNavigation, UiIconsOutline, UiIconsSocial } from './icon/config'
 export type { AppConfig as UiKitConfig } from './types'
 

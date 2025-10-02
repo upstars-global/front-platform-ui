@@ -1,14 +1,17 @@
-name: ci-linters
+name: build-dts
 
-on: pull_request
+on:
+  pull_request:
+    paths:
+      - src/**
 
 jobs:
-  lint:
-    name: Run linters
+  buildDts:
+    name: Build type definitions
     runs-on: ${{ matrix.os }}
     permissions:
-      contents: read
-      pull-requests: read
+      contents: write
+      pull-requests: write
     strategy:
       matrix:
         os: [ubuntu-latest] # macos-latest, windows-latest
@@ -18,7 +21,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
@@ -30,9 +34,9 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      - name: Eslint
-        run: pnpm run lint:eslint
-      - name: Prettier
-        run: pnpm run lint:prettier
-      - name: Types check
-        run: pnpm run lint:tsc
+      - name: Build types
+        run: pnpm run build:dts
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: 'build: generate type definitions'
