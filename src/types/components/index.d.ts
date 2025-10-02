@@ -10,7 +10,7 @@ export type { UiCarouselProps, UiCarouselEmits, UiCarouselSlots } from './carous
 export type { UiCheckboxProps, UiCheckboxEmits, UiCheckboxSlots } from './checkbox/UiCheckbox.vue';
 export type { UiCircleProgressBarProps, UiCircleProgressBarSlots } from './circle-progress-bar/UiCircleProgressBar.vue';
 export type { UiIconProps } from './icon/UiIcon.vue';
-export type { UiLinkProps, UiLinkEmits } from './link/UiLink.vue';
+export type { UiLinkProps, UiLinkEmits, UiLinkSlots } from './link/UiLink.vue';
 export type { UiIconsFill, UiIconName, UiIconsNavigation, UiIconsOutline, UiIconsSocial } from './icon/config';
 export type { AppConfig as UiKitConfig } from './types';
 export { UiButton, UiCarousel, UiCheckbox, UiCircleProgressBar, UiIcon, UiLink, UiSkeleton };
