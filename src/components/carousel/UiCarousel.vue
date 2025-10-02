@@ -341,7 +341,7 @@ function render() {
         'div',
         {
           class: ['ui-carousel__item', uiClasses.value.item, { 'is-transparent-border': props.transparentBorder }],
-          'data-test': `carousel-scroll-item-${index}`,
+          'data-test': `carousel-item-${index}`,
           key: index
         },
         element
