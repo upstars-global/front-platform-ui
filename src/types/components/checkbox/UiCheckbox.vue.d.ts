@@ -6,9 +6,10 @@ interface CheckboxProps extends FormElementProps {
     error?: string;
 }
 type __VLS_Props = CheckboxProps;
-type __VLS_PublicProps = __VLS_Props & {
+type __VLS_ModelProps = {
     'modelValue': boolean;
 };
+type __VLS_PublicProps = __VLS_Props & __VLS_ModelProps;
 declare var __VLS_1: {}, __VLS_7: {}, __VLS_9: {}, __VLS_15: {};
 type __VLS_Slots = {} & {
     checkmark?: (props: typeof __VLS_1) => any;
@@ -19,14 +20,15 @@ type __VLS_Slots = {} & {
 } & {
     'required-message'?: (props: typeof __VLS_15) => any;
 };
-declare const __VLS_component: import("vue").DefineComponent<__VLS_PublicProps, void, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+declare const __VLS_base: import("vue").DefineComponent<__VLS_PublicProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
     "update:modelValue": (value: boolean) => any;
 } & {
     "update:modelValue": (value: boolean) => any;
 }, string, import("vue").PublicProps, Readonly<__VLS_PublicProps> & Readonly<{
     "onUpdate:modelValue"?: ((value: boolean) => any) | undefined;
 }>, {}, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>;
-declare const _default: __VLS_WithSlots<typeof __VLS_component, __VLS_Slots>;
+declare const __VLS_export: __VLS_WithSlots<typeof __VLS_base, __VLS_Slots>;
+declare const _default: typeof __VLS_export;
 export default _default;
 type __VLS_WithSlots<T, S> = T & {
     new (): {

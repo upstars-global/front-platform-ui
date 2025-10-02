@@ -4,3 +4,5 @@ export const ICONS_LIST = [
   '/assets/icons/tutorials.svg',
   '/assets/icons/youtube.svg'
 ]
+
+export const ICON_SIZE_LIST = ['16', '20', '24', '32', '40', '48']

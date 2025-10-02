@@ -8,7 +8,7 @@ export interface UiLinkProps {
   to?: RouteLocationRaw
   activeClass?: ClassNameValue
   exactActiveClass?: ClassNameValue
-  variant?: 'primary' | 'unstyled'
+  variant?: 'primary' | 'default'
   ui?: UiProp<LinkUi>
 }
 
@@ -24,6 +24,7 @@ export interface UiLinkSlots {
 <script setup lang="ts">
 import { computed, resolveComponent, useAttrs, type ConcreteComponent } from 'vue'
 import { isExternalUrl } from '../../helpers/externalUrl'
+import { prepareVariants } from '../../helpers/prepareClassNames'
 import { useAppConfig } from '../../composables/useAppConfig'
 import { useComponentAttributes } from '../../composables/useUiClasses'
 import theme from './theme'
@@ -37,7 +38,7 @@ defineOptions({
 
 const props = withDefaults(defineProps<UiLinkProps>(), {
   to: undefined,
-  variant: 'unstyled',
+  variant: 'default',
   activeClass: undefined,
   exactActiveClass: undefined,
   ui: undefined
@@ -52,15 +53,17 @@ const appConfig = useAppConfig()
 const { attributes, className } = useComponentAttributes(
   'ui-link',
   computed(() => {
-    const baseClasses: ClassNameValue[] = [theme.base, appConfig?.ui?.link?.base, props.ui?.base]
+    const commonClasses: ClassNameValue[] = [theme.base, appConfig?.ui?.link?.base, props.ui?.base].filter(Boolean)
 
-    baseClasses.push([
-      theme.variants[props.variant],
-      appConfig?.ui?.link?.variants?.[props.variant],
-      props.ui?.variants?.[props.variant]
-    ])
+    const variants = prepareVariants<LinkUi['variants']>({
+      theme: theme.variants,
+      appConfig: appConfig?.ui?.link?.variants,
+      uiProp: props.ui?.variants
+    })
 
-    return baseClasses
+    commonClasses.push(variants[props.variant])
+
+    return commonClasses
   }),
   appConfig?.ui?.link?.strategy || props.ui?.strategy
 )

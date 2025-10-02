@@ -1,7 +1,7 @@
 import type { ComponentProps } from 'vue-component-type-helpers'
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import { computed } from 'vue'
-import { ICONS_LIST } from '../config/icons'
+import { ICONS_LIST, ICON_SIZE_LIST } from '../config/icons'
 import UiIcon from '@src/components/icon/UiIcon.vue'
 import { icons, type UiIconName } from '@src/components/icon/config'
 
@@ -19,7 +19,7 @@ const meta = {
     color: { control: 'color' },
     name: { control: 'select', options: names },
     src: { control: 'select', options: ICONS_LIST },
-    size: { control: 'select', options: ['16', '20', '24', '32', '40', '48'] }
+    size: { control: 'select', options: ICON_SIZE_LIST }
   },
   args: {
     color: '#222',

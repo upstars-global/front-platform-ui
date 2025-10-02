@@ -15,7 +15,7 @@ const meta = {
     to: { control: 'text' },
     activeClass: { control: 'text' },
     exactActiveClass: { control: 'text' },
-    variant: { control: 'select', options: ['unstyled', 'primary'] },
+    variant: { control: 'select', options: ['default', 'primary'] },
     ui: { control: 'object' },
     target: { control: 'select', options: ['_self', '_blank', '_parent', '_top', undefined] },
     text: { control: 'text' }
@@ -44,8 +44,8 @@ type Story = StoryObj<typeof meta>
 export const Unstyled: Story = {
   args: {
     to: '#',
-    variant: 'unstyled',
-    text: 'This is an unstyled link'
+    variant: 'default',
+    text: 'This is an default link'
   }
 }
 
@@ -61,7 +61,7 @@ export const RouterLink: Story = {
   args: {
     to: '/',
     variant: 'primary',
-    activeClass: 'text-sky-500',
+    activeClass: 'text-violet-500 hover:text-violet-600',
     text: 'This is a router link'
   }
 }
