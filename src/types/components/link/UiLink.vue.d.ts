@@ -12,6 +12,9 @@ export interface UiLinkProps {
 export interface UiLinkEmits {
     (event: 'click', value: MouseEvent): void;
 }
+export interface UiLinkSlots {
+    default: () => unknown;
+}
 declare const _default: __VLS_WithSlots<import("vue").DefineComponent<UiLinkProps, void, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
     click: (value: MouseEvent) => any;
 }, string, import("vue").PublicProps, Readonly<UiLinkProps> & Readonly<{
@@ -22,9 +25,7 @@ declare const _default: __VLS_WithSlots<import("vue").DefineComponent<UiLinkProp
     ui: UiProp<LinkUi>;
     activeClass: string | false | 0 | 0n | ClassNameValue[] | null;
     exactActiveClass: string | false | 0 | 0n | ClassNameValue[] | null;
-}, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
-    default?: (props: {}) => any;
-}>;
+}, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiLinkSlots>;
 export default _default;
 type __VLS_WithSlots<T, S> = T & {
     new (): {
