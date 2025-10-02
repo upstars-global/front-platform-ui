@@ -24,7 +24,7 @@ export interface UiButtonSlots {
     default(): unknown;
     trailing(): unknown;
 }
-declare const _default: __VLS_WithSlots<import("vue").DefineComponent<UiButtonProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
+declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiButtonProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
     click: (value: MouseEvent) => any;
 }, string, import("vue").PublicProps, Readonly<UiButtonProps> & Readonly<{
     onClick?: ((value: MouseEvent) => any) | undefined;
@@ -37,6 +37,7 @@ declare const _default: __VLS_WithSlots<import("vue").DefineComponent<UiButtonPr
     trailingIconName: UiIconName;
     trailingIconSize: IconSize;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiButtonSlots>;
+declare const _default: typeof __VLS_export;
 export default _default;
 type __VLS_WithSlots<T, S> = T & {
     new (): {
