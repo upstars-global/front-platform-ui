@@ -42,13 +42,35 @@
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier . --check",
     "lint:tsc": "vue-tsc --noEmit",
-    "lintfix": "eslint . --fix && prettier --write --list-different ."
+    "lintfix": "eslint . --fix && prettier --write --list-different .",
+    "prepare": "husky"
   },
   "engines": {
     "node": ">=22.19.0"
   },
+  "lint-staged": {
+    ".github/**/*.yaml": [
+      "prettier . --check"
+    ],
+    "**/*.md": [
+      "prettier . --check"
+    ],
+    "**/*.css": [
+      "prettier . --check"
+    ],
+    "**/*.{js,tsx,vue}": [
+      "eslint .",
+      "prettier . --check"
+    ],
+    "**/*.!(d).ts": [
+      "eslint .",
+      "prettier . --check"
+    ]
+  },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.0.1",
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
     "@eslint/js": "^9.31.0",
     "@storybook/addon-docs": "^9.0.18",
     "@storybook/addon-vitest": "9.0.18",
@@ -68,14 +90,16 @@
     "eslint-plugin-vue": "^10.3.0",
     "glob": "^11.0.3",
     "globals": "^16.3.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.3",
     "playwright": "^1.54.1",
     "postcss": "^8.5.6",
     "postcss-nested": "^7.0.2",
     "prettier": "^3.6.2",
     "rimraf": "^6.0.1",
     "storybook": "^9.0.18",
-    "tailwindcss": "~3.4.17",
     "tailwind-merge": "~2.6.0",
+    "tailwindcss": "~3.4.17",
     "tsc-alias": "^1.8.16",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.38.0",
