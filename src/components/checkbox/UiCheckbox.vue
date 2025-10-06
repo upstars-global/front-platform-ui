@@ -25,7 +25,7 @@ export interface UiCheckboxSlots {
 }
 </script>
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useAppConfig } from '../../composables/useAppConfig'
 import { useComponentAttributes } from '../../composables/useUiClasses'
 import { prepareVariants } from '../../helpers/prepareClassNames'
@@ -116,6 +116,13 @@ const uiClasses = computed(() => {
     error: mergeClasses(theme.error, appConfig.ui?.checkbox?.error, props.ui?.error)
   }
 })
+
+watch(
+  () => model.value,
+  (value) => {
+    isChecked.value = value
+  }
+)
 
 const handleChange = (event: Event) => {
   isChecked.value = (event.target as HTMLInputElement).checked
