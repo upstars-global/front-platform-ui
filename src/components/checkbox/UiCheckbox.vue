@@ -1,46 +1,139 @@
-<script setup lang="ts">
-import type { FormElementProps } from '../types'
-import { ref } from 'vue'
+<script lang="ts">
+import type { ClassNameValue } from 'tailwind-merge'
+import type { FormElementProps, UiProp } from '../types'
 import type { UiIconName } from '../icon/config'
-import UiIcon from '../icon/UiIcon.vue'
+import type { CheckboxUi } from './theme'
 
-const model = defineModel<boolean>('modelValue', {
-  required: true
-})
+type CheckboxSize = '16' | '20' | '24' | '32' | '40' | '48'
 
-interface CheckboxProps extends FormElementProps {
+export interface UiCheckboxProps extends FormElementProps {
   icon?: UiIconName
-  requiredMessage?: string
+  checkboxSize?: CheckboxSize
   error?: string
+  errorIcon?: UiIconName
+  ui?: UiProp<CheckboxUi>
 }
 
-type CheckboxEmits = {
+export interface UiCheckboxEmits {
   (event: 'update:modelValue', value: boolean): void
 }
 
-defineProps<CheckboxProps>()
-defineEmits<CheckboxEmits>()
+export interface UiCheckboxSlots {
+  checkmark(): unknown
+  default(): unknown
+  'error-message'(): unknown
+}
+</script>
+<script setup lang="ts">
+import { computed, ref, watch } from 'vue'
+import { useAppConfig } from '../../composables/useAppConfig'
+import { useComponentAttributes } from '../../composables/useUiClasses'
+import { prepareVariants } from '../../helpers/prepareClassNames'
+import UiIcon from '../icon/UiIcon.vue'
+import theme from './theme'
+
+const SIZE_CLASSES_LIST: Record<CheckboxSize, string> = {
+  '16': 'w-4 h-4',
+  '20': 'w-5 h-5',
+  '24': 'w-6 h-6',
+  '32': 'w-8 h-8',
+  '40': 'w-10 h-10',
+  '48': 'w-12 h-12'
+}
+
+defineOptions({
+  name: 'UiCheckbox',
+  inheritAttrs: false
+})
+
+const props = withDefaults(defineProps<UiCheckboxProps>(), {
+  icon: 'check',
+  checkboxSize: '24',
+  error: undefined,
+  errorIcon: undefined,
+  ui: undefined
+})
+defineEmits<UiCheckboxEmits>()
+const slots = defineSlots<UiCheckboxSlots>()
+
+const model = defineModel<boolean>('modelValue', { default: undefined })
 
 const isChecked = ref(model.value)
+
+const appConfig = useAppConfig()
+const { attributes, className, mergeClasses } = useComponentAttributes(
+  'ui-checkbox',
+  computed(() => {
+    const commonClasses: ClassNameValue[] = [theme.base, appConfig.ui?.checkbox?.base, props.ui?.base].filter(Boolean)
+
+    const states = prepareVariants<CheckboxUi['states']>({
+      theme: theme.states,
+      appConfig: appConfig?.ui?.checkbox?.states,
+      uiProp: props.ui?.states
+    })
+
+    if (props.disabled) {
+      commonClasses.push(states.disabled)
+    }
+
+    return commonClasses
+  }),
+  appConfig?.ui?.checkbox?.strategy || props.ui?.strategy
+)
+
+const isError = computed(() => props.error || slots['error-message'])
+
+const uiClasses = computed(() => {
+  const checkboxInner = [theme.checkmark.inner, appConfig.ui?.checkbox?.checkmark?.inner, props.ui?.checkmark?.inner]
+  if (isChecked.value) {
+    checkboxInner.push(
+      theme.checkmark.checked,
+      appConfig.ui?.checkbox?.checkmark?.checked,
+      props.ui?.checkmark?.checked
+    )
+  }
+
+  if (isError.value && !isChecked.value) {
+    checkboxInner.push(
+      theme.checkmark.invalid,
+      appConfig.ui?.checkbox?.checkmark?.invalid,
+      props.ui?.checkmark?.invalid
+    )
+  }
+
+  return {
+    input: mergeClasses(theme.input, appConfig.ui?.checkbox?.input, props.ui?.input),
+    container: mergeClasses(theme.container, appConfig.ui?.checkbox?.container, props.ui?.container),
+    checkmark: {
+      container: mergeClasses(
+        theme.checkmark.container,
+        appConfig.ui?.checkbox?.checkmark?.container,
+        props.ui?.checkmark?.container,
+        SIZE_CLASSES_LIST[props.checkboxSize]
+      ),
+      inner: mergeClasses(checkboxInner.filter(Boolean))
+    },
+    error: mergeClasses(theme.error, appConfig.ui?.checkbox?.error, props.ui?.error)
+  }
+})
+
+watch(
+  () => model.value,
+  (value) => {
+    isChecked.value = value
+  }
+)
+
 const handleChange = (event: Event) => {
   isChecked.value = (event.target as HTMLInputElement).checked
 }
 </script>
 
 <template>
-  <label
-    class="ui-checkbox relative flex flex-col max-w-max select-none"
-    :class="{
-      'is-checked': isChecked,
-      'cursor-pointer': !disabled,
-      'is-disabled cursor-not-allowed': disabled,
-      'is-invalid': !isChecked && error,
-      'is-required': required
-    }"
-  >
+  <label :class="className" v-bind="attributes">
     <input
       v-model="model"
-      class="absolute top-0 left-0 opacity-0"
+      :class="uiClasses.input"
       type="checkbox"
       :name="name"
       :form="form"
@@ -48,29 +141,23 @@ const handleChange = (event: Event) => {
       :required="required"
       @change="handleChange"
     />
-    <span class="ui-checkbox__inner flex items-center">
+    <span :class="uiClasses.container">
       <slot name="checkmark">
-        <div
-          class="ui-checkbox__checkmark w-5 h-5 self-baseline shrink-0 relative after:absolute after:w-6 after:h-6 after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2"
-        >
-          <UiIcon v-show="isChecked" :name="icon || 'check'" size="full" />
+        <div :class="uiClasses.checkmark.container">
+          <div :class="uiClasses.checkmark.inner">
+            <UiIcon v-show="isChecked" :name="icon" size="full" />
+          </div>
         </div>
       </slot>
-      <slot name="label">
+      <slot>
         <span>{{ label }}</span>
       </slot>
     </span>
-    <slot name="error-message">
-      <span v-if="!isChecked && error" class="ui-checkbox__error-message flex">
-        <UiIcon name="exclamationTriangle" size="16" />
+    <span v-if="!isChecked && isError" :class="uiClasses.error">
+      <slot name="error-message">
+        <UiIcon v-if="errorIcon" :name="errorIcon" size="16" />
         {{ error }}
-      </span>
-    </slot>
-    <slot v-if="required" name="required-message">
-      <span class="ui-checkbox__required-message flex">
-        <UiIcon name="exclamationCircle" size="16" />
-        {{ requiredMessage }}
-      </span>
-    </slot>
+      </slot>
+    </span>
   </label>
 </template>

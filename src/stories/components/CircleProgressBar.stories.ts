@@ -4,7 +4,7 @@ import UiCircleProgressBar from '@src/components/circle-progress-bar/UiCirclePro
 import { icons, type UiIconName } from '@src/components/icon/config'
 import type { ComponentProps } from 'vue-component-type-helpers'
 
-const names = Object.keys(icons).sort((a, b) => a.localeCompare(b)) as UiIconName[]
+const iconNames = Object.keys(icons).sort((a, b) => a.localeCompare(b)) as UiIconName[]
 
 const meta = {
   title: 'UI Kit/CircleProgressBar',
@@ -46,7 +46,7 @@ type SlotContent = ComponentProps<typeof UiCircleProgressBar> & { iconName?: UiI
 type SlotContentStory = StoryObj<Meta<SlotContent>>
 export const SlotContent: SlotContentStory = {
   argTypes: {
-    iconName: { control: 'select', options: names }
+    iconName: { control: 'select', options: iconNames }
   },
   args: {
     background: '#e0e0e0',

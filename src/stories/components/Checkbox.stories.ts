@@ -1,6 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import { emitsObserver } from '@src/stories/utils/decorators'
 import UiCheckbox from '@src/components/checkbox/UiCheckbox.vue'
+import { icons } from '@src/components/icon/config'
+import { CHECKBOX_SIZE_LIST } from '../config/checkbox'
+import type { UiIconName } from '@src/components'
+
+const iconNames = Object.keys(icons).sort((a, b) => a.localeCompare(b)) as UiIconName[]
 
 const meta = {
   title: 'UI Kit/Checkbox',
@@ -13,16 +18,20 @@ const meta = {
     disabled: { control: 'boolean' },
     required: { control: 'boolean' },
     form: { control: 'text' },
-    icon: { control: 'text' },
+    checkboxSize: { control: 'select', options: CHECKBOX_SIZE_LIST },
+    icon: { control: 'select', options: iconNames },
     error: { control: 'text' },
-    requiredMessage: { control: 'text' }
+    errorIcon: { control: 'select', options: iconNames },
+    ui: { control: 'object' }
   },
   args: {
     label: 'Checkbox label',
     name: 'checkbox',
+    icon: 'check',
     disabled: false,
     required: false,
-    modelValue: false
+    modelValue: false,
+    checkboxSize: '24'
   },
   render: (args) => ({
     name: 'Story',
@@ -49,16 +58,10 @@ export const Disabled: Story = {
   }
 }
 
-export const Required: Story = {
-  args: {
-    required: true,
-    requiredMessage: 'This field is required'
-  }
-}
-
 export const Error: Story = {
   args: {
-    error: 'Need to be checked'
+    error: 'Need to be checked',
+    errorIcon: 'exclamationTriangle'
   }
 }
 
@@ -68,9 +71,7 @@ export const CustomLabelSlot: Story = {
     components: { UiCheckbox },
     setup: () => ({ args }),
     template: `<UiCheckbox v-bind="args">
-    <template #label>
       <span>Custom label via slot</span>
-    </template>
   </UiCheckbox>`
   })
 }
@@ -85,7 +86,7 @@ export const CustomErrorSlot: Story = {
     setup: () => ({ args }),
     template: `<UiCheckbox v-bind="args">
     <template #error-message>
-      <span style="color: tomato; font-size: 10px;">Custom error message via slot</span>
+      <span>Custom error message via slot</span>
     </template>
   </UiCheckbox>`
   })
