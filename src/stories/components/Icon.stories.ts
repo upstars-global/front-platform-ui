@@ -19,7 +19,8 @@ const meta = {
     color: { control: 'color' },
     name: { control: 'select', options: names },
     src: { control: 'select', options: ICONS_LIST },
-    size: { control: 'select', options: ICON_SIZE_LIST }
+    size: { control: 'select', options: ICON_SIZE_LIST },
+    ui: { control: 'object' }
   },
   args: {
     color: '#222',

@@ -15,6 +15,12 @@ export const uiKitConfig: AppConfig = {
         ghost: 'bg-transparent text-black hover:bg-slate-200 active:bg-slate-400'
       }
     },
+    carousel: {
+      pagination: {
+        item: 'bg-slate-300',
+        active: 'bg-sky-500'
+      }
+    },
     checkbox: {
       base: 'text-sm',
       checkmark: {
@@ -25,11 +31,20 @@ export const uiKitConfig: AppConfig = {
       },
       error: 'text-xs text-red-500'
     },
+    circleProgressBar: {
+      progress: {
+        trail: 'stroke-indigo-300',
+        line: 'stroke-indigo-500'
+      }
+    },
     icon: { strategy: 'merge' },
     link: {
       variants: {
         primary: 'text-sky-500 hover:text-sky-600'
       }
+    },
+    skeleton: {
+      base: 'bg-slate-500'
     }
   }
 }
