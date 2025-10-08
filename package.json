@@ -1,17 +1,17 @@
 {
-  "name": "front-platfrom-ui",
+  "name": "front-platform-ui",
   "version": "1.3.0",
   "license": "MIT",
   "author": "Upstars Global",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/upstars-global/front-platfrom-ui.git"
+    "url": "git+https://github.com/upstars-global/front-platform-ui.git"
   },
   "bugs": {
-    "url": "https://github.com/upstars-global/front-platfrom-ui/issues"
+    "url": "https://github.com/upstars-global/front-platform-ui/issues"
   },
-  "homepage": "https://github.com/upstars-global/front-platfrom-ui#readme",
+  "homepage": "https://github.com/upstars-global/front-platform-ui#readme",
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "types": "./src/types/index.d.ts",
