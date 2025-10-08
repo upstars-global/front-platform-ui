@@ -4,6 +4,7 @@ import type { CarouselUi } from './carousel/theme';
 import type { CheckboxUi } from './checkbox/theme';
 import type { CircleProgressBarUi } from './circle-progress-bar/theme';
 import type { LinkUi } from './link/theme';
+import type { SkeletonUi } from './skeleton/theme';
 export type Strategy = 'join' | 'merge';
 export type DeepPartial<T> = {
     [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P] | undefined;
@@ -20,6 +21,7 @@ interface UiConfig {
         strategy?: Strategy;
     };
     link?: UiProp<LinkUi>;
+    skeleton?: UiProp<SkeletonUi>;
 }
 export interface AppConfig {
     icons?: UiIcons;

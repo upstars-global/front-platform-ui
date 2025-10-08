@@ -10,8 +10,20 @@ export const config = {
   content: ['./src/**/*.{vue,ts,tsx,css}', './.storybook/**/*.{ts,css}'],
   theme: {
     extend: {
+      animation: {
+        skeleton: 'skeleton 1.5s linear infinite'
+      },
       boxShadow: {
         button: 'inset 0 0 0 1px rgba(0, 0, 0, 0.3)'
+      },
+      keyframes: {
+        skeleton: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' }
+        }
+      },
+      willChange: {
+        'background-position': 'background-position'
       }
     },
     borderRadius: {
