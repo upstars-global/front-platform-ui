@@ -9,6 +9,12 @@ export function useComponentAttributes(
 ) {
   const attrs = useAttrs()
 
+  function mergeClasses(...classList: ClassNameValue[]) {
+    const mergeFn = strategy === 'merge' ? twMerge : twJoin
+
+    return mergeFn(classList)
+  }
+
   const attributes = computed(() => {
     const result = { ...attrs }
     delete result.class
@@ -34,13 +40,8 @@ export function useComponentAttributes(
   })
 
   const className = computed(() => {
-    const classList = [rootClassName, baseClasses?.value, classes.value]
-    if (strategy === 'merge') {
-      return twMerge(classList)
-    }
-
-    return twJoin(classList)
+    return mergeClasses(rootClassName, baseClasses?.value, classes.value)
   })
 
-  return { attributes, className }
+  return { attributes, className, mergeClasses }
 }

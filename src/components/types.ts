@@ -1,5 +1,6 @@
 import type { UiIcons } from './icon/config'
 import type { LinkUi } from './link/theme'
+import type { ButtonUi } from './button/theme'
 
 export type Strategy = 'join' | 'merge'
 
@@ -10,6 +11,7 @@ export type DeepPartial<T> = {
 export type UiProp<T> = DeepPartial<T> & { strategy?: Strategy }
 
 interface UiConfig {
+  button?: UiProp<ButtonUi>
   icon?: { strategy?: Strategy }
   link?: UiProp<LinkUi>
 }

@@ -6,4 +6,5 @@ export declare function useComponentAttributes(rootClassName: ClassNameValue, ba
         [x: string]: unknown;
     }>;
     className: ComputedRef<string>;
+    mergeClasses: (...classList: ClassNameValue[]) => string;
 };
