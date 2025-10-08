@@ -3,3 +3,4 @@ node_modules
 dist
 src/types/**/*.d.ts
 pnpm-lock.yaml
+changelog-template-commit.hbs
