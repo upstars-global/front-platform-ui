@@ -1,3 +1,8 @@
+## <small>1.4.1 (2025-10-08)</small>
+
+* add husky pre-commit hook and update `.prettierignore`
+ ([](https://github.com/upstars-global/front-platform-ui/commit/93f2b14))
+
 ## 1.4.0 (2025-10-08)
 
 * Build type definitions
