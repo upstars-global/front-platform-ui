@@ -1,10 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import type { UiIconName } from '@src/components'
+import type { ComponentProps } from 'vue-component-type-helpers'
 import UiButton from '@src/components/button/UiButton.vue'
 import UiIcon from '@src/components/icon/UiIcon.vue'
 import { emitsObserver } from '@src/stories/utils/decorators'
 import { icons } from '@src/components/icon/config'
 import { ICON_SIZE_LIST } from '../config/icons'
+
+type ButtonPropsAndCustomArgs = ComponentProps<typeof UiButton> & { text?: string }
 
 const variantOptions = ['primary', 'secondary', 'tertiary', 'ghost', 'default']
 const sizeOptions = ['xs', 'sm', 'md', 'default']
@@ -17,6 +20,7 @@ const meta = {
   tags: ['autodocs'],
   decorators: [emitsObserver],
   argTypes: {
+    text: { control: 'text' },
     size: { control: 'select', options: sizeOptions },
     variant: { control: 'select', options: variantOptions },
     disabled: { control: 'boolean' },
@@ -28,15 +32,16 @@ const meta = {
     trailingIconSize: { control: 'select', options: ICON_SIZE_LIST }
   },
   args: {
+    text: 'Button',
     size: 'sm'
   },
   render: (args) => ({
     name: 'Story',
     components: { UiButton },
     setup: () => ({ args }),
-    template: `<UiButton v-bind="args">Button</UiButton>`
+    template: `<UiButton v-bind="args">{{ args.text }}</UiButton>`
   })
-} satisfies Meta<typeof UiButton>
+} satisfies Meta<ButtonPropsAndCustomArgs>
 
 export default meta
 type Story = StoryObj<typeof meta>
