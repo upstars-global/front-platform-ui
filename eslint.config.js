@@ -13,7 +13,10 @@ export default [
   { ignores: ['/node_modules/', '*.d.ts', 'src/types/**/*.d.ts', 'storybook-static'] },
   {
     languageOptions: {
-      globals: globals.browser
+      globals: {
+        ...globals.browser,
+        process: true
+      }
     }
   },
   pluginJs.configs.recommended,
