@@ -1,3 +1,178 @@
+## 1.6.0 (2025-10-13)
+
+* Merge branch 'main' into ui-checkbox
+ ([](https://github.com/upstars-global/front-platform-ui/commit/8df515f))
+
+
+* Merge branch 'ui-button' into ui-checkbox
+ ([](https://github.com/upstars-global/front-platform-ui/commit/cb0c658))
+
+
+
+  # Conflicts:
+
+  #	package.json
+* Merge branch 'ui-button' into ui-checkbox
+ ([](https://github.com/upstars-global/front-platform-ui/commit/6b1f40b))
+
+
+* Merge branch 'ui-button' into ui-checkbox
+ ([](https://github.com/upstars-global/front-platform-ui/commit/f221aed))
+
+
+
+  # Conflicts:
+
+  #	src/types/components/checkbox/UiCheckbox.vue.d.ts
+* Merge branch 'ui-button' into ui-checkbox
+ ([](https://github.com/upstars-global/front-platform-ui/commit/887a58a))
+
+
+* Merge branch 'ui-button' into ui-checkbox
+ ([](https://github.com/upstars-global/front-platform-ui/commit/dccf891))
+
+
+* Merge branch 'ui-button' into ui-checkbox
+ ([](https://github.com/upstars-global/front-platform-ui/commit/c618d58))
+
+
+* Merge branch 'ui-carousel' into ui-skeleton
+ ([](https://github.com/upstars-global/front-platform-ui/commit/b0a2d27))
+
+
+
+  # Conflicts:
+
+  #	package.json
+* Merge branch 'ui-carousel' into ui-skeleton
+ ([](https://github.com/upstars-global/front-platform-ui/commit/09738f7))
+
+
+* Merge branch 'ui-checkbox' into ui-carousel
+ ([](https://github.com/upstars-global/front-platform-ui/commit/5626f5e))
+
+
+* Merge branch 'ui-checkbox' into ui-carousel
+ ([](https://github.com/upstars-global/front-platform-ui/commit/02ea8b5))
+
+
+
+  # Conflicts:
+
+  #	package.json
+* Merge branch 'ui-checkbox' into ui-carousel
+ ([](https://github.com/upstars-global/front-platform-ui/commit/7b034bf))
+
+
+
+  # Conflicts:
+
+  #	src/types/components/circle-progress-bar/UiCircleProgressBar.vue.d.ts
+* Merge branch 'ui-checkbox' into ui-carousel
+ ([](https://github.com/upstars-global/front-platform-ui/commit/02164de))
+
+
+* Merge pull request #13 from upstars-global/ui-checkbox
+ ([](https://github.com/upstars-global/front-platform-ui/commit/f09bf31))
+
+, closes [#13](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  UI checkbox
+* Merge pull request #14 from upstars-global/ui-carousel
+ ([](https://github.com/upstars-global/front-platform-ui/commit/1b9c245))
+
+, closes [#14](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  UI carousel
+* Merge pull request #15 from upstars-global/ui-skeleton
+ ([](https://github.com/upstars-global/front-platform-ui/commit/4261b14))
+
+, closes [#15](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  UiSkeleton
+* add `CarouselNavigation` and `CarouselPagination` as subcomponents in `UiCarousel` stories
+ ([](https://github.com/upstars-global/front-platform-ui/commit/684e3d9))
+
+
+* bump version to 1.5.0 in package.json
+ ([](https://github.com/upstars-global/front-platform-ui/commit/a963aab))
+
+
+* bump version to 1.6.0 in package.json
+ ([](https://github.com/upstars-global/front-platform-ui/commit/4d77925))
+
+
+* clean up old merge conflict markers in `CHANGELOG.md`
+ ([](https://github.com/upstars-global/front-platform-ui/commit/6ab3e81))
+
+
+* update `data-test` attribute in UiCarousel component for consistency
+ ([](https://github.com/upstars-global/front-platform-ui/commit/cba4be2))
+
+
+* add `isMobile` prop to `UiCarousel` and update its default configuration in stories
+ ([](https://github.com/upstars-global/front-platform-ui/commit/8f56335))
+
+
+* add `UiCarousel` component with theming, navigation, and pagination support
+ ([](https://github.com/upstars-global/front-platform-ui/commit/457a429))
+
+
+* add `UiSkeleton` component with theming support and Storybook integration
+ ([](https://github.com/upstars-global/front-platform-ui/commit/3b372a2))
+
+
+* sync `isChecked` with `model` using a watcher in UiCheckbox
+ ([](https://github.com/upstars-global/front-platform-ui/commit/351669d))
+
+
+* generate type definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/72794a4))
+
+
+* generate type definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/db9e3c0))
+
+
+* generate type definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/cfa0843))
+
+
+* export `UiCheckbox` component, revise theming structure, and align types and class merging logic
+ ([](https://github.com/upstars-global/front-platform-ui/commit/f26bd6d))
+
+
+* extend `UiCircleProgressBar` theming to include `strategy` configuration
+ ([](https://github.com/upstars-global/front-platform-ui/commit/b38ae1c))
+
+
+* make `isMobile` prop optional in `UiCarousel` and update related types and stories
+ ([](https://github.com/upstars-global/front-platform-ui/commit/5719aea))
+
+
+* remove deprecated checkbox styles and plugin, add new theming approach and story updates for `UiCheckbox` component
+ ([](https://github.com/upstars-global/front-platform-ui/commit/f877c04))
+
+
+* rename CSS class in `UiCarousel` for consistency with naming conventions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/73d05f0))
+
+
+* replace CSS-based approach in CircleProgressBar with theming support, update types, and stories for consistent customization
+ ([](https://github.com/upstars-global/front-platform-ui/commit/f9df980))
+
+
+* simplify checkbox theming by removing redundant classes and updating styles in config and theme
+ ([](https://github.com/upstars-global/front-platform-ui/commit/1032607))
+
+
+* update `UiCheckbox` component to use `mergeClasses`, revise checkbox theming structure, and update related types and stories
+ ([](https://github.com/upstars-global/front-platform-ui/commit/6967719))
+
+
+* update import path for `useAppConfig` in `UiCircleProgressBar` component to use relative path format
+ ([](https://github.com/upstars-global/front-platform-ui/commit/6839834))
+
 ## 1.5.0 (2025-10-08)
 
 * Merge branch 'main' into ui-button
