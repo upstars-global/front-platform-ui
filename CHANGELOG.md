@@ -3,46 +3,6 @@
 * Merge branch 'main' into ui-button
  ([](https://github.com/upstars-global/front-platform-ui/commit/742fb06))
 
-
-
-  # Conflicts:
-
-  #	package.json
-
-  #	pnpm-lock.yaml
-* Merge branch 'main' into ui-button
- ([](https://github.com/upstars-global/front-platform-ui/commit/6328729))
-
-
-
-  # Conflicts:
-
-  #	package.json
-
-  #	pnpm-lock.yaml
-
-  #	src/types/components/link/UiLink.vue.d.ts
-* Merge branch 'main' into ui-button
- ([](https://github.com/upstars-global/front-platform-ui/commit/fa64113))
-
-
-
-  # Conflicts:
-
-  #	package.json
-* Merge branch 'ui-link' into ui-button
- ([](https://github.com/upstars-global/front-platform-ui/commit/3c9ac97))
-
-
-
-  # Conflicts:
-
-  #	.github/workflows/ci-lint.yaml
-
-  #	pnpm-lock.yaml
-* Merge pull request #12 from upstars-global/ui-button
- ([](https://github.com/upstars-global/front-platform-ui/commit/aad6321))
-
 , closes [#12](https://github.com/upstars-global/front-platform-ui/issues/)
 
   UI button

@@ -1,6 +1,10 @@
 import type { UiIcons } from './icon/config'
-import type { LinkUi } from './link/theme'
 import type { ButtonUi } from './button/theme'
+import type { CarouselUi } from './carousel/theme'
+import type { CheckboxUi } from './checkbox/theme'
+import type { CircleProgressBarUi } from './circle-progress-bar/theme'
+import type { LinkUi } from './link/theme'
+import type { SkeletonUi } from './skeleton/theme'
 
 export type Strategy = 'join' | 'merge'
 
@@ -12,8 +16,12 @@ export type UiProp<T> = DeepPartial<T> & { strategy?: Strategy }
 
 interface UiConfig {
   button?: UiProp<ButtonUi>
+  carousel?: UiProp<CarouselUi>
+  checkbox?: UiProp<CheckboxUi>
+  circleProgressBar?: UiProp<CircleProgressBarUi>
   icon?: { strategy?: Strategy }
   link?: UiProp<LinkUi>
+  skeleton?: UiProp<SkeletonUi>
 }
 
 export interface AppConfig {

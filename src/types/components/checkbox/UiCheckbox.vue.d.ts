@@ -1,33 +1,39 @@
-import type { FormElementProps } from '../types';
+import type { FormElementProps, UiProp } from '../types';
 import type { UiIconName } from '../icon/config';
-interface CheckboxProps extends FormElementProps {
+import type { CheckboxUi } from './theme';
+type CheckboxSize = '16' | '20' | '24' | '32' | '40' | '48';
+export interface UiCheckboxProps extends FormElementProps {
     icon?: UiIconName;
-    requiredMessage?: string;
+    checkboxSize?: CheckboxSize;
     error?: string;
+    errorIcon?: UiIconName;
+    ui?: UiProp<CheckboxUi>;
 }
-type __VLS_Props = CheckboxProps;
-type __VLS_ModelProps = {
-    'modelValue': boolean;
-};
-type __VLS_PublicProps = __VLS_Props & __VLS_ModelProps;
-declare var __VLS_1: {}, __VLS_7: {}, __VLS_9: {}, __VLS_15: {};
-type __VLS_Slots = {} & {
-    checkmark?: (props: typeof __VLS_1) => any;
-} & {
-    label?: (props: typeof __VLS_7) => any;
-} & {
-    'error-message'?: (props: typeof __VLS_9) => any;
-} & {
-    'required-message'?: (props: typeof __VLS_15) => any;
-};
-declare const __VLS_base: import("vue").DefineComponent<__VLS_PublicProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+export interface UiCheckboxEmits {
+    (event: 'update:modelValue', value: boolean): void;
+}
+export interface UiCheckboxSlots {
+    checkmark(): unknown;
+    default(): unknown;
+    'error-message'(): unknown;
+}
+declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiCheckboxProps & {
+    modelValue?: boolean;
+}, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
     "update:modelValue": (value: boolean) => any;
 } & {
     "update:modelValue": (value: boolean) => any;
-}, string, import("vue").PublicProps, Readonly<__VLS_PublicProps> & Readonly<{
+}, string, import("vue").PublicProps, Readonly<UiCheckboxProps & {
+    modelValue?: boolean;
+}> & Readonly<{
     "onUpdate:modelValue"?: ((value: boolean) => any) | undefined;
-}>, {}, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>;
-declare const __VLS_export: __VLS_WithSlots<typeof __VLS_base, __VLS_Slots>;
+}>, {
+    error: string;
+    icon: UiIconName;
+    ui: UiProp<CheckboxUi>;
+    checkboxSize: CheckboxSize;
+    errorIcon: UiIconName;
+}, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiCheckboxSlots>;
 declare const _default: typeof __VLS_export;
 export default _default;
 type __VLS_WithSlots<T, S> = T & {

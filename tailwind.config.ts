@@ -1,11 +1,29 @@
 import type { Config } from 'tailwindcss'
+import plugin from 'tailwindcss/plugin'
+import { carouselPlugin } from './src/components/carousel/tailwind.plugin'
+
+const uiPlugins = plugin((helpers) => {
+  carouselPlugin.handler(helpers)
+})
 
 export const config = {
   content: ['./src/**/*.{vue,ts,tsx,css}', './.storybook/**/*.{ts,css}'],
   theme: {
     extend: {
+      animation: {
+        skeleton: 'skeleton 1.5s linear infinite'
+      },
       boxShadow: {
         button: 'inset 0 0 0 1px rgba(0, 0, 0, 0.3)'
+      },
+      keyframes: {
+        skeleton: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' }
+        }
+      },
+      willChange: {
+        'background-position': 'background-position'
       }
     },
     borderRadius: {
@@ -23,7 +41,8 @@ export const config = {
       8: '2rem', // 32px
       full: '9999px'
     }
-  }
+  },
+  plugins: [uiPlugins]
 } satisfies Config
 
 export default config
