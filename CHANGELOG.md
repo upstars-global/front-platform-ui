@@ -1,3 +1,78 @@
+## 1.5.0 (2025-10-08)
+
+* Merge branch 'main' into ui-button
+ ([](https://github.com/upstars-global/front-platform-ui/commit/742fb06))
+
+, closes [#12](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  UI button
+* bump version to 1.4.0 in package.json
+ ([](https://github.com/upstars-global/front-platform-ui/commit/e036bbb))
+
+
+* include `tailwind.config.ts` in package files list
+ ([](https://github.com/upstars-global/front-platform-ui/commit/b933599))
+
+
+* remove `vite.lib.ts` and update dependencies and lockfile
+ ([](https://github.com/upstars-global/front-platform-ui/commit/6f7928b))
+
+
+* remove pull request trigger branch restriction in chromatic workflow
+ ([](https://github.com/upstars-global/front-platform-ui/commit/77496ab))
+
+
+* update Button stories to support dynamic text property
+ ([](https://github.com/upstars-global/front-platform-ui/commit/ca79ef7))
+
+
+* update dependencies
+ ([](https://github.com/upstars-global/front-platform-ui/commit/bd07efe))
+
+
+* update dependencies in `package.json` and `pnpm-lock.yaml`
+ ([](https://github.com/upstars-global/front-platform-ui/commit/34582cb))
+
+
+* generate type definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/ba89a95))
+
+
+* add `mergeClasses` helper in `useUiClasses` types and remove unused imports in `UiButton` component
+ ([](https://github.com/upstars-global/front-platform-ui/commit/4d322d7))
+
+
+* add `xs` size to button component and update default size to `sm` in types and stories
+ ([](https://github.com/upstars-global/front-platform-ui/commit/46eab47))
+
+
+* add `xs` size to button component, remove `lg` size, and update related types and stories
+ ([](https://github.com/upstars-global/front-platform-ui/commit/523410b))
+
+
+* button component, related styles, types, and stories
+ ([](https://github.com/upstars-global/front-platform-ui/commit/bdc92eb))
+
+
+* button component, related styles, types, and stories
+ ([](https://github.com/upstars-global/front-platform-ui/commit/cb6dcd5))
+
+
+* enhance button component with active state, icon classes, and improved theming; update related styles, types, and stories
+ ([](https://github.com/upstars-global/front-platform-ui/commit/8645167))
+
+
+* extend button component with `ghost` variant, add `isActive` prop, and update theming, types, and stories
+ ([](https://github.com/upstars-global/front-platform-ui/commit/8711245))
+
+
+* extract `mergeClasses` helper in `useUiClasses` composable and simplify class merging in `UiButton` component
+ ([](https://github.com/upstars-global/front-platform-ui/commit/9fe998a))
+
+
+* migrate from yarn to pnpm
+ ([](https://github.com/upstars-global/front-platform-ui/commit/594318e))
+
 ## <small>1.4.1 (2025-10-08)</small>
 
 * add husky pre-commit hook and update `.prettierignore`
