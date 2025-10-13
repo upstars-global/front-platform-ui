@@ -1,31 +1,27 @@
-interface CircleProgressBarProps {
+import type { CircleProgressBarUi } from './theme';
+import type { UiProp } from '../types';
+export interface UiCircleProgressBarProps {
     progress: number;
     progressWidth: number;
     max?: number;
-    background?: string;
-    progressColor?: string;
-    trailColor?: string;
     size?: number;
     startAngle?: number;
     isAnimation?: boolean;
     rounded?: boolean;
+    ui?: UiProp<CircleProgressBarUi>;
 }
-declare var __VLS_1: {
-    progress: number;
+export interface UiCircleProgressBarSlots {
+    default(props?: {
+        progress: number;
+        max?: number;
+    }): unknown;
+}
+declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiCircleProgressBarProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<UiCircleProgressBarProps> & Readonly<{}>, {
     max: number;
-};
-type __VLS_Slots = {} & {
-    default?: (props: typeof __VLS_1) => any;
-};
-declare const __VLS_base: import("vue").DefineComponent<CircleProgressBarProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<CircleProgressBarProps> & Readonly<{}>, {
-    max: number;
-    background: string;
     size: number;
-    progressColor: string;
-    trailColor: string;
+    ui: UiProp<CircleProgressBarUi>;
     startAngle: number;
-}, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>;
-declare const __VLS_export: __VLS_WithSlots<typeof __VLS_base, __VLS_Slots>;
+}, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiCircleProgressBarSlots>;
 declare const _default: typeof __VLS_export;
 export default _default;
 type __VLS_WithSlots<T, S> = T & {

@@ -3,7 +3,6 @@ import { setup } from '@storybook/vue3-vite'
 import FrontPlatformUi from '@src/plugins/vue-plugin'
 import { uiKitConfig } from './config/uiKitConfig'
 import './css/tailwind.css'
-import '@src/assets/css/variables/index.css'
 
 setup(async (app) => {
   // added for testing
