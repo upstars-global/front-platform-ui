@@ -60,6 +60,7 @@ declare const iconsNavigation: {
     faq: string;
     giftShop: string;
     birthdayPromo: string;
+    newYearPromo: string;
     more: string;
 };
 declare const iconsOutline: {
