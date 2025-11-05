@@ -1,3 +1,34 @@
+## <small>1.6.1 (2025-11-05)</small>
+
+* FP-4040 Add `newYearPromo.svg` asset and configure in icon system
+ ([](https://github.com/upstars-global/front-platform-ui/commit/5051cb9))
+
+
+* FP-4040 Add `viewBox` attribute to `birthdayPromo.svg` for improved scalability
+ ([](https://github.com/upstars-global/front-platform-ui/commit/ab4597f))
+
+
+* FP-4040 Update `birthdayPromo.svg` asset with a simpler and optimized design
+ ([](https://github.com/upstars-global/front-platform-ui/commit/1ef428e))
+
+
+* FP-4040 Update `birthdayPromo.svg` to use `currentColor` for better adaptability
+ ([](https://github.com/upstars-global/front-platform-ui/commit/258a4ed))
+
+
+* Merge pull request #33 from upstars-global/FP-4040
+ ([](https://github.com/upstars-global/front-platform-ui/commit/8660e89))
+
+, closes [#33](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  FP-4040 Update `birthdayPromo.svg` asset with a simpler and optimized…
+* add newline to `.env.dist`
+ ([](https://github.com/upstars-global/front-platform-ui/commit/d3a65b5))
+
+
+* generate type definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/8e2a6b6))
+
 ## 1.6.0 (2025-10-13)
 
 * Merge branch 'main' into ui-checkbox
