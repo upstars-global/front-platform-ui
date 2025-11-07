@@ -27,12 +27,14 @@ declare const iconsFill: {
     chat: string;
     minus: string;
     notAvailable: string;
+    otherDocs: string;
     plus: string;
     prize: string;
     rollUp: string;
     safety2: string;
     shield: string;
     timer: string;
+    trashBin: string;
     user: string;
     visibilityOff: string;
     visibilityOn: string;

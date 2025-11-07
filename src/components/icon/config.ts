@@ -31,6 +31,7 @@ import longTap from '../../assets/icons/fill/longTap.svg?raw'
 import mail from '../../assets/icons/fill/mail.svg?raw'
 import minus from '../../assets/icons/fill/minus.svg?raw'
 import notAvailable from '../../assets/icons/fill/notAvailable.svg?raw'
+import otherDocs from '../../assets/icons/fill/otherDocs.svg?raw'
 import paymentCard from '../../assets/icons/fill/paymentCard.svg?raw'
 import paymentCard2 from '../../assets/icons/fill/paymentCard_2.svg?raw'
 import phone from '../../assets/icons/fill/phone.svg?raw'
@@ -43,6 +44,7 @@ import rollUp from '../../assets/icons/fill/rollUp.svg?raw'
 import safety2 from '../../assets/icons/fill/safety_2.svg?raw'
 import shield from '../../assets/icons/fill/shield.svg?raw'
 import timer from '../../assets/icons/fill/timer.svg?raw'
+import trashBin from '../../assets/icons/fill/trashBin.svg?raw'
 import user from '../../assets/icons/fill/user.svg?raw'
 import visibilityOff from '../../assets/icons/fill/visibilityOff.svg?raw'
 import visibilityOn from '../../assets/icons/fill/visibilityOn.svg?raw'
@@ -108,12 +110,14 @@ const iconsFill = {
   chat,
   minus,
   notAvailable,
+  otherDocs,
   plus,
   prize,
   rollUp,
   safety2,
   shield,
   timer,
+  trashBin,
   user,
   visibilityOff,
   visibilityOn,
