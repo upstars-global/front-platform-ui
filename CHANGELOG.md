@@ -1,3 +1,22 @@
+## 1.7.0 (2025-11-07)
+
+* Merge branch 'main' into FP-4137
+ ([](https://github.com/upstars-global/front-platform-ui/commit/2633afa))
+
+
+* Merge pull request #38 from upstars-global/FP-4137
+ ([](https://github.com/upstars-global/front-platform-ui/commit/5feef59))
+
+, closes [#38](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  feat(FP-4137): add otherDocs and trashBin fill icons
+* generate type definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/8ffc68d))
+
+
+* **FP-4137:** add otherDocs and trashBin fill icons
+ ([](https://github.com/upstars-global/front-platform-ui/commit/4894d64))
+
 ## <small>1.6.1 (2025-11-05)</small>
 
 * FP-4040 Add `newYearPromo.svg` asset and configure in icon system
