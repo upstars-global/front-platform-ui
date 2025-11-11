@@ -34,7 +34,7 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<UiMenuProps>(), {
-  ui: () => ({ strategy: 'merge' })
+  ui: undefined
 })
 
 const router = useRouter()
