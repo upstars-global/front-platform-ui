@@ -7,7 +7,7 @@ import type { MenuUi } from './theme'
 
 export interface UiMenuItem {
   routerName?: string
-  name?: string
+  label?: string
   iconName?: UiIconName
   isHidden?: boolean
   to?: RouteLocationRaw | string
@@ -92,7 +92,7 @@ const getItemPath = (item: UiMenuItem): RouteLocationRaw | string => {
         :active-class="uiClasses.item.active"
       >
         <UiIcon v-if="item.iconName" :name="item.iconName" class="mr-2" />
-        {{ item.name }}
+        {{ item.label }}
       </UiLink>
     </template>
   </div>

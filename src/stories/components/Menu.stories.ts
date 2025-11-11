@@ -19,10 +19,10 @@ type Story = StoryObj<typeof meta>
 export const Common: Story = {
   args: {
     items: [
-      { name: 'Item 1', to: '/item-1' },
-      { name: 'Item active', to: '/' },
-      { name: 'Item 3', to: '/item-3' },
-      { name: 'Item 4', to: '/item-4' }
+      { label: 'Item 1', to: '/item-1' },
+      { label: 'Item active', to: '/' },
+      { label: 'Item 3', to: '/item-3' },
+      { label: 'Item 4', to: '/item-4' }
     ]
   }
 }
