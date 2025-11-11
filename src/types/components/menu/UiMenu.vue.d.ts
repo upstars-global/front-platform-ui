@@ -4,7 +4,7 @@ import type { UiProp } from '../types';
 import type { MenuUi } from './theme';
 export interface UiMenuItem {
     routerName?: string;
-    name?: string;
+    label?: string;
     iconName?: UiIconName;
     isHidden?: boolean;
     to?: RouteLocationRaw | string;
