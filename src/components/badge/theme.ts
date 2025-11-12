@@ -1,9 +1,9 @@
 const badge = {
-  base: 'text-center w-fit font-bold flex items-center justify-center',
+  base: 'text-center font-bold flex items-center justify-center',
   size: {
     default: '',
-    sm: 'px-2',
-    md: 'py-1 px-2'
+    sm: 'w-fit px-2',
+    md: 'w-fit py-1 px-2'
   },
   variants: {
     default: 'rounded-6',
