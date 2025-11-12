@@ -24,7 +24,7 @@ declare const __VLS_export: import("vue").DefineComponent<CarouselNavigationProp
     iconPrev: UiIconName;
     iconNext: UiIconName;
     buttonVariant: "default" | "primary" | "secondary" | "tertiary" | "ghost";
-    buttonSize: "default" | "xs" | "sm" | "md";
+    buttonSize: "default" | "sm" | "xs" | "md";
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>;
 declare const _default: typeof __VLS_export;
 export default _default;
