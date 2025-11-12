@@ -1,4 +1,5 @@
 import type { UiIcons } from './icon/config'
+import type { BadgeUi } from './badge/theme'
 import type { ButtonUi } from './button/theme'
 import type { CarouselUi } from './carousel/theme'
 import type { CheckboxUi } from './checkbox/theme'
@@ -15,6 +16,7 @@ export type DeepPartial<T> = {
 export type UiProp<T> = DeepPartial<T> & { strategy?: Strategy }
 
 interface UiConfig {
+  badge?: UiProp<BadgeUi>
   button?: UiProp<ButtonUi>
   carousel?: UiProp<CarouselUi>
   checkbox?: UiProp<CheckboxUi>

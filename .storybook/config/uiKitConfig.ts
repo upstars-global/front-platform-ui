@@ -2,6 +2,13 @@ import type { AppConfig } from '@src/components/types'
 
 export const uiKitConfig: AppConfig = {
   ui: {
+    badge: {
+      size: {
+        default: 'text-[10px] tracking-wider',
+        sm: 'text-[10px]',
+        md: 'text-xs'
+      }
+    },
     button: {
       size: {
         xs: 'text-xs leading-4',
