@@ -10,6 +10,8 @@ declare const badge: {
         cropped: string;
         counter: string;
     };
+    leadingIcon: string;
+    trailingIcon: string;
 };
 export type BadgeUi = typeof badge;
 export default badge;
