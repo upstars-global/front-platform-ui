@@ -35,7 +35,7 @@
   ],
   "scripts": {
     "dev:storybook": "pnpm run dev:types & storybook dev -p 6006 --no-open",
-    "dev:types": "vue-tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json --watch",
+    "dev:types": "vue-tsc -p tsconfig.build.json --watch & tsc-alias -p tsconfig.build.json --watch",
     "build:types": "vue-tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json",
     "build:dts": "pnpm run clean:types && pnpm run build:types",
     "build:storybook": "storybook build",
