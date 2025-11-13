@@ -9,7 +9,9 @@ const badge = {
     default: 'rounded-6',
     cropped: 'rounded-b-2',
     counter: 'rounded-full'
-  }
+  },
+  leadingIcon: 'mr-1',
+  trailingIcon: 'ml-1'
 }
 
 export type BadgeUi = typeof badge
