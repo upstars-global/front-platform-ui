@@ -4,6 +4,7 @@ import type { CarouselUi } from './carousel/theme'
 import type { CheckboxUi } from './checkbox/theme'
 import type { CircleProgressBarUi } from './circle-progress-bar/theme'
 import type { LinkUi } from './link/theme'
+import type { MenuUi } from './menu/theme'
 import type { SkeletonUi } from './skeleton/theme'
 
 export type Strategy = 'join' | 'merge'
@@ -21,6 +22,7 @@ interface UiConfig {
   circleProgressBar?: UiProp<CircleProgressBarUi>
   icon?: { strategy?: Strategy }
   link?: UiProp<LinkUi>
+  menu?: UiProp<MenuUi>
   skeleton?: UiProp<SkeletonUi>
 }
 

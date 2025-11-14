@@ -4,6 +4,7 @@ import UiCheckbox from './checkbox/UiCheckbox.vue'
 import UiCircleProgressBar from './circle-progress-bar/UiCircleProgressBar.vue'
 import UiIcon from './icon/UiIcon.vue'
 import UiLink from './link/UiLink.vue'
+import UiMenu from './menu/UiMenu.vue'
 import UiSkeleton from './skeleton/UiSkeleton.vue'
 
 export type { UiButtonProps, UiButtonEmits, UiButtonSlots } from './button/UiButton.vue'
@@ -12,7 +13,8 @@ export type { UiCheckboxProps, UiCheckboxEmits, UiCheckboxSlots } from './checkb
 export type { UiCircleProgressBarProps, UiCircleProgressBarSlots } from './circle-progress-bar/UiCircleProgressBar.vue'
 export type { UiIconProps } from './icon/UiIcon.vue'
 export type { UiLinkProps, UiLinkEmits, UiLinkSlots } from './link/UiLink.vue'
+export type { UiMenuItem, UiMenuProps } from './menu/UiMenu.vue'
 export type { UiIconsFill, UiIconName, UiIconsNavigation, UiIconsOutline, UiIconsSocial } from './icon/config'
 export type { AppConfig as UiKitConfig } from './types'
 
-export { UiButton, UiCarousel, UiCheckbox, UiCircleProgressBar, UiIcon, UiLink, UiSkeleton }
+export { UiButton, UiCarousel, UiCheckbox, UiCircleProgressBar, UiIcon, UiLink, UiMenu, UiSkeleton }
