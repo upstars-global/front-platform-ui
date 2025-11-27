@@ -91,6 +91,14 @@ const { attributes, className, mergeClasses } = useComponentAttributes(
       commonClasses.push(states.disabled)
     }
 
+    if (props.fullWidth) {
+      commonClasses.push(states.full)
+    }
+
+    if (!props.fullWidth) {
+      commonClasses.push(states.max)
+    }
+
     return commonClasses
   }),
   appConfig?.ui?.select?.strategy || props.ui?.strategy
@@ -157,7 +165,7 @@ const handleBlur = (event: FocusEvent) => {
 </script>
 
 <template>
-  <div :class="[className, { 'w-full': fullWidth, 'max-w-full w-max': !fullWidth }]" v-bind="attributes">
+  <div :class="className" v-bind="attributes">
     <label v-if="label" :for="elementId" :class="uiClasses.label">
       <slot name="label">{{ label }}</slot>
       <span v-if="required" class="text-red-500">*</span>

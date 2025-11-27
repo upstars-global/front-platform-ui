@@ -19,7 +19,9 @@ const select = {
   },
   description: 'px-6 mt-1',
   states: {
-    disabled: 'opacity-50 cursor-not-allowed pointer-events-none'
+    disabled: 'opacity-50 cursor-not-allowed pointer-events-none',
+    full: 'w-full',
+    max: 'max-w-full w-max'
   }
 }
 
