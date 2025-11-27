@@ -20,6 +20,8 @@ declare const select: {
     description: string;
     states: {
         disabled: string;
+        full: string;
+        max: string;
     };
 };
 export type SelectUi = typeof select;
