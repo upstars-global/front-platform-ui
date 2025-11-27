@@ -1,3 +1,42 @@
+## 1.9.0 (2025-11-27)
+
+* Merge branch 'main' into ui-menu
+ ([](https://github.com/upstars-global/front-platform-ui/commit/fc1afe7))
+
+
+* Merge pull request #39 from upstars-global/ui-menu
+ ([](https://github.com/upstars-global/front-platform-ui/commit/59b25cf))
+
+, closes [#39](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  feat(FP-3533): add `UiMenu` component with theme support and Storybook integration
+* Merge remote-tracking branch 'origin/ui-menu' into ui-menu
+ ([](https://github.com/upstars-global/front-platform-ui/commit/93a4024))
+
+
+* Merge remote-tracking branch 'origin/ui-menu' into ui-menu
+ ([](https://github.com/upstars-global/front-platform-ui/commit/665d403))
+
+
+* remove default `ui` property definition
+ ([](https://github.com/upstars-global/front-platform-ui/commit/61c6c01))
+
+
+* generate type definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/5b8fe18))
+
+
+* generate type definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/ed46528))
+
+
+* **FP-3533:** rename `name` to `label` in menu items for clarity and consistency
+ ([](https://github.com/upstars-global/front-platform-ui/commit/e99d70f))
+
+
+* **FP-3533:** add `UiMenu` component with theme support and Storybook integration
+ ([](https://github.com/upstars-global/front-platform-ui/commit/f5c994a))
+
 ## 1.8.0 (2025-11-13)
 
 * Merge pull request #41 from upstars-global/FP-3980
