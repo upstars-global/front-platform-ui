@@ -1,3 +1,26 @@
+## 1.8.0 (2025-11-13)
+
+* Merge pull request #41 from upstars-global/FP-3980
+ ([](https://github.com/upstars-global/front-platform-ui/commit/403808d))
+
+, closes [#41](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  feat(FP-3980): new dev command
+* **FP-3980:** add missed flag
+ ([](https://github.com/upstars-global/front-platform-ui/commit/6ae885d))
+
+
+* **FP-3980:** command change
+ ([](https://github.com/upstars-global/front-platform-ui/commit/91e6ab1))
+
+
+* **FP-3980:** new dev command
+ ([](https://github.com/upstars-global/front-platform-ui/commit/d9c623b))
+
+
+* generate type definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/1c710dd))
+
 ## 1.7.0 (2025-11-07)
 
 * Merge branch 'main' into FP-4137
