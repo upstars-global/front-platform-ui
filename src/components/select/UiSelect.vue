@@ -8,8 +8,7 @@ import type { ClassNameValue } from 'tailwind-merge'
 import theme from './theme'
 import type { SelectUi } from './theme'
 import UiIcon from '../icon/UiIcon.vue'
-import UiTooltip from '../tooltip/UiTooltip.vue'
-import type { UiTooltipProps } from '../../types/components/tooltip/UiTooltip.vue'
+import UiTooltip, { type UiTooltipProps } from '../tooltip/UiTooltip.vue'
 
 export interface SelectOption {
   label: string

@@ -7,8 +7,7 @@ import { prepareVariants } from '../../helpers/prepareClassNames'
 import type { ClassNameValue } from 'tailwind-merge'
 import theme from './theme'
 import type { InputUi } from './theme'
-import UiTooltip from '../tooltip/UiTooltip.vue'
-import type { UiTooltipProps } from '../../types/components/tooltip/UiTooltip.vue'
+import UiTooltip, { type UiTooltipProps } from '../tooltip/UiTooltip.vue'
 
 export interface UiInputProps extends FormElementProps, Partial<Pick<UiTooltipProps, 'offsetValue'>> {
   dataTest?: string
