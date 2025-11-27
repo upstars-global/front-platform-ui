@@ -19,13 +19,13 @@ export interface UiBadgeSlots {
     trailing(): unknown;
 }
 declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiBadgeProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<UiBadgeProps> & Readonly<{}>, {
-    size: BadgeSize;
     variant: BadgeVariant;
+    size: BadgeSize;
+    ui: UiProp<BadgeUi>;
     leadingIconName: UiIconName;
     leadingIconSize: IconSize;
     trailingIconName: UiIconName;
     trailingIconSize: IconSize;
-    ui: UiProp<BadgeUi>;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiBadgeSlots>;
 declare const _default: typeof __VLS_export;
 export default _default;
