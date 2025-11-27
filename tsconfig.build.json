@@ -8,5 +8,5 @@
     "skipLibCheck": false
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "./vite-env.d.ts"],
-  "exclude": ["node_modules", "**/node_modules", "src/stories/**/*", ".storybook", "dist"]
+  "exclude": ["node_modules", "src/types", "**/node_modules", "src/stories/**/*", ".storybook", "dist"]
 }
