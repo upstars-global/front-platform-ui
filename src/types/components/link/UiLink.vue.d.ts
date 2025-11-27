@@ -21,8 +21,8 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiLink
     onClick?: ((value: MouseEvent) => any) | undefined;
 }>, {
     variant: "primary" | "default";
-    ui: UiProp<LinkUi>;
     to: RouteLocationRaw;
+    ui: UiProp<LinkUi>;
     activeClass: string | false | 0 | 0n | ClassNameValue[] | null;
     exactActiveClass: string | false | 0 | 0n | ClassNameValue[] | null;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiLinkSlots>;

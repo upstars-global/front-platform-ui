@@ -37,29 +37,29 @@ export interface UiSelectSlots {
     }) => unknown;
 }
 declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiSelectProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
-    "update:modelValue": (value: string | number) => any;
     change: (value: string | number) => any;
-    focus: (value: FocusEvent) => any;
     blur: (value: FocusEvent) => any;
+    focus: (value: FocusEvent) => any;
+    "update:modelValue": (value: string | number) => any;
 }, string, import("vue").PublicProps, Readonly<UiSelectProps> & Readonly<{
-    "onUpdate:modelValue"?: ((value: string | number) => any) | undefined;
     onChange?: ((value: string | number) => any) | undefined;
-    onFocus?: ((value: FocusEvent) => any) | undefined;
     onBlur?: ((value: FocusEvent) => any) | undefined;
+    onFocus?: ((value: FocusEvent) => any) | undefined;
+    "onUpdate:modelValue"?: ((value: string | number) => any) | undefined;
 }>, {
+    error: string;
+    id: string;
+    options: SelectOption[];
     size: "small" | "medium";
+    description: string;
+    placeholder: string;
     ui: UiProp<SelectUi>;
     dataTest: string;
-    placeholder: string;
-    offsetValue: number;
+    fullWidth: boolean;
     modelValue: string | number;
-    error: string;
-    description: string;
+    offsetValue: number;
     subLabel: string;
     selectTextAlign: "left" | "center" | "right";
-    options: SelectOption[];
-    id: string;
-    fullWidth: boolean;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiSelectSlots>;
 declare const _default: typeof __VLS_export;
 export default _default;

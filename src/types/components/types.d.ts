@@ -1,3 +1,4 @@
+import type { BadgeUi } from './badge/theme';
 import type { ButtonUi } from './button/theme';
 import type { CarouselUi } from './carousel/theme';
 import type { CheckboxUi } from './checkbox/theme';
