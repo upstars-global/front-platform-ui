@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/vue3-vite'
-import { ref } from 'vue'
-import { emitsObserver } from '@src/stories/utils/decorators'
 import UiInput from '@src/components/input/UiInput.vue'
+import { emitsObserver } from '@src/stories/utils/decorators'
+import { ref } from 'vue'
+import type { Meta, StoryObj } from '@storybook/vue3-vite'
 
 const meta = {
   title: 'UI Kit/Input',
@@ -49,7 +49,19 @@ const meta = {
     inputTextAlign: 'left',
     dataTest: 'text-field',
     recommendations: [],
-    offsetValue: 4
+    offsetValue: 4,
+    ui: {
+      input: {
+        base: 'bg-slate-100 autofill:bg-slate-50 focus:border-sky-500 border-slate-300 placeholder:text-slate-400',
+        invalid: '!border-red-500'
+      },
+      recommendationsContainer: 'border-sky-500 bg-slate-50',
+      recommendationsListItem: 'border-slate-300 hover:bg-slate-100',
+      error: {
+        content: 'bg-red-500',
+        text: 'text-white'
+      }
+    }
   },
   render: (args) => ({
     name: 'Story',

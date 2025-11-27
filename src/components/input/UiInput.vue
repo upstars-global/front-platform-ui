@@ -1,13 +1,8 @@
-<script setup lang="ts">
-import { computed, ref, useTemplateRef, onMounted } from 'vue'
-import type { FormElementProps, UiProp } from '../types'
-import { useComponentAttributes } from '../../composables/useUiClasses'
-import { useAppConfig } from '../../composables/useAppConfig'
-import { prepareVariants } from '../../helpers/prepareClassNames'
+<script lang="ts">
 import type { ClassNameValue } from 'tailwind-merge'
-import theme from './theme'
+import type { FormElementProps, UiProp } from '../types'
+import type { UiTooltipProps } from '../tooltip/UiTooltip.vue'
 import type { InputUi } from './theme'
-import UiTooltip, { type UiTooltipProps } from '../tooltip/UiTooltip.vue'
 
 export interface UiInputProps extends FormElementProps, Partial<Pick<UiTooltipProps, 'offsetValue'>> {
   dataTest?: string
@@ -49,6 +44,19 @@ export interface UiInputSlots {
   'error-message'?: () => unknown
   description?: () => unknown
 }
+</script>
+<script setup lang="ts">
+import { computed, ref, useTemplateRef, onMounted } from 'vue'
+import { useAppConfig } from '../../composables/useAppConfig'
+import { useComponentAttributes } from '../../composables/useUiClasses'
+import { prepareVariants } from '../../helpers/prepareClassNames'
+import UiTooltip from '../tooltip/UiTooltip.vue'
+import theme from './theme'
+
+defineOptions({
+  name: 'UiInput',
+  inheritAttrs: false
+})
 
 const props = withDefaults(defineProps<UiInputProps>(), {
   modelValue: '',
@@ -75,18 +83,13 @@ const props = withDefaults(defineProps<UiInputProps>(), {
   maxlength: undefined
 })
 
-defineOptions({
-  name: 'UiInput',
-  inheritAttrs: false
-})
-
 const emit = defineEmits<UiInputEmits>()
-
 const slots = defineSlots<UiInputSlots>()
 
 const elementId = computed(() => `label-${props.name}`)
 
 const fieldRef = useTemplateRef('input')
+const isRecommendationsVisible = ref(false)
 
 const appConfig = useAppConfig()
 const { attributes, className, mergeClasses } = useComponentAttributes(
@@ -194,8 +197,6 @@ const handleBlur = (event: FocusEvent) => {
 const handleKeydown = (event: KeyboardEvent) => {
   emit('keydown', event)
 }
-
-const isRecommendationsVisible = ref(false)
 
 const handleRecommendationClick = (suggestion: string) => {
   emit('update:modelValue', suggestion)

@@ -29,8 +29,8 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiChec
     "onUpdate:modelValue"?: ((value: boolean) => any) | undefined;
 }>, {
     error: string;
-    icon: UiIconName;
     ui: UiProp<CheckboxUi>;
+    icon: UiIconName;
     checkboxSize: CheckboxSize;
     errorIcon: UiIconName;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiCheckboxSlots>;

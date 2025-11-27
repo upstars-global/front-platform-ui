@@ -1,14 +1,8 @@
-<script setup lang="ts">
-import { computed } from 'vue'
-import type { FormElementProps, UiProp } from '../types'
-import { useComponentAttributes } from '../../composables/useUiClasses'
-import { useAppConfig } from '../../composables/useAppConfig'
-import { prepareVariants } from '../../helpers/prepareClassNames'
+<script lang="ts">
 import type { ClassNameValue } from 'tailwind-merge'
-import theme from './theme'
+import type { FormElementProps, UiProp } from '../types'
+import type { UiTooltipProps } from '../tooltip/UiTooltip.vue'
 import type { SelectUi } from './theme'
-import UiIcon from '../icon/UiIcon.vue'
-import UiTooltip, { type UiTooltipProps } from '../tooltip/UiTooltip.vue'
 
 export interface SelectOption {
   label: string
@@ -33,20 +27,34 @@ export interface UiSelectProps extends FormElementProps, Partial<Pick<UiTooltipP
   fullWidth?: boolean
 }
 
-interface UiSelectEmits {
+export interface UiSelectEmits {
   (event: 'update:modelValue', value: string | number): void
   (event: 'change', value: string | number): void
   (event: 'focus', value: FocusEvent): void
   (event: 'blur', value: FocusEvent): void
 }
 
-interface UiSelectSlots {
+export interface UiSelectSlots {
   left?: () => unknown
   label?: () => unknown
   'error-message'?: () => unknown
   description?: () => unknown
   option?: (props: { option: SelectOption; index: number }) => unknown
 }
+</script>
+<script setup lang="ts">
+import { computed } from 'vue'
+import { useAppConfig } from '../../composables/useAppConfig'
+import { useComponentAttributes } from '../../composables/useUiClasses'
+import { prepareVariants } from '../../helpers/prepareClassNames'
+import UiIcon from '../icon/UiIcon.vue'
+import UiTooltip from '../tooltip/UiTooltip.vue'
+import theme from './theme'
+
+defineOptions({
+  name: 'UiSelect',
+  inheritAttrs: false
+})
 
 const props = withDefaults(defineProps<UiSelectProps>(), {
   modelValue: '',
@@ -64,13 +72,7 @@ const props = withDefaults(defineProps<UiSelectProps>(), {
   fullWidth: false
 })
 
-defineOptions({
-  name: 'UiSelect',
-  inheritAttrs: false
-})
-
 const emit = defineEmits<UiSelectEmits>()
-
 const slots = defineSlots<UiSelectSlots>()
 
 const elementId = computed(() => `label-${props.name}`)

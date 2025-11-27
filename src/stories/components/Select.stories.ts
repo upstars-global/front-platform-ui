@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/vue3-vite'
-import { ref } from 'vue'
-import { emitsObserver } from '@src/stories/utils/decorators'
 import UiSelect from '@src/components/select/UiSelect.vue'
+import { emitsObserver } from '@src/stories/utils/decorators'
+import { ref } from 'vue'
+import type { Meta, StoryObj } from '@storybook/vue3-vite'
 
 const meta = {
   title: 'UI Kit/Select',
@@ -45,7 +45,17 @@ const meta = {
       { label: 'Option 4', value: '4' },
       { label: 'Option 5', value: '5' }
     ],
-    offsetValue: 4
+    offsetValue: 4,
+    ui: {
+      select: {
+        base: 'bg-slate-100 focus:border-sky-500 border-slate-300',
+        invalid: '!border-red-500'
+      },
+      error: {
+        content: 'bg-red-500',
+        text: 'text-white'
+      }
+    }
   },
   render: (args) => ({
     name: 'Story',
