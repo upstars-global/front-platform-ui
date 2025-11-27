@@ -47,18 +47,18 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiSele
     onFocus?: ((value: FocusEvent) => any) | undefined;
     onBlur?: ((value: FocusEvent) => any) | undefined;
 }>, {
-    offsetValue: number;
+    size: "small" | "medium";
+    ui: UiProp<SelectUi>;
     dataTest: string;
+    placeholder: string;
+    offsetValue: number;
     modelValue: string | number;
     error: string;
     description: string;
     subLabel: string;
-    ui: UiProp<SelectUi>;
-    placeholder: string;
-    id: string;
     selectTextAlign: "left" | "center" | "right";
     options: SelectOption[];
-    size: "small" | "medium";
+    id: string;
     fullWidth: boolean;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiSelectSlots>;
 declare const _default: typeof __VLS_export;

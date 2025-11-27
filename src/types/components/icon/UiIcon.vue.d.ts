@@ -10,11 +10,11 @@ export interface UiIconProps {
     };
 }
 declare const __VLS_export: import("vue").DefineComponent<UiIconProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<UiIconProps> & Readonly<{}>, {
+    size: IconSize;
     ui: {
         strategy?: Strategy;
     };
     name: UiIconName;
-    size: IconSize;
     src: string;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>;
 declare const _default: typeof __VLS_export;

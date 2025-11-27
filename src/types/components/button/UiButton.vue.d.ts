@@ -29,13 +29,13 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiButt
 }, string, import("vue").PublicProps, Readonly<UiButtonProps> & Readonly<{
     onClick?: ((value: MouseEvent) => any) | undefined;
 }>, {
-    ui: UiProp<ButtonUi>;
     size: ButtonSize;
     variant: ButtonVariant;
     leadingIconName: UiIconName;
     leadingIconSize: IconSize;
     trailingIconName: UiIconName;
     trailingIconSize: IconSize;
+    ui: UiProp<ButtonUi>;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiButtonSlots>;
 declare const _default: typeof __VLS_export;
 export default _default;

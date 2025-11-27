@@ -1,3 +1,60 @@
+## 1.10.0 (2025-11-27)
+
+* Merge branch 'main' into ui-badge
+ ([](https://github.com/upstars-global/front-platform-ui/commit/12334ca))
+
+
+
+  # Conflicts:
+
+  #	src/components/index.ts
+
+  #	src/types/components/index.d.ts
+* Merge pull request #40 from upstars-global/ui-badge
+ ([](https://github.com/upstars-global/front-platform-ui/commit/391563e))
+
+, closes [#40](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  feat(FP-3524): add UiBadge component with theming and storybook support
+* Merge remote-tracking branch 'origin/ui-badge' into ui-badge
+ ([](https://github.com/upstars-global/front-platform-ui/commit/d7a19bd))
+
+
+* Merge remote-tracking branch 'origin/ui-badge' into ui-badge
+ ([](https://github.com/upstars-global/front-platform-ui/commit/f4199a8))
+
+
+* generate type definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/d9c2c17))
+
+
+* generate type definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/57eb37c))
+
+
+* generate type definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/58d1d66))
+
+
+* **FP-3524:** add icon support and slots for `UiBadge`
+ ([](https://github.com/upstars-global/front-platform-ui/commit/493593a))
+
+
+
+  Introduce leading and trailing icon props for enhanced customization.
+* **FP-3524:** add UiBadge component with theming and storybook support
+ ([](https://github.com/upstars-global/front-platform-ui/commit/c73ea2c))
+
+
+
+  Introduces the `UiBadge` component with customizable size, variant, and theming capabilities.
+* **FP-3524:** export UiBadge from components index
+ ([](https://github.com/upstars-global/front-platform-ui/commit/4150162))
+
+
+* **badge:** update `base` and `size` styles for improved flexibility
+ ([](https://github.com/upstars-global/front-platform-ui/commit/9d8d06f))
+
 ## 1.9.0 (2025-11-27)
 
 * Merge branch 'main' into ui-menu

@@ -17,6 +17,7 @@ export type UiProp<T> = DeepPartial<T> & {
     strategy?: Strategy;
 };
 interface UiConfig {
+    badge?: UiProp<BadgeUi>;
     button?: UiProp<ButtonUi>;
     carousel?: UiProp<CarouselUi>;
     checkbox?: UiProp<CheckboxUi>;

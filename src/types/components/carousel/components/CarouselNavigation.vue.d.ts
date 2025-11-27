@@ -20,11 +20,11 @@ declare const __VLS_export: import("vue").DefineComponent<CarouselNavigationProp
     onChange?: ((value: number) => any) | undefined;
 }>, {
     ui: CarouselNavigationUi;
-    iconSize: IconSize;
     iconPrev: UiIconName;
     iconNext: UiIconName;
+    iconSize: IconSize;
     buttonVariant: "default" | "primary" | "secondary" | "tertiary" | "ghost";
-    buttonSize: "default" | "xs" | "sm" | "md";
+    buttonSize: "default" | "sm" | "md" | "xs";
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>;
 declare const _default: typeof __VLS_export;
 export default _default;

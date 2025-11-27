@@ -17,12 +17,12 @@ export interface UiTooltipSlots {
 }
 type __VLS_Slots = UiTooltipSlots;
 declare const __VLS_base: import("vue").DefineComponent<UiTooltipProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<UiTooltipProps> & Readonly<{}>, {
-    offsetValue: number;
-    text: string;
     ui: UiProp<TooltipUi>;
+    text: string;
+    strategy: Strategy;
+    offsetValue: number;
     disabled: boolean;
     placement: Placement;
-    strategy: Strategy;
     fallbackPlacements: Placement[];
     trigger: "hover" | "click" | "always";
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>;
