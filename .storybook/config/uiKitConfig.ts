@@ -43,6 +43,13 @@ export const uiKitConfig: AppConfig = {
         primary: 'text-sky-500 hover:text-sky-600'
       }
     },
+    menu: {
+      base: 'bg-neutral-100',
+      item: {
+        base: 'text-sky-500 hover:text-sky-600',
+        active: 'text-violet-500 hover:text-violet-600'
+      }
+    },
     skeleton: {
       base: 'bg-slate-500'
     }
