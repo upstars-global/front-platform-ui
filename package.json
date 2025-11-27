@@ -130,6 +130,7 @@
     "tailwindcss": "^3.4.x",
     "vue": "^3.5.x",
     "vue-router": "^4.5.x",
+    "vue3-mask": "^3.1.2",
     "vue3-outside-events": "^2.0.5"
   },
   "packageManager": "pnpm@10.17.0"
