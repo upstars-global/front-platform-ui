@@ -6,12 +6,27 @@ A modern Vue 3 UI component library built with TypeScript, Tailwind CSS, and Vit
 
 ## 📋 Table of Contents
 
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Development](#development)
-- [Component Development](#component-development)
-- [Theming & Customization](#theming--customization)
-- [Code Quality](#code-quality)
+- [Requirements](#-requirements)
+- [Installation](#-installation)
+- [Development](#-development)
+- [Component Development](#-component-development)
+  - [Component Structure](#component-structure)
+  - [Component File Structure](#component-file-structure)
+  - [Creating a New Component](#creating-a-new-component)
+  - [Component Architecture](#component-architecture)
+    - [Core Composables](#core-composables)
+    - [Class Merging Pattern](#class-merging-pattern)
+    - [uiClasses Pattern](#uiclasses-pattern)
+    - [Complete Component Example](#complete-component-example)
+    - [Helper Functions](#helper-functions)
+- [Theming & Customization](#-theming--customization)
+  - [Using the Theme System](#using-the-theme-system)
+  - [Global Configuration](#global-configuration)
+  - [Merge Strategies](#merge-strategies)
+- [Code Quality](#-code-quality)
+  - [Linting](#linting)
+  - [Formatting](#formatting)
+  - [Commit Convention](#commit-convention)
 
 ## 📦 Requirements
 
@@ -159,6 +174,171 @@ const slots = defineSlots<UiComponentSlots>()
    ```bash
    pnpm run build:types
    ```
+
+### Component Architecture
+
+#### Core Composables
+
+**`useComponentAttributes`**
+
+This composable handles class merging and attribute management for components.
+
+```typescript
+const { attributes, className, mergeClasses } = useComponentAttributes(
+  'ui-component-name', // Root class name
+  computed(() => [...classes]), // Base classes
+  'merge' // Strategy: 'merge' | 'join'
+)
+```
+
+**Returns:**
+
+- `attributes` - All HTML attributes except `class`
+- `className` - Merged root classes for the component
+- `mergeClasses()` - Function to merge additional classes
+
+**`useAppConfig`**
+
+Provides access to global UI configuration.
+
+```typescript
+const appConfig = useAppConfig()
+// Access: appConfig.ui?.componentName?....
+```
+
+#### Class Merging Pattern
+
+Components follow a three-tier class merging system:
+
+1. **Theme** (default) - From `theme.ts`
+2. **Global Config** - From app configuration
+3. **Component Prop** - From `ui` prop
+
+```typescript
+// Example: Merging button classes
+const classes = [
+  theme.base, // 1. Theme default
+  appConfig.ui?.button?.base, // 2. Global config
+  props.ui?.base // 3. Component prop
+].filter(Boolean)
+```
+
+#### uiClasses Pattern
+
+The `uiClasses` computed property organizes all component element classes:
+
+```typescript
+const uiClasses = computed(() => ({
+  // Root element
+  root: mergeClasses(theme.root, appConfig.ui?.input?.root, props.ui?.root),
+
+  // Child elements
+  label: mergeClasses(theme.label, appConfig.ui?.input?.label, props.ui?.label),
+  input: mergeClasses(theme.input, appConfig.ui?.input?.input, props.ui?.input),
+
+  // Conditional classes
+  error: isError.value ? mergeClasses(theme.error, appConfig.ui?.input?.error, props.ui?.error) : ''
+}))
+```
+
+#### Complete Component Example
+
+```vue
+<script lang="ts">
+import type { FormElementProps, UiProp } from '../types'
+import type { ComponentUi } from './theme'
+
+export interface UiComponentProps extends FormElementProps {
+  ui?: UiProp<ComponentUi>
+  // ... other props
+}
+
+export interface UiComponentEmits {
+  (event: 'update:modelValue', value: string): void
+}
+
+export interface UiComponentSlots {
+  default(): unknown
+}
+</script>
+
+<script setup lang="ts">
+import { computed } from 'vue'
+import { useAppConfig } from '../../composables/useAppConfig'
+import { useComponentAttributes } from '../../composables/useUiClasses'
+import { prepareVariants } from '../../helpers/prepareClassNames'
+import theme from './theme'
+
+defineOptions({
+  name: 'UiComponent',
+  inheritAttrs: false
+})
+
+const props = defineProps<UiComponentProps>()
+const emit = defineEmits<UiComponentEmits>()
+const slots = defineSlots<UiComponentSlots>()
+
+// 1. Get global config
+const appConfig = useAppConfig()
+
+// 2. Setup component attributes and base classes
+const { attributes, className, mergeClasses } = useComponentAttributes(
+  'ui-component',
+  computed(() => {
+    const commonClasses = [theme.base, appConfig.ui?.component?.base, props.ui?.base].filter(Boolean)
+
+    // Handle state variants
+    const states = prepareVariants({
+      theme: theme.states,
+      appConfig: appConfig?.ui?.component?.states,
+      uiProp: props.ui?.states
+    })
+
+    if (props.disabled) {
+      commonClasses.push(states.disabled)
+    }
+
+    return commonClasses
+  }),
+  appConfig?.ui?.component?.strategy || props.ui?.strategy
+)
+
+// 3. Define element-specific classes
+const uiClasses = computed(() => ({
+  label: mergeClasses(theme.label, appConfig.ui?.component?.label, props.ui?.label),
+  input: mergeClasses(theme.input, appConfig.ui?.component?.input, props.ui?.input),
+  icon: mergeClasses(theme.icon, appConfig.ui?.component?.icon, props.ui?.icon)
+}))
+</script>
+
+<template>
+  <div :class="className" v-bind="attributes">
+    <label :class="uiClasses.label">
+      <slot name="label">{{ label }}</slot>
+    </label>
+    <input :class="uiClasses.input" />
+  </div>
+</template>
+```
+
+#### Helper Functions
+
+**`prepareVariants`**
+
+Merges variant classes from theme, config, and props:
+
+```typescript
+const states = prepareVariants<ComponentUi['states']>({
+  theme: theme.states,
+  appConfig: appConfig?.ui?.component?.states,
+  uiProp: props.ui?.states
+})
+
+// Usage
+if (props.disabled) {
+  commonClasses.push(states.disabled)
+}
+```
 
 ## 🎨 Theming & Customization
 
