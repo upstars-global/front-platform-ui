@@ -38,38 +38,38 @@ export interface UiInputSlots {
     description?: () => unknown;
 }
 declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiInputProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
-    "update:modelValue": (value: string) => any;
     change: (value: string) => any;
-    focus: (value: FocusEvent) => any;
     blur: (value: FocusEvent) => any;
+    focus: (value: FocusEvent) => any;
     keydown: (value: KeyboardEvent) => any;
+    "update:modelValue": (value: string) => any;
 }, string, import("vue").PublicProps, Readonly<UiInputProps> & Readonly<{
-    "onUpdate:modelValue"?: ((value: string) => any) | undefined;
     onChange?: ((value: string) => any) | undefined;
-    onFocus?: ((value: FocusEvent) => any) | undefined;
     onBlur?: ((value: FocusEvent) => any) | undefined;
+    onFocus?: ((value: FocusEvent) => any) | undefined;
     onKeydown?: ((value: KeyboardEvent) => any) | undefined;
+    "onUpdate:modelValue"?: ((value: string) => any) | undefined;
 }>, {
-    offsetValue: number;
-    dataTest: string;
-    modelValue: string;
-    error: string;
-    description: string;
-    subLabel: string;
-    recommendations: string[];
-    ui: UiProp<InputUi>;
-    mask: string | Record<string, unknown>;
-    inputTextAlign: "left" | "center" | "right";
-    value: string | number;
-    placeholder: string;
-    autocomplete: string;
-    min: number | string;
     max: number | string;
     type: "text" | "password" | "email" | "number" | "tel" | "url" | "search" | "date";
+    error: string;
     id: string;
+    min: number | string;
+    mask: string | Record<string, unknown>;
+    value: string | number;
     pattern: string;
+    autocomplete: string;
+    description: string;
     step: number | string;
+    placeholder: string;
     maxlength: number;
+    ui: UiProp<InputUi>;
+    dataTest: string;
+    modelValue: string;
+    offsetValue: number;
+    subLabel: string;
+    recommendations: string[];
+    inputTextAlign: "left" | "center" | "right";
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiInputSlots>;
 declare const _default: typeof __VLS_export;
 export default _default;

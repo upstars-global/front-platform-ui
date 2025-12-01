@@ -23,9 +23,9 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiCaro
 }, string, import("vue").PublicProps, Readonly<UiCarouselProps> & Readonly<{
     "onChange:page"?: ((value: number) => any) | undefined;
 }>, {
+    autoplay: number;
     ui: UiProp<CarouselUi>;
     activeIndex: number;
-    autoplay: number;
     showNavigation: boolean;
     navigation: Navigation;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiCarouselSlots>;
