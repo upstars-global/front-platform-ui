@@ -45,17 +45,7 @@ const meta = {
       { label: 'Option 4', value: '4' },
       { label: 'Option 5', value: '5' }
     ],
-    offsetValue: 4,
-    ui: {
-      select: {
-        base: 'bg-slate-100 focus:border-sky-500 border-slate-300',
-        invalid: '!border-red-500'
-      },
-      error: {
-        content: 'bg-red-500',
-        text: 'text-white'
-      }
-    }
+    offsetValue: 4
   },
   render: (args) => ({
     name: 'Story',

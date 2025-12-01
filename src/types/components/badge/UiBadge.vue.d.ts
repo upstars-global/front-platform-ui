@@ -19,9 +19,9 @@ export interface UiBadgeSlots {
     trailing(): unknown;
 }
 declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiBadgeProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<UiBadgeProps> & Readonly<{}>, {
-    variant: BadgeVariant;
     size: BadgeSize;
     ui: UiProp<BadgeUi>;
+    variant: BadgeVariant;
     leadingIconName: UiIconName;
     leadingIconSize: IconSize;
     trailingIconName: UiIconName;

@@ -218,7 +218,7 @@ onMounted(() => {
   <div v-click-outside="handleClickOutside" :class="className" v-bind="attributes">
     <label v-if="label" :for="elementId" :class="uiClasses.label">
       <slot name="label">{{ label }}</slot>
-      <span v-if="required" class="text-red-500">*</span>
+      <span v-if="required">*</span>
       <span v-if="subLabel">{{ subLabel }}</span>
     </label>
     <UiTooltip :disabled="!isError" placement="bottom" trigger="always" :offset-value>
@@ -260,7 +260,7 @@ onMounted(() => {
                 :class="uiClasses.recommendationsListItem"
                 @click.stop.capture="handleRecommendationClick(recommendation)"
               >
-                <span class="text-slate-600">{{ recommendation }}</span>
+                <span>{{ recommendation }}</span>
               </li>
             </ul>
           </div>
