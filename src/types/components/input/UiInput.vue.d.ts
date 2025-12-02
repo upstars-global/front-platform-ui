@@ -11,7 +11,6 @@ export interface UiInputProps extends FormElementProps, Partial<Pick<UiTooltipPr
     ui?: UiProp<InputUi>;
     mask?: string | Record<string, unknown>;
     inputTextAlign?: 'left' | 'center' | 'right';
-    value?: string | number;
     placeholder?: string;
     autocomplete?: string;
     autofocus?: boolean;
@@ -56,7 +55,6 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiInpu
     id: string;
     min: number | string;
     mask: string | Record<string, unknown>;
-    value: string | number;
     pattern: string;
     autocomplete: string;
     description: string;
