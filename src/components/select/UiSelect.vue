@@ -183,9 +183,9 @@ const handleBlur = (event: FocusEvent) => {
             v-bind="$attrs"
             :id="elementId"
             :value="modelValue"
-            :disabled="disabled"
+            :disabled
             :class="uiClasses.select"
-            :data-test="dataTest"
+            :data-test
             @input="handleInput"
             @change="handleChange"
             @focus="handleFocus"

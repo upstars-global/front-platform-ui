@@ -16,7 +16,6 @@ export interface UiInputProps extends FormElementProps, Partial<Pick<UiTooltipPr
   inputTextAlign?: 'left' | 'center' | 'right'
 
   // Input-specific props
-  value?: string | number
   placeholder?: string
   autocomplete?: string
   autofocus?: boolean
