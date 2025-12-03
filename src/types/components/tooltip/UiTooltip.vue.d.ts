@@ -1,9 +1,9 @@
-import type { Placement, Strategy } from '@floating-ui/vue';
+import type { AlignedPlacement, Placement, Side, Strategy } from '@floating-ui/vue';
 import type { UiProp } from '../types';
 import type { TooltipUi } from './theme';
 export interface UiTooltipProps {
     text?: string;
-    placement?: Placement;
+    placement?: AlignedPlacement | Side;
     strategy?: Strategy;
     fallbackPlacements?: Placement[];
     offsetValue?: number;
@@ -22,7 +22,7 @@ declare const __VLS_base: import("vue").DefineComponent<UiTooltipProps, {}, {}, 
     ui: UiProp<TooltipUi>;
     strategy: Strategy;
     fallbackPlacements: Placement[];
-    placement: Placement;
+    placement: AlignedPlacement | Side;
     offsetValue: number;
     trigger: "hover" | "click" | "always";
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>;

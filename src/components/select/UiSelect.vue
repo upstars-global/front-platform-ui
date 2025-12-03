@@ -143,7 +143,21 @@ const uiClasses = computed(() => {
       content: mergeClasses(theme.error.content, appConfig.ui?.select?.error?.content, props.ui?.error?.content),
       text: mergeClasses(theme.error.text, appConfig.ui?.select?.error?.text, props.ui?.error?.text)
     },
-    description: mergeClasses(theme.description, appConfig.ui?.select?.description, props.ui?.description)
+    description: mergeClasses(theme.description, appConfig.ui?.select?.description, props.ui?.description),
+    tooltip: {
+      base: mergeClasses(theme.tooltip?.base, appConfig.ui?.select?.tooltip?.base, props.ui?.tooltip?.base),
+      activator: mergeClasses(
+        theme.tooltip?.activator,
+        appConfig.ui?.select?.tooltip?.activator,
+        props.ui?.tooltip?.activator
+      ),
+      body: mergeClasses(theme.tooltip?.body, appConfig.ui?.select?.tooltip?.body, props.ui?.tooltip?.body),
+      bodyVisible: mergeClasses(
+        theme.tooltip?.bodyVisible,
+        appConfig.ui?.select?.tooltip?.bodyVisible,
+        props.ui?.tooltip?.bodyVisible
+      )
+    }
   }
 })
 
@@ -173,7 +187,7 @@ const handleBlur = (event: FocusEvent) => {
       <span v-if="required">*</span>
       <span v-if="subLabel">{{ subLabel }}</span>
     </label>
-    <UiTooltip :disabled="!isError" placement="bottom" trigger="always" :offset-value>
+    <UiTooltip :ui="uiClasses.tooltip" :disabled="!isError" placement="bottom" trigger="always" :offset-value>
       <template #activator>
         <div :class="uiClasses.container">
           <div v-if="slots.left" :class="uiClasses.slotLeft">
@@ -186,6 +200,7 @@ const handleBlur = (event: FocusEvent) => {
             :disabled
             :class="uiClasses.select"
             :data-test
+            :name
             @input="handleInput"
             @change="handleChange"
             @focus="handleFocus"

@@ -1,4 +1,6 @@
-declare const select: {
+import type { TooltipUi } from '../tooltip/theme';
+import type { UiProp } from '../types';
+export type SelectUi = {
     base: string;
     label: string;
     container: string;
@@ -18,11 +20,12 @@ declare const select: {
         text: string;
     };
     description: string;
+    tooltip?: UiProp<TooltipUi>;
     states: {
         disabled: string;
         full: string;
         max: string;
     };
 };
-export type SelectUi = typeof select;
+declare const select: SelectUi;
 export default select;

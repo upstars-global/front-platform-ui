@@ -1,4 +1,6 @@
-declare const input: {
+import type { TooltipUi } from '../tooltip/theme';
+import type { UiProp } from '../types';
+export type InputUi = {
     base: string;
     label: string;
     container: string;
@@ -22,9 +24,10 @@ declare const input: {
         text: string;
     };
     description: string;
+    tooltip?: UiProp<TooltipUi>;
     states: {
         disabled: string;
     };
 };
-export type InputUi = typeof input;
+declare const input: InputUi;
 export default input;

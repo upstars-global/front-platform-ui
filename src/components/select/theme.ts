@@ -1,4 +1,35 @@
-const select = {
+import type { TooltipUi } from '../tooltip/theme'
+import type { UiProp } from '../types'
+
+export type SelectUi = {
+  base: string
+  label: string
+  container: string
+  select: {
+    base: string
+    sizeSmall: string
+    sizeMedium: string
+    textAlignRight: string
+    textAlignCenter: string
+    leftSlot: string
+    invalid: string
+  }
+  leftSlot: string
+  dropdownIcon: string
+  error: {
+    content: string
+    text: string
+  }
+  description: string
+  tooltip?: UiProp<TooltipUi>
+  states: {
+    disabled: string
+    full: string
+    max: string
+  }
+}
+
+const select: SelectUi = {
   base: '',
   label: 'block mb-1 px-4',
   container: 'relative',
@@ -18,13 +49,12 @@ const select = {
     text: 'text-xs font-bold'
   },
   description: 'px-6 mt-1',
+  tooltip: {},
   states: {
     disabled: 'opacity-50 cursor-not-allowed pointer-events-none',
     full: 'w-full',
     max: 'max-w-full w-max'
   }
 }
-
-export type SelectUi = typeof select
 
 export default select

@@ -70,6 +70,9 @@ export const uiKitConfig: AppConfig = {
       error: {
         content: 'bg-red-500',
         text: 'text-white'
+      },
+      tooltip: {
+        body: 'pointer-events-none'
       }
     },
     select: {

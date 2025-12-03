@@ -1,4 +1,37 @@
-const input = {
+import type { TooltipUi } from '../tooltip/theme'
+import type { UiProp } from '../types'
+
+export type InputUi = {
+  base: string
+  label: string
+  container: string
+  input: {
+    base: string
+    textAlignRight: string
+    textAlignCenter: string
+    leftSlot: string
+    rightSlot: string
+    disabled: string
+    invalid: string
+    recommendations: string
+  }
+  leftSlot: string
+  rightSlot: string
+  recommendationsContainer: string
+  recommendationsList: string
+  recommendationsListItem: string
+  error: {
+    content: string
+    text: string
+  }
+  description: string
+  tooltip?: UiProp<TooltipUi>
+  states: {
+    disabled: string
+  }
+}
+
+const input: InputUi = {
   base: '',
   label: 'block mb-1 px-4',
   container: 'relative flex items-center w-full h-12 outline-none',
@@ -21,12 +54,10 @@ const input = {
     content: 'flex py-1 px-2 rounded-2 text-center',
     text: 'text-xs font-bold'
   },
+  tooltip: {},
   description: 'px-6 mt-1',
   states: {
     disabled: 'opacity-50 cursor-not-allowed'
   }
 }
-
-export type InputUi = typeof input
-
 export default input

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 import { useFloating, offset, flip, autoUpdate } from '@floating-ui/vue'
-import type { Placement, Strategy } from '@floating-ui/vue'
+import type { AlignedPlacement, Placement, Side, Strategy } from '@floating-ui/vue'
 import type { UiProp } from '../types'
 import { useComponentAttributes } from '../../composables/useUiClasses'
 import { useAppConfig } from '../../composables/useAppConfig'
@@ -11,7 +11,7 @@ import type { TooltipUi } from './theme'
 
 export interface UiTooltipProps {
   text?: string
-  placement?: Placement
+  placement?: AlignedPlacement | Side
   strategy?: Strategy
   fallbackPlacements?: Placement[]
   offsetValue?: number
