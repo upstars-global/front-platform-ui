@@ -6,7 +6,7 @@ import type { InputUi } from './theme'
 
 export interface UiInputProps extends FormElementProps, Partial<Pick<UiTooltipProps, 'offsetValue'>> {
   dataTest?: string
-  modelValue?: string
+  modelValue?: string | undefined
   error?: string
   description?: string
   subLabel?: string

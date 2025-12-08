@@ -1,6 +1,5 @@
 import UiInput from '@src/components/input/UiInput.vue'
 import { emitsObserver } from '@src/stories/utils/decorators'
-import { ref } from 'vue'
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
 
 const meta = {
@@ -123,6 +122,9 @@ export const WithLeftSlot: Story = {
     label: 'Price',
     placeholder: '0.00',
     type: 'number'
+  },
+  argTypes: {
+    modelValue: { control: 'number' }
   }
 }
 
@@ -141,69 +143,42 @@ export const WithRightSlot: Story = {
     label: 'Amount',
     placeholder: '0.00',
     type: 'number'
+  },
+  argTypes: {
+    modelValue: { control: 'number' }
   }
 }
 
 export const PhoneMask: Story = {
-  render: (args) => ({
-    components: { UiInput },
-    setup() {
-      const modelValue = ref(args.modelValue || '')
-      return { args, modelValue }
-    },
-    template: `
-      <UiInput 
-        v-bind="args" 
-        v-model="modelValue"
-      />
-    `
-  }),
   args: {
     label: 'Phone Number',
     placeholder: '+1 (555) 123-4567',
     mask: '+1 (###) ###-####',
     type: 'tel'
+  },
+  argTypes: {
+    modelValue: { control: false }
   }
 }
 
 export const CardMask: Story = {
-  render: (args) => ({
-    components: { UiInput },
-    setup() {
-      const modelValue = ref(args.modelValue || '')
-      return { args, modelValue }
-    },
-    template: `
-      <UiInput 
-        v-bind="args" 
-        v-model="modelValue"
-      />
-    `
-  }),
   args: {
     label: 'Credit Card',
     placeholder: '1234 5678 9012 3456',
     mask: '#### #### #### ####'
+  },
+  argTypes: {
+    modelValue: { control: false }
   }
 }
 
 export const DateMask: Story = {
-  render: (args) => ({
-    components: { UiInput },
-    setup() {
-      const modelValue = ref(args.modelValue || '')
-      return { args, modelValue }
-    },
-    template: `
-      <UiInput 
-        v-bind="args" 
-        v-model="modelValue"
-      />
-    `
-  }),
   args: {
     label: 'Date',
     placeholder: 'DD/MM/YYYY',
     mask: '##/##/####'
+  },
+  argTypes: {
+    modelValue: { control: false }
   }
 }
