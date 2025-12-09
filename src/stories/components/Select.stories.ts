@@ -1,6 +1,5 @@
 import UiSelect from '@src/components/select/UiSelect.vue'
 import { argsUpdater, emitsObserver } from '@src/stories/utils/decorators'
-import { ref } from 'vue'
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
 
 const meta = {
@@ -50,11 +49,8 @@ const meta = {
   render: (args) => ({
     name: 'Story',
     components: { UiSelect },
-    setup: () => {
-      const modelValue = ref(args.modelValue)
-      return { args, modelValue }
-    },
-    template: `<UiSelect v-bind="args" v-model="modelValue" />`
+    setup: () => ({ args }),
+    template: `<UiSelect v-bind="args" />`
   })
 } satisfies Meta<typeof UiSelect>
 
@@ -133,11 +129,8 @@ export const WithLeftSlot: Story = {
   render: (args) => ({
     name: 'Story',
     components: { UiSelect },
-    setup: () => {
-      const modelValue = ref(args.modelValue)
-      return { args, modelValue }
-    },
-    template: `<UiSelect v-bind="args" v-model="modelValue">
+    setup: () => ({ args }),
+    template: `<UiSelect v-bind="args">
       <template #left>
         <span class="text-gray-500">🌍</span>
       </template>
