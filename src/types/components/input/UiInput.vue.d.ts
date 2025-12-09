@@ -66,7 +66,7 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiInpu
     modelValue: string;
     offsetValue: number;
     subLabel: string;
-    recommendations: string[];
+    recommendations: string[] | null;
     inputTextAlign: "left" | "center" | "right";
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiInputSlots>;
 declare const _default: typeof __VLS_export;
