@@ -66,7 +66,7 @@ export const uiKitConfig: AppConfig = {
         invalid: '!border-red-500'
       },
       recommendationsContainer: 'border-sky-500 bg-slate-50',
-      recommendationsListItem: 'border-slate-300 hover:bg-slate-100',
+      recommendationsListItem: 'border-slate-300 hover:bg-slate-100 last:border-b-0 last:rounded-b-6',
       error: {
         content: 'bg-red-500',
         text: 'text-white'

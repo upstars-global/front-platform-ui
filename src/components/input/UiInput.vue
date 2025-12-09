@@ -10,7 +10,7 @@ export interface UiInputProps extends FormElementProps, Partial<Pick<UiTooltipPr
   error?: string
   description?: string
   subLabel?: string
-  recommendations?: string[]
+  recommendations?: string[] | null
   ui?: UiProp<InputUi>
   mask?: string | Record<string, unknown>
   inputTextAlign?: 'left' | 'center' | 'right'
@@ -133,7 +133,7 @@ const uiClasses = computed(() => {
 
     ...(isError.value ? [theme.input.invalid, appConfig.ui?.input?.input?.invalid, props.ui?.input?.invalid] : []),
 
-    ...(props.recommendations.length && isRecommendationsVisible.value
+    ...(props.recommendations?.length && isRecommendationsVisible.value
       ? [theme.input.recommendations, appConfig.ui?.input?.input?.recommendations, props.ui?.input?.recommendations]
       : [])
   ]
@@ -196,9 +196,7 @@ const handleChange = (event: Event) => {
 }
 
 const handleFocus = (event: FocusEvent) => {
-  if (props.recommendations.length) {
-    isRecommendationsVisible.value = true
-  }
+  isRecommendationsVisible.value = true
 
   emit('focus', event)
 }
@@ -266,7 +264,7 @@ onMounted(() => {
             @change="handleChange"
             @keydown="handleKeydown"
           />
-          <div v-if="recommendations.length && isRecommendationsVisible" :class="uiClasses.recommendationsContainer">
+          <div v-if="recommendations?.length && isRecommendationsVisible" :class="uiClasses.recommendationsContainer">
             <ul :data-test="`${dataTest}-recommend-list`" :class="uiClasses.recommendationsList">
               <li
                 v-for="recommendation in recommendations"

@@ -1,12 +1,12 @@
 import UiSelect from '@src/components/select/UiSelect.vue'
-import { emitsObserver } from '@src/stories/utils/decorators'
+import { argsUpdater, emitsObserver } from '@src/stories/utils/decorators'
 import { ref } from 'vue'
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
 
 const meta = {
   title: 'UI Kit/Select',
   component: UiSelect,
-  decorators: [emitsObserver],
+  decorators: [emitsObserver, argsUpdater],
   tags: ['autodocs'],
   argTypes: {
     name: { control: 'text' },

@@ -1,11 +1,12 @@
 import UiInput from '@src/components/input/UiInput.vue'
-import { emitsObserver } from '@src/stories/utils/decorators'
+import { argsUpdater, emitsObserver } from '@src/stories/utils/decorators'
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
+import { computed, ref } from 'vue'
 
 const meta = {
   title: 'UI Kit/Input',
   component: UiInput,
-  decorators: [emitsObserver],
+  decorators: [emitsObserver, argsUpdater],
   tags: ['autodocs'],
   argTypes: {
     name: { control: 'text' },
@@ -84,9 +85,39 @@ export const WithDescription: Story = {
 
 export const WithRecommendations: Story = {
   args: {
-    recommendations: ['john.doe@example.com', 'jane.smith@example.com', 'admin@company.com'],
+    recommendations: ['@gmail.com', '@yahoo.com', '@hotmail.com'],
     placeholder: 'Type to see recommendations...'
-  }
+  },
+  render: (args) => ({
+    name: 'Story',
+    components: { UiInput },
+    setup: () => {
+      const modelValue = ref(args.modelValue || '')
+
+      const filteredRecommendations = computed(() => {
+        if (!modelValue.value) return []
+
+        const value = getValueWithoutDomain(modelValue.value)
+
+        return (args?.recommendations?.map((recommendation: string) => `${value}${recommendation}`) || []).filter(
+          (value: string) => value.includes(modelValue.value)
+        )
+      })
+
+      const getValueWithoutDomain = (value: string) => {
+        if (!value) return ''
+
+        return value.split('@')[0]
+      }
+
+      return { args, modelValue, filteredRecommendations }
+    },
+    template: `<UiInput 
+      v-bind="args" 
+      v-model="modelValue" 
+      :recommendations="filteredRecommendations"
+    />`
+  })
 }
 
 export const PasswordInput: Story = {
@@ -155,9 +186,6 @@ export const PhoneMask: Story = {
     placeholder: '+1 (555) 123-4567',
     mask: '+1 (###) ###-####',
     type: 'tel'
-  },
-  argTypes: {
-    modelValue: { control: false }
   }
 }
 
@@ -166,9 +194,6 @@ export const CardMask: Story = {
     label: 'Credit Card',
     placeholder: '1234 5678 9012 3456',
     mask: '#### #### #### ####'
-  },
-  argTypes: {
-    modelValue: { control: false }
   }
 }
 
@@ -177,8 +202,5 @@ export const DateMask: Story = {
     label: 'Date',
     placeholder: 'DD/MM/YYYY',
     mask: '##/##/####'
-  },
-  argTypes: {
-    modelValue: { control: false }
   }
 }
