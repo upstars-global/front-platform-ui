@@ -186,6 +186,9 @@ export const PhoneMask: Story = {
     placeholder: '+1 (555) 123-4567',
     mask: '+1 (###) ###-####',
     type: 'tel'
+  },
+  argTypes: {
+    modelValue: { control: false }
   }
 }
 
@@ -194,6 +197,9 @@ export const CardMask: Story = {
     label: 'Credit Card',
     placeholder: '1234 5678 9012 3456',
     mask: '#### #### #### ####'
+  },
+  argTypes: {
+    modelValue: { control: false }
   }
 }
 
@@ -202,5 +208,8 @@ export const DateMask: Story = {
     label: 'Date',
     placeholder: 'DD/MM/YYYY',
     mask: '##/##/####'
+  },
+  argTypes: {
+    modelValue: { control: false }
   }
 }
