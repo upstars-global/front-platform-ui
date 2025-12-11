@@ -1,10 +1,6 @@
 declare const card: {
     base: string;
     rounded: string;
-    wrapper: string;
-    header: string;
-    body: string;
-    footer: string;
     variants: {
         default: string;
         outline: string;

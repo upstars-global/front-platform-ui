@@ -14,7 +14,6 @@ const meta = {
   argTypes: {
     as: { control: 'text' },
     isRounded: { control: 'boolean' },
-    isReverse: { control: 'boolean' },
     orientation: { control: 'select', options: orientationOptions },
     variant: { control: 'select', options: variantOptions },
     ui: { control: 'object' }
@@ -22,7 +21,6 @@ const meta = {
   args: {
     as: 'div',
     isRounded: true,
-    isReverse: false,
     orientation: 'vertical'
   },
   render: (args) => ({
@@ -30,16 +28,8 @@ const meta = {
     components: { UiCard, StoryPlaceholder },
     setup: () => ({ args }),
     template: `<UiCard v-bind="args">
-      <template #header>
-        <StoryPlaceholder class="h-8">header slot</StoryPlaceholder>
-      </template>
-      <template #body>
-        <StoryPlaceholder class="h-24">body slot</StoryPlaceholder>
-      </template>
-      <template #footer>
-        <StoryPlaceholder class="h-8">footer slot</StoryPlaceholder>
-      </template>
-      <StoryPlaceholder class="h-48">default slot</StoryPlaceholder>
+      <StoryPlaceholder class="h-48" />
+      <StoryPlaceholder v-if="args.orientation === 'horizontal'" class="h-48" />
     </UiCard>`
   })
 } satisfies Meta<typeof UiCard>
@@ -52,19 +42,6 @@ export const Common: Story = {}
 export const Horizontal: Story = {
   args: {
     orientation: 'horizontal'
-  }
-}
-
-export const HorizontalReverse: Story = {
-  args: {
-    isReverse: true,
-    orientation: 'horizontal'
-  }
-}
-
-export const VerticalReverse: Story = {
-  args: {
-    isReverse: true
   }
 }
 
