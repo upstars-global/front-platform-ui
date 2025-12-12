@@ -22,6 +22,11 @@ import { useComponentAttributes } from '../../composables/useUiClasses'
 import theme from './theme'
 import { prepareVariants } from '../../helpers/prepareClassNames'
 
+defineOptions({
+  name: 'UiCard',
+  inheritAttrs: false
+})
+
 const props = withDefaults(defineProps<UiCardProps>(), {
   as: 'div',
   isRounded: true,
