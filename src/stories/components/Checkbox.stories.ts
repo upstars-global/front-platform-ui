@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
-import { emitsObserver } from '@src/stories/utils/decorators'
+import { argsUpdater, emitsObserver } from '@src/stories/utils/decorators'
 import UiCheckbox from '@src/components/checkbox/UiCheckbox.vue'
 import { icons } from '@src/components/icon/config'
 import { CHECKBOX_SIZE_LIST } from '../config/checkbox'
@@ -10,7 +10,7 @@ const iconNames = Object.keys(icons).sort((a, b) => a.localeCompare(b)) as UiIco
 const meta = {
   title: 'UI Kit/Checkbox',
   component: UiCheckbox,
-  decorators: [emitsObserver],
+  decorators: [emitsObserver, argsUpdater],
   tags: ['autodocs'],
   argTypes: {
     name: { control: 'text' },

@@ -72,6 +72,31 @@ export const uiKitConfig: AppConfig = {
     },
     skeleton: {
       base: 'bg-slate-500'
+    },
+    input: {
+      input: {
+        base: 'bg-slate-100 autofill:bg-slate-50 focus:border-sky-500 border-slate-300 placeholder:text-slate-400',
+        invalid: '!border-red-500'
+      },
+      recommendationsContainer: 'border-sky-500 bg-slate-50',
+      recommendationsListItem: 'border-slate-300 hover:bg-slate-100 last:border-b-0 last:rounded-b-6',
+      error: {
+        content: 'bg-red-500',
+        text: 'text-white'
+      },
+      tooltip: {
+        body: 'pointer-events-none'
+      }
+    },
+    select: {
+      select: {
+        base: 'bg-slate-100 focus:border-sky-500 border-slate-300',
+        invalid: '!border-red-500'
+      },
+      error: {
+        content: 'bg-red-500',
+        text: 'text-white'
+      }
     }
   }
 }

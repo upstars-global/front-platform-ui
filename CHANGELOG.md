@@ -1,3 +1,114 @@
+## 1.11.0 (2025-12-12)
+
+* Merge branch 'FP-3980' of d-balianytsia.github.com:upstars-global/front-platform-ui into FP-3980
+ ([](https://github.com/upstars-global/front-platform-ui/commit/6a889ff))
+
+
+* Merge branch 'FP-3980' of d-balianytsia.github.com:upstars-global/front-platform-ui into FP-3980
+ ([](https://github.com/upstars-global/front-platform-ui/commit/97059a3))
+
+
+* Merge branch 'FP-3980' of d-balianytsia.github.com:upstars-global/front-platform-ui into FP-3980
+ ([](https://github.com/upstars-global/front-platform-ui/commit/d6ffaaf))
+
+
+* Merge branch 'FP-3980' of d-balianytsia.github.com:upstars-global/front-platform-ui into FP-3980
+ ([](https://github.com/upstars-global/front-platform-ui/commit/7c16150))
+
+
+* Merge pull request #42 from upstars-global/FP-3980
+ ([](https://github.com/upstars-global/front-platform-ui/commit/b7a1964))
+
+, closes [#42](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  feat(FP-3980): add UiInput, UiTooltip, UiSelect
+* Merge remote-tracking branch 'origin/main' into FP-3980
+ ([](https://github.com/upstars-global/front-platform-ui/commit/7dd8e04))
+
+
+* Merge remote-tracking branch 'origin/main' into FP-3980
+ ([](https://github.com/upstars-global/front-platform-ui/commit/a493710))
+
+
+* **FP-3980:** add tooltip support to input and select components
+ ([](https://github.com/upstars-global/front-platform-ui/commit/a02ab2e))
+
+
+* **FP-3980:** add UiInput, UiTooltip, UiSelect
+ ([](https://github.com/upstars-global/front-platform-ui/commit/186bcab))
+
+
+* **FP-3980:** added README.md and code review fixes
+ ([](https://github.com/upstars-global/front-platform-ui/commit/bb78807))
+
+
+* **FP-3980:** code review fixes
+ ([](https://github.com/upstars-global/front-platform-ui/commit/1a2588b))
+
+
+* **FP-3980:** enhance input and select components with args updater
+ ([](https://github.com/upstars-global/front-platform-ui/commit/2434567))
+
+
+* **FP-3980:** fixed modelValue for select
+ ([](https://github.com/upstars-global/front-platform-ui/commit/2d79c9f))
+
+
+* **FP-3980:** readme.md fixes
+ ([](https://github.com/upstars-global/front-platform-ui/commit/320ed95))
+
+
+* **FP-3980:** removed modelValue
+ ([](https://github.com/upstars-global/front-platform-ui/commit/4419bb0))
+
+
+* **FP-3980:** removed modelValue from mask components
+ ([](https://github.com/upstars-global/front-platform-ui/commit/3fd8e19))
+
+
+* **FP-3980:** small fixes
+ ([](https://github.com/upstars-global/front-platform-ui/commit/a25a556))
+
+
+* generate type definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/5222914))
+
+
+* generate type definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/568a52a))
+
+
+* generate type definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/2788ca5))
+
+
+* generate type definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/ae11d61))
+
+
+* generate type definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/4862cf1))
+
+
+* generate type definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/b626ebb))
+
+
+* generate type definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/ce72660))
+
+
+* **FP-3980:** add vue3-mask as peer dependency
+ ([](https://github.com/upstars-global/front-platform-ui/commit/84139dd))
+
+
+* **FP-3980:** fixed import
+ ([](https://github.com/upstars-global/front-platform-ui/commit/df8cfe5))
+
+
+* **FP-3980:** removed hardcoded styles
+ ([](https://github.com/upstars-global/front-platform-ui/commit/323e5d6))
+
 ## 1.10.0 (2025-11-27)
 
 * Merge branch 'main' into ui-badge
