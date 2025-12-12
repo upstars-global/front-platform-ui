@@ -20,7 +20,7 @@ import { computed } from 'vue'
 import { useAppConfig } from '../../composables/useAppConfig'
 import { useComponentAttributes } from '../../composables/useUiClasses'
 import theme from './theme'
-import { prepareVariants } from '@src/helpers/prepareClassNames.ts'
+import { prepareVariants } from '../../helpers/prepareClassNames'
 
 const props = withDefaults(defineProps<UiCardProps>(), {
   as: 'div',
