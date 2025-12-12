@@ -24,9 +24,6 @@ export const uiKitConfig: AppConfig = {
     },
     card: {
       base: 'gap-4',
-      header: '',
-      body: 'py-4',
-      footer: '',
       variants: {
         default: '',
         outline: 'px-4 py-6 border-slate-300',
