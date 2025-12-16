@@ -46,11 +46,11 @@ const navigate = (index: number) => emit('change', index)
 </script>
 
 <template>
-  <div :class="ui.container" data-test="carousel-navigation">
+  <div :class="ui?.container" data-test="carousel-navigation">
     <UiButton
       :variant="buttonVariant"
       :size="buttonSize"
-      :class="[ui.button, ui.prev, { 'opacity-0 invisible': !backward }]"
+      :class="[ui?.button, ui?.prev, { 'opacity-0 invisible': !backward }]"
       :tabindex="backward ? 0 : -1"
       data-test="carousel-navigation-button carousel-navigation-prev"
       @click="navigate(-1)"
@@ -60,7 +60,7 @@ const navigate = (index: number) => emit('change', index)
     <UiButton
       :variant="buttonVariant"
       :size="buttonSize"
-      :class="[ui.button, ui.next, { 'opacity-0 invisible': !forward }]"
+      :class="[ui?.button, ui?.next, { 'opacity-0 invisible': !forward }]"
       :tabindex="forward ? 0 : -1"
       data-test="carousel-navigation-button carousel-navigation-next"
       @click="navigate(1)"

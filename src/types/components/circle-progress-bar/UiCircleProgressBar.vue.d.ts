@@ -16,14 +16,14 @@ export interface UiCircleProgressBarSlots {
         max?: number;
     }): unknown;
 }
+declare const _default: typeof __VLS_export;
+export default _default;
 declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiCircleProgressBarProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<UiCircleProgressBarProps> & Readonly<{}>, {
     max: number;
     size: number;
     ui: UiProp<CircleProgressBarUi>;
     startAngle: number;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiCircleProgressBarSlots>;
-declare const _default: typeof __VLS_export;
-export default _default;
 type __VLS_WithSlots<T, S> = T & {
     new (): {
         $slots: S;

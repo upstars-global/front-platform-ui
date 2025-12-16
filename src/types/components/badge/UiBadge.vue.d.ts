@@ -18,6 +18,8 @@ export interface UiBadgeSlots {
     default(): unknown;
     trailing(): unknown;
 }
+declare const _default: typeof __VLS_export;
+export default _default;
 declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiBadgeProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<UiBadgeProps> & Readonly<{}>, {
     variant: BadgeVariant;
     size: BadgeSize;
@@ -27,8 +29,6 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiBadg
     trailingIconName: UiIconName;
     trailingIconSize: IconSize;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiBadgeSlots>;
-declare const _default: typeof __VLS_export;
-export default _default;
 type __VLS_WithSlots<T, S> = T & {
     new (): {
         $slots: S;
