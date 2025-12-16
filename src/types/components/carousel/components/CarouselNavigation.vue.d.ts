@@ -14,6 +14,8 @@ interface CarouselNavigationProps extends Navigation {
     forward?: boolean;
     ui?: CarouselNavigationUi;
 }
+declare const _default: typeof __VLS_export;
+export default _default;
 declare const __VLS_export: import("vue").DefineComponent<CarouselNavigationProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
     change: (value: number) => any;
 }, string, import("vue").PublicProps, Readonly<CarouselNavigationProps> & Readonly<{
@@ -26,5 +28,3 @@ declare const __VLS_export: import("vue").DefineComponent<CarouselNavigationProp
     buttonVariant: "default" | "primary" | "secondary" | "tertiary" | "ghost";
     buttonSize: "default" | "sm" | "md" | "xs";
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>;
-declare const _default: typeof __VLS_export;
-export default _default;

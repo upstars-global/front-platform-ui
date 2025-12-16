@@ -36,23 +36,25 @@ export interface UiSelectSlots {
         index: number;
     }) => unknown;
 }
+declare const _default: typeof __VLS_export;
+export default _default;
 declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiSelectProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
-    change: (value: string | number) => any;
     blur: (value: FocusEvent) => any;
+    change: (value: string | number) => any;
     focus: (value: FocusEvent) => any;
     "update:modelValue": (value: string | number) => any;
 }, string, import("vue").PublicProps, Readonly<UiSelectProps> & Readonly<{
-    onChange?: ((value: string | number) => any) | undefined;
     onBlur?: ((value: FocusEvent) => any) | undefined;
+    onChange?: ((value: string | number) => any) | undefined;
     onFocus?: ((value: FocusEvent) => any) | undefined;
     "onUpdate:modelValue"?: ((value: string | number) => any) | undefined;
 }>, {
-    error: string;
-    id: string;
-    options: SelectOption[];
     size: "small" | "medium";
     description: string;
+    error: string;
+    id: string;
     placeholder: string;
+    options: SelectOption[];
     ui: UiProp<SelectUi>;
     dataTest: string;
     fullWidth: boolean;
@@ -61,8 +63,6 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiSele
     subLabel: string;
     selectTextAlign: "left" | "center" | "right";
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiSelectSlots>;
-declare const _default: typeof __VLS_export;
-export default _default;
 type __VLS_WithSlots<T, S> = T & {
     new (): {
         $slots: S;
