@@ -36,6 +36,8 @@ export interface UiInputSlots {
     'error-message'?: () => unknown;
     description?: () => unknown;
 }
+declare const _default: typeof __VLS_export;
+export default _default;
 declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiInputProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
     change: (value: string) => any;
     blur: (value: FocusEvent) => any;
@@ -69,8 +71,6 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiInpu
     recommendations: string[] | null;
     inputTextAlign: "left" | "center" | "right";
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiInputSlots>;
-declare const _default: typeof __VLS_export;
-export default _default;
 type __VLS_WithSlots<T, S> = T & {
     new (): {
         $slots: S;

@@ -7,12 +7,12 @@ export interface UiSkeletonProps {
 export interface UiSkeletonSlots {
     default(): unknown;
 }
+declare const _default: typeof __VLS_export;
+export default _default;
 declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiSkeletonProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<UiSkeletonProps> & Readonly<{}>, {
     as: string;
     ui: UiProp<SkeletonUi>;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiSkeletonSlots>;
-declare const _default: typeof __VLS_export;
-export default _default;
 type __VLS_WithSlots<T, S> = T & {
     new (): {
         $slots: S;

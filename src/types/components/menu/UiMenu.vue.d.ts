@@ -14,8 +14,8 @@ export interface UiMenuProps {
     items: UiMenuItem[];
     ui?: UiProp<MenuUi>;
 }
+declare const _default: typeof __VLS_export;
+export default _default;
 declare const __VLS_export: import("vue").DefineComponent<UiMenuProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<UiMenuProps> & Readonly<{}>, {
     ui: UiProp<MenuUi>;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>;
-declare const _default: typeof __VLS_export;
-export default _default;
