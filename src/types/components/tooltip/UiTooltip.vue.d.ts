@@ -17,8 +17,8 @@ export interface UiTooltipSlots {
 }
 type __VLS_Slots = UiTooltipSlots;
 declare const __VLS_base: import("vue").DefineComponent<UiTooltipProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<UiTooltipProps> & Readonly<{}>, {
-    disabled: boolean;
     text: string;
+    disabled: boolean;
     ui: UiProp<TooltipUi>;
     strategy: Strategy;
     fallbackPlacements: Placement[];

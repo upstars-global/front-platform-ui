@@ -39,30 +39,30 @@ export interface UiInputSlots {
 declare const _default: typeof __VLS_export;
 export default _default;
 declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiInputProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
-    blur: (value: FocusEvent) => any;
     change: (value: string) => any;
+    blur: (value: FocusEvent) => any;
     focus: (value: FocusEvent) => any;
     keydown: (value: KeyboardEvent) => any;
     "update:modelValue": (value: string) => any;
 }, string, import("vue").PublicProps, Readonly<UiInputProps> & Readonly<{
-    onBlur?: ((value: FocusEvent) => any) | undefined;
     onChange?: ((value: string) => any) | undefined;
+    onBlur?: ((value: FocusEvent) => any) | undefined;
     onFocus?: ((value: FocusEvent) => any) | undefined;
     onKeydown?: ((value: KeyboardEvent) => any) | undefined;
     "onUpdate:modelValue"?: ((value: string) => any) | undefined;
 }>, {
-    description: string;
     max: number | string;
-    error: string;
-    mask: string | Record<string, unknown>;
     type: "text" | "password" | "email" | "number" | "tel" | "url" | "search" | "date";
-    step: number | string;
+    error: string;
     id: string;
-    placeholder: string;
-    autocomplete: string;
-    maxlength: number;
     min: number | string;
+    mask: string | Record<string, unknown>;
     pattern: string;
+    autocomplete: string;
+    description: string;
+    step: number | string;
+    placeholder: string;
+    maxlength: number;
     ui: UiProp<InputUi>;
     dataTest: string;
     modelValue: string;
