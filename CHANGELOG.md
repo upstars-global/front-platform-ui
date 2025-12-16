@@ -1,3 +1,26 @@
+## <small>1.11.1 (2025-12-16)</small>
+
+* Merge pull request #44 from upstars-global/update-deps
+ ([](https://github.com/upstars-global/front-platform-ui/commit/46e93a2))
+
+, closes [#44](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  chore(deps): update dependency versions and types declaration cleanup
+* Merge remote-tracking branch 'origin/update-deps' into update-deps
+ ([](https://github.com/upstars-global/front-platform-ui/commit/7186dee))
+
+
+* generate type definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/75a4529))
+
+
+* generate type definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/d219674))
+
+
+* **deps:** update dependency versions and types declaration cleanup
+ ([](https://github.com/upstars-global/front-platform-ui/commit/aae2a32))
+
 ## 1.11.0 (2025-12-12)
 
 * Merge branch 'FP-3980' of d-balianytsia.github.com:upstars-global/front-platform-ui into FP-3980
