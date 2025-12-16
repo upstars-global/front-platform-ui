@@ -2,6 +2,7 @@
  * Components exports
  * Note: Please keep all imports, type exports, and component exports sorted alphabetically
  */
+import UiAccordion from './accordion/UiAccordion.vue';
 import UiBadge from './badge/UiBadge.vue';
 import UiButton from './button/UiButton.vue';
 import UiCarousel from './carousel/UiCarousel.vue';
@@ -14,6 +15,7 @@ import UiMenu from './menu/UiMenu.vue';
 import UiSelect from './select/UiSelect.vue';
 import UiSkeleton from './skeleton/UiSkeleton.vue';
 import UiTooltip from './tooltip/UiTooltip.vue';
+export type { UiAccordionProps, UiAccordionSlots } from './accordion/UiAccordion.vue';
 export type { UiBadgeProps, UiBadgeSlots } from './badge/UiBadge.vue';
 export type { UiButtonProps, UiButtonEmits, UiButtonSlots } from './button/UiButton.vue';
 export type { UiCarouselProps, UiCarouselEmits, UiCarouselSlots } from './carousel/UiCarousel.vue';
@@ -27,4 +29,4 @@ export type { UiMenuItem, UiMenuProps } from './menu/UiMenu.vue';
 export type { UiSelectProps, SelectOption } from './select/UiSelect.vue';
 export type { UiTooltipProps, UiTooltipSlots } from './tooltip/UiTooltip.vue';
 export type { AppConfig as UiKitConfig } from './types';
-export { UiBadge, UiButton, UiCarousel, UiCheckbox, UiCircleProgressBar, UiIcon, UiInput, UiLink, UiMenu, UiSelect, UiSkeleton, UiTooltip };
+export { UiAccordion, UiBadge, UiButton, UiCarousel, UiCheckbox, UiCircleProgressBar, UiIcon, UiInput, UiLink, UiMenu, UiSelect, UiSkeleton, UiTooltip };

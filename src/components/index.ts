@@ -3,6 +3,7 @@
  * Note: Please keep all imports, type exports, and component exports sorted alphabetically
  */
 
+import UiAccordion from './accordion/UiAccordion.vue'
 import UiBadge from './badge/UiBadge.vue'
 import UiButton from './button/UiButton.vue'
 import UiCarousel from './carousel/UiCarousel.vue'
@@ -16,6 +17,7 @@ import UiSelect from './select/UiSelect.vue'
 import UiSkeleton from './skeleton/UiSkeleton.vue'
 import UiTooltip from './tooltip/UiTooltip.vue'
 
+export type { UiAccordionProps, UiAccordionSlots } from './accordion/UiAccordion.vue'
 export type { UiBadgeProps, UiBadgeSlots } from './badge/UiBadge.vue'
 export type { UiButtonProps, UiButtonEmits, UiButtonSlots } from './button/UiButton.vue'
 export type { UiCarouselProps, UiCarouselEmits, UiCarouselSlots } from './carousel/UiCarousel.vue'
@@ -31,6 +33,7 @@ export type { UiTooltipProps, UiTooltipSlots } from './tooltip/UiTooltip.vue'
 export type { AppConfig as UiKitConfig } from './types'
 
 export {
+  UiAccordion,
   UiBadge,
   UiButton,
   UiCarousel,

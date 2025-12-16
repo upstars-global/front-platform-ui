@@ -24,10 +24,10 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiBadg
     variant: BadgeVariant;
     size: BadgeSize;
     ui: UiProp<BadgeUi>;
-    leadingIconName: UiIconName;
-    leadingIconSize: IconSize;
     trailingIconName: UiIconName;
     trailingIconSize: IconSize;
+    leadingIconName: UiIconName;
+    leadingIconSize: IconSize;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiBadgeSlots>;
 type __VLS_WithSlots<T, S> = T & {
     new (): {
