@@ -13,8 +13,8 @@ export interface UiAccordionProps {
   ui?: UiProp<AccordionUi>
 }
 export interface UiAccordionSlots {
-  activator(): unknown
-  default(): unknown
+  activator(props: { toggleHandler: () => void; showContent: boolean }): unknown
+  default(props: { toggleHandler: () => void }): unknown
   trailing(): unknown
 }
 </script>
