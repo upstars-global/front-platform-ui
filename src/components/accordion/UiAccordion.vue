@@ -73,13 +73,14 @@ watch(
 
 <template>
   <div :class="className" v-bind="attributes" data-test="accordion-menu">
-    <div :class="uiClasses.item" @click="!isCustomToggle ? toggleHandler() : null">
+    <div :class="uiClasses.item" data-test="accordion-menu-title" @click="!isCustomToggle ? toggleHandler() : null">
       <slot name="activator" :toggle-handler="toggleHandler" :show-content="showContent" />
       <slot name="trailing">
         <UiIcon
           :name="trailingIconName"
           :size="trailingIconSize"
           :class="[uiClasses.trailingIcon, { 'rotate-180': showContent }]"
+          data-test="accordion-menu-arrow"
         />
       </slot>
     </div>
