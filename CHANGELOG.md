@@ -1,3 +1,54 @@
+## 1.12.0 (2025-12-22)
+
+* Merge branch 'main' into ui-card
+ ([](https://github.com/upstars-global/front-platform-ui/commit/c109826))
+
+
+* Merge branch 'main' into ui-card
+ ([](https://github.com/upstars-global/front-platform-ui/commit/faeac0d))
+
+
+* Merge pull request #43 from upstars-global/ui-card
+ ([](https://github.com/upstars-global/front-platform-ui/commit/809667e))
+
+, closes [#43](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  feat(FP-3528): add new `UiCard` component
+* Merge remote-tracking branch 'origin/ui-card' into ui-card
+ ([](https://github.com/upstars-global/front-platform-ui/commit/f0fd232))
+
+
+* **FP-3528:** export `UiCard` in components and types index files
+ ([](https://github.com/upstars-global/front-platform-ui/commit/9846054))
+
+
+* **FP-3528:** remove unused slot-related styles for `UiCard`
+ ([](https://github.com/upstars-global/front-platform-ui/commit/80c7309))
+
+
+* **FP-3528:** simplify `UiCard` API and remove unused slot properties
+ ([](https://github.com/upstars-global/front-platform-ui/commit/6982429))
+
+
+* **ui-card:** update commit message to skip CI for type generation
+ ([](https://github.com/upstars-global/front-platform-ui/commit/daa64d3))
+
+
+* generate type definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/85a66ed))
+
+
+* **FP-3528:** add `defineOptions` with `inheritAttrs: false` for `UiBadge` and `UiCard`
+ ([](https://github.com/upstars-global/front-platform-ui/commit/be1a27a))
+
+
+* **FP-3528:** update import path for `prepareVariants` in `UiCard`
+ ([](https://github.com/upstars-global/front-platform-ui/commit/6f1a9e0))
+
+
+* **FP-3528:** add new `UiCard` component
+ ([](https://github.com/upstars-global/front-platform-ui/commit/8e457c6))
+
 ## <small>1.11.1 (2025-12-16)</small>
 
 * Merge pull request #44 from upstars-global/update-deps

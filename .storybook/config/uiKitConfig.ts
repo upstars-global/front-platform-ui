@@ -25,6 +25,19 @@ export const uiKitConfig: AppConfig = {
         ghost: 'bg-transparent text-black hover:bg-slate-200 active:bg-slate-400'
       }
     },
+    card: {
+      base: 'gap-4',
+      variants: {
+        default: '',
+        outline: 'px-4 py-6 border-slate-300',
+        soft: 'px-4 py-6 bg-slate-300',
+        subtle: 'px-4 py-6 border-slate-500 bg-slate-300'
+      },
+      orientation: {
+        vertical: '',
+        horizontal: 'grid-cols-2 items-center'
+      }
+    },
     carousel: {
       pagination: {
         item: 'bg-slate-300',
