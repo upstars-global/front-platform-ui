@@ -1,5 +1,6 @@
 import type { BadgeUi } from './badge/theme';
 import type { ButtonUi } from './button/theme';
+import type { CardUi } from './card/theme';
 import type { CarouselUi } from './carousel/theme';
 import type { CheckboxUi } from './checkbox/theme';
 import type { CircleProgressBarUi } from './circle-progress-bar/theme';
@@ -20,6 +21,7 @@ export type UiProp<T> = DeepPartial<T> & {
 interface UiConfig {
     badge?: UiProp<BadgeUi>;
     button?: UiProp<ButtonUi>;
+    card?: UiProp<CardUi>;
     carousel?: UiProp<CarouselUi>;
     checkbox?: UiProp<CheckboxUi>;
     circleProgressBar?: UiProp<CircleProgressBarUi>;

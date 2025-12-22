@@ -33,6 +33,11 @@ import { prepareVariants } from '../../helpers/prepareClassNames'
 import UiIcon from '../icon/UiIcon.vue'
 import theme from './theme'
 
+defineOptions({
+  name: 'UiBadge',
+  inheritAttrs: false
+})
+
 const props = withDefaults(defineProps<UiBadgeProps>(), {
   size: 'default',
   variant: 'default',

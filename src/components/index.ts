@@ -5,6 +5,7 @@
 
 import UiBadge from './badge/UiBadge.vue'
 import UiButton from './button/UiButton.vue'
+import UiCard from './card/UiCard.vue'
 import UiCarousel from './carousel/UiCarousel.vue'
 import UiCheckbox from './checkbox/UiCheckbox.vue'
 import UiCircleProgressBar from './circle-progress-bar/UiCircleProgressBar.vue'
@@ -18,6 +19,7 @@ import UiTooltip from './tooltip/UiTooltip.vue'
 
 export type { UiBadgeProps, UiBadgeSlots } from './badge/UiBadge.vue'
 export type { UiButtonProps, UiButtonEmits, UiButtonSlots } from './button/UiButton.vue'
+export type { UiCardProps, UiCardSlots } from './card/UiCard.vue'
 export type { UiCarouselProps, UiCarouselEmits, UiCarouselSlots } from './carousel/UiCarousel.vue'
 export type { UiCheckboxProps, UiCheckboxEmits, UiCheckboxSlots } from './checkbox/UiCheckbox.vue'
 export type { UiCircleProgressBarProps, UiCircleProgressBarSlots } from './circle-progress-bar/UiCircleProgressBar.vue'
@@ -33,6 +35,7 @@ export type { AppConfig as UiKitConfig } from './types'
 export {
   UiBadge,
   UiButton,
+  UiCard,
   UiCarousel,
   UiCheckbox,
   UiCircleProgressBar,
