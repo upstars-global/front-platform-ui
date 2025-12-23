@@ -135,6 +135,7 @@ const handleChange = (event: Event) => {
       v-model="model"
       :class="uiClasses.input"
       type="checkbox"
+      :data-test="model ? 'checkbox-checked' : 'checkbox-unchecked'"
       :name="name"
       :form="form"
       :disabled="disabled"

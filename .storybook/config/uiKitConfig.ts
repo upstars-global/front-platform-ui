@@ -2,6 +2,9 @@ import type { AppConfig } from '@src/components/types'
 
 export const uiKitConfig: AppConfig = {
   ui: {
+    accordion: {
+      item: 'p-2 bg-slate-300 border-slate-300 rounded-4 cursor-pointer'
+    },
     badge: {
       size: {
         default: 'text-[10px] tracking-wider',
