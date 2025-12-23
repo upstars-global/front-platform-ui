@@ -20,7 +20,7 @@ export interface UiAccordionSlots {
 </script>
 
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, ref } from 'vue'
 import { useAppConfig } from '../../composables/useAppConfig'
 import { useComponentAttributes } from '../../composables/useUiClasses'
 import theme from './theme'
@@ -62,13 +62,6 @@ const uiClasses = computed(() => {
 const toggleHandler = () => {
   showContent.value = !showContent.value
 }
-
-watch(
-  () => props.isOpen,
-  () => {
-    showContent.value = props.isOpen
-  }
-)
 </script>
 
 <template>
