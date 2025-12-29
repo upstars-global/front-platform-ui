@@ -1,3 +1,46 @@
+## 1.13.0 (2025-12-29)
+
+* Merge branch 'main' into ui-accordion
+ ([](https://github.com/upstars-global/front-platform-ui/commit/1bd28af))
+
+
+
+  # Conflicts:
+
+  #	src/types/components/index.d.ts
+* Merge pull request #45 from upstars-global/ui-accordion
+ ([](https://github.com/upstars-global/front-platform-ui/commit/00456d6))
+
+, closes [#45](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  feat(accordion): add `UiAccordion` component
+* Merge remote-tracking branch 'origin/ui-accordion' into ui-accordion
+ ([](https://github.com/upstars-global/front-platform-ui/commit/32cf6af))
+
+
+* **accordion:** remove unused watch for prop updates
+ ([](https://github.com/upstars-global/front-platform-ui/commit/5c73eab))
+
+
+* **accordion:** add data-test attributes for better testing support
+ ([](https://github.com/upstars-global/front-platform-ui/commit/f676bc5))
+
+
+* **accordion:** enhance slot props with toggleHandler and showContent
+ ([](https://github.com/upstars-global/front-platform-ui/commit/b00146a))
+
+
+* **checkbox:** add data-test attributes for better testing support
+ ([](https://github.com/upstars-global/front-platform-ui/commit/042fc1f))
+
+
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/2e77d68))
+
+
+* **accordion:** add `UiAccordion` component
+ ([](https://github.com/upstars-global/front-platform-ui/commit/2d85f26))
+
 ## 1.12.0 (2025-12-22)
 
 * Merge branch 'main' into ui-card
