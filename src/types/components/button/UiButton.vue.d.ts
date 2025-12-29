@@ -34,10 +34,10 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiButt
     variant: ButtonVariant;
     size: ButtonSize;
     ui: UiProp<ButtonUi>;
-    leadingIconName: UiIconName;
-    leadingIconSize: IconSize;
     trailingIconName: UiIconName;
     trailingIconSize: IconSize;
+    leadingIconName: UiIconName;
+    leadingIconSize: IconSize;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiButtonSlots>;
 type __VLS_WithSlots<T, S> = T & {
     new (): {
