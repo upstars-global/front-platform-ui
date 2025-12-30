@@ -65,7 +65,7 @@ const toggleHandler = () => {
 </script>
 
 <template>
-  <div :class="className" v-bind="attributes" data-test="accordion-menu">
+  <div :class="className" data-test="accordion-menu" v-bind="attributes">
     <div :class="uiClasses.item" data-test="accordion-menu-title" @click="!isCustomToggle ? toggleHandler() : null">
       <slot name="activator" :toggle-handler="toggleHandler" :show-content="showContent" />
       <slot name="trailing">
