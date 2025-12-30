@@ -1,3 +1,14 @@
+## <small>1.13.1 (2025-12-30)</small>
+
+* Merge pull request #51 from upstars-global/fix-accordion
+ ([](https://github.com/upstars-global/front-platform-ui/commit/318cfed))
+
+, closes [#51](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  fix(accordion): adjust attribute order for `v-bind` in root div
+* **accordion:** adjust attribute order for `v-bind` in root div
+ ([](https://github.com/upstars-global/front-platform-ui/commit/4fa4c74))
+
 ## 1.13.0 (2025-12-29)
 
 * Merge branch 'main' into ui-accordion
