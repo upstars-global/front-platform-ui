@@ -49,8 +49,8 @@ const uiClasses = computed(() => {
       <UiChip
         v-if="!chip.isHidden"
         :class="uiClasses.item"
-        :is-active="chip.name === modelValue"
         v-bind="chip"
+        :is-active="chip.name === modelValue"
         @click="modelValue = chip.name"
       >
         <template v-if="chip.count" #trailing>

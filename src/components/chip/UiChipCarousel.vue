@@ -48,8 +48,8 @@ const uiClasses = computed(() => {
       v-for="chip in items"
       :key="chip.name"
       :class="uiClasses.item"
-      :is-active="chip.name === modelValue"
       v-bind="chip"
+      :is-active="chip.name === modelValue"
       @click="modelValue = chip.name"
     />
   </UiCarousel>
