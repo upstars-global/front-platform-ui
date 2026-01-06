@@ -48,7 +48,7 @@ const uiClasses = computed(() => {
       v-for="chip in items"
       :key="chip.name"
       :class="uiClasses.item"
-      :active="chip.name === modelValue"
+      :is-active="chip.name === modelValue"
       v-bind="chip"
       @click="modelValue = chip.name"
     />

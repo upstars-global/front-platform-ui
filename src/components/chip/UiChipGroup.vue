@@ -49,7 +49,7 @@ const uiClasses = computed(() => {
       <UiChip
         v-if="!chip.isHidden"
         :class="uiClasses.item"
-        :active="chip.name === modelValue"
+        :is-active="chip.name === modelValue"
         v-bind="chip"
         @click="modelValue = chip.name"
       >
