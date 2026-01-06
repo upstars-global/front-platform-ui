@@ -19,7 +19,7 @@ declare const __VLS_export: <T extends string | number>(__VLS_props: NonNullable
             count: number;
         }): unknown;
     };
-    emit: (evt: "update:modelValue", value: T) => void;
+    emit: ((event: "update:modelValue", ...args: any[]) => void) & ((evt: "update:modelValue", value: T) => void);
 }>) => import("vue").VNode & {
     __ctx?: Awaited<typeof __VLS_setup>;
 };
