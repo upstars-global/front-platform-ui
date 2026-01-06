@@ -14,10 +14,9 @@ const props = defineProps<{
   items: UiChipProps<T>[]
   ui?: UiProp<ChipUi>
 }>()
+const emit = defineEmits(['update:modelValue'])
 
-const modelValue = defineModel<T>({
-  required: true
-})
+const modelValue = defineModel<T>('modelValue', { required: true })
 
 const appConfig = useAppConfig()
 const { attributes, className, mergeClasses } = useComponentAttributes(
@@ -39,6 +38,11 @@ const uiClasses = computed(() => {
     item: mergeClasses(theme.carousel.item, appConfig.ui?.chip?.carousel?.item, props.ui?.carousel?.item)
   }
 })
+
+const handleClick = (name: T) => {
+  modelValue.value = name
+  emit('update:modelValue', name)
+}
 </script>
 
 <template>
@@ -49,7 +53,7 @@ const uiClasses = computed(() => {
       :class="uiClasses.item"
       v-bind="chip"
       :is-active="chip.name === modelValue"
-      @click="modelValue = chip.name"
+      @click="() => handleClick(chip.name)"
     />
   </UiCarousel>
 </template>
