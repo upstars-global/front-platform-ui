@@ -54,6 +54,14 @@ export const uiKitConfig: AppConfig = {
       },
       error: 'text-xs text-red-500'
     },
+    chip: {
+      strategy: 'merge',
+      base: 'text-slate-900 border-slate-300 hover:bg-slate-300',
+      states: {
+        active: 'bg-sky-500 border-sky-500 text-white',
+        special: 'bg-slate-300 hover:bg-slate-500'
+      }
+    },
     circleProgressBar: {
       progress: {
         trail: 'stroke-indigo-300',

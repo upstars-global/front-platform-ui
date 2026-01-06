@@ -11,7 +11,6 @@ export interface UiCarouselProps {
   showPagination?: boolean
   showNavigation?: boolean
   transparentBorder?: boolean
-  isMobile?: boolean
   navigation?: Navigation
   ui?: UiProp<CarouselUi>
 }
@@ -26,6 +25,7 @@ export interface UiCarouselSlots {
 <script setup lang="ts">
 import { computed, Fragment, h, nextTick, onMounted, onUnmounted, onUpdated, ref, watch } from 'vue'
 import { useAppConfig } from '../../composables/useAppConfig'
+import { useMediaQuery } from '../../composables/useMediaQuery'
 import { useComponentAttributes } from '../../composables/useUiClasses'
 import { observeContentChanged } from '../../helpers/observeContentChanged'
 import CarouselNavigation from './components/CarouselNavigation.vue'
@@ -61,6 +61,8 @@ const localActiveIndex = ref(props.activeIndex)
 const autoPlayId = ref<number | null>(null)
 const backward = ref(false)
 const forward = ref(false)
+
+const { isMediaMatch: isMobileView } = useMediaQuery()
 
 const uiClasses = computed(() => {
   return {
@@ -101,7 +103,7 @@ const uiClasses = computed(() => {
   }
 })
 const fadeDistance = computed(() => {
-  return props.isMobile ? 16 : 64
+  return isMobileView.value ? 16 : 64
 })
 
 const getItemGap = () => {
@@ -275,6 +277,13 @@ watch(
 
 watch(
   () => props.disableFadeEffect,
+  () => {
+    handleFadeEffect()
+  }
+)
+
+watch(
+  () => isMobileView.value,
   () => {
     handleFadeEffect()
   }
