@@ -4,7 +4,6 @@ import type { ChipUi } from './theme';
 declare const __VLS_export: <T extends string | number>(__VLS_props: NonNullable<Awaited<typeof __VLS_setup>>["props"], __VLS_ctx?: __VLS_PrettifyLocal<Pick<NonNullable<Awaited<typeof __VLS_setup>>, "attrs" | "emit" | "slots">>, __VLS_exposed?: NonNullable<Awaited<typeof __VLS_setup>>["expose"], __VLS_setup?: Promise<{
     props: __VLS_PrettifyLocal<({
         items: UiChipProps<T>[];
-        isMobile?: boolean;
         ui?: UiProp<ChipUi>;
     } & {
         modelValue: T;

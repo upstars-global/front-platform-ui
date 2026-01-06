@@ -12,7 +12,6 @@ import theme from './theme'
 
 const props = defineProps<{
   items: UiChipProps<T>[]
-  isMobile?: boolean
   ui?: UiProp<ChipUi>
 }>()
 
@@ -43,7 +42,7 @@ const uiClasses = computed(() => {
 </script>
 
 <template>
-  <UiCarousel :class="className" v-bind="attributes" :is-mobile="isMobile">
+  <UiCarousel :class="className" v-bind="attributes">
     <UiChip
       v-for="chip in items"
       :key="chip.name"
