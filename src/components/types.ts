@@ -5,6 +5,7 @@ import type { CardUi } from './card/theme'
 import type { CarouselUi } from './carousel/theme'
 import type { CheckboxUi } from './checkbox/theme'
 import type { CircleProgressBarUi } from './circle-progress-bar/theme'
+import type { DropdownUi } from './dropdown/theme'
 import type { UiIcons } from './icon/config'
 import type { InputUi } from './input/theme'
 import type { LinkUi } from './link/theme'
@@ -29,6 +30,7 @@ interface UiConfig {
   carousel?: UiProp<CarouselUi>
   checkbox?: UiProp<CheckboxUi>
   circleProgressBar?: UiProp<CircleProgressBarUi>
+  dropdown?: UiProp<DropdownUi>
   icon?: { strategy?: Strategy }
   link?: UiProp<LinkUi>
   menu?: UiProp<MenuUi>
