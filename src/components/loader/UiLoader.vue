@@ -30,7 +30,7 @@ const SPACING = 2
 const props = withDefaults(defineProps<UiLoaderProps>(), {
   duration: 1,
   size: 64,
-  strokeWidth: 2,
+  strokeWidth: 3,
   ui: () => ({ strategy: 'merge' })
 })
 

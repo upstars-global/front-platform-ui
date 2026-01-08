@@ -9,7 +9,7 @@ const meta = {
   args: {
     duration: isChromatic() ? 0 : 1,
     size: 64,
-    strokeWidth: 2
+    strokeWidth: 3
   },
   argTypes: {
     duration: { control: 'number' },
