@@ -10,6 +10,7 @@ import UiCard from './card/UiCard.vue'
 import UiCarousel from './carousel/UiCarousel.vue'
 import UiCheckbox from './checkbox/UiCheckbox.vue'
 import UiCircleProgressBar from './circle-progress-bar/UiCircleProgressBar.vue'
+import UiDropdown from './dropdown/UiDropdown.vue'
 import UiIcon from './icon/UiIcon.vue'
 import UiInput from './input/UiInput.vue'
 import UiLink from './link/UiLink.vue'
@@ -25,6 +26,7 @@ export type { UiCardProps, UiCardSlots } from './card/UiCard.vue'
 export type { UiCarouselProps, UiCarouselEmits, UiCarouselSlots } from './carousel/UiCarousel.vue'
 export type { UiCheckboxProps, UiCheckboxEmits, UiCheckboxSlots } from './checkbox/UiCheckbox.vue'
 export type { UiCircleProgressBarProps, UiCircleProgressBarSlots } from './circle-progress-bar/UiCircleProgressBar.vue'
+export type { UiDropdownProps, UiDropdownSlots } from './dropdown/UiDropdown.vue'
 export type { UiIconProps } from './icon/UiIcon.vue'
 export type { UiIconsFill, UiIconName, UiIconsNavigation, UiIconsOutline, UiIconsSocial } from './icon/config'
 export type { UiInputProps, UiInputEmits, UiInputSlots } from './input/UiInput.vue'
@@ -42,6 +44,7 @@ export {
   UiCarousel,
   UiCheckbox,
   UiCircleProgressBar,
+  UiDropdown,
   UiIcon,
   UiInput,
   UiLink,
