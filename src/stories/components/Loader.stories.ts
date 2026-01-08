@@ -12,8 +12,11 @@ const meta = {
     strokeWidth: 2
   },
   argTypes: {
+    duration: { control: 'number' },
     size: { control: 'number' },
     strokeWidth: { control: 'number' },
+    isCentered: { control: 'boolean' },
+    rounded: { control: 'boolean' },
     ui: { control: 'object' }
   },
   render: (args) => ({

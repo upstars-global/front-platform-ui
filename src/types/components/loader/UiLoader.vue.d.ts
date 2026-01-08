@@ -5,6 +5,7 @@ export interface UiLoaderProps {
     size?: number;
     strokeWidth?: number;
     rounded?: boolean;
+    isCentered?: boolean;
     ui?: UiProp<LoaderUi>;
 }
 declare const _default: typeof __VLS_export;

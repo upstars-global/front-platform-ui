@@ -8,6 +8,7 @@ export interface UiLoaderProps {
   size?: number
   strokeWidth?: number
   rounded?: boolean
+  isCentered?: boolean
   ui?: UiProp<LoaderUi>
 }
 </script>
@@ -16,6 +17,7 @@ export interface UiLoaderProps {
 import { computed } from 'vue'
 import { useAppConfig } from '../../composables/useAppConfig'
 import { useComponentAttributes } from '../../composables/useUiClasses'
+import { prepareVariants } from '../../helpers/prepareClassNames'
 import theme from './theme'
 
 defineOptions({
@@ -37,6 +39,16 @@ const { attributes, className, mergeClasses } = useComponentAttributes(
   'ui-loader',
   computed(() => {
     const commonClasses: ClassNameValue[] = [theme.base, appConfig.ui?.loader?.base, props.ui?.base].filter(Boolean)
+
+    const states = prepareVariants<LoaderUi['states']>({
+      theme: theme.states,
+      appConfig: appConfig.ui?.loader?.states,
+      uiProp: props.ui?.states
+    })
+
+    if (props.isCentered) {
+      commonClasses.push(states.centered)
+    }
 
     return commonClasses
   }),
