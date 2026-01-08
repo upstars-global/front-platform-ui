@@ -66,6 +66,9 @@ export const uiKitConfig: AppConfig = {
         primary: 'text-sky-500 hover:text-sky-600'
       }
     },
+    loader: {
+      base: 'm-0'
+    },
     menu: {
       base: 'bg-neutral-100',
       item: {
