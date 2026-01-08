@@ -20,7 +20,7 @@ const meta = {
     name: 'Story',
     components: { UiLoader },
     setup: () => ({ args }),
-    template: `<UiLoader v-bind="args" :style="{ width: args.size + 'px' }" />`
+    template: `<UiLoader v-bind="args" />`
   })
 } satisfies Meta<typeof UiLoader>
 
@@ -41,7 +41,7 @@ export const VariousSizes: Story = {
       <template v-for="size in sizes" :key="size">
         <div class="flex flex-col gap-4 text-center">
           <span class="text-xs text-neutral-700">{{ size + 'px' }}</span>
-          <UiLoader v-bind="args" :size="size" :style="{ width: size + 'px' }" />
+          <UiLoader v-bind="args" :size="size" />
         </div>
       </template>
     </div>`

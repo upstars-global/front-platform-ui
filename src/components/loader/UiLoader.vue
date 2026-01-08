@@ -72,7 +72,7 @@ const animateTransformAttrs = computed(() => ({
 </script>
 
 <template>
-  <div :class="className" v-bind="attributes">
+  <div :class="className" v-bind="attributes" :style="{ width: `${size}px`, height: `${size}px` }">
     <svg :class="uiClasses.svg" :viewBox="viewBox">
       <circle
         :class="uiClasses.circle"
