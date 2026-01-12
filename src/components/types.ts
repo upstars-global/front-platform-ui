@@ -12,6 +12,7 @@ import type { MenuUi } from './menu/theme'
 import type { SelectUi } from './select/theme'
 import type { SkeletonUi } from './skeleton/theme'
 import type { TooltipUi } from './tooltip/theme'
+import type { ImageUi } from './image/theme'
 
 export type Strategy = 'join' | 'merge'
 
@@ -36,11 +37,17 @@ interface UiConfig {
   input?: UiProp<InputUi>
   select?: UiProp<SelectUi>
   tooltip?: UiProp<TooltipUi>
+  image?: UiProp<ImageUi>
 }
 
 export interface AppConfig {
   icons?: UiIcons
   ui?: UiConfig
+  store?: {
+    env?: {
+      isMockerMode?: boolean
+    }
+  }
 }
 
 export interface FormElementProps {

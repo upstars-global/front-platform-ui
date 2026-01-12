@@ -17,6 +17,7 @@ import UiMenu from './menu/UiMenu.vue'
 import UiSelect from './select/UiSelect.vue'
 import UiSkeleton from './skeleton/UiSkeleton.vue'
 import UiTooltip from './tooltip/UiTooltip.vue'
+import UiImage from './image/UiImage.vue'
 
 export type { UiAccordionProps, UiAccordionSlots } from './accordion/UiAccordion.vue'
 export type { UiBadgeProps, UiBadgeSlots } from './badge/UiBadge.vue'
@@ -27,6 +28,7 @@ export type { UiCheckboxProps, UiCheckboxEmits, UiCheckboxSlots } from './checkb
 export type { UiCircleProgressBarProps, UiCircleProgressBarSlots } from './circle-progress-bar/UiCircleProgressBar.vue'
 export type { UiIconProps } from './icon/UiIcon.vue'
 export type { UiIconsFill, UiIconName, UiIconsNavigation, UiIconsOutline, UiIconsSocial } from './icon/config'
+export type { UiImageProps } from './image/UiImage.vue'
 export type { UiInputProps, UiInputEmits, UiInputSlots } from './input/UiInput.vue'
 export type { UiLinkProps, UiLinkEmits, UiLinkSlots } from './link/UiLink.vue'
 export type { UiMenuItem, UiMenuProps } from './menu/UiMenu.vue'
@@ -48,5 +50,6 @@ export {
   UiMenu,
   UiSelect,
   UiSkeleton,
-  UiTooltip
+  UiTooltip,
+  UiImage
 }

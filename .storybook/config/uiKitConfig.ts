@@ -61,6 +61,10 @@ export const uiKitConfig: AppConfig = {
       }
     },
     icon: { strategy: 'merge' },
+    image: {
+      strategy: 'merge',
+      base: ''
+    },
     link: {
       variants: {
         primary: 'text-sky-500 hover:text-sky-600'
