@@ -31,6 +31,7 @@ import { computed } from 'vue'
 import { useAppConfig } from '../../composables/useAppConfig'
 import { useComponentAttributes } from '../../composables/useUiClasses'
 import { prepareVariants } from '../../helpers/prepareClassNames'
+import { useModalControls } from '../../composables/useModalControls'
 import UiIcon from '../icon/UiIcon.vue'
 import theme from './theme'
 
@@ -52,9 +53,11 @@ const emit = defineEmits<UiModalEmits>()
 defineSlots<UiModalSlots>()
 
 const appConfig = useAppConfig()
+const { closeHandler: injectedClose } = useModalControls()
 
 function closeHandler() {
   emit('close')
+  injectedClose()
 }
 
 const { attributes, className, mergeClasses } = useComponentAttributes(

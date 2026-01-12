@@ -83,6 +83,9 @@ export const uiKitConfig: AppConfig = {
       description: 'text-slate-600',
       closeIcon: 'text-slate-600'
     },
+    modalRenderer: {
+      overlay: 'bg-black/50'
+    },
     skeleton: {
       base: 'bg-slate-500'
     },

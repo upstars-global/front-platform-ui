@@ -1,4 +1,4 @@
-const modal = {
+export const modal = {
   base: 'relative flex flex-col m-0 min-h-[320px] max-h-[80vh] md:min-w-[432px] md:max-w-[80vw]',
 
   states: {
@@ -21,4 +21,12 @@ const modal = {
 }
 
 export type ModalUi = typeof modal
+
+export const modalRenderer = {
+  base: 'fixed inset-0 z-50',
+  overlay: '',
+  wrapper: 'min-h-full w-full flex items-end md:items-center justify-center p-0 md:p-4'
+}
+export type ModalRendererUi = typeof modalRenderer
+
 export default modal

@@ -9,7 +9,7 @@ import type { UiIcons } from './icon/config';
 import type { InputUi } from './input/theme';
 import type { LinkUi } from './link/theme';
 import type { MenuUi } from './menu/theme';
-import type { ModalUi } from './modal/theme';
+import type { ModalUi, ModalRendererUi } from './modal/theme';
 import type { SelectUi } from './select/theme';
 import type { SkeletonUi } from './skeleton/theme';
 import type { TooltipUi } from './tooltip/theme';
@@ -34,6 +34,7 @@ interface UiConfig {
     link?: UiProp<LinkUi>;
     menu?: UiProp<MenuUi>;
     modal?: UiProp<ModalUi>;
+    modalRenderer?: UiProp<ModalRendererUi>;
     skeleton?: UiProp<SkeletonUi>;
     input?: UiProp<InputUi>;
     select?: UiProp<SelectUi>;
