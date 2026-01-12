@@ -13,6 +13,7 @@ import UiIcon from './icon/UiIcon.vue';
 import UiInput from './input/UiInput.vue';
 import UiLink from './link/UiLink.vue';
 import UiMenu from './menu/UiMenu.vue';
+import UiModal from './modal/UiModal.vue';
 import UiSelect from './select/UiSelect.vue';
 import UiSkeleton from './skeleton/UiSkeleton.vue';
 import UiTooltip from './tooltip/UiTooltip.vue';
@@ -28,7 +29,8 @@ export type { UiIconsFill, UiIconName, UiIconsNavigation, UiIconsOutline, UiIcon
 export type { UiInputProps, UiInputEmits, UiInputSlots } from './input/UiInput.vue';
 export type { UiLinkProps, UiLinkEmits, UiLinkSlots } from './link/UiLink.vue';
 export type { UiMenuItem, UiMenuProps } from './menu/UiMenu.vue';
+export type { UiModalProps, UiModalEmits, UiModalSlots } from './modal/UiModal.vue';
 export type { UiSelectProps, SelectOption } from './select/UiSelect.vue';
 export type { UiTooltipProps, UiTooltipSlots } from './tooltip/UiTooltip.vue';
 export type { AppConfig as UiKitConfig } from './types';
-export { UiAccordion, UiBadge, UiButton, UiCard, UiCarousel, UiCheckbox, UiCircleProgressBar, UiIcon, UiInput, UiLink, UiMenu, UiSelect, UiSkeleton, UiTooltip };
+export { UiAccordion, UiBadge, UiButton, UiCard, UiCarousel, UiCheckbox, UiCircleProgressBar, UiIcon, UiInput, UiLink, UiMenu, UiModal, UiSelect, UiSkeleton, UiTooltip };
