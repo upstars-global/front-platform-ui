@@ -32,11 +32,11 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiModa
     onClose?: (() => any) | undefined;
 }>, {
     title: string;
-    description: string;
-    showCloseButton: boolean;
-    fullscreen: boolean;
     role: ModalRole;
+    description: string;
+    fullscreen: boolean;
     ui: UiProp<ModalUi>;
+    showCloseButton: boolean;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiModalSlots>;
 type __VLS_WithSlots<T, S> = T & {
     new (): {
