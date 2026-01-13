@@ -1,6 +1,7 @@
 <script lang="ts">
 import type { UiProp } from '../types'
 import type { ModalUi } from './theme'
+import type { ClassNameValue } from 'tailwind-merge'
 
 type ModalRole = 'dialog' | 'alertdialog'
 
@@ -26,13 +27,13 @@ export interface UiModalSlots {
 </script>
 
 <script setup lang="ts">
-import type { ClassNameValue } from 'tailwind-merge'
 import { computed } from 'vue'
 import { useAppConfig } from '../../composables/useAppConfig'
 import { useComponentAttributes } from '../../composables/useUiClasses'
 import { prepareVariants } from '../../helpers/prepareClassNames'
 import { useModalControls } from '../../composables/useModalControls'
 import UiIcon from '../icon/UiIcon.vue'
+import UiButton from '../button/UiButton.vue'
 import theme from './theme'
 
 defineOptions({
@@ -113,22 +114,22 @@ const uiClasses = computed(() => ({
       </slot>
 
       <slot name="close" :close="closeHandler">
-        <button
+        <UiButton
           v-if="showCloseButton"
-          type="button"
+          variant="default"
           :class="uiClasses.closeButton"
           aria-label="Close"
           data-test="modal-close"
           @click="closeHandler"
         >
-          <UiIcon name="close" :class="uiClasses.closeIcon" />
-        </button>
+          <UiIcon class="shrink-0" name="close" :class="uiClasses.closeIcon" />
+        </UiButton>
       </slot>
     </header>
 
-    <main :class="uiClasses.content">
+    <section :class="uiClasses.content">
       <slot />
-    </main>
+    </section>
 
     <footer v-if="$slots.footer" :class="uiClasses.footer">
       <slot name="footer" :close="closeHandler" />

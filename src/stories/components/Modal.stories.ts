@@ -171,10 +171,7 @@ export const CustomHeader: Story = {
         </UiModal>
       </div>
     `
-  }),
-  args: {
-    title: ''
-  }
+  })
 }
 
 export const Fullscreen: Story = {
