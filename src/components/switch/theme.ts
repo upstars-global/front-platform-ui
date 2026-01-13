@@ -4,7 +4,7 @@ const switchTheme = {
   checkmark: {
     base: [
       'absolute top-0 right-0 h-full w-full bg-transparent rounded-6 border-2',
-      'after:absolute after:left-0.5 after:top-1/2 after:border-0 after:rounded-6 after:-translate-y-1/2',
+      'after:absolute after:left-1 after:top-1/2 after:border-0 after:rounded-6 after:-translate-y-1/2',
       'after:transition-all after:duration-200'
     ].join(' '),
     size: {
@@ -18,9 +18,9 @@ const switchTheme = {
     disabled: 'opacity-50 pointer-events-none cursor-not-allowed'
   },
   size: {
-    sm: 'w-10 h-5',
-    md: 'w-12 h-6',
-    lg: 'w-14 h-7'
+    sm: 'w-11 h-6',
+    md: 'w-[3.25rem] h-7',
+    lg: 'w-[3.75rem] h-8'
   }
 }
 
