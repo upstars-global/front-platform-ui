@@ -18,7 +18,7 @@ declare const __VLS_export: import("vue").DefineComponent<ModalRendererProps, {}
     "onModal-open"?: ((modal: ModalItem) => any) | undefined;
     "onModal-close"?: ((modal: ModalItem) => any) | undefined;
 }>, {
-    isVisible: boolean;
-    isMobile: boolean;
     ui: UiProp<ModalRendererUi>;
+    isMobile: boolean;
+    isVisible: boolean;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>;
