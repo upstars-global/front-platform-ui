@@ -78,7 +78,7 @@ export const uiKitConfig: AppConfig = {
       states: {
         fullscreen: 'border-cyan-500'
       },
-      header: 'justify-center',
+      header: '',
       title: 'text-slate-900 text-base md:text-xl font-bold',
       description: 'text-slate-600',
       closeIcon: 'text-slate-600'

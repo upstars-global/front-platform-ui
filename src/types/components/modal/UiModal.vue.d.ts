@@ -31,9 +31,9 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiModa
 }, string, import("vue").PublicProps, Readonly<UiModalProps> & Readonly<{
     onClose?: (() => any) | undefined;
 }>, {
+    description: string;
     title: string;
     role: ModalRole;
-    description: string;
     fullscreen: boolean;
     ui: UiProp<ModalUi>;
     showCloseButton: boolean;

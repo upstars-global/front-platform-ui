@@ -8,7 +8,7 @@ const modal = {
   },
 
   // Header
-  header: 'relative flex items-center p-4',
+  header: 'relative flex items-center justify-center p-4',
   title: 'px-8 text-center',
   description: 'px-5 text-center',
 
