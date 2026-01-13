@@ -11,6 +11,7 @@ import type { LinkUi } from './link/theme'
 import type { MenuUi } from './menu/theme'
 import type { SelectUi } from './select/theme'
 import type { SkeletonUi } from './skeleton/theme'
+import type { SwitchUi } from './switch/theme'
 import type { TooltipUi } from './tooltip/theme'
 
 export type Strategy = 'join' | 'merge'
@@ -33,6 +34,7 @@ interface UiConfig {
   link?: UiProp<LinkUi>
   menu?: UiProp<MenuUi>
   skeleton?: UiProp<SkeletonUi>
+  switch?: UiProp<SwitchUi>
   input?: UiProp<InputUi>
   select?: UiProp<SelectUi>
   tooltip?: UiProp<TooltipUi>
@@ -41,6 +43,7 @@ interface UiConfig {
 export interface AppConfig {
   icons?: UiIcons
   ui?: UiConfig
+  store?: unknown
 }
 
 export interface FormElementProps {
