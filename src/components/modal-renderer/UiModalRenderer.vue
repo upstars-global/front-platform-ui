@@ -1,9 +1,9 @@
 <script lang="ts">
-import type { UiProp } from '../../types.ts'
-import type { ModalRendererUi } from '../theme.ts'
-import type { ModalItem, ModalRendererEmits } from '../types.ts'
+import type { UiProp } from '../types'
+import type { ModalRendererUi } from './theme'
+import type { ModalItem, ModalRendererEmits } from './types'
 
-export interface ModalRendererProps {
+export interface UiModalRendererProps {
   modals: ModalItem[]
   isVisible?: boolean
   isMobile?: boolean
@@ -13,17 +13,17 @@ export interface ModalRendererProps {
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useAppConfig } from '@src/composables/useAppConfig.ts'
-import { useComponentAttributes } from '@src/composables/useUiClasses.ts'
-import { modalRenderer as theme } from '../theme.ts'
-import ModalWrapper from '@src/components/modal/components/ModalWrapper.vue'
+import { useAppConfig } from '../../composables/useAppConfig'
+import { useComponentAttributes } from '../../composables/useUiClasses'
+import theme from './theme'
+import ModalWrapper from './components/ModalWrapper.vue'
 
 defineOptions({
-  name: 'ModalRenderer',
+  name: 'UiModalRenderer',
   inheritAttrs: false
 })
 
-const props = withDefaults(defineProps<ModalRendererProps>(), {
+const props = withDefaults(defineProps<UiModalRendererProps>(), {
   isMobile: false,
   ui: undefined,
   isVisible: undefined
@@ -35,7 +35,7 @@ const appConfig = useAppConfig()
 const transitionName = computed(() => (props.isMobile ? 'modal-mobile' : 'modal'))
 
 const { attributes, className, mergeClasses } = useComponentAttributes(
-  'modal-renderer',
+  'ui-modal-renderer',
   computed(() => [theme.base, appConfig?.ui?.modalRenderer?.base, props.ui?.base].filter(Boolean)),
   appConfig?.ui?.modalRenderer?.strategy || props.ui?.strategy
 )
@@ -47,19 +47,25 @@ const uiClasses = computed(() => ({
 </script>
 
 <template>
-  <div v-show="isVisible" v-bind="attributes" :class="[className, uiClasses.overlay]" data-test="modal-container">
-    <TransitionGroup tag="div" :name="transitionName" :class="uiClasses.wrapper">
-      <ModalWrapper
-        v-for="(modal, index) in modals"
-        v-show="index === 0"
-        :key="modal.name"
-        :modal="modal"
-        @modal-open="$emit('modal-open', modal)"
-        @modal-close="$emit('modal-close', modal)"
-        @close="$emit('close', modal.name)"
-      />
-    </TransitionGroup>
-  </div>
+  <TransitionGroup
+    v-show="isVisible"
+    tag="div"
+    :name="transitionName"
+    v-bind="attributes"
+    :class="[className, uiClasses.overlay]"
+    data-test="modal-container"
+  >
+    <ModalWrapper
+      v-for="(modal, index) in modals"
+      v-show="index === 0"
+      :key="modal.name"
+      :modal="modal"
+      :class="uiClasses.wrapper"
+      @modal-open="$emit('modal-open', modal)"
+      @modal-close="$emit('modal-close', modal)"
+      @close="$emit('close', modal.name)"
+    />
+  </TransitionGroup>
 </template>
 
 <style lang="postcss">

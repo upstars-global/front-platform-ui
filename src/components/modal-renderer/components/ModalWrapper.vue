@@ -1,5 +1,5 @@
 <script lang="ts">
-import type { ModalItem, ModalRendererEmits } from '../types.ts'
+import type { ModalItem, ModalRendererEmits } from '../types'
 
 interface ModalWrapperProps {
   modal: ModalItem
@@ -8,8 +8,8 @@ interface ModalWrapperProps {
 
 <script setup lang="ts">
 import { provide, useTemplateRef, onMounted, onBeforeUnmount } from 'vue'
-import { CLOSE_MODAL_INJECTION_KEY } from '../types.ts'
-import { useBodyScrollLock } from '@src/composables/useBodyScrollLock.ts'
+import { CLOSE_MODAL_INJECTION_KEY } from '../types'
+import { useBodyScrollLock } from '../../../composables/useBodyScrollLock'
 
 const props = defineProps<ModalWrapperProps>()
 const emit = defineEmits<ModalRendererEmits>()
@@ -43,11 +43,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div
-    ref="rendererRef"
-    class="absolute inset-0 flex items-end md:items-center justify-center"
-    @click.self="handleBackdropClick"
-  >
+  <div ref="rendererRef" @click.self="handleBackdropClick">
     <component :is="modal.component" v-bind="modal.props" />
   </div>
 </template>

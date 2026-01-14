@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import { ref, markRaw, defineComponent, h } from 'vue'
-import ModalRenderer from '../../components/modal/components/ModalRenderer.vue'
+import UiModalRenderer from '../../components/modal-renderer/UiModalRenderer.vue'
 import UiModal from '@src/components/modal/UiModal.vue'
 import UiButton from '@src/components/button/UiButton.vue'
-import type { ModalItem } from '@src/components/modal/types'
+import type { ModalItem } from '@src/components/modal-renderer/types'
 
 // Sample modal content component
 const SampleModalContent = defineComponent({
@@ -27,16 +27,16 @@ const SampleModalContent = defineComponent({
   }
 })
 
-const meta: Meta<typeof ModalRenderer> = {
+const meta: Meta<typeof UiModalRenderer> = {
   title: 'UI Kit/ModalRenderer',
-  component: ModalRenderer,
+  component: UiModalRenderer,
   tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
     docs: {
       description: {
         component:
-          'ModalRenderer renders a queue of modals. It should be placed in App.vue without Teleport - the consuming app handles positioning.'
+          'UiModalRenderer renders a queue of modals. It should be placed in App.vue without Teleport - the consuming app handles positioning.'
       }
     }
   },
@@ -62,7 +62,7 @@ const backgroundContent = `
 export const Default: Story = {
   render: () => ({
     name: 'Story',
-    components: { ModalRenderer, UiButton },
+    components: { UiModalRenderer, UiButton },
     setup() {
       const modals = ref<ModalItem[]>([])
       const isVisible = ref(false)
@@ -74,7 +74,7 @@ export const Default: Story = {
             component: markRaw(SampleModalContent),
             props: {
               title: 'Welcome',
-              message: 'This modal is rendered by ModalRenderer. Try scrolling - it should be blocked!'
+              message: 'This modal is rendered by UiModalRenderer. Try scrolling - it should be blocked!'
             }
           }
         ]
@@ -108,7 +108,7 @@ export const Default: Story = {
         <UiButton variant="primary" @click="openModal">Open Modal</UiButton>
         ${backgroundContent}
 
-        <ModalRenderer
+        <UiModalRenderer
           :modals="modals"
           :is-visible="isVisible"
           @close="closeModal"
@@ -123,7 +123,7 @@ export const Default: Story = {
 export const WithBackdropClosingDisabled: Story = {
   render: () => ({
     name: 'Story',
-    components: { ModalRenderer, UiButton },
+    components: { UiModalRenderer, UiButton },
     setup() {
       const modals = ref<ModalItem[]>([])
       const isVisible = ref(false)
@@ -162,7 +162,7 @@ export const WithBackdropClosingDisabled: Story = {
         <UiButton variant="primary" @click="openModal">Open Protected Modal</UiButton>
         ${backgroundContent}
 
-        <ModalRenderer
+        <UiModalRenderer
           :modals="modals"
           :is-visible="isVisible"
           @close="closeModal"
@@ -175,7 +175,7 @@ export const WithBackdropClosingDisabled: Story = {
 export const ModalStack: Story = {
   render: () => ({
     name: 'Story',
-    components: { ModalRenderer, UiButton },
+    components: { UiModalRenderer, UiButton },
     setup() {
       const modals = ref<ModalItem[]>([])
       const isVisible = ref(false)
@@ -232,7 +232,7 @@ export const ModalStack: Story = {
         <p class="mt-4 text-slate-400">Stack size: {{ modals.length }}</p>
         ${backgroundContent}
 
-        <ModalRenderer
+        <UiModalRenderer
           :modals="modals"
           :is-visible="isVisible"
           @close="closeModal"
@@ -245,7 +245,7 @@ export const ModalStack: Story = {
 export const MobileTransition: Story = {
   render: () => ({
     name: 'Story',
-    components: { ModalRenderer, UiButton },
+    components: { UiModalRenderer, UiButton },
     setup() {
       const modals = ref<ModalItem[]>([])
       const isVisible = ref(false)
@@ -283,7 +283,7 @@ export const MobileTransition: Story = {
         <UiButton variant="primary" @click="openModal">Open Modal (Mobile Transition)</UiButton>
         ${backgroundContent}
 
-        <ModalRenderer
+        <UiModalRenderer
           :modals="modals"
           :is-visible="isVisible"
           :is-mobile="true"

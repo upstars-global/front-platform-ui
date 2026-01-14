@@ -9,9 +9,9 @@ export interface ModalItem {
 }
 
 export interface ModalRendererEmits {
-  (e: 'close', name: string): void
-  (e: 'modal-open', modal: ModalItem): void
-  (e: 'modal-close', modal: ModalItem): void
+  (event: 'close', name: string): void
+  (event: 'modal-open', modal: ModalItem): void
+  (event: 'modal-close', modal: ModalItem): void
 }
 
 export const CLOSE_MODAL_INJECTION_KEY = 'closeModalHandler' as unknown as InjectionKey<() => void>
