@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import UiModal from '@src/components/modal/UiModal.vue'
 import UiButton from '@src/components/button/UiButton.vue'
 
-const meta: Meta<typeof UiModal> = {
+const meta = {
   title: 'UI Kit/Modal',
   component: UiModal,
   tags: ['autodocs'],
@@ -22,7 +22,7 @@ const meta: Meta<typeof UiModal> = {
     description: '',
     role: 'dialog'
   }
-}
+} satisfies Meta<typeof UiModal>
 
 export default meta
 type Story = StoryObj<typeof meta>

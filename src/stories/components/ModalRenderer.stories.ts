@@ -1,11 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
-import { ref, markRaw, defineComponent, h } from 'vue'
-import UiModalRenderer from '../../components/modal-renderer/UiModalRenderer.vue'
+import { inject, markRaw, defineComponent, h } from 'vue'
 import UiModal from '@src/components/modal/UiModal.vue'
 import UiButton from '@src/components/button/UiButton.vue'
 import type { ModalItem } from '@src/components/modal-renderer/types'
+import { modalManager } from '../utils/decorators'
 
-// Sample modal content component
+interface ModalRendererStoryArgs {
+  buttonText: string
+  modalName?: string
+  modalProps?: Record<string, unknown>
+  disableBackdropClosing?: boolean
+  openMultiple?: (openModal: (config: ModalItem) => void) => void
+}
+
 const SampleModalContent = defineComponent({
   name: 'SampleModalContent',
   props: {
@@ -27,9 +34,9 @@ const SampleModalContent = defineComponent({
   }
 })
 
-const meta: Meta<typeof UiModalRenderer> = {
+const meta = {
   title: 'UI Kit/ModalRenderer',
-  component: UiModalRenderer,
+  decorators: [modalManager],
   tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
@@ -40,255 +47,93 @@ const meta: Meta<typeof UiModalRenderer> = {
       }
     }
   },
-  argTypes: {
-    modals: { control: 'object' }
-  }
-}
+  render: (args: ModalRendererStoryArgs) => ({
+    components: { UiButton },
+    setup() {
+      const { openModal } = inject<{ openModal: (config: ModalItem) => void; closeModal: (name: string) => void }>(
+        'modalManager'
+      )!
+
+      const handleOpen = () => {
+        if (args.openMultiple) {
+          args.openMultiple(openModal)
+        } else {
+          openModal({
+            name: args.modalName || 'sample-modal',
+            component: markRaw(SampleModalContent),
+            props: args.modalProps || {},
+            disableBackdropClosing: args.disableBackdropClosing || false
+          })
+        }
+      }
+
+      return { handleOpen, buttonText: args.buttonText }
+    },
+    template: `<UiButton variant="primary" @click="handleOpen">{{ buttonText }}</UiButton>`
+  })
+} satisfies Meta<ModalRendererStoryArgs>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-// Background content for scroll lock testing
-const backgroundContent = `
-  <div class="mt-8 min-h-[200vh] bg-gradient-to-b from-slate-200 to-slate-400 p-4 rounded">
-    <p class="text-slate-600 mb-4">Scroll down to test. When modal is open, scrolling should be blocked.</p>
-    <div class="sticky top-4 bg-white p-4 rounded shadow">
-      <p class="font-bold">Sticky indicator - scroll to see it move</p>
-    </div>
-  </div>
-`
-
 export const Default: Story = {
-  render: () => ({
-    name: 'Story',
-    components: { UiModalRenderer, UiButton },
-    setup() {
-      const modals = ref<ModalItem[]>([])
-      const isVisible = ref(false)
-
-      function openModal() {
-        modals.value = [
-          {
-            name: 'sample-modal',
-            component: markRaw(SampleModalContent),
-            props: {
-              title: 'Welcome',
-              message: 'This modal is rendered by UiModalRenderer. Try scrolling - it should be blocked!'
-            }
-          }
-        ]
-        isVisible.value = true
-      }
-
-      function closeModal(name: string) {
-        modals.value = modals.value.filter((m) => m.name !== name)
-
-        if (modals.value.length === 0) {
-          setTimeout(() => {
-            if (modals.value.length === 0) {
-              isVisible.value = false
-            }
-          }, 500)
-        }
-      }
-
-      function handleOpen(modal: ModalItem) {
-        console.log('Modal opened:', modal.name)
-      }
-
-      function handleClose(modal: ModalItem) {
-        console.log('Modal closed:', modal.name)
-      }
-
-      return { modals, isVisible, openModal, closeModal, handleOpen, handleClose }
-    },
-    template: `
-      <div class="p-8">
-        <UiButton variant="primary" @click="openModal">Open Modal</UiButton>
-        ${backgroundContent}
-
-        <UiModalRenderer
-          :modals="modals"
-          :is-visible="isVisible"
-          @close="closeModal"
-          @modal-open="handleOpen"
-          @modal-close="handleClose"
-        />
-      </div>
-    `
-  })
+  args: {
+    buttonText: 'Open Modal',
+    modalName: 'sample-modal',
+    modalProps: {
+      title: 'Welcome',
+      message: 'This modal is rendered by UiModalRenderer. Try scrolling - it should be blocked!'
+    }
+  }
 }
 
 export const WithBackdropClosingDisabled: Story = {
-  render: () => ({
-    name: 'Story',
-    components: { UiModalRenderer, UiButton },
-    setup() {
-      const modals = ref<ModalItem[]>([])
-      const isVisible = ref(false)
-
-      function openModal() {
-        modals.value = [
-          {
-            name: 'protected-modal',
-            component: markRaw(SampleModalContent),
-            props: {
-              title: 'Protected Modal',
-              message: 'Click the Close button - backdrop click is disabled.'
-            },
-            disableBackdropClosing: true
-          }
-        ]
-        isVisible.value = true
-      }
-
-      function closeModal(name: string) {
-        modals.value = modals.value.filter((m) => m.name !== name)
-
-        if (modals.value.length === 0) {
-          setTimeout(() => {
-            if (modals.value.length === 0) {
-              isVisible.value = false
-            }
-          }, 500)
-        }
-      }
-
-      return { modals, isVisible, openModal, closeModal }
+  args: {
+    buttonText: 'Open Protected Modal',
+    modalName: 'protected-modal',
+    modalProps: {
+      title: 'Protected Modal',
+      message: 'Click the Close button - backdrop click is disabled.'
     },
-    template: `
-      <div class="p-8">
-        <UiButton variant="primary" @click="openModal">Open Protected Modal</UiButton>
-        ${backgroundContent}
-
-        <UiModalRenderer
-          :modals="modals"
-          :is-visible="isVisible"
-          @close="closeModal"
-        />
-      </div>
-    `
-  })
+    disableBackdropClosing: true
+  }
 }
 
 export const ModalStack: Story = {
-  render: () => ({
-    name: 'Story',
-    components: { UiModalRenderer, UiButton },
-    setup() {
-      const modals = ref<ModalItem[]>([])
-      const isVisible = ref(false)
-
-      function openFirstModal() {
-        modals.value = [
-          {
-            name: 'first-modal',
-            component: markRaw(SampleModalContent),
-            props: {
-              title: 'First Modal',
-              message: 'This is the first modal. Open another one!'
-            }
-          }
-        ]
-        isVisible.value = true
-
-        openSecondModal()
-      }
-
-      function openSecondModal() {
-        modals.value = [
-          {
-            name: 'second-modal',
-            component: markRaw(SampleModalContent),
-            props: {
-              title: 'Second Modal',
-              message: 'This is the second modal on top.'
-            }
-          },
-          ...modals.value
-        ]
-      }
-
-      function closeModal(name: string) {
-        modals.value = modals.value.filter((m) => m.name !== name)
-
-        if (modals.value.length === 0) {
-          setTimeout(() => {
-            if (modals.value.length === 0) {
-              isVisible.value = false
-            }
-          }, 500)
+  args: {
+    buttonText: 'Open Two Modals',
+    openMultiple: (openModal: (config: ModalItem) => void) => {
+      openModal({
+        name: 'first-modal',
+        component: markRaw(SampleModalContent),
+        props: {
+          title: 'First Modal',
+          message: 'This is the first modal. The second modal will appear on top!'
         }
-      }
+      })
 
-      return { modals, isVisible, openFirstModal, openSecondModal, closeModal }
-    },
-    template: `
-      <div class="p-8">
-        <div class="space-x-4">
-          <UiButton variant="primary" @click="openFirstModal">Open Two Modal</UiButton>
-        </div>
-        <p class="mt-4 text-slate-400">Stack size: {{ modals.length }}</p>
-        ${backgroundContent}
-
-        <UiModalRenderer
-          :modals="modals"
-          :is-visible="isVisible"
-          @close="closeModal"
-        />
-      </div>
-    `
-  })
+      setTimeout(() => {
+        openModal({
+          name: 'second-modal',
+          component: markRaw(SampleModalContent),
+          props: {
+            title: 'Second Modal',
+            message: 'This is the second modal on top. Close it to see the first one.'
+          }
+        })
+      }, 100)
+    }
+  }
 }
 
 export const MobileTransition: Story = {
-  render: () => ({
-    name: 'Story',
-    components: { UiModalRenderer, UiButton },
-    setup() {
-      const modals = ref<ModalItem[]>([])
-      const isVisible = ref(false)
-
-      function openModal() {
-        modals.value = [
-          {
-            name: 'mobile-modal',
-            component: markRaw(SampleModalContent),
-            props: {
-              title: 'Mobile Modal',
-              message:
-                'This modal automatically uses mobile slide-up transition on screens ≤767px wide. Resize your browser to see the effect!'
-            }
-          }
-        ]
-        isVisible.value = true
-      }
-
-      function closeModal(name: string) {
-        modals.value = modals.value.filter((m) => m.name !== name)
-
-        if (modals.value.length === 0) {
-          setTimeout(() => {
-            if (modals.value.length === 0) {
-              isVisible.value = false
-            }
-          }, 500)
-        }
-      }
-
-      return { modals, isVisible, openModal, closeModal }
-    },
-    template: `
-      <div class="p-8">
-        <UiButton variant="primary" @click="openModal">Open Modal (Responsive Transition)</UiButton>
-        ${backgroundContent}
-
-        <UiModalRenderer
-          :modals="modals"
-          :is-visible="isVisible"
-          @close="closeModal"
-        />
-      </div>
-    `
-  })
+  args: {
+    buttonText: 'Open Modal (Responsive Transition)',
+    modalName: 'mobile-modal',
+    modalProps: {
+      title: 'Responsive Modal',
+      message:
+        'This modal automatically uses mobile slide-up transition on screens ≤767px wide. Resize your browser to see the effect!'
+    }
+  }
 }
