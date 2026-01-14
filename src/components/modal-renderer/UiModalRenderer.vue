@@ -6,7 +6,6 @@ import type { ModalItem, ModalRendererEmits } from './types'
 export interface UiModalRendererProps {
   modals: ModalItem[]
   isVisible?: boolean
-  isMobile?: boolean
   ui?: UiProp<ModalRendererUi>
 }
 </script>
@@ -15,6 +14,7 @@ export interface UiModalRendererProps {
 import { computed } from 'vue'
 import { useAppConfig } from '../../composables/useAppConfig'
 import { useComponentAttributes } from '../../composables/useUiClasses'
+import { useMediaQuery, mediaMaxBreakpoints } from '../../composables/useMediaQuery'
 import theme from './theme'
 import ModalWrapper from './components/ModalWrapper.vue'
 
@@ -24,7 +24,6 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<UiModalRendererProps>(), {
-  isMobile: false,
   ui: undefined,
   isVisible: undefined
 })
@@ -32,7 +31,8 @@ const props = withDefaults(defineProps<UiModalRendererProps>(), {
 defineEmits<ModalRendererEmits>()
 
 const appConfig = useAppConfig()
-const transitionName = computed(() => (props.isMobile ? 'modal-mobile' : 'modal'))
+const { isMediaMatch: isMobileView } = useMediaQuery(mediaMaxBreakpoints.MD)
+const transitionName = computed(() => (isMobileView.value ? 'modal-mobile' : 'modal'))
 
 const { attributes, className, mergeClasses } = useComponentAttributes(
   'ui-modal-renderer',

@@ -36,13 +36,12 @@ const meta: Meta<typeof UiModalRenderer> = {
     docs: {
       description: {
         component:
-          'UiModalRenderer renders a queue of modals. It should be placed in App.vue without Teleport - the consuming app handles positioning.'
+          'UiModalRenderer renders a queue of modals. It should be placed in App.vue without Teleport - the consuming app handles positioning. Mobile view is automatically detected using useMediaQuery (MD breakpoint: 767px).'
       }
     }
   },
   argTypes: {
-    modals: { control: 'object' },
-    isMobile: { control: 'boolean' }
+    modals: { control: 'object' }
   }
 }
 
@@ -257,7 +256,8 @@ export const MobileTransition: Story = {
             component: markRaw(SampleModalContent),
             props: {
               title: 'Mobile Modal',
-              message: 'This modal uses mobile slide-up transition.'
+              message:
+                'This modal automatically uses mobile slide-up transition on screens ≤767px wide. Resize your browser to see the effect!'
             }
           }
         ]
@@ -280,13 +280,12 @@ export const MobileTransition: Story = {
     },
     template: `
       <div class="p-8">
-        <UiButton variant="primary" @click="openModal">Open Modal (Mobile Transition)</UiButton>
+        <UiButton variant="primary" @click="openModal">Open Modal (Responsive Transition)</UiButton>
         ${backgroundContent}
 
         <UiModalRenderer
           :modals="modals"
           :is-visible="isVisible"
-          :is-mobile="true"
           @close="closeModal"
         />
       </div>

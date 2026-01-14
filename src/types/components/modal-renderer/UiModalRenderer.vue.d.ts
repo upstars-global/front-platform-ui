@@ -4,7 +4,6 @@ import type { ModalItem } from './types';
 export interface UiModalRendererProps {
     modals: ModalItem[];
     isVisible?: boolean;
-    isMobile?: boolean;
     ui?: UiProp<ModalRendererUi>;
 }
 declare const _default: typeof __VLS_export;
@@ -19,6 +18,5 @@ declare const __VLS_export: import("vue").DefineComponent<UiModalRendererProps, 
     "onModal-close"?: ((modal: ModalItem) => any) | undefined;
 }>, {
     ui: UiProp<ModalRendererUi>;
-    isMobile: boolean;
     isVisible: boolean;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>;
