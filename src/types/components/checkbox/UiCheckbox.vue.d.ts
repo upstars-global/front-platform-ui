@@ -11,23 +11,27 @@ export interface UiCheckboxProps extends FormElementProps {
 }
 export interface UiCheckboxEmits {
     (event: 'update:modelValue', value: boolean): void;
+    (event: 'focus', value: FocusEvent): void;
+    (event: 'blur', value: FocusEvent): void;
 }
 export interface UiCheckboxSlots {
     checkmark(): unknown;
     default(): unknown;
     'error-message'(): unknown;
 }
-declare const _default: typeof __VLS_export;
-export default _default;
 declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiCheckboxProps & {
     modelValue?: boolean;
 }, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
     "update:modelValue": (value: boolean) => any;
 } & {
+    blur: (value: FocusEvent) => any;
+    focus: (value: FocusEvent) => any;
     "update:modelValue": (value: boolean) => any;
 }, string, import("vue").PublicProps, Readonly<UiCheckboxProps & {
     modelValue?: boolean;
 }> & Readonly<{
+    onBlur?: ((value: FocusEvent) => any) | undefined;
+    onFocus?: ((value: FocusEvent) => any) | undefined;
     "onUpdate:modelValue"?: ((value: boolean) => any) | undefined;
 }>, {
     error: string;
@@ -36,6 +40,8 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiChec
     checkboxSize: CheckboxSize;
     errorIcon: UiIconName;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiCheckboxSlots>;
+declare const _default: typeof __VLS_export;
+export default _default;
 type __VLS_WithSlots<T, S> = T & {
     new (): {
         $slots: S;

@@ -12,6 +12,7 @@ export type SelectUi = {
         textAlignCenter: string;
         leftSlot: string;
         invalid: string;
+        hasValue: string;
     };
     leftSlot: string;
     dropdownIcon: string;

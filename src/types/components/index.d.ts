@@ -28,7 +28,7 @@ export type { UiIconsFill, UiIconName, UiIconsNavigation, UiIconsOutline, UiIcon
 export type { UiInputProps, UiInputEmits, UiInputSlots } from './input/UiInput.vue';
 export type { UiLinkProps, UiLinkEmits, UiLinkSlots } from './link/UiLink.vue';
 export type { UiMenuItem, UiMenuProps } from './menu/UiMenu.vue';
-export type { UiSelectProps, SelectOption } from './select/UiSelect.vue';
+export type { UiSelectProps, UiSelectEmits, UiSelectSlots, SelectOption } from './select/UiSelect.vue';
 export type { UiTooltipProps, UiTooltipSlots } from './tooltip/UiTooltip.vue';
 export type { AppConfig as UiKitConfig } from './types';
 export { UiAccordion, UiBadge, UiButton, UiCard, UiCarousel, UiCheckbox, UiCircleProgressBar, UiIcon, UiInput, UiLink, UiMenu, UiSelect, UiSkeleton, UiTooltip };

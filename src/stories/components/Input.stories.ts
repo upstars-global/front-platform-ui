@@ -2,10 +2,13 @@ import UiInput from '@src/components/input/UiInput.vue'
 import { argsUpdater, emitsObserver } from '@src/stories/utils/decorators'
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import { computed, ref } from 'vue'
+import type { ComponentProps } from 'vue-component-type-helpers'
 
-const meta = {
+type UiInputProps = ComponentProps<typeof UiInput>
+
+const meta: Meta<UiInputProps> = {
   title: 'UI Kit/Input',
-  component: UiInput,
+  component: UiInput as unknown as never,
   decorators: [emitsObserver, argsUpdater],
   tags: ['autodocs'],
   argTypes: {
@@ -57,7 +60,7 @@ const meta = {
     setup: () => ({ args }),
     template: `<UiInput v-bind="args" />`
   })
-} satisfies Meta<typeof UiInput>
+}
 
 export default meta
 type Story = StoryObj<typeof meta>
@@ -85,7 +88,7 @@ export const WithDescription: Story = {
 
 export const WithRecommendations: Story = {
   args: {
-    recommendations: ['@gmail.com', '@yahoo.com', '@hotmail.com'],
+    recommendations: [{ value: '@gmail.com' }, { value: '@yahoo.com' }, { value: '@hotmail.com' }],
     placeholder: 'Type to see recommendations...'
   },
   render: (args) => ({
@@ -99,10 +102,16 @@ export const WithRecommendations: Story = {
 
         const value = getValueWithoutDomain(modelValue.value)
 
-        return (args?.recommendations?.map((recommendation: string) => `${value}${recommendation}`) || []).filter(
-          (value: string) => value.includes(modelValue.value)
-        )
+        return (
+          args?.recommendations?.map((recommendation) => {
+            return {
+              value: `${value}${recommendation.value}`
+            }
+          }) || []
+        ).filter((recommendation) => recommendation.value.includes(modelValue.value))
       })
+
+      console.log(filteredRecommendations.value)
 
       const getValueWithoutDomain = (value: string) => {
         if (!value) return ''
