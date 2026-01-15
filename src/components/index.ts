@@ -9,10 +9,14 @@ import UiButton from './button/UiButton.vue'
 import UiCard from './card/UiCard.vue'
 import UiCarousel from './carousel/UiCarousel.vue'
 import UiCheckbox from './checkbox/UiCheckbox.vue'
+import UiChip from './chip/UiChip.vue'
+import UiChipGroup from './chip/UiChipGroup.vue'
+import UiChipCarousel from './chip/UiChipCarousel.vue'
 import UiCircleProgressBar from './circle-progress-bar/UiCircleProgressBar.vue'
 import UiIcon from './icon/UiIcon.vue'
 import UiInput from './input/UiInput.vue'
 import UiLink from './link/UiLink.vue'
+import UiLoader from './loader/UiLoader.vue'
 import UiMenu from './menu/UiMenu.vue'
 import UiModal from './modal/UiModal.vue'
 import UiSelect from './select/UiSelect.vue'
@@ -25,11 +29,13 @@ export type { UiButtonProps, UiButtonEmits, UiButtonSlots } from './button/UiBut
 export type { UiCardProps, UiCardSlots } from './card/UiCard.vue'
 export type { UiCarouselProps, UiCarouselEmits, UiCarouselSlots } from './carousel/UiCarousel.vue'
 export type { UiCheckboxProps, UiCheckboxEmits, UiCheckboxSlots } from './checkbox/UiCheckbox.vue'
+export type { UiChipProps, UiChipEmits, UiChipSlots } from './chip/UiChip.vue'
 export type { UiCircleProgressBarProps, UiCircleProgressBarSlots } from './circle-progress-bar/UiCircleProgressBar.vue'
 export type { UiIconProps } from './icon/UiIcon.vue'
 export type { UiIconsFill, UiIconName, UiIconsNavigation, UiIconsOutline, UiIconsSocial } from './icon/config'
 export type { UiInputProps, UiInputEmits, UiInputSlots } from './input/UiInput.vue'
 export type { UiLinkProps, UiLinkEmits, UiLinkSlots } from './link/UiLink.vue'
+export type { UiLoaderProps } from './loader/UiLoader.vue'
 export type { UiMenuItem, UiMenuProps } from './menu/UiMenu.vue'
 export type { UiModalProps, UiModalEmits, UiModalSlots } from './modal/UiModal.vue'
 export type { UiSelectProps, SelectOption } from './select/UiSelect.vue'
@@ -43,10 +49,14 @@ export {
   UiCard,
   UiCarousel,
   UiCheckbox,
+  UiChip,
+  UiChipGroup,
+  UiChipCarousel,
   UiCircleProgressBar,
   UiIcon,
   UiInput,
   UiLink,
+  UiLoader,
   UiMenu,
   UiModal,
   UiSelect,
