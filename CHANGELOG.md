@@ -1,3 +1,38 @@
+## 1.14.0 (2026-01-14)
+
+* Merge pull request #52 from upstars-global/ui-chips
+ ([](https://github.com/upstars-global/front-platform-ui/commit/42867ad))
+
+, closes [#52](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  feat(chip): add `UiChip`, `UiChipGroup`, and `UiChipCarousel` components
+* **chip:** add `UiChip`, `UiChipGroup`, and `UiChipCarousel` components
+ ([](https://github.com/upstars-global/front-platform-ui/commit/7065355))
+
+
+* **chip:** enhance `modelValue` handling and emit `update:modelValue` on click
+ ([](https://github.com/upstars-global/front-platform-ui/commit/908cc01))
+
+
+* **chip:** enhance `modelValue` handling and emit `update:modelValue` on click
+ ([](https://github.com/upstars-global/front-platform-ui/commit/b6a43c0))
+
+
+* **media-query:** introduce `useMediaQuery` composable and refactor `isMobile` logic
+ ([](https://github.com/upstars-global/front-platform-ui/commit/49d2634))
+
+
+* **media-query:** introduce `useMediaQuery` composable and refactor `isMobile` logic
+ ([](https://github.com/upstars-global/front-platform-ui/commit/e6c0603))
+
+
+* **chip:** update attribute binding from `active` to `is-active`
+ ([](https://github.com/upstars-global/front-platform-ui/commit/3f801b9))
+
+
+* **chip:** update attribute binding from `active` to `is-active`
+ ([](https://github.com/upstars-global/front-platform-ui/commit/21e76ea))
+
 ## <small>1.13.1 (2025-12-30)</small>
 
 * Merge pull request #51 from upstars-global/fix-accordion
