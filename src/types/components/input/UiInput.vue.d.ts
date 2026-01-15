@@ -49,18 +49,22 @@ export interface UiInputSlots<T extends {
         recommendation: T;
     }) => unknown;
 }
+declare const _default: typeof __VLS_export;
+export default _default;
 declare const __VLS_export: <T extends {
     value: string;
 } = {
     value: string;
-}>(__VLS_props: NonNullable<Awaited<typeof __VLS_setup>>["props"], __VLS_ctx?: __VLS_PrettifyLocal<Pick<NonNullable<Awaited<typeof __VLS_setup>>, "attrs" | "emit" | "slots">>, __VLS_expose?: NonNullable<Awaited<typeof __VLS_setup>>["expose"], __VLS_setup?: Promise<{
+}>(__VLS_props: NonNullable<Awaited<typeof __VLS_setup>>["props"], __VLS_ctx?: __VLS_PrettifyLocal<Pick<NonNullable<Awaited<typeof __VLS_setup>>, "attrs" | "emit" | "slots">>, __VLS_exposed?: NonNullable<Awaited<typeof __VLS_setup>>["expose"], __VLS_setup?: Promise<{
     props: __VLS_PrettifyLocal<UiInputProps<T> & {
         onChange?: ((value: string) => any) | undefined;
         onBlur?: ((value: FocusEvent) => any) | undefined;
         onFocus?: ((value: FocusEvent) => any) | undefined;
         onKeydown?: ((value: KeyboardEvent) => any) | undefined;
         "onUpdate:modelValue"?: ((value: string) => any) | undefined;
-    }> & import("vue").PublicProps;
+    }> & import("vue").PublicProps & (typeof globalThis extends {
+        __VLS_PROPS_FALLBACK: infer P;
+    } ? P : {});
     expose: (exposed: {}) => void;
     attrs: any;
     slots: UiInputSlots<T>;
@@ -68,8 +72,8 @@ declare const __VLS_export: <T extends {
 }>) => import("vue").VNode & {
     __ctx?: Awaited<typeof __VLS_setup>;
 };
-declare const _default: typeof __VLS_export;
-export default _default;
-type __VLS_PrettifyLocal<T> = {
+type __VLS_PrettifyLocal<T> = (T extends any ? {
+    [K in keyof T]: T[K];
+} : {
     [K in keyof T as K]: T[K];
-} & {};
+}) & {};

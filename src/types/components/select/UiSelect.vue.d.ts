@@ -38,6 +38,8 @@ export interface UiSelectSlots {
         index: number;
     }) => unknown;
 }
+declare const _default: typeof __VLS_export;
+export default _default;
 declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiSelectProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
     change: (value: string | number) => any;
     blur: (value: FocusEvent) => any;
@@ -63,8 +65,6 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiSele
     subLabel: string;
     selectTextAlign: "left" | "center" | "right";
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiSelectSlots>;
-declare const _default: typeof __VLS_export;
-export default _default;
 type __VLS_WithSlots<T, S> = T & {
     new (): {
         $slots: S;

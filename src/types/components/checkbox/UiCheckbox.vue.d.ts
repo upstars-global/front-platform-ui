@@ -19,6 +19,8 @@ export interface UiCheckboxSlots {
     default(): unknown;
     'error-message'(): unknown;
 }
+declare const _default: typeof __VLS_export;
+export default _default;
 declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiCheckboxProps & {
     modelValue?: boolean;
 }, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
@@ -40,8 +42,6 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiChec
     checkboxSize: CheckboxSize;
     errorIcon: UiIconName;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiCheckboxSlots>;
-declare const _default: typeof __VLS_export;
-export default _default;
 type __VLS_WithSlots<T, S> = T & {
     new (): {
         $slots: S;
