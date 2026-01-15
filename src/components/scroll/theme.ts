@@ -1,5 +1,5 @@
 const scroll = {
-  base: 'ui-scroll overflow-hidden'
+  base: 'overflow-hidden'
 }
 
 export type ScrollUi = typeof scroll
