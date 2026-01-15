@@ -21,7 +21,6 @@ export interface UiScrollProps {
   overflowY?: OverflowBehavior
   showNativeOverlaidScrollbars?: boolean
   defer?: boolean
-  bodyScrollLockIgnore?: boolean
   infiniteScroll?: boolean
   infiniteScrollMargin?: number
   ui?: UiProp<ScrollUi>
@@ -64,7 +63,6 @@ const props = withDefaults(defineProps<UiScrollProps>(), {
   overflowY: 'scroll',
   showNativeOverlaidScrollbars: false,
   defer: true,
-  bodyScrollLockIgnore: true,
   infiniteScroll: false,
   infiniteScrollMargin: 50,
   ui: () => ({ strategy: 'merge' })
@@ -119,7 +117,6 @@ function scrollHandler(instance: OverlayScrollbars) {
     ref="scrollElement"
     :class="className"
     v-bind="attributes"
-    :body-scroll-lock-ignore="bodyScrollLockIgnore || undefined"
     :options="{
       showNativeOverlaidScrollbars,
       overflow: {
