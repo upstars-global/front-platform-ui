@@ -14,6 +14,7 @@ import UiIcon from './icon/UiIcon.vue'
 import UiInput from './input/UiInput.vue'
 import UiLink from './link/UiLink.vue'
 import UiMenu from './menu/UiMenu.vue'
+import UiScroll from './scroll/UiScroll.vue'
 import UiSelect from './select/UiSelect.vue'
 import UiSkeleton from './skeleton/UiSkeleton.vue'
 import UiTooltip from './tooltip/UiTooltip.vue'
@@ -30,6 +31,7 @@ export type { UiIconsFill, UiIconName, UiIconsNavigation, UiIconsOutline, UiIcon
 export type { UiInputProps, UiInputEmits, UiInputSlots } from './input/UiInput.vue'
 export type { UiLinkProps, UiLinkEmits, UiLinkSlots } from './link/UiLink.vue'
 export type { UiMenuItem, UiMenuProps } from './menu/UiMenu.vue'
+export type { UiScrollProps, UiScrollEmits, UiScrollSlots } from './scroll/UiScroll.vue'
 export type { UiSelectProps, SelectOption } from './select/UiSelect.vue'
 export type { UiTooltipProps, UiTooltipSlots } from './tooltip/UiTooltip.vue'
 export type { AppConfig as UiKitConfig } from './types'
@@ -46,6 +48,7 @@ export {
   UiInput,
   UiLink,
   UiMenu,
+  UiScroll,
   UiSelect,
   UiSkeleton,
   UiTooltip

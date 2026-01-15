@@ -9,6 +9,7 @@ import type { UiIcons } from './icon/config'
 import type { InputUi } from './input/theme'
 import type { LinkUi } from './link/theme'
 import type { MenuUi } from './menu/theme'
+import type { ScrollUi } from './scroll/theme'
 import type { SelectUi } from './select/theme'
 import type { SkeletonUi } from './skeleton/theme'
 import type { TooltipUi } from './tooltip/theme'
@@ -30,11 +31,12 @@ interface UiConfig {
   checkbox?: UiProp<CheckboxUi>
   circleProgressBar?: UiProp<CircleProgressBarUi>
   icon?: { strategy?: Strategy }
+  input?: UiProp<InputUi>
   link?: UiProp<LinkUi>
   menu?: UiProp<MenuUi>
-  skeleton?: UiProp<SkeletonUi>
-  input?: UiProp<InputUi>
+  scroll?: UiProp<ScrollUi>
   select?: UiProp<SelectUi>
+  skeleton?: UiProp<SkeletonUi>
   tooltip?: UiProp<TooltipUi>
 }
 

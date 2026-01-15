@@ -98,6 +98,12 @@ importers:
       lint-staged:
         specifier: ^16.2.7
         version: 16.2.7
+      overlayscrollbars:
+        specifier: ^2.13.0
+        version: 2.13.0
+      overlayscrollbars-vue:
+        specifier: ^0.5.9
+        version: 0.5.9(overlayscrollbars@2.13.0)(vue@3.5.25(typescript@5.9.3))
       playwright:
         specifier: ^1.57.0
         version: 1.57.0
@@ -2914,6 +2920,15 @@ packages:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==}
     engines: {node: '>= 0.8.0'}
 
+  overlayscrollbars-vue@0.5.9:
+    resolution: {integrity: sha512-zZEcsb6llnKaRwXTP44E4RrmwuH+eAi70mgCdiiPwcPBE2H99Vs2V0q7sWnEanqU3462ch38e4SmIMnuH906DQ==}
+    peerDependencies:
+      overlayscrollbars: ^2.0.0
+      vue: ^3.2.25
+
+  overlayscrollbars@2.13.0:
+    resolution: {integrity: sha512-uQGpLESrbFDLTWucWAKX9ceIANj7detMwH/2yJ315Llt72ZcWN3P6ckMotoqVv2Mk29R/pnhDtgYjy4K+kwAyQ==}
+
   p-each-series@3.0.0:
     resolution: {integrity: sha512-lastgtAdoH9YaLyDa5i5z64q+kzOcQHsQ5SsZJD3q0VEyI8mq872S3geuNbRUQLVAE9siMfgKrpj7MloKFHruw==}
     engines: {node: '>=12'}
@@ -3843,6 +3858,9 @@ packages:
 
   vue-component-type-helpers@3.1.8:
     resolution: {integrity: sha512-oaowlmEM6BaYY+8o+9D9cuzxpWQWHqHTMKakMxXu0E+UCIOMTljyIPO15jcnaCwJtZu/zWDotK7mOIHvWD9mcw==}
+
+  vue-component-type-helpers@3.2.2:
+    resolution: {integrity: sha512-x8C2nx5XlUNM0WirgfTkHjJGO/ABBxlANZDtHw2HclHtQnn+RFPTnbjMJn8jHZW4TlUam0asHcA14lf1C6Jb+A==}
 
   vue-demi@0.14.10:
     resolution: {integrity: sha512-nMZBOwuzabUO0nLgIcc6rycZEebF6eeUfaiQx9+WSk8e29IbLvPU9feI6tqW4kTo3hvoYAJkMh8n8D0fuISphg==}
@@ -4896,7 +4914,7 @@ snapshots:
       storybook: 10.1.9(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       type-fest: 2.19.0
       vue: 3.5.25(typescript@5.9.3)
-      vue-component-type-helpers: 3.1.8
+      vue-component-type-helpers: 3.2.2
 
   '@testing-library/dom@10.4.1':
     dependencies:
@@ -6749,6 +6767,13 @@ snapshots:
       type-check: 0.4.0
       word-wrap: 1.2.5
 
+  overlayscrollbars-vue@0.5.9(overlayscrollbars@2.13.0)(vue@3.5.25(typescript@5.9.3)):
+    dependencies:
+      overlayscrollbars: 2.13.0
+      vue: 3.5.25(typescript@5.9.3)
+
+  overlayscrollbars@2.13.0: {}
+
   p-each-series@3.0.0: {}
 
   p-filter@4.1.0:
@@ -7672,6 +7697,8 @@ snapshots:
   vue-component-type-helpers@2.2.12: {}
 
   vue-component-type-helpers@3.1.8: {}
+
+  vue-component-type-helpers@3.2.2: {}
 
   vue-demi@0.14.10(vue@3.5.25(typescript@5.9.3)):
     dependencies:
