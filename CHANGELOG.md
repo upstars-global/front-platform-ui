@@ -1,3 +1,38 @@
+## 1.15.0 (2026-01-15)
+
+* Merge branch 'main' into ui-loader
+ ([](https://github.com/upstars-global/front-platform-ui/commit/1d4869f))
+
+
+
+  # Conflicts:
+
+  #	src/types/components/index.d.ts
+* Merge pull request #53 from upstars-global/ui-loader
+ ([](https://github.com/upstars-global/front-platform-ui/commit/6091f81))
+
+, closes [#53](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  feat(loader): add `UiLoader` component
+* **components:** export UiLoader component and types in index file
+ ([](https://github.com/upstars-global/front-platform-ui/commit/2c87da1))
+
+
+* **loader:** add `isCentered` prop for vertical alignment
+ ([](https://github.com/upstars-global/front-platform-ui/commit/58cebcf))
+
+
+* **loader:** add `UiLoader` component
+ ([](https://github.com/upstars-global/front-platform-ui/commit/334e535))
+
+
+* **loader:** add dynamic sizing with `size` prop and remove redundant styles
+ ([](https://github.com/upstars-global/front-platform-ui/commit/ff486e3))
+
+
+* **loader:** adjust default `strokeWidth` from 2 to 3
+ ([](https://github.com/upstars-global/front-platform-ui/commit/b786fcc))
+
 ## 1.14.0 (2026-01-14)
 
 * Merge pull request #52 from upstars-global/ui-chips

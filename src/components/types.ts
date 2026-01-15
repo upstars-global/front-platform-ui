@@ -9,6 +9,7 @@ import type { CircleProgressBarUi } from './circle-progress-bar/theme'
 import type { UiIcons } from './icon/config'
 import type { InputUi } from './input/theme'
 import type { LinkUi } from './link/theme'
+import type { LoaderUi } from './loader/theme'
 import type { MenuUi } from './menu/theme'
 import type { ModalUi } from './modal/theme'
 import type { ModalRendererUi } from './modal-renderer/theme'
@@ -35,6 +36,7 @@ interface UiConfig {
   circleProgressBar?: UiProp<CircleProgressBarUi>
   icon?: { strategy?: Strategy }
   link?: UiProp<LinkUi>
+  loader?: UiProp<LoaderUi>
   menu?: UiProp<MenuUi>
   modal?: UiProp<ModalUi>
   modalRenderer?: UiProp<ModalRendererUi>
