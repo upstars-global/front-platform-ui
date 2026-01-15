@@ -4,9 +4,9 @@ import type { UiTooltipProps } from '../tooltip/UiTooltip.vue'
 import type { InputUi } from './theme'
 import type { Slot } from 'vue'
 
-export interface UiInputProps<T extends { value: string } = { value: string }>
-  extends FormElementProps,
-    Partial<Pick<UiTooltipProps, 'offsetValue'>> {
+type UiInputPropsBase = FormElementProps & Partial<Pick<UiTooltipProps, 'offsetValue'>>
+
+export interface UiInputProps<T extends { value: string } = { value: string }> extends UiInputPropsBase {
   dataTest?: string
   modelValue?: string | undefined
   error?: string
