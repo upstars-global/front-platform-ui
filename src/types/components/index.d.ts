@@ -36,7 +36,7 @@ export type { UiInputProps, UiInputEmits, UiInputSlots } from './input/UiInput.v
 export type { UiLinkProps, UiLinkEmits, UiLinkSlots } from './link/UiLink.vue';
 export type { UiLoaderProps } from './loader/UiLoader.vue';
 export type { UiMenuItem, UiMenuProps } from './menu/UiMenu.vue';
-export type { UiSelectProps, SelectOption } from './select/UiSelect.vue';
+export type { UiSelectProps, UiSelectEmits, UiSelectSlots, SelectOption } from './select/UiSelect.vue';
 export type { UiTooltipProps, UiTooltipSlots } from './tooltip/UiTooltip.vue';
 export type { AppConfig as UiKitConfig } from './types';
 export { UiAccordion, UiBadge, UiButton, UiCard, UiCarousel, UiCheckbox, UiChip, UiChipGroup, UiChipCarousel, UiCircleProgressBar, UiIcon, UiInput, UiLink, UiLoader, UiMenu, UiSelect, UiSkeleton, UiTooltip, UiImage };

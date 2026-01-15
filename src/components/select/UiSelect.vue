@@ -3,6 +3,7 @@ import type { ClassNameValue } from 'tailwind-merge'
 import type { FormElementProps, UiProp } from '../types'
 import type { UiTooltipProps } from '../tooltip/UiTooltip.vue'
 import type { SelectUi } from './theme'
+import type { Slot } from 'vue'
 
 export interface SelectOption {
   label: string
@@ -18,13 +19,14 @@ export interface UiSelectProps extends FormElementProps, Partial<Pick<UiTooltipP
   subLabel?: string
   ui?: UiProp<SelectUi>
   selectTextAlign?: 'left' | 'center' | 'right'
+  fullWidth?: boolean
+  size?: 'small' | 'medium'
+  options?: SelectOption[]
 
   // Select-specific props
-  options?: SelectOption[]
+  autocomplete: string
   placeholder?: string
   id?: string
-  size?: 'small' | 'medium'
-  fullWidth?: boolean
 }
 
 export interface UiSelectEmits {
@@ -35,10 +37,10 @@ export interface UiSelectEmits {
 }
 
 export interface UiSelectSlots {
-  left?: () => unknown
-  label?: () => unknown
-  'error-message'?: () => unknown
-  description?: () => unknown
+  left?: Slot
+  label?: Slot
+  'error-message'?: Slot
+  description?: Slot
   option?: (props: { option: SelectOption; index: number }) => unknown
 }
 </script>
@@ -47,6 +49,7 @@ import { computed } from 'vue'
 import { useAppConfig } from '../../composables/useAppConfig'
 import { useComponentAttributes } from '../../composables/useUiClasses'
 import { prepareVariants } from '../../helpers/prepareClassNames'
+import useHasSlot from '../../composables/useHasSlot'
 import UiIcon from '../icon/UiIcon.vue'
 import UiTooltip from '../tooltip/UiTooltip.vue'
 import theme from './theme'
@@ -108,6 +111,8 @@ const { attributes, className, mergeClasses } = useComponentAttributes(
 
 const isError = computed(() => props.error || slots['error-message'])
 
+const { hasSlotContent } = useHasSlot()
+
 const uiClasses = computed(() => {
   const selectClasses = [theme.select?.base, appConfig.ui?.select?.select?.base, props.ui?.select?.base]
 
@@ -128,7 +133,13 @@ const uiClasses = computed(() => {
       ? [theme.select.textAlignCenter, appConfig.ui?.select?.select?.textAlignCenter, props.ui?.select?.textAlignCenter]
       : []),
 
-    ...(slots.left ? [theme.select.leftSlot, appConfig.ui?.select?.select?.leftSlot, props.ui?.select?.leftSlot] : []),
+    ...(hasSlotContent(slots.left)
+      ? [theme.select.leftSlot, appConfig.ui?.select?.select?.leftSlot, props.ui?.select?.leftSlot]
+      : []),
+
+    ...(props.modelValue
+      ? [theme.select.hasValue, appConfig.ui?.select?.select?.hasValue, props.ui?.select?.hasValue]
+      : []),
 
     ...(isError.value ? [theme.select.invalid, appConfig.ui?.select?.select?.invalid, props.ui?.select?.invalid] : [])
   ]
@@ -187,7 +198,14 @@ const handleBlur = (event: FocusEvent) => {
       <span v-if="required">*</span>
       <span v-if="subLabel">{{ subLabel }}</span>
     </label>
-    <UiTooltip :ui="uiClasses.tooltip" :disabled="!isError" placement="bottom" trigger="always" :offset-value>
+    <UiTooltip
+      :ui="uiClasses.tooltip"
+      :disabled="!isError"
+      placement="bottom"
+      :fallback-placements="['bottom']"
+      trigger="always"
+      :offset-value
+    >
       <template #activator>
         <div :class="uiClasses.container">
           <div v-if="slots.left" :class="uiClasses.slotLeft">
@@ -196,6 +214,7 @@ const handleBlur = (event: FocusEvent) => {
           <select
             v-bind="$attrs"
             :id="elementId"
+            :autocomplete
             :value="modelValue"
             :disabled
             :class="uiClasses.select"
