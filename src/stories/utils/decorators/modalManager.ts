@@ -1,5 +1,6 @@
 import type { Decorator } from '@storybook/vue3-vite'
 import { h, ref, provide } from 'vue'
+import { action } from 'storybook/actions'
 import UiModalRenderer from '@src/components/modal-renderer/UiModalRenderer.vue'
 import type { ModalItem } from '@src/components/modal-renderer/types'
 
@@ -23,7 +24,7 @@ const backgroundContent = `
  * - Modal stack support (multiple modals)
  * - Auto-renders background content for scroll lock testing
  * - Handles 500ms transition delay for closing
- * - Logs modal events to console
+ * - Logs modal events to Storybook Actions Tab
  */
 export const modalManager: Decorator = (story) => ({
   setup(_, { attrs }) {
@@ -47,13 +48,8 @@ export const modalManager: Decorator = (story) => ({
       }
     }
 
-    const handleModalOpen = (modal: ModalItem) => {
-      console.log('Modal opened:', modal.name)
-    }
-
-    const handleModalClose = (modal: ModalItem) => {
-      console.log('Modal closed:', modal.name)
-    }
+    const handleModalOpen = action('modal-open')
+    const handleModalClose = action('modal-close')
 
     // Provide to stories
     provide('modalManager', { openModal, closeModal })
