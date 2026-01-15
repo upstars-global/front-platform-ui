@@ -1,3 +1,26 @@
+## 1.16.0 (2026-01-15)
+
+* Merge branch 'main' of github.com:upstars-global/front-platform-ui into ui-image
+ ([](https://github.com/upstars-global/front-platform-ui/commit/db2d02d))
+
+
+
+  # Conflicts:
+
+  #	src/types/components/index.d.ts
+* Merge pull request #56 from upstars-global/ui-image
+ ([](https://github.com/upstars-global/front-platform-ui/commit/b0f50ea))
+
+, closes [#56](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  feat(image): add UiImage component
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/4ec44fd))
+
+
+* **image:** add UiImage component
+ ([](https://github.com/upstars-global/front-platform-ui/commit/13ecd23))
+
 ## 1.15.0 (2026-01-15)
 
 * Merge branch 'main' into ui-loader
