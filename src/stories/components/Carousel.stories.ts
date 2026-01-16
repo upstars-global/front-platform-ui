@@ -17,7 +17,6 @@ const meta = {
     showPagination: { control: 'boolean' },
     showNavigation: { control: 'boolean' },
     transparentBorder: { control: 'boolean' },
-    isMobile: { control: 'boolean' },
     navigation: { control: 'object' },
     ui: { control: 'object' }
   },
