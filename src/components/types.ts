@@ -11,6 +11,7 @@ import type { InputUi } from './input/theme'
 import type { LinkUi } from './link/theme'
 import type { LoaderUi } from './loader/theme'
 import type { MenuUi } from './menu/theme'
+import type { ScrollUi } from './scroll/theme'
 import type { SelectUi } from './select/theme'
 import type { SkeletonUi } from './skeleton/theme'
 import type { TooltipUi } from './tooltip/theme'
@@ -34,12 +35,13 @@ interface UiConfig {
   chip?: UiProp<ChipUi>
   circleProgressBar?: UiProp<CircleProgressBarUi>
   icon?: { strategy?: Strategy }
+  input?: UiProp<InputUi>
   link?: UiProp<LinkUi>
   loader?: UiProp<LoaderUi>
   menu?: UiProp<MenuUi>
-  skeleton?: UiProp<SkeletonUi>
-  input?: UiProp<InputUi>
+  scroll?: UiProp<ScrollUi>
   select?: UiProp<SelectUi>
+  skeleton?: UiProp<SkeletonUi>
   tooltip?: UiProp<TooltipUi>
   image?: UiProp<ImageUi>
 }

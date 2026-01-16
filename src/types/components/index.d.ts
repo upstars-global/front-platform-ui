@@ -17,6 +17,7 @@ import UiInput from './input/UiInput.vue';
 import UiLink from './link/UiLink.vue';
 import UiLoader from './loader/UiLoader.vue';
 import UiMenu from './menu/UiMenu.vue';
+import UiScroll from './scroll/UiScroll.vue';
 import UiSelect from './select/UiSelect.vue';
 import UiSkeleton from './skeleton/UiSkeleton.vue';
 import UiTooltip from './tooltip/UiTooltip.vue';
@@ -36,7 +37,8 @@ export type { UiInputProps, UiInputEmits, UiInputSlots } from './input/UiInput.v
 export type { UiLinkProps, UiLinkEmits, UiLinkSlots } from './link/UiLink.vue';
 export type { UiLoaderProps } from './loader/UiLoader.vue';
 export type { UiMenuItem, UiMenuProps } from './menu/UiMenu.vue';
+export type { UiScrollProps, UiScrollEmits, UiScrollSlots } from './scroll/UiScroll.vue';
 export type { UiSelectProps, SelectOption } from './select/UiSelect.vue';
 export type { UiTooltipProps, UiTooltipSlots } from './tooltip/UiTooltip.vue';
 export type { AppConfig as UiKitConfig } from './types';
-export { UiAccordion, UiBadge, UiButton, UiCard, UiCarousel, UiCheckbox, UiChip, UiChipGroup, UiChipCarousel, UiCircleProgressBar, UiIcon, UiInput, UiLink, UiLoader, UiMenu, UiSelect, UiSkeleton, UiTooltip, UiImage };
+export { UiAccordion, UiBadge, UiButton, UiCard, UiCarousel, UiCheckbox, UiChip, UiChipGroup, UiChipCarousel, UiCircleProgressBar, UiIcon, UiInput, UiLink, UiLoader, UiMenu, UiScroll, UiSelect, UiSkeleton, UiTooltip, UiImage };
