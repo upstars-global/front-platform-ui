@@ -1,4 +1,4 @@
-declare const mediaMaxBreakpoints: {
+export declare const mediaMaxBreakpoints: {
     readonly XS: 359;
     readonly SM: 479;
     readonly MD: 767;
