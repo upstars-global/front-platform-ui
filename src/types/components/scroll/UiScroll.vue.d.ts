@@ -36,10 +36,10 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiScro
     onScroll?: ((instance: OverlayScrollbars) => any) | undefined;
     onInfiniteScroll?: (() => any) | undefined;
 }>, {
+    defer: boolean;
     overflowX: OverflowBehavior;
     overflowY: OverflowBehavior;
     visibility: ScrollbarsVisibilityBehavior;
-    defer: boolean;
     ui: UiProp<ScrollUi>;
     theme: string | null;
     showNativeOverlaidScrollbars: boolean;
