@@ -36,21 +36,30 @@ const { attributes, className, mergeClasses } = useComponentAttributes(
 
 const uiClasses = computed(() => ({
   step: {
-    base: mergeClasses(theme.step.base, appConfig?.ui?.stepper?.step?.base, props.ui?.step?.base),
-    active: mergeClasses(theme.step.active, appConfig?.ui?.stepper?.step?.active, props.ui?.step?.active),
-    inactive: mergeClasses(theme.step.inactive, appConfig?.ui?.stepper?.step?.inactive, props.ui?.step?.inactive)
+    base: mergeClasses(theme.states.base, appConfig?.ui?.stepper?.states?.base, props.ui?.states?.base),
+    completed: mergeClasses(
+      theme.states.completed,
+      appConfig?.ui?.stepper?.states?.completed,
+      props.ui?.states?.completed
+    ),
+    active: mergeClasses(theme.states.active, appConfig?.ui?.stepper?.states?.active, props.ui?.states?.active),
+    inactive: mergeClasses(theme.states.inactive, appConfig?.ui?.stepper?.states?.inactive, props.ui?.states?.inactive)
   }
 }))
 
-const isStepActive = (step: number) => step <= props.currentStep
+const getStepClass = (step: number) => {
+  if (step < props.currentStep) return uiClasses.value.step.completed
+  if (step === props.currentStep) return uiClasses.value.step.active
+  return uiClasses.value.step.inactive
+}
 </script>
 
 <template>
-  <div v-bind="attributes" :class="className" data-test="toolbar-progress">
+  <div v-bind="attributes" :class="className">
     <div
       v-for="step in size"
       :key="step"
-      :class="[uiClasses.step.base, isStepActive(step) ? uiClasses.step.active : uiClasses.step.inactive]"
+      :class="[uiClasses.step.base, getStepClass(step)]"
       data-test="progress-step"
     />
   </div>

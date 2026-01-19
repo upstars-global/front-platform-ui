@@ -1,7 +1,8 @@
 declare const stepper: {
     base: string;
-    step: {
+    states: {
         base: string;
+        completed: string;
         active: string;
         inactive: string;
     };

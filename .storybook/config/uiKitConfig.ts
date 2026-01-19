@@ -92,7 +92,9 @@ export const uiKitConfig: AppConfig = {
       base: 'bg-slate-500'
     },
     stepper: {
-      step: {
+      states: {
+        base: 'rounded-full',
+        completed: 'bg-sky-700',
         active: 'bg-sky-500',
         inactive: 'bg-slate-300'
       }
