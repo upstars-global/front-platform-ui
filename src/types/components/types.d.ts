@@ -6,15 +6,17 @@ import type { CarouselUi } from './carousel/theme';
 import type { CheckboxUi } from './checkbox/theme';
 import type { ChipUi } from './chip/theme';
 import type { CircleProgressBarUi } from './circle-progress-bar/theme';
+import type { DropdownUi } from './dropdown/theme';
 import type { UiIcons } from './icon/config';
+import type { ImageUi } from './image/theme';
 import type { InputUi } from './input/theme';
 import type { LinkUi } from './link/theme';
 import type { LoaderUi } from './loader/theme';
 import type { MenuUi } from './menu/theme';
 import type { SelectUi } from './select/theme';
 import type { SkeletonUi } from './skeleton/theme';
+import type { SwitchUi } from './switch/theme';
 import type { TooltipUi } from './tooltip/theme';
-import type { ImageUi } from './image/theme';
 export type Strategy = 'join' | 'merge';
 export type DeepPartial<T> = {
     [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P] | undefined;
@@ -31,17 +33,19 @@ interface UiConfig {
     checkbox?: UiProp<CheckboxUi>;
     chip?: UiProp<ChipUi>;
     circleProgressBar?: UiProp<CircleProgressBarUi>;
+    dropdown?: UiProp<DropdownUi>;
     icon?: {
         strategy?: Strategy;
     };
+    image?: UiProp<ImageUi>;
+    input?: UiProp<InputUi>;
     link?: UiProp<LinkUi>;
     loader?: UiProp<LoaderUi>;
     menu?: UiProp<MenuUi>;
-    skeleton?: UiProp<SkeletonUi>;
-    input?: UiProp<InputUi>;
     select?: UiProp<SelectUi>;
+    skeleton?: UiProp<SkeletonUi>;
+    switch?: UiProp<SwitchUi>;
     tooltip?: UiProp<TooltipUi>;
-    image?: UiProp<ImageUi>;
 }
 export interface AppConfig {
     icons?: UiIcons;

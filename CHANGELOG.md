@@ -1,3 +1,75 @@
+## 1.18.0 (2026-01-19)
+
+* Merge branch 'main' into ui-dropdown
+ ([](https://github.com/upstars-global/front-platform-ui/commit/e03a999))
+
+
+
+  # Conflicts:
+
+  #	src/types/components/index.d.ts
+* Merge branch 'main' into ui-dropdown
+ ([](https://github.com/upstars-global/front-platform-ui/commit/ebf85c9))
+
+
+
+  # Conflicts:
+
+  #	src/types/components/index.d.ts
+* Merge pull request #54 from upstars-global/ui-dropdown
+ ([](https://github.com/upstars-global/front-platform-ui/commit/cea57a4))
+
+, closes [#54](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  feat(dropdown): add `UiDropdown` component
+* **components:** export UiDropdown component and types in index file
+ ([](https://github.com/upstars-global/front-platform-ui/commit/ef2d138))
+
+
+* **components:** export UiDropdown component and types in index file
+ ([](https://github.com/upstars-global/front-platform-ui/commit/78ca9bf))
+
+
+* **dropdown:** add `UiDropdown` component
+ ([](https://github.com/upstars-global/front-platform-ui/commit/aaecde1))
+
+## 1.17.0 (2026-01-19)
+
+* Merge branch 'main' into ui-switch
+ ([](https://github.com/upstars-global/front-platform-ui/commit/909a533))
+
+
+
+  # Conflicts:
+
+  #	src/components/index.ts
+
+  #	src/components/types.ts
+
+  #	src/types/components/index.d.ts
+
+  #	src/types/components/types.d.ts
+* Merge pull request #55 from upstars-global/ui-switch
+ ([](https://github.com/upstars-global/front-platform-ui/commit/eb6c9bb))
+
+, closes [#55](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  feat(switch): add `UiSwitch` component
+* **types:** `UiSwitch` and `UiImage` definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/976d5c6))
+
+
+* **switch:** adjust styles for checkmark and size variants
+ ([](https://github.com/upstars-global/front-platform-ui/commit/604dc8c))
+
+
+* **switch:** add `UiSwitch` component
+ ([](https://github.com/upstars-global/front-platform-ui/commit/07d7ebc))
+
+
+* **switch:** export `UiSwitch` component types and definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/3195095))
+
 ## 1.16.0 (2026-01-15)
 
 * Merge branch 'main' of github.com:upstars-global/front-platform-ui into ui-image
