@@ -18,7 +18,7 @@ export interface UiSelectProps extends FormElementProps, Partial<Pick<UiTooltipP
     fullWidth?: boolean;
     size?: 'small' | 'medium';
     options?: SelectOption[];
-    autocomplete: string;
+    autocomplete?: string;
     placeholder?: string;
     id?: string;
 }
@@ -53,6 +53,7 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiSele
 }>, {
     error: string;
     id: string;
+    autocomplete: string;
     options: SelectOption[];
     size: "small" | "medium";
     description: string;
