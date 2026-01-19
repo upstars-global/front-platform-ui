@@ -13,6 +13,7 @@ import UiChip from './chip/UiChip.vue'
 import UiChipGroup from './chip/UiChipGroup.vue'
 import UiChipCarousel from './chip/UiChipCarousel.vue'
 import UiCircleProgressBar from './circle-progress-bar/UiCircleProgressBar.vue'
+import UiDropdown from './dropdown/UiDropdown.vue'
 import UiIcon from './icon/UiIcon.vue'
 import UiImage from './image/UiImage.vue'
 import UiInput from './input/UiInput.vue'
@@ -32,6 +33,7 @@ export type { UiCarouselProps, UiCarouselEmits, UiCarouselSlots } from './carous
 export type { UiCheckboxProps, UiCheckboxEmits, UiCheckboxSlots } from './checkbox/UiCheckbox.vue'
 export type { UiChipProps, UiChipEmits, UiChipSlots } from './chip/UiChip.vue'
 export type { UiCircleProgressBarProps, UiCircleProgressBarSlots } from './circle-progress-bar/UiCircleProgressBar.vue'
+export type { UiDropdownProps, UiDropdownSlots } from './dropdown/UiDropdown.vue'
 export type { UiIconProps } from './icon/UiIcon.vue'
 export type { UiIconsFill, UiIconName, UiIconsNavigation, UiIconsOutline, UiIconsSocial } from './icon/config'
 export type { UiImageProps } from './image/UiImage.vue'
@@ -55,6 +57,7 @@ export {
   UiChipGroup,
   UiChipCarousel,
   UiCircleProgressBar,
+  UiDropdown,
   UiIcon,
   UiImage,
   UiInput,

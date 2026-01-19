@@ -6,6 +6,7 @@ import type { CarouselUi } from './carousel/theme';
 import type { CheckboxUi } from './checkbox/theme';
 import type { ChipUi } from './chip/theme';
 import type { CircleProgressBarUi } from './circle-progress-bar/theme';
+import type { DropdownUi } from './dropdown/theme';
 import type { UiIcons } from './icon/config';
 import type { ImageUi } from './image/theme';
 import type { InputUi } from './input/theme';
@@ -32,6 +33,7 @@ interface UiConfig {
     checkbox?: UiProp<CheckboxUi>;
     chip?: UiProp<ChipUi>;
     circleProgressBar?: UiProp<CircleProgressBarUi>;
+    dropdown?: UiProp<DropdownUi>;
     icon?: {
         strategy?: Strategy;
     };
