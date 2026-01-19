@@ -20,6 +20,7 @@ import UiLoader from './loader/UiLoader.vue'
 import UiMenu from './menu/UiMenu.vue'
 import UiSelect from './select/UiSelect.vue'
 import UiSkeleton from './skeleton/UiSkeleton.vue'
+import UiStepper from './stepper/UiStepper.vue'
 import UiTooltip from './tooltip/UiTooltip.vue'
 import UiImage from './image/UiImage.vue'
 
@@ -39,6 +40,7 @@ export type { UiLinkProps, UiLinkEmits, UiLinkSlots } from './link/UiLink.vue'
 export type { UiLoaderProps } from './loader/UiLoader.vue'
 export type { UiMenuItem, UiMenuProps } from './menu/UiMenu.vue'
 export type { UiSelectProps, SelectOption } from './select/UiSelect.vue'
+export type { UiStepperProps } from './stepper/UiStepper.vue'
 export type { UiTooltipProps, UiTooltipSlots } from './tooltip/UiTooltip.vue'
 export type { AppConfig as UiKitConfig } from './types'
 
@@ -60,6 +62,7 @@ export {
   UiMenu,
   UiSelect,
   UiSkeleton,
+  UiStepper,
   UiTooltip,
   UiImage
 }

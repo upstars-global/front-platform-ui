@@ -13,6 +13,7 @@ import type { LoaderUi } from './loader/theme';
 import type { MenuUi } from './menu/theme';
 import type { SelectUi } from './select/theme';
 import type { SkeletonUi } from './skeleton/theme';
+import type { StepperUi } from './stepper/theme';
 import type { TooltipUi } from './tooltip/theme';
 import type { ImageUi } from './image/theme';
 export type Strategy = 'join' | 'merge';
@@ -38,6 +39,7 @@ interface UiConfig {
     loader?: UiProp<LoaderUi>;
     menu?: UiProp<MenuUi>;
     skeleton?: UiProp<SkeletonUi>;
+    stepper?: UiProp<StepperUi>;
     input?: UiProp<InputUi>;
     select?: UiProp<SelectUi>;
     tooltip?: UiProp<TooltipUi>;
