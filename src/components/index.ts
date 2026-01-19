@@ -14,6 +14,7 @@ import UiChipGroup from './chip/UiChipGroup.vue'
 import UiChipCarousel from './chip/UiChipCarousel.vue'
 import UiCircleProgressBar from './circle-progress-bar/UiCircleProgressBar.vue'
 import UiIcon from './icon/UiIcon.vue'
+import UiImage from './image/UiImage.vue'
 import UiInput from './input/UiInput.vue'
 import UiLink from './link/UiLink.vue'
 import UiLoader from './loader/UiLoader.vue'
@@ -22,7 +23,6 @@ import UiSelect from './select/UiSelect.vue'
 import UiSkeleton from './skeleton/UiSkeleton.vue'
 import UiSwitch from './switch/UiSwitch.vue'
 import UiTooltip from './tooltip/UiTooltip.vue'
-import UiImage from './image/UiImage.vue'
 
 export type { UiAccordionProps, UiAccordionSlots } from './accordion/UiAccordion.vue'
 export type { UiBadgeProps, UiBadgeSlots } from './badge/UiBadge.vue'
@@ -56,6 +56,7 @@ export {
   UiChipCarousel,
   UiCircleProgressBar,
   UiIcon,
+  UiImage,
   UiInput,
   UiLink,
   UiLoader,
@@ -63,6 +64,5 @@ export {
   UiSelect,
   UiSkeleton,
   UiSwitch,
-  UiTooltip,
-  UiImage
+  UiTooltip
 }
