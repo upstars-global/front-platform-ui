@@ -1,3 +1,38 @@
+## 1.18.0 (2026-01-19)
+
+* Merge branch 'main' into ui-dropdown
+ ([](https://github.com/upstars-global/front-platform-ui/commit/e03a999))
+
+
+
+  # Conflicts:
+
+  #	src/types/components/index.d.ts
+* Merge branch 'main' into ui-dropdown
+ ([](https://github.com/upstars-global/front-platform-ui/commit/ebf85c9))
+
+
+
+  # Conflicts:
+
+  #	src/types/components/index.d.ts
+* Merge pull request #54 from upstars-global/ui-dropdown
+ ([](https://github.com/upstars-global/front-platform-ui/commit/cea57a4))
+
+, closes [#54](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  feat(dropdown): add `UiDropdown` component
+* **components:** export UiDropdown component and types in index file
+ ([](https://github.com/upstars-global/front-platform-ui/commit/ef2d138))
+
+
+* **components:** export UiDropdown component and types in index file
+ ([](https://github.com/upstars-global/front-platform-ui/commit/78ca9bf))
+
+
+* **dropdown:** add `UiDropdown` component
+ ([](https://github.com/upstars-global/front-platform-ui/commit/aaecde1))
+
 ## 1.17.0 (2026-01-19)
 
 * Merge branch 'main' into ui-switch
