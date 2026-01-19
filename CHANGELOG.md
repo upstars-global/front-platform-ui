@@ -1,3 +1,40 @@
+## 1.17.0 (2026-01-19)
+
+* Merge branch 'main' into ui-switch
+ ([](https://github.com/upstars-global/front-platform-ui/commit/909a533))
+
+
+
+  # Conflicts:
+
+  #	src/components/index.ts
+
+  #	src/components/types.ts
+
+  #	src/types/components/index.d.ts
+
+  #	src/types/components/types.d.ts
+* Merge pull request #55 from upstars-global/ui-switch
+ ([](https://github.com/upstars-global/front-platform-ui/commit/eb6c9bb))
+
+, closes [#55](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  feat(switch): add `UiSwitch` component
+* **types:** `UiSwitch` and `UiImage` definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/976d5c6))
+
+
+* **switch:** adjust styles for checkmark and size variants
+ ([](https://github.com/upstars-global/front-platform-ui/commit/604dc8c))
+
+
+* **switch:** add `UiSwitch` component
+ ([](https://github.com/upstars-global/front-platform-ui/commit/07d7ebc))
+
+
+* **switch:** export `UiSwitch` component types and definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/3195095))
+
 ## 1.16.0 (2026-01-15)
 
 * Merge branch 'main' of github.com:upstars-global/front-platform-ui into ui-image
