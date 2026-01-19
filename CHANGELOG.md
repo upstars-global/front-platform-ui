@@ -1,3 +1,96 @@
+## 1.16.0 (2026-01-15)
+
+* Merge branch 'main' of github.com:upstars-global/front-platform-ui into ui-image
+ ([](https://github.com/upstars-global/front-platform-ui/commit/db2d02d))
+
+
+
+  # Conflicts:
+
+  #	src/types/components/index.d.ts
+* Merge pull request #56 from upstars-global/ui-image
+ ([](https://github.com/upstars-global/front-platform-ui/commit/b0f50ea))
+
+, closes [#56](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  feat(image): add UiImage component
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/4ec44fd))
+
+
+* **image:** add UiImage component
+ ([](https://github.com/upstars-global/front-platform-ui/commit/13ecd23))
+
+## 1.15.0 (2026-01-15)
+
+* Merge branch 'main' into ui-loader
+ ([](https://github.com/upstars-global/front-platform-ui/commit/1d4869f))
+
+
+
+  # Conflicts:
+
+  #	src/types/components/index.d.ts
+* Merge pull request #53 from upstars-global/ui-loader
+ ([](https://github.com/upstars-global/front-platform-ui/commit/6091f81))
+
+, closes [#53](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  feat(loader): add `UiLoader` component
+* **components:** export UiLoader component and types in index file
+ ([](https://github.com/upstars-global/front-platform-ui/commit/2c87da1))
+
+
+* **loader:** add `isCentered` prop for vertical alignment
+ ([](https://github.com/upstars-global/front-platform-ui/commit/58cebcf))
+
+
+* **loader:** add `UiLoader` component
+ ([](https://github.com/upstars-global/front-platform-ui/commit/334e535))
+
+
+* **loader:** add dynamic sizing with `size` prop and remove redundant styles
+ ([](https://github.com/upstars-global/front-platform-ui/commit/ff486e3))
+
+
+* **loader:** adjust default `strokeWidth` from 2 to 3
+ ([](https://github.com/upstars-global/front-platform-ui/commit/b786fcc))
+
+## 1.14.0 (2026-01-14)
+
+* Merge pull request #52 from upstars-global/ui-chips
+ ([](https://github.com/upstars-global/front-platform-ui/commit/42867ad))
+
+, closes [#52](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  feat(chip): add `UiChip`, `UiChipGroup`, and `UiChipCarousel` components
+* **chip:** add `UiChip`, `UiChipGroup`, and `UiChipCarousel` components
+ ([](https://github.com/upstars-global/front-platform-ui/commit/7065355))
+
+
+* **chip:** enhance `modelValue` handling and emit `update:modelValue` on click
+ ([](https://github.com/upstars-global/front-platform-ui/commit/908cc01))
+
+
+* **chip:** enhance `modelValue` handling and emit `update:modelValue` on click
+ ([](https://github.com/upstars-global/front-platform-ui/commit/b6a43c0))
+
+
+* **media-query:** introduce `useMediaQuery` composable and refactor `isMobile` logic
+ ([](https://github.com/upstars-global/front-platform-ui/commit/49d2634))
+
+
+* **media-query:** introduce `useMediaQuery` composable and refactor `isMobile` logic
+ ([](https://github.com/upstars-global/front-platform-ui/commit/e6c0603))
+
+
+* **chip:** update attribute binding from `active` to `is-active`
+ ([](https://github.com/upstars-global/front-platform-ui/commit/3f801b9))
+
+
+* **chip:** update attribute binding from `active` to `is-active`
+ ([](https://github.com/upstars-global/front-platform-ui/commit/21e76ea))
+
 ## <small>1.13.1 (2025-12-30)</small>
 
 * Merge pull request #51 from upstars-global/fix-accordion
