@@ -24,7 +24,7 @@ export interface UiSelectProps extends FormElementProps, Partial<Pick<UiTooltipP
   options?: SelectOption[]
 
   // Select-specific props
-  autocomplete: string
+  autocomplete?: string
   placeholder?: string
   id?: string
 }
@@ -72,7 +72,8 @@ const props = withDefaults(defineProps<UiSelectProps>(), {
   placeholder: undefined,
   id: undefined,
   size: 'small',
-  fullWidth: false
+  fullWidth: false,
+  autocomplete: 'off'
 })
 
 const emit = defineEmits<UiSelectEmits>()
