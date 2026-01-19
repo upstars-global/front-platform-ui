@@ -4,14 +4,17 @@ import type { ButtonUi } from './button/theme'
 import type { CardUi } from './card/theme'
 import type { CarouselUi } from './carousel/theme'
 import type { CheckboxUi } from './checkbox/theme'
+import type { ChipUi } from './chip/theme'
 import type { CircleProgressBarUi } from './circle-progress-bar/theme'
 import type { UiIcons } from './icon/config'
 import type { InputUi } from './input/theme'
 import type { LinkUi } from './link/theme'
+import type { LoaderUi } from './loader/theme'
 import type { MenuUi } from './menu/theme'
 import type { SelectUi } from './select/theme'
 import type { SkeletonUi } from './skeleton/theme'
 import type { TooltipUi } from './tooltip/theme'
+import type { ImageUi } from './image/theme'
 
 export type Strategy = 'join' | 'merge'
 
@@ -28,19 +31,27 @@ interface UiConfig {
   card?: UiProp<CardUi>
   carousel?: UiProp<CarouselUi>
   checkbox?: UiProp<CheckboxUi>
+  chip?: UiProp<ChipUi>
   circleProgressBar?: UiProp<CircleProgressBarUi>
   icon?: { strategy?: Strategy }
   link?: UiProp<LinkUi>
+  loader?: UiProp<LoaderUi>
   menu?: UiProp<MenuUi>
   skeleton?: UiProp<SkeletonUi>
   input?: UiProp<InputUi>
   select?: UiProp<SelectUi>
   tooltip?: UiProp<TooltipUi>
+  image?: UiProp<ImageUi>
 }
 
 export interface AppConfig {
   icons?: UiIcons
   ui?: UiConfig
+  store?: {
+    env?: {
+      isMockerMode?: boolean
+    }
+  }
 }
 
 export interface FormElementProps {
