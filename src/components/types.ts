@@ -23,7 +23,6 @@ import type { TooltipUi } from './tooltip/theme'
 export type Strategy = 'join' | 'merge'
 
 export type DeepPartial<T> = {
-  // [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P] | undefined
   [P in keyof T]?: T[P] extends object
     ? DeepPartial<T[P]>
     : T[P] extends DeepPartial<T[P]>
