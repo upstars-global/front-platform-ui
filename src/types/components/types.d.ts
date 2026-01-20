@@ -44,8 +44,8 @@ interface UiConfig {
     loader?: UiProp<LoaderUi>;
     menu?: UiProp<MenuUi>;
     modal?: UiProp<ModalUi>;
-    skeleton?: UiProp<SkeletonUi>;
     select?: UiProp<SelectUi>;
+    skeleton?: UiProp<SkeletonUi>;
     switch?: UiProp<SwitchUi>;
     tooltip?: UiProp<TooltipUi>;
 }
