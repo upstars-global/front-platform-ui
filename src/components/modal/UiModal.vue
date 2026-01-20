@@ -114,6 +114,7 @@ const uiClasses = computed(() => ({
         <UiButton
           v-if="showCloseButton"
           variant="default"
+          size="default"
           :class="uiClasses.closeButton"
           aria-label="Close"
           data-test="modal-close"
