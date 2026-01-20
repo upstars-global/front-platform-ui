@@ -1,5 +1,4 @@
 <script lang="ts">
-import type { ClassNameValue } from 'tailwind-merge'
 import type { UiProp } from '../types'
 import type { ProgressBarUi } from './theme'
 
@@ -22,7 +21,6 @@ export type UiProgressBarSlots = {
 import { computed } from 'vue'
 import { useAppConfig } from '../../composables/useAppConfig'
 import { useComponentAttributes } from '../../composables/useUiClasses'
-// import { prepareVariants } from '../../helpers/prepareClassNames'
 import theme from './theme'
 
 defineOptions({
@@ -34,7 +32,7 @@ const props = withDefaults(defineProps<UiProgressBarProps>(), {
   max: 100,
   min: 0,
   size: 'sm',
-  ui: () => ({ strategy: 'merge' })
+  ui: undefined
 })
 defineSlots<UiProgressBarSlots>()
 
@@ -42,21 +40,11 @@ const appConfig = useAppConfig()
 const { attributes, className, mergeClasses } = useComponentAttributes(
   'ui-progress-bar',
   computed(() => {
-    const commonClasses: ClassNameValue[] = [theme.base, appConfig.ui?.progressBar?.base, props.ui?.base].filter(
-      Boolean
-    )
-
-    // const sizes = prepareVariants<ProgressBarUi['size']>({
-    //   theme: theme.size,
-    //   appConfig: appConfig.ui?.progressBar?.size,
-    //   uiProp: props.ui.size
-    // })
-
-    // commonClasses.push(sizes[props.size])
+    const commonClasses = [theme.base, appConfig.ui?.progressBar?.base, props.ui?.base].filter(Boolean)
 
     return commonClasses
   }),
-  appConfig.ui?.progressBar?.strategy || props.ui.strategy
+  appConfig.ui?.progressBar?.strategy || props.ui?.strategy
 )
 
 const uiClasses = computed(() => {
@@ -73,7 +61,7 @@ const uiClasses = computed(() => {
         props.ui?.progress?.trail,
         theme.size[props.size],
         appConfig.ui?.progressBar?.size?.[props.size],
-        props.ui.size?.[props.size]
+        props.ui?.size?.[props.size]
       ),
       line: mergeClasses(theme.progress.line, appConfig.ui?.progressBar?.progress?.line, props.ui?.progress?.line)
     }
