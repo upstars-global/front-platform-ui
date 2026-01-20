@@ -88,6 +88,13 @@ export const uiKitConfig: AppConfig = {
         active: 'text-violet-500 hover:text-violet-600'
       }
     },
+    progressBar: {
+      progress: {
+        content: 'text-xs leading-4',
+        trail: 'bg-slate-300',
+        line: 'bg-sky-500'
+      }
+    },
     skeleton: {
       base: 'bg-slate-500'
     },

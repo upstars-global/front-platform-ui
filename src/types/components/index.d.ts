@@ -19,6 +19,7 @@ import UiInput from './input/UiInput.vue';
 import UiLink from './link/UiLink.vue';
 import UiLoader from './loader/UiLoader.vue';
 import UiMenu from './menu/UiMenu.vue';
+import UiProgressBar from './progress-bar/UiProgressBar.vue';
 import UiSelect from './select/UiSelect.vue';
 import UiSkeleton from './skeleton/UiSkeleton.vue';
 import UiSwitch from './switch/UiSwitch.vue';
@@ -39,8 +40,9 @@ export type { UiInputProps, UiInputEmits, UiInputSlots } from './input/UiInput.v
 export type { UiLinkProps, UiLinkEmits, UiLinkSlots } from './link/UiLink.vue';
 export type { UiLoaderProps } from './loader/UiLoader.vue';
 export type { UiMenuItem, UiMenuProps } from './menu/UiMenu.vue';
+export type { UiProgressBarProps, UiProgressBarSlots } from './progress-bar/UiProgressBar.vue';
 export type { UiSelectProps, SelectOption } from './select/UiSelect.vue';
 export type { UiSwitchProps, UiSwitchEmits } from './switch/UiSwitch.vue';
 export type { UiTooltipProps, UiTooltipSlots } from './tooltip/UiTooltip.vue';
 export type { AppConfig as UiKitConfig } from './types';
-export { UiAccordion, UiBadge, UiButton, UiCard, UiCarousel, UiCheckbox, UiChip, UiChipGroup, UiChipCarousel, UiCircleProgressBar, UiDropdown, UiIcon, UiImage, UiInput, UiLink, UiLoader, UiMenu, UiSelect, UiSkeleton, UiSwitch, UiTooltip };
+export { UiAccordion, UiBadge, UiButton, UiCard, UiCarousel, UiCheckbox, UiChip, UiChipGroup, UiChipCarousel, UiCircleProgressBar, UiDropdown, UiIcon, UiImage, UiInput, UiLink, UiLoader, UiMenu, UiProgressBar, UiSelect, UiSkeleton, UiSwitch, UiTooltip };
