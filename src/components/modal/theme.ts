@@ -7,12 +7,10 @@ const modal = {
       'h-full max-h-full rounded-none border-t-4 md:h-auto md:min-h-[320px] md:max-h-[80vh] md:rounded-6 md:border-0'
   },
 
-  // Header
   header: 'relative flex items-center justify-center pb-4',
   title: 'px-8 text-center break-all',
   description: 'px-5 text-center break-all',
 
-  // Close button
   closeButton: 'absolute top-0 right-0 size-6',
   closeIcon: 'size-4',
 
