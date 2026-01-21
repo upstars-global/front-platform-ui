@@ -4,7 +4,6 @@ import { action } from 'storybook/actions'
 import UiModalRenderer from '@src/components/modal-renderer/UiModalRenderer.vue'
 import type { ModalItem } from '@src/components/modal-renderer/types'
 
-// Background content for scroll lock testing
 const backgroundContent = `
   <div class="mt-8 min-h-[200vh] bg-gradient-to-b from-slate-200 to-slate-400 p-4 rounded">
     <p class="text-slate-600 mb-4">Scroll down to test. When modal is open, scrolling should be blocked.</p>
