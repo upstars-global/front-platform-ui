@@ -88,6 +88,15 @@ export const uiKitConfig: AppConfig = {
         active: 'text-violet-500 hover:text-violet-600'
       }
     },
+    modal: {
+      base: 'bg-white',
+      states: {
+        fullscreen: 'border-cyan-500'
+      },
+      title: 'text-slate-900 text-base md:text-xl font-bold',
+      description: 'text-slate-600',
+      closeIcon: 'text-slate-600'
+    },
     skeleton: {
       base: 'bg-slate-500'
     },
