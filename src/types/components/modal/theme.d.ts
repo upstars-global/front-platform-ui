@@ -1,4 +1,4 @@
-export declare const modal: {
+declare const modal: {
     base: string;
     states: {
         default: string;

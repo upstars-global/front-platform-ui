@@ -48,29 +48,4 @@ export type { UiSelectProps, SelectOption } from './select/UiSelect.vue';
 export type { UiSwitchProps, UiSwitchEmits } from './switch/UiSwitch.vue';
 export type { UiTooltipProps, UiTooltipSlots } from './tooltip/UiTooltip.vue';
 export type { AppConfig as UiKitConfig } from './types';
-
-export {
-  UiAccordion,
-  UiBadge,
-  UiButton,
-  UiCard,
-  UiCarousel,
-  UiCheckbox,
-  UiChip,
-  UiChipGroup,
-  UiChipCarousel,
-  UiCircleProgressBar,
-  UiDropdown,
-  UiIcon,
-  UiInput,
-  UiLink,
-  UiLoader,
-  UiMenu,
-  UiModal,
-  UiModalRenderer,
-  UiSelect,
-  UiSkeleton,
-  UiSwitch,
-  UiTooltip,
-  UiImage
-};
+export { UiAccordion, UiBadge, UiButton, UiCard, UiCarousel, UiCheckbox, UiChip, UiChipGroup, UiChipCarousel, UiCircleProgressBar, UiDropdown, UiIcon, UiImage, UiInput, UiLink, UiLoader, UiMenu, UiModal, UiModalRenderer, UiSelect, UiSkeleton, UiSwitch, UiTooltip };
