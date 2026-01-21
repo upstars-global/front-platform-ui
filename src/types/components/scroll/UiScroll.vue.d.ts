@@ -1,7 +1,7 @@
 import 'overlayscrollbars/overlayscrollbars.css';
 import type { OverlayScrollbars, ScrollbarsAutoHideBehavior, ScrollbarsVisibilityBehavior, OverflowBehavior } from 'overlayscrollbars';
-import type { ScrollUi } from './theme';
 import type { UiProp } from '../types';
+import type { ScrollUi } from './theme';
 export interface UiScrollProps {
     autoHide?: ScrollbarsAutoHideBehavior;
     autoHideDelay?: number;
