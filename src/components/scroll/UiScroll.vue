@@ -5,8 +5,8 @@ import type {
   ScrollbarsVisibilityBehavior,
   OverflowBehavior
 } from 'overlayscrollbars'
-import type { ScrollUi } from './theme'
 import type { UiProp } from '../types'
+import type { ScrollUi } from './theme'
 
 export interface UiScrollProps {
   autoHide?: ScrollbarsAutoHideBehavior
