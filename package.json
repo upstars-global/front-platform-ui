@@ -70,6 +70,7 @@
     ]
   },
   "devDependencies": {
+    "body-scroll-lock-upgrade": "^1.1.0",
     "@chromatic-com/storybook": "^4.1.3",
     "@commitlint/cli": "^20.2.0",
     "@commitlint/config-conventional": "^20.2.0",
@@ -123,6 +124,7 @@
     "vue3-outside-events": "upstars-global/vue3-outside-events#v2.0.5"
   },
   "peerDependencies": {
+    "body-scroll-lock-upgrade": "^1.1.0",
     "@floating-ui/vue": "^1.1.9",
     "@vue/tsconfig": "^0.7.0",
     "defu": "^6.1.4",

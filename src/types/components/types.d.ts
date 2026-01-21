@@ -14,6 +14,7 @@ import type { LinkUi } from './link/theme';
 import type { LoaderUi } from './loader/theme';
 import type { MenuUi } from './menu/theme';
 import type { ModalUi } from './modal/theme';
+import type { ModalRendererUi } from './modal-renderer/theme';
 import type { SelectUi } from './select/theme';
 import type { SkeletonUi } from './skeleton/theme';
 import type { SwitchUi } from './switch/theme';
@@ -44,6 +45,7 @@ interface UiConfig {
     loader?: UiProp<LoaderUi>;
     menu?: UiProp<MenuUi>;
     modal?: UiProp<ModalUi>;
+    modalRenderer?: UiProp<ModalRendererUi>;
     select?: UiProp<SelectUi>;
     skeleton?: UiProp<SkeletonUi>;
     switch?: UiProp<SwitchUi>;
