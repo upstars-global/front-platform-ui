@@ -13,16 +13,20 @@ import UiChip from './chip/UiChip.vue'
 import UiChipGroup from './chip/UiChipGroup.vue'
 import UiChipCarousel from './chip/UiChipCarousel.vue'
 import UiCircleProgressBar from './circle-progress-bar/UiCircleProgressBar.vue'
+import UiDropdown from './dropdown/UiDropdown.vue'
 import UiIcon from './icon/UiIcon.vue'
+import UiImage from './image/UiImage.vue'
 import UiInput from './input/UiInput.vue'
 import UiLink from './link/UiLink.vue'
 import UiLoader from './loader/UiLoader.vue'
 import UiMenu from './menu/UiMenu.vue'
+import UiModal from './modal/UiModal.vue'
+import UiModalRenderer from './modal-renderer/UiModalRenderer.vue'
 import UiScroll from './scroll/UiScroll.vue'
 import UiSelect from './select/UiSelect.vue'
 import UiSkeleton from './skeleton/UiSkeleton.vue'
+import UiSwitch from './switch/UiSwitch.vue'
 import UiTooltip from './tooltip/UiTooltip.vue'
-import UiImage from './image/UiImage.vue'
 
 export type { UiAccordionProps, UiAccordionSlots } from './accordion/UiAccordion.vue'
 export type { UiBadgeProps, UiBadgeSlots } from './badge/UiBadge.vue'
@@ -32,6 +36,7 @@ export type { UiCarouselProps, UiCarouselEmits, UiCarouselSlots } from './carous
 export type { UiCheckboxProps, UiCheckboxEmits, UiCheckboxSlots } from './checkbox/UiCheckbox.vue'
 export type { UiChipProps, UiChipEmits, UiChipSlots } from './chip/UiChip.vue'
 export type { UiCircleProgressBarProps, UiCircleProgressBarSlots } from './circle-progress-bar/UiCircleProgressBar.vue'
+export type { UiDropdownProps, UiDropdownSlots } from './dropdown/UiDropdown.vue'
 export type { UiIconProps } from './icon/UiIcon.vue'
 export type { UiIconsFill, UiIconName, UiIconsNavigation, UiIconsOutline, UiIconsSocial } from './icon/config'
 export type { UiImageProps } from './image/UiImage.vue'
@@ -39,8 +44,12 @@ export type { UiInputProps, UiInputEmits, UiInputSlots } from './input/UiInput.v
 export type { UiLinkProps, UiLinkEmits, UiLinkSlots } from './link/UiLink.vue'
 export type { UiLoaderProps } from './loader/UiLoader.vue'
 export type { UiMenuItem, UiMenuProps } from './menu/UiMenu.vue'
+export type { UiModalProps, UiModalEmits, UiModalSlots } from './modal/UiModal.vue'
+export type { UiModalRendererProps } from './modal-renderer/UiModalRenderer.vue'
+export type { ModalItem, ModalRendererEmits } from './modal-renderer/types'
 export type { UiScrollProps, UiScrollEmits, UiScrollSlots } from './scroll/UiScroll.vue'
 export type { UiSelectProps, SelectOption } from './select/UiSelect.vue'
+export type { UiSwitchProps, UiSwitchEmits } from './switch/UiSwitch.vue'
 export type { UiTooltipProps, UiTooltipSlots } from './tooltip/UiTooltip.vue'
 export type { AppConfig as UiKitConfig } from './types'
 
@@ -55,14 +64,18 @@ export {
   UiChipGroup,
   UiChipCarousel,
   UiCircleProgressBar,
+  UiDropdown,
   UiIcon,
+  UiImage,
   UiInput,
   UiLink,
   UiLoader,
   UiMenu,
+  UiModal,
+  UiModalRenderer,
   UiScroll,
   UiSelect,
   UiSkeleton,
-  UiTooltip,
-  UiImage
+  UiSwitch,
+  UiTooltip
 }
