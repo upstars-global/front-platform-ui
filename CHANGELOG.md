@@ -1,3 +1,14 @@
+## <small>1.20.1 (2026-01-21)</small>
+
+* Merge pull request #62 from upstars-global/update-dependencies
+ ([](https://github.com/upstars-global/front-platform-ui/commit/9df8b11))
+
+, closes [#62](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  chore(deps): update dev dependencies and Vue interface types
+* **deps:** update dev dependencies and Vue interface types
+ ([](https://github.com/upstars-global/front-platform-ui/commit/0ef3a37))
+
 ## 1.20.0 (2026-01-21)
 
 * Merge branch 'FP-4391' into FP-4393
