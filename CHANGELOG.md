@@ -1,3 +1,92 @@
+## 1.20.0 (2026-01-21)
+
+* Merge branch 'FP-4391' into FP-4393
+ ([](https://github.com/upstars-global/front-platform-ui/commit/5271ed6))
+
+
+* Merge branch 'main' into FP-4393
+ ([](https://github.com/upstars-global/front-platform-ui/commit/f542e05))
+
+
+
+  # Conflicts:
+
+  #	src/components/modal/theme.ts
+
+  #	src/components/types.ts
+
+  #	src/types/components/index.d.ts
+
+  #	src/types/components/types.d.ts
+* Merge branch 'main' into FP-4393
+ ([](https://github.com/upstars-global/front-platform-ui/commit/3c5cd5b))
+
+
+
+  # Conflicts:
+
+  #	src/types/components/index.d.ts
+* Merge branch 'main' into FP-4393
+ ([](https://github.com/upstars-global/front-platform-ui/commit/2e377fc))
+
+
+
+  # Conflicts:
+
+  #	src/types/components/index.d.ts
+* Merge branch 'main' into FP-4393
+ ([](https://github.com/upstars-global/front-platform-ui/commit/b357a40))
+
+
+
+  # Conflicts:
+
+  #	src/types/components/index.d.ts
+* Merge pull request #58 from upstars-global/FP-4393
+ ([](https://github.com/upstars-global/front-platform-ui/commit/e842bd1))
+
+, closes [#58](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  feat(FP-4393): Modal Renderer
+* **FP-4393:** refactor ModalRenderer to UiModalRenderer
+ ([](https://github.com/upstars-global/front-platform-ui/commit/3ceb575))
+
+
+* **FP-4393:** remove unnecessary comment
+ ([](https://github.com/upstars-global/front-platform-ui/commit/4489b0d))
+
+
+* **FP-4393:** replace console logging with Storybook actions for modal events
+ ([](https://github.com/upstars-global/front-platform-ui/commit/4c4d1ca))
+
+
+* **FP-4393:** update ModalRenderer stories
+ ([](https://github.com/upstars-global/front-platform-ui/commit/b3734bb))
+
+
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/6ac99d7))
+
+
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/b2ad6c3))
+
+
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/0cc701a))
+
+
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/9c41776))
+
+
+* **FP-4393:** add ModalRenderer
+ ([](https://github.com/upstars-global/front-platform-ui/commit/8d22117))
+
+
+* **FP-4393:** make UiModalRenderer responsive, export mediaMaxBreakpoints
+ ([](https://github.com/upstars-global/front-platform-ui/commit/5cb809e))
+
 ## 1.19.0 (2026-01-21)
 
 * Merge branch 'main' into FP-4391
