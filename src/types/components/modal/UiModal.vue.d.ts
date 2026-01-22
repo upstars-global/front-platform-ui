@@ -38,9 +38,9 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiModa
     onClose?: (() => any) | undefined;
     onInfiniteScroll?: (() => any) | undefined;
 }>, {
-    description: string;
     title: string;
     role: ModalRole;
+    description: string;
     fullscreen: boolean;
     ui: UiProp<ModalUi>;
     infiniteScroll: boolean;
