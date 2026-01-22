@@ -16,6 +16,8 @@ export interface UiCheckboxProps extends FormElementProps {
 
 export interface UiCheckboxEmits {
   (event: 'update:modelValue', value: boolean): void
+  (event: 'focus', value: FocusEvent): void
+  (event: 'blur', value: FocusEvent): void
 }
 
 export interface UiCheckboxSlots {
@@ -53,7 +55,7 @@ const props = withDefaults(defineProps<UiCheckboxProps>(), {
   errorIcon: undefined,
   ui: undefined
 })
-defineEmits<UiCheckboxEmits>()
+const emit = defineEmits<UiCheckboxEmits>()
 const slots = defineSlots<UiCheckboxSlots>()
 
 const model = defineModel<boolean>('modelValue', { default: undefined })
@@ -124,6 +126,14 @@ watch(
   }
 )
 
+const handleFocus = (event: FocusEvent) => {
+  emit('focus', event)
+}
+
+const handleBlur = (event: FocusEvent) => {
+  emit('blur', event)
+}
+
 const handleChange = (event: Event) => {
   isChecked.value = (event.target as HTMLInputElement).checked
 }
@@ -141,6 +151,8 @@ const handleChange = (event: Event) => {
       :disabled="disabled"
       :required="required"
       @change="handleChange"
+      @focus="handleFocus"
+      @blur="handleBlur"
     />
     <span :class="uiClasses.container">
       <slot name="checkmark">
