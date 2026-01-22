@@ -56,13 +56,13 @@ declare const __VLS_export: <T extends {
 } = {
     value: string;
 }>(__VLS_props: NonNullable<Awaited<typeof __VLS_setup>>["props"], __VLS_ctx?: __VLS_PrettifyLocal<Pick<NonNullable<Awaited<typeof __VLS_setup>>, "attrs" | "emit" | "slots">>, __VLS_exposed?: NonNullable<Awaited<typeof __VLS_setup>>["expose"], __VLS_setup?: Promise<{
-    props: __VLS_PrettifyLocal<UiInputProps<T> & {
+    props: import("vue").PublicProps & __VLS_PrettifyLocal<UiInputProps<T> & {
         onChange?: ((value: string) => any) | undefined;
         onBlur?: ((value: FocusEvent) => any) | undefined;
         onFocus?: ((value: FocusEvent) => any) | undefined;
         onKeydown?: ((value: KeyboardEvent) => any) | undefined;
         "onUpdate:modelValue"?: ((value: string) => any) | undefined;
-    }> & import("vue").PublicProps & (typeof globalThis extends {
+    }> & (typeof globalThis extends {
         __VLS_PROPS_FALLBACK: infer P;
     } ? P : {});
     expose: (exposed: {}) => void;
