@@ -111,8 +111,6 @@ export const WithRecommendations: Story = {
         ).filter((recommendation) => recommendation.value.includes(modelValue.value))
       })
 
-      console.log(filteredRecommendations.value)
-
       const getValueWithoutDomain = (value: string) => {
         if (!value) return ''
 
