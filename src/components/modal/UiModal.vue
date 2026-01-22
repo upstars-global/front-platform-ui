@@ -84,6 +84,8 @@ function checkScrollbar() {
   hasNativeScrollbar.value = element.scrollHeight > element.clientHeight
 }
 
+const FADE_THRESHOLD = 16
+
 function handleScroll(instance: OverlayScrollbars) {
   if (!instance) return
 
@@ -91,8 +93,8 @@ function handleScroll(instance: OverlayScrollbars) {
   const { scrollOffsetElement } = instance.elements()
   const { scrollTop } = scrollOffsetElement
 
-  showFadeEffect.top = scrollTop > 16
-  showFadeEffect.bottom = overflowAmount.y - scrollTop > 16
+  showFadeEffect.top = scrollTop > FADE_THRESHOLD
+  showFadeEffect.bottom = overflowAmount.y - scrollTop > FADE_THRESHOLD
 }
 
 function closeHandler() {
@@ -253,11 +255,11 @@ watch(
   top: 0;
   left: 0;
   right: 0;
-  height: 2rem;
+  height: theme('spacing.8');
   background: linear-gradient(to bottom, var(--modal-fade-color, #110e1b), transparent);
   pointer-events: none;
-  width: calc(100% - 0.5rem);
-  z-index: 10;
+  width: calc(100% - theme('spacing.2'));
+  z-index: theme('zIndex.10');
 }
 
 .show-fade-bottom::after {
@@ -266,16 +268,16 @@ watch(
   bottom: 0;
   left: 0;
   right: 0;
-  height: 2rem;
+  height: theme('spacing.8');
   background: linear-gradient(to top, var(--modal-fade-color, #110e1b), transparent);
   pointer-events: none;
-  width: calc(100% - 0.5rem);
-  z-index: 10;
+  width: calc(100% - theme('spacing.2'));
+  z-index: theme('zIndex.10');
 }
 </style>
 
 <style scoped>
 :deep([data-overlayscrollbars-viewport~='overflowYScroll']) {
-  padding-right: 1.5rem !important;
+  padding-right: theme('spacing.6') !important;
 }
 </style>
