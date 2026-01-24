@@ -18,6 +18,7 @@ import type { ModalRendererUi } from './modal-renderer/theme'
 import type { SelectUi } from './select/theme'
 import type { SkeletonUi } from './skeleton/theme'
 import type { StepperUi } from './stepper/theme'
+import type { StepperModalUi } from './stepper-modal/theme'
 import type { SwitchUi } from './switch/theme'
 import type { TooltipUi } from './tooltip/theme'
 
@@ -46,6 +47,7 @@ interface UiConfig {
   loader?: UiProp<LoaderUi>
   menu?: UiProp<MenuUi>
   stepper?: UiProp<StepperUi>
+  stepperModal?: UiProp<StepperModalUi>
   modal?: UiProp<ModalUi>
   modalRenderer?: UiProp<ModalRendererUi>
   select?: UiProp<SelectUi>

@@ -3,7 +3,7 @@ import type { UiProp } from '../types'
 import type { ModalUi } from './theme'
 import type { ClassNameValue } from 'tailwind-merge'
 
-type ModalRole = 'dialog' | 'alertdialog'
+export type ModalRole = 'dialog' | 'alertdialog'
 
 export interface UiModalProps {
   title?: string

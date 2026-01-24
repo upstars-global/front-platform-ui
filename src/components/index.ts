@@ -25,6 +25,7 @@ import UiModalRenderer from './modal-renderer/UiModalRenderer.vue'
 import UiSelect from './select/UiSelect.vue'
 import UiSkeleton from './skeleton/UiSkeleton.vue'
 import UiStepper from './stepper/UiStepper.vue'
+import UiStepperModal from './stepper-modal/UiStepperModal.vue'
 import UiSwitch from './switch/UiSwitch.vue'
 import UiTooltip from './tooltip/UiTooltip.vue'
 
@@ -49,6 +50,7 @@ export type { UiModalRendererProps } from './modal-renderer/UiModalRenderer.vue'
 export type { ModalItem, ModalRendererEmits } from './modal-renderer/types'
 export type { UiSelectProps, SelectOption } from './select/UiSelect.vue'
 export type { UiStepperProps } from './stepper/UiStepper.vue'
+export type { UiStepperModalProps, UiStepperModalEmits, UiStepperModalSlots } from './stepper-modal/UiStepperModal.vue'
 export type { UiSwitchProps, UiSwitchEmits } from './switch/UiSwitch.vue'
 export type { UiTooltipProps, UiTooltipSlots } from './tooltip/UiTooltip.vue'
 export type { AppConfig as UiKitConfig } from './types'
@@ -76,6 +78,7 @@ export {
   UiSelect,
   UiSkeleton,
   UiStepper,
+  UiStepperModal,
   UiSwitch,
   UiTooltip
 }
