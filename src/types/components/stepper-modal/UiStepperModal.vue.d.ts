@@ -34,9 +34,9 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiStep
     onClose?: (() => any) | undefined;
     onBack?: ((step: number) => any) | undefined;
 }>, {
-    description: string;
     title: string;
     role: ModalRole;
+    description: string;
     fullscreen: boolean;
     ui: UiProp<StepperModalUi>;
     showCloseButton: boolean;
