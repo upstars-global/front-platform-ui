@@ -34,18 +34,24 @@ const { attributes, className, mergeClasses } = useComponentAttributes(
   appConfig?.ui?.stepper?.strategy || props.ui?.strategy
 )
 
-const uiClasses = computed(() => ({
-  step: {
-    base: mergeClasses(theme.states.base, appConfig?.ui?.stepper?.states?.base, props.ui?.states?.base),
-    completed: mergeClasses(
-      theme.states.completed,
-      appConfig?.ui?.stepper?.states?.completed,
-      props.ui?.states?.completed
-    ),
-    active: mergeClasses(theme.states.active, appConfig?.ui?.stepper?.states?.active, props.ui?.states?.active),
-    inactive: mergeClasses(theme.states.inactive, appConfig?.ui?.stepper?.states?.inactive, props.ui?.states?.inactive)
+const uiClasses = computed(() => {
+  return {
+    step: {
+      base: mergeClasses(theme.states.base, appConfig?.ui?.stepper?.states?.base, props.ui?.states?.base),
+      completed: mergeClasses(
+        theme.states.completed,
+        appConfig?.ui?.stepper?.states?.completed,
+        props.ui?.states?.completed
+      ),
+      active: mergeClasses(theme.states.active, appConfig?.ui?.stepper?.states?.active, props.ui?.states?.active),
+      inactive: mergeClasses(
+        theme.states.inactive,
+        appConfig?.ui?.stepper?.states?.inactive,
+        props.ui?.states?.inactive
+      )
+    }
   }
-}))
+})
 
 const getStepClass = (step: number) => {
   if (step < props.currentStep) return uiClasses.value.step.completed
