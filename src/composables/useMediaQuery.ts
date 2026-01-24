@@ -14,7 +14,7 @@ interface MediaObservableObj extends ObservableObj {
   isMediaMatch: Ref<boolean>
 }
 
-const mediaMaxBreakpoints = {
+export const mediaMaxBreakpoints = {
   XS: 359,
   SM: 479,
   MD: 767,

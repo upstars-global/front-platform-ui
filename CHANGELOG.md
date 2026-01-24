@@ -1,3 +1,246 @@
+## <small>1.20.1 (2026-01-21)</small>
+
+* Merge pull request #62 from upstars-global/update-dependencies
+ ([](https://github.com/upstars-global/front-platform-ui/commit/9df8b11))
+
+, closes [#62](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  chore(deps): update dev dependencies and Vue interface types
+* **deps:** update dev dependencies and Vue interface types
+ ([](https://github.com/upstars-global/front-platform-ui/commit/0ef3a37))
+
+## 1.20.0 (2026-01-21)
+
+* Merge branch 'FP-4391' into FP-4393
+ ([](https://github.com/upstars-global/front-platform-ui/commit/5271ed6))
+
+
+* Merge branch 'main' into FP-4393
+ ([](https://github.com/upstars-global/front-platform-ui/commit/f542e05))
+
+
+
+  # Conflicts:
+
+  #	src/components/modal/theme.ts
+
+  #	src/components/types.ts
+
+  #	src/types/components/index.d.ts
+
+  #	src/types/components/types.d.ts
+* Merge branch 'main' into FP-4393
+ ([](https://github.com/upstars-global/front-platform-ui/commit/3c5cd5b))
+
+
+
+  # Conflicts:
+
+  #	src/types/components/index.d.ts
+* Merge branch 'main' into FP-4393
+ ([](https://github.com/upstars-global/front-platform-ui/commit/2e377fc))
+
+
+
+  # Conflicts:
+
+  #	src/types/components/index.d.ts
+* Merge branch 'main' into FP-4393
+ ([](https://github.com/upstars-global/front-platform-ui/commit/b357a40))
+
+
+
+  # Conflicts:
+
+  #	src/types/components/index.d.ts
+* Merge pull request #58 from upstars-global/FP-4393
+ ([](https://github.com/upstars-global/front-platform-ui/commit/e842bd1))
+
+, closes [#58](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  feat(FP-4393): Modal Renderer
+* **FP-4393:** refactor ModalRenderer to UiModalRenderer
+ ([](https://github.com/upstars-global/front-platform-ui/commit/3ceb575))
+
+
+* **FP-4393:** remove unnecessary comment
+ ([](https://github.com/upstars-global/front-platform-ui/commit/4489b0d))
+
+
+* **FP-4393:** replace console logging with Storybook actions for modal events
+ ([](https://github.com/upstars-global/front-platform-ui/commit/4c4d1ca))
+
+
+* **FP-4393:** update ModalRenderer stories
+ ([](https://github.com/upstars-global/front-platform-ui/commit/b3734bb))
+
+
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/6ac99d7))
+
+
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/b2ad6c3))
+
+
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/0cc701a))
+
+
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/9c41776))
+
+
+* **FP-4393:** add ModalRenderer
+ ([](https://github.com/upstars-global/front-platform-ui/commit/8d22117))
+
+
+* **FP-4393:** make UiModalRenderer responsive, export mediaMaxBreakpoints
+ ([](https://github.com/upstars-global/front-platform-ui/commit/5cb809e))
+
+## 1.19.0 (2026-01-21)
+
+* Merge branch 'main' into FP-4391
+ ([](https://github.com/upstars-global/front-platform-ui/commit/9e0a5b3))
+
+
+
+  # Conflicts:
+
+  #	src/components/types.ts
+
+  #	src/types/components/index.d.ts
+
+  #	src/types/components/types.d.ts
+* Merge branch 'main' into FP-4391
+ ([](https://github.com/upstars-global/front-platform-ui/commit/1023925))
+
+
+
+  # Conflicts:
+
+  #	src/types/components/index.d.ts
+* Merge branch 'main' into FP-4391
+ ([](https://github.com/upstars-global/front-platform-ui/commit/c9c2503))
+
+
+
+  # Conflicts:
+
+  #	src/types/components/index.d.ts
+* Merge pull request #57 from upstars-global/FP-4391
+ ([](https://github.com/upstars-global/front-platform-ui/commit/6d08a52))
+
+, closes [#57](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  feat(FP-4391): add UiModal component
+* **FP-4391:** minor style changes
+ ([](https://github.com/upstars-global/front-platform-ui/commit/51ef38e))
+
+
+* **FP-4391:** remove comments
+ ([](https://github.com/upstars-global/front-platform-ui/commit/b3ae362))
+
+
+* **FP-4391:** remove unused args in CustomHeader story
+ ([](https://github.com/upstars-global/front-platform-ui/commit/343af34))
+
+
+* **FP-4391:** remove unused header style configuration
+ ([](https://github.com/upstars-global/front-platform-ui/commit/3a1e435))
+
+
+* **FP-4391:** replace plain button with UiButton and align layout styles
+ ([](https://github.com/upstars-global/front-platform-ui/commit/a5cb778))
+
+
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/63d2f91))
+
+
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/56a84c7))
+
+
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/cb7b833))
+
+
+* **FP-4391:** add UiModal component
+ ([](https://github.com/upstars-global/front-platform-ui/commit/0622124))
+
+## 1.18.0 (2026-01-19)
+
+* Merge branch 'main' into ui-dropdown
+ ([](https://github.com/upstars-global/front-platform-ui/commit/e03a999))
+
+
+
+  # Conflicts:
+
+  #	src/types/components/index.d.ts
+* Merge branch 'main' into ui-dropdown
+ ([](https://github.com/upstars-global/front-platform-ui/commit/ebf85c9))
+
+
+
+  # Conflicts:
+
+  #	src/types/components/index.d.ts
+* Merge pull request #54 from upstars-global/ui-dropdown
+ ([](https://github.com/upstars-global/front-platform-ui/commit/cea57a4))
+
+, closes [#54](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  feat(dropdown): add `UiDropdown` component
+* **components:** export UiDropdown component and types in index file
+ ([](https://github.com/upstars-global/front-platform-ui/commit/ef2d138))
+
+
+* **components:** export UiDropdown component and types in index file
+ ([](https://github.com/upstars-global/front-platform-ui/commit/78ca9bf))
+
+
+* **dropdown:** add `UiDropdown` component
+ ([](https://github.com/upstars-global/front-platform-ui/commit/aaecde1))
+
+## 1.17.0 (2026-01-19)
+
+* Merge branch 'main' into ui-switch
+ ([](https://github.com/upstars-global/front-platform-ui/commit/909a533))
+
+
+
+  # Conflicts:
+
+  #	src/components/index.ts
+
+  #	src/components/types.ts
+
+  #	src/types/components/index.d.ts
+
+  #	src/types/components/types.d.ts
+* Merge pull request #55 from upstars-global/ui-switch
+ ([](https://github.com/upstars-global/front-platform-ui/commit/eb6c9bb))
+
+, closes [#55](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  feat(switch): add `UiSwitch` component
+* **types:** `UiSwitch` and `UiImage` definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/976d5c6))
+
+
+* **switch:** adjust styles for checkmark and size variants
+ ([](https://github.com/upstars-global/front-platform-ui/commit/604dc8c))
+
+
+* **switch:** add `UiSwitch` component
+ ([](https://github.com/upstars-global/front-platform-ui/commit/07d7ebc))
+
+
+* **switch:** export `UiSwitch` component types and definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/3195095))
+
 ## 1.16.0 (2026-01-15)
 
 * Merge branch 'main' of github.com:upstars-global/front-platform-ui into ui-image

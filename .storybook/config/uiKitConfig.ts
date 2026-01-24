@@ -88,6 +88,18 @@ export const uiKitConfig: AppConfig = {
         active: 'text-violet-500 hover:text-violet-600'
       }
     },
+    modal: {
+      base: 'bg-white',
+      states: {
+        fullscreen: 'border-cyan-500'
+      },
+      title: 'text-slate-900 text-base md:text-xl font-bold',
+      description: 'text-slate-600',
+      closeIcon: 'text-slate-600'
+    },
+    modalRenderer: {
+      overlay: 'bg-black/50'
+    },
     skeleton: {
       base: 'bg-slate-500'
     },
@@ -98,6 +110,12 @@ export const uiKitConfig: AppConfig = {
         active: 'bg-sky-500',
         inactive: 'bg-slate-300'
       }
+    },
+    switch: {
+      checkmark: {
+        base: 'border-slate-500 after:bg-slate-500'
+      },
+      checked: 'border-sky-500 after:bg-sky-500'
     },
     input: {
       input: {
