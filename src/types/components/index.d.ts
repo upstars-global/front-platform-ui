@@ -46,8 +46,8 @@ export type { UiModalProps, UiModalEmits, UiModalSlots } from './modal/UiModal.v
 export type { UiModalRendererProps } from './modal-renderer/UiModalRenderer.vue';
 export type { ModalItem, ModalRendererEmits } from './modal-renderer/types';
 export type { UiSelectProps, SelectOption } from './select/UiSelect.vue';
-export type { UiSwitchProps, UiSwitchEmits } from './switch/UiSwitch.vue';
 export type { UiStepperProps } from './stepper/UiStepper.vue';
+export type { UiSwitchProps, UiSwitchEmits } from './switch/UiSwitch.vue';
 export type { UiTooltipProps, UiTooltipSlots } from './tooltip/UiTooltip.vue';
 export type { AppConfig as UiKitConfig } from './types';
-export { UiAccordion, UiBadge, UiButton, UiCard, UiCarousel, UiCheckbox, UiChip, UiChipGroup, UiChipCarousel, UiCircleProgressBar, UiDropdown, UiIcon, UiInput, UiLink, UiLoader, UiMenu, UiModal, UiModalRenderer, UiSelect, UiSkeleton, UiStepper, UiSwitch, UiTooltip, UiImage };
+export { UiAccordion, UiBadge, UiButton, UiCard, UiCarousel, UiCheckbox, UiChip, UiChipGroup, UiChipCarousel, UiCircleProgressBar, UiDropdown, UiIcon, UiImage, UiInput, UiLink, UiLoader, UiMenu, UiModal, UiModalRenderer, UiSelect, UiSkeleton, UiStepper, UiSwitch, UiTooltip };

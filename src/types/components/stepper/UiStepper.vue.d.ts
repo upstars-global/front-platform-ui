@@ -8,7 +8,7 @@ export interface UiStepperProps {
 declare const _default: typeof __VLS_export;
 export default _default;
 declare const __VLS_export: import("vue").DefineComponent<UiStepperProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<UiStepperProps> & Readonly<{}>, {
-    currentStep: number;
     size: number;
     ui: UiProp<StepperUi>;
+    currentStep: number;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>;

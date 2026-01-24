@@ -45,11 +45,11 @@ interface UiConfig {
     link?: UiProp<LinkUi>;
     loader?: UiProp<LoaderUi>;
     menu?: UiProp<MenuUi>;
+    stepper?: UiProp<StepperUi>;
     modal?: UiProp<ModalUi>;
     modalRenderer?: UiProp<ModalRendererUi>;
     select?: UiProp<SelectUi>;
     skeleton?: UiProp<SkeletonUi>;
-    stepper?: UiProp<StepperUi>;
     switch?: UiProp<SwitchUi>;
     tooltip?: UiProp<TooltipUi>;
 }
