@@ -1,12 +1,7 @@
 import type { UiProp } from '../types';
 import type { StepperModalUi } from './theme';
-import type { ModalRole } from '../modal/UiModal.vue';
-export interface UiStepperModalProps {
-    title?: string;
-    description?: string;
-    showCloseButton?: boolean;
-    fullscreen?: boolean;
-    role?: ModalRole;
+import type { UiModalProps } from '../modal/UiModal.vue';
+export interface UiStepperModalProps extends Omit<UiModalProps, 'ui'> {
     currentStep?: number;
     totalSteps?: number;
     hideProgress?: boolean;
@@ -34,9 +29,9 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiStep
     onClose?: (() => any) | undefined;
     onBack?: ((step: number) => any) | undefined;
 }>, {
-    title: string;
-    role: ModalRole;
     description: string;
+    title: string;
+    role: "dialog" | "alertdialog";
     fullscreen: boolean;
     ui: UiProp<StepperModalUi>;
     showCloseButton: boolean;

@@ -1,14 +1,9 @@
 <script lang="ts">
 import type { UiProp } from '../types'
 import type { StepperModalUi } from './theme'
-import type { ModalRole } from '../modal/UiModal.vue'
+import type { UiModalProps } from '../modal/UiModal.vue'
 
-export interface UiStepperModalProps {
-  title?: string
-  description?: string
-  showCloseButton?: boolean
-  fullscreen?: boolean
-  role?: ModalRole
+export interface UiStepperModalProps extends Omit<UiModalProps, 'ui'> {
   currentStep?: number
   totalSteps?: number
   hideProgress?: boolean
