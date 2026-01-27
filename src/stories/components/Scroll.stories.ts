@@ -88,8 +88,8 @@ export const HorizontalScroll: Story = {
     template: `
       <UiScroll v-bind="args" class="w-96 border border-dashed border-gray-500">
         <div class="flex gap-4 p-4 w-max">
-          <div v-for="i in 10" :key="i" class="w-36 h-24 bg-gray-700 rounded-lg flex items-center justify-center">
-            Item {{ i }}
+          <div v-for="number in 10" :key="number" class="w-36 h-24 bg-gray-700 rounded-lg flex items-center justify-center">
+            Item {{ number }}
           </div>
         </div>
       </UiScroll>
