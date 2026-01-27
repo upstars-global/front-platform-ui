@@ -1,3 +1,26 @@
+## 1.22.0 (2026-01-27)
+
+* Merge pull request #61 from upstars-global/ui-progress-bar
+ ([](https://github.com/upstars-global/front-platform-ui/commit/884699a))
+
+, closes [#61](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  feat(progress-bar): add UiProgressBar component
+* Merge remote-tracking branch 'origin/main' into ui-progress-bar
+ ([](https://github.com/upstars-global/front-platform-ui/commit/2362ea5))
+
+
+* **progress-bar:** clean up unused imports and unused code
+ ([](https://github.com/upstars-global/front-platform-ui/commit/92d4ae7))
+
+
+* **progress-bar:** clean up unused imports and unused code
+ ([](https://github.com/upstars-global/front-platform-ui/commit/b0e8037))
+
+
+* **progress-bar:** add UiProgressBar component
+ ([](https://github.com/upstars-global/front-platform-ui/commit/1672b91))
+
 ## 1.21.0 (2026-01-27)
 
 * Merge branch 'main' into FP-4473
