@@ -119,7 +119,7 @@
     "vue-component-type-helpers": "^3.2.2",
     "vue-eslint-parser": "^10.2.0",
     "vue-router": "~4.6.4",
-    "vue-tsc": "^3.2.2",
+    "vue-tsc": "^3.2.4",
     "vue3-mask": "upstars-global/vue3-mask#v3.1.2",
     "vue3-outside-events": "upstars-global/vue3-outside-events#v2.0.5",
     "overlayscrollbars": "^2.13.0",
