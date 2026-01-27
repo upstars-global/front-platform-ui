@@ -20,6 +20,7 @@ import UiInput from './input/UiInput.vue'
 import UiLink from './link/UiLink.vue'
 import UiLoader from './loader/UiLoader.vue'
 import UiMenu from './menu/UiMenu.vue'
+import UiProgressBar from './progress-bar/UiProgressBar.vue'
 import UiModal from './modal/UiModal.vue'
 import UiModalRenderer from './modal-renderer/UiModalRenderer.vue'
 import UiScroll from './scroll/UiScroll.vue'
@@ -44,6 +45,7 @@ export type { UiInputProps, UiInputEmits, UiInputSlots } from './input/UiInput.v
 export type { UiLinkProps, UiLinkEmits, UiLinkSlots } from './link/UiLink.vue'
 export type { UiLoaderProps } from './loader/UiLoader.vue'
 export type { UiMenuItem, UiMenuProps } from './menu/UiMenu.vue'
+export type { UiProgressBarProps, UiProgressBarSlots } from './progress-bar/UiProgressBar.vue'
 export type { UiModalProps, UiModalEmits, UiModalSlots } from './modal/UiModal.vue'
 export type { UiModalRendererProps } from './modal-renderer/UiModalRenderer.vue'
 export type { ModalItem, ModalRendererEmits } from './modal-renderer/types'
@@ -71,6 +73,7 @@ export {
   UiLink,
   UiLoader,
   UiMenu,
+  UiProgressBar,
   UiModal,
   UiModalRenderer,
   UiScroll,
