@@ -1,3 +1,4 @@
+import type { ClassNameValue } from 'tailwind-merge';
 import type { AccordionUi } from './accordion/theme';
 import type { BadgeUi } from './badge/theme';
 import type { ButtonUi } from './button/theme';
@@ -13,6 +14,8 @@ import type { InputUi } from './input/theme';
 import type { LinkUi } from './link/theme';
 import type { LoaderUi } from './loader/theme';
 import type { MenuUi } from './menu/theme';
+import type { ProgressBarUi } from './progress-bar/theme';
+import type { ScrollUi } from './scroll/theme';
 import type { ModalUi } from './modal/theme';
 import type { ModalRendererUi } from './modal-renderer/theme';
 import type { SelectUi } from './select/theme';
@@ -22,7 +25,7 @@ import type { SwitchUi } from './switch/theme';
 import type { TooltipUi } from './tooltip/theme';
 export type Strategy = 'join' | 'merge';
 export type DeepPartial<T> = {
-    [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P] | undefined;
+    [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P] extends DeepPartial<T[P]> ? DeepPartial<T[P]> : ClassNameValue;
 };
 export type UiProp<T> = DeepPartial<T> & {
     strategy?: Strategy;
@@ -45,10 +48,12 @@ interface UiConfig {
     link?: UiProp<LinkUi>;
     loader?: UiProp<LoaderUi>;
     menu?: UiProp<MenuUi>;
-    stepper?: UiProp<StepperUi>;
+    progressBar?: UiProp<ProgressBarUi>;
     modal?: UiProp<ModalUi>;
     modalRenderer?: UiProp<ModalRendererUi>;
+    scroll?: UiProp<ScrollUi>;
     select?: UiProp<SelectUi>;
+    stepper?: UiProp<StepperUi>;
     skeleton?: UiProp<SkeletonUi>;
     switch?: UiProp<SwitchUi>;
     tooltip?: UiProp<TooltipUi>;
