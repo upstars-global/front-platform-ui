@@ -1,3 +1,30 @@
+## 1.23.0 (2026-01-27)
+
+* Merge branch 'main' into FP-4498
+ ([](https://github.com/upstars-global/front-platform-ui/commit/5f6fac6))
+
+
+* Merge branch 'main' into FP-4498
+ ([](https://github.com/upstars-global/front-platform-ui/commit/9312012))
+
+
+* Merge pull request #63 from upstars-global/FP-4498
+ ([](https://github.com/upstars-global/front-platform-ui/commit/1447c30))
+
+, closes [#63](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  FP 4498: Add UiScroll and fade effects into the UiModal
+* **FP-4498:** minor changes
+ ([](https://github.com/upstars-global/front-platform-ui/commit/2d5216f))
+
+
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/70bc01c))
+
+
+* **FP-4498:** enhance `UiModal` with loading, custom scroll, and infinite scroll support
+ ([](https://github.com/upstars-global/front-platform-ui/commit/d62126a))
+
 ## 1.22.0 (2026-01-27)
 
 * Merge pull request #61 from upstars-global/ui-progress-bar
