@@ -23,6 +23,8 @@ A modern Vue 3 UI component library built with TypeScript, Tailwind CSS, and Vit
   - [Using the Theme System](#using-the-theme-system)
   - [Global Configuration](#global-configuration)
   - [Merge Strategies](#merge-strategies)
+- [Storybook Utilities](#-storybook-utilities)
+  - [Decorators](#decorators)
 - [Code Quality](#-code-quality)
   - [Linting](#linting)
   - [Formatting](#formatting)
@@ -398,6 +400,64 @@ Control how classes are merged:
   Button
 </UiButton>
 ```
+
+## 📖 Storybook Utilities
+
+### Decorators
+
+The library provides utility decorators for Storybook stories located in `src/stories/utils/decorators/`.
+
+#### emitsObserver
+
+Automatically tracks component emits and displays them in the Storybook Actions panel.
+
+**Basic usage:**
+
+```ts
+import { emitsObserver } from '@src/stories/utils/decorators'
+
+const meta = {
+  title: 'UI Kit/Button',
+  component: UiButton,
+  decorators: [emitsObserver]
+} satisfies Meta<typeof UiButton>
+```
+
+**Important: Decorator Order**
+
+When using `emitsObserver` with other decorators, the order matters. Storybook applies decorators in the order they are defined.
+
+**Problem example:**
+
+In the `Modal.stories.ts` we had an issue with an `emitsObserver`. The story looked like this:
+
+```ts
+template: `
+  <div class="fixed inset-0 flex items-end md:items-center justify-center bg-black/50">
+    <UiModal v-bind="args">
+      <p class="text-slate-700">Modal with both title and description in the header.</p>
+    </UiModal>
+  </div>
+`
+```
+
+In this case, the close and infiniteScroll events didn't work because of a div that wraps UiModal.
+
+**Solution (from `Modal.stories.ts`):**
+
+In `Modal.stories.ts` story, we needed a backdrop wrapper for proper modal display, but we also need `emitsObserver` works properly.
+So, we created a wrapper decorator that wraps the `UiModal` component and the correct order places `emitsObserver` first:
+
+```ts
+decorators: [
+  emitsObserver,
+  () => ({
+    template: "<div class='fixed inset-0 flex items-end md:items-center justify-center bg-black/50'><story/></div>"
+  })
+]
+```
+
+With this order, `emitsObserver` wraps everything and properly tracks `UiModal` events like `close` in Storybook Actions, then the wrapper decorator is applied to create the backdrop.
 
 ## 🔍 Code Quality
 
