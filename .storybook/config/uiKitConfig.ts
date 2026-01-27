@@ -95,6 +95,18 @@ export const uiKitConfig: AppConfig = {
         line: 'bg-sky-500'
       }
     },
+    modal: {
+      base: 'bg-white',
+      states: {
+        fullscreen: 'border-cyan-500'
+      },
+      title: 'text-slate-900 text-base md:text-xl font-bold',
+      description: 'text-slate-600',
+      closeIcon: 'text-slate-600'
+    },
+    modalRenderer: {
+      overlay: 'bg-black/50'
+    },
     skeleton: {
       base: 'bg-slate-500'
     },
