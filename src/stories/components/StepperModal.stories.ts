@@ -1,18 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
+import { ref, watch } from 'vue'
 import UiStepperModal from '@src/components/stepper-modal/UiStepperModal.vue'
 import UiButton from '@src/components/button/UiButton.vue'
-import { emitsObserver } from '@src/stories/utils/decorators'
+import { emitsObserver, fullScreenOverlay } from '@src/stories/utils/decorators'
 
 const meta = {
   title: 'UI Kit/StepperModal',
   component: UiStepperModal,
   tags: ['autodocs'],
-  decorators: [
-    emitsObserver,
-    () => ({
-      template: "<div class='fixed inset-0 flex items-end md:items-center justify-center bg-black/50'><story/></div>"
-    })
-  ],
+  decorators: [emitsObserver, fullScreenOverlay],
   parameters: {
     layout: 'fullscreen'
   },
@@ -44,10 +40,22 @@ export const Default: Story = {
   render: (args) => ({
     name: 'Story',
     components: { UiStepperModal, UiButton },
-    setup: () => ({ args }),
+    setup: () => {
+      const currentStep = ref(args.currentStep)
+      const handleCurrentStep = (step: number) => {
+        currentStep.value = step
+      }
+      watch(
+        () => args.currentStep,
+        () => {
+          currentStep.value = args.currentStep
+        }
+      )
+      return { args, currentStep, handleCurrentStep }
+    },
     template: `
-      <UiStepperModal v-bind="args">
-        <p class="text-slate-700">This is the modal content for step {{ args.currentStep }}.</p>
+      <UiStepperModal v-bind="args" :current-step="currentStep" @back="handleCurrentStep">
+        <p class="text-slate-700">This is the modal content for step {{ currentStep }}.</p>
       </UiStepperModal>
     `
   })
