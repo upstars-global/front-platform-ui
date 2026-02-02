@@ -12,9 +12,12 @@ const modal = {
   description: 'px-5 text-center break-all',
 
   closeButton: 'absolute top-0 right-0 size-6',
-  closeIcon: 'size-4',
+  closeIcon: 'size-6',
 
-  content: 'flex-1 overflow-y-auto',
+  loaderWrapper: 'flex-1 flex items-center justify-center',
+  content: 'flex-1',
+  contentFallback: 'flex-1 overflow-y-auto',
+
   footer: 'flex flex-col gap-4 pt-4'
 }
 

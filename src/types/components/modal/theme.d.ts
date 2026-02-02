@@ -9,7 +9,9 @@ declare const modal: {
     description: string;
     closeButton: string;
     closeIcon: string;
+    loaderWrapper: string;
     content: string;
+    contentFallback: string;
     footer: string;
 };
 export type ModalUi = typeof modal;
