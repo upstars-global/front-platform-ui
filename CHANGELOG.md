@@ -1,3 +1,66 @@
+## 1.25.0 (2026-02-03)
+
+* Merge branch 'main' into FP-4392
+ ([](https://github.com/upstars-global/front-platform-ui/commit/714d292))
+
+
+
+  # Conflicts:
+
+  #	src/components/types.ts
+
+  #	src/types/components/index.d.ts
+
+  #	src/types/components/types.d.ts
+* Merge branch 'main' into FP-4392
+ ([](https://github.com/upstars-global/front-platform-ui/commit/7b213c0))
+
+
+
+  # Conflicts:
+
+  #	src/components/types.ts
+
+  #	src/types/components/index.d.ts
+
+  #	src/types/components/types.d.ts
+* Merge pull request #65 from upstars-global/FP-4392
+ ([](https://github.com/upstars-global/front-platform-ui/commit/872b209))
+
+, closes [#65](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  FP-4392: Add UiStepperModal
+* **components:** update types definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/e5e8d3a))
+
+
+* **components:** update types definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/7a33163))
+
+
+* **decorators:** add `fullScreenOverlay` decorator, extend story for modal stepper
+ ([](https://github.com/upstars-global/front-platform-ui/commit/52d6671))
+
+
+* **FP-4392:** add UiStepperModal component and stories
+ ([](https://github.com/upstars-global/front-platform-ui/commit/18970d8))
+
+
+* **stepper-modal:** handle `hideProgress` prop in `handleBack` method
+ ([](https://github.com/upstars-global/front-platform-ui/commit/68cacb0))
+
+
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/adf6bc0))
+
+
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/a7e1b01))
+
+
+* **FP-4392:** unify UiModal and UiStepperModal prop types by extending UiModalProps
+ ([](https://github.com/upstars-global/front-platform-ui/commit/bdf9bb4))
+
 ## 1.24.0 (2026-02-03)
 
 * Merge branch 'main' into FP-3541
