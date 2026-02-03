@@ -20,6 +20,7 @@ import type { ModalUi } from './modal/theme';
 import type { ModalRendererUi } from './modal-renderer/theme';
 import type { SelectUi } from './select/theme';
 import type { SkeletonUi } from './skeleton/theme';
+import type { StepperUi } from './stepper/theme';
 import type { SwitchUi } from './switch/theme';
 import type { TooltipUi } from './tooltip/theme';
 export type Strategy = 'join' | 'merge';
@@ -52,6 +53,7 @@ interface UiConfig {
     modalRenderer?: UiProp<ModalRendererUi>;
     scroll?: UiProp<ScrollUi>;
     select?: UiProp<SelectUi>;
+    stepper?: UiProp<StepperUi>;
     skeleton?: UiProp<SkeletonUi>;
     switch?: UiProp<SwitchUi>;
     tooltip?: UiProp<TooltipUi>;

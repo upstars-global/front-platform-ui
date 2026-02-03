@@ -110,6 +110,14 @@ export const uiKitConfig: AppConfig = {
     skeleton: {
       base: 'bg-slate-500'
     },
+    stepper: {
+      states: {
+        base: 'rounded-full',
+        completed: 'bg-sky-700',
+        active: 'bg-sky-500',
+        inactive: 'bg-slate-300'
+      }
+    },
     switch: {
       checkmark: {
         base: 'border-slate-500 after:bg-slate-500'
