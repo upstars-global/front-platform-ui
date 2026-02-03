@@ -79,6 +79,10 @@ function handleClose() {
 }
 
 function handleBack() {
+  if (props.hideProgress) {
+    return handleClose()
+  }
+
   if (props.currentStep > 1) {
     emit('back', props.currentStep - 1)
   } else {
