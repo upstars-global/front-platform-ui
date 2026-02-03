@@ -1,3 +1,54 @@
+## 1.24.0 (2026-02-03)
+
+* Merge branch 'main' into FP-3541
+ ([](https://github.com/upstars-global/front-platform-ui/commit/6174750))
+
+
+
+  # Conflicts:
+
+  #	src/components/types.ts
+
+  #	src/types/components/index.d.ts
+
+  #	src/types/components/types.d.ts
+* Merge branch 'main' into FP-3541
+ ([](https://github.com/upstars-global/front-platform-ui/commit/b6b01ab))
+
+
+
+  # Conflicts:
+
+  #	.storybook/config/uiKitConfig.ts
+
+  #	src/components/index.ts
+
+  #	src/components/types.ts
+
+  #	src/types/components/index.d.ts
+
+  #	src/types/components/types.d.ts
+* Merge pull request #64 from upstars-global/FP-3541
+ ([](https://github.com/upstars-global/front-platform-ui/commit/3c41308))
+
+, closes [#64](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  FP-3541: Add UiStepper component
+* **FP-3541:** simplify `uiClasses` computed
+ ([](https://github.com/upstars-global/front-platform-ui/commit/3bfab75))
+
+
+* **FP-3541:** update theme structure to use `states` instead of `step` for improved clarity
+ ([](https://github.com/upstars-global/front-platform-ui/commit/ff4bc12))
+
+
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/acd323b))
+
+
+* **FP-3541:** add UiStepper component
+ ([](https://github.com/upstars-global/front-platform-ui/commit/15a9cc6))
+
 ## 1.23.0 (2026-01-27)
 
 * Merge branch 'main' into FP-4498
