@@ -1,5 +1,6 @@
 export * from './argsUpdater'
 export * from './emitsObserver'
+export * from './fullScreenOverlay'
 export * from './modalManager'
 export * from './updateArgsProvider'
 export * from './vueRouter'

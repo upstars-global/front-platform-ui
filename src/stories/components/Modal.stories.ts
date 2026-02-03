@@ -1,18 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import UiModal from '@src/components/modal/UiModal.vue'
 import UiButton from '@src/components/button/UiButton.vue'
-import { emitsObserver } from '@src/stories/utils/decorators'
+import { emitsObserver, fullScreenOverlay } from '@src/stories/utils/decorators'
 
 const meta = {
   title: 'UI Kit/Modal',
   component: UiModal,
   tags: ['autodocs'],
-  decorators: [
-    emitsObserver,
-    () => ({
-      template: "<div class='fixed inset-0 flex items-end md:items-center justify-center bg-black/50'><story/></div>"
-    })
-  ],
+  decorators: [emitsObserver, fullScreenOverlay],
   parameters: {
     layout: 'fullscreen'
   },
