@@ -88,6 +88,13 @@ export const uiKitConfig: AppConfig = {
         active: 'text-violet-500 hover:text-violet-600'
       }
     },
+    progressBar: {
+      progress: {
+        content: 'text-xs leading-4',
+        trail: 'bg-slate-300',
+        line: 'bg-sky-500'
+      }
+    },
     modal: {
       base: 'bg-white',
       states: {
@@ -102,6 +109,14 @@ export const uiKitConfig: AppConfig = {
     },
     skeleton: {
       base: 'bg-slate-500'
+    },
+    stepper: {
+      states: {
+        base: 'rounded-full',
+        completed: 'bg-sky-700',
+        active: 'bg-sky-500',
+        inactive: 'bg-slate-300'
+      }
     },
     switch: {
       checkmark: {

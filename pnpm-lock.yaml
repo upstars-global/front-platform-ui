@@ -101,6 +101,12 @@ importers:
       lint-staged:
         specifier: ^16.2.7
         version: 16.2.7
+      overlayscrollbars:
+        specifier: ^2.13.0
+        version: 2.13.0
+      overlayscrollbars-vue:
+        specifier: ^0.5.9
+        version: 0.5.9(overlayscrollbars@2.13.0)(vue@3.5.27(typescript@5.9.3))
       playwright:
         specifier: ^1.57.0
         version: 1.57.0
@@ -2764,6 +2770,15 @@ packages:
   optionator@0.9.4:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==}
     engines: {node: '>= 0.8.0'}
+
+  overlayscrollbars-vue@0.5.9:
+    resolution: {integrity: sha512-zZEcsb6llnKaRwXTP44E4RrmwuH+eAi70mgCdiiPwcPBE2H99Vs2V0q7sWnEanqU3462ch38e4SmIMnuH906DQ==}
+    peerDependencies:
+      overlayscrollbars: ^2.0.0
+      vue: ^3.2.25
+
+  overlayscrollbars@2.13.0:
+    resolution: {integrity: sha512-uQGpLESrbFDLTWucWAKX9ceIANj7detMwH/2yJ315Llt72ZcWN3P6ckMotoqVv2Mk29R/pnhDtgYjy4K+kwAyQ==}
 
   p-each-series@3.0.0:
     resolution: {integrity: sha512-lastgtAdoH9YaLyDa5i5z64q+kzOcQHsQ5SsZJD3q0VEyI8mq872S3geuNbRUQLVAE9siMfgKrpj7MloKFHruw==}
@@ -6494,6 +6509,13 @@ snapshots:
       prelude-ls: 1.2.1
       type-check: 0.4.0
       word-wrap: 1.2.5
+
+  overlayscrollbars-vue@0.5.9(overlayscrollbars@2.13.0)(vue@3.5.27(typescript@5.9.3)):
+    dependencies:
+      overlayscrollbars: 2.13.0
+      vue: 3.5.27(typescript@5.9.3)
+
+  overlayscrollbars@2.13.0: {}
 
   p-each-series@3.0.0: {}
 

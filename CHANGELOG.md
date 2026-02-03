@@ -1,3 +1,254 @@
+## 1.25.0 (2026-02-03)
+
+* Merge branch 'main' into FP-4392
+ ([](https://github.com/upstars-global/front-platform-ui/commit/714d292))
+
+
+
+  # Conflicts:
+
+  #	src/components/types.ts
+
+  #	src/types/components/index.d.ts
+
+  #	src/types/components/types.d.ts
+* Merge branch 'main' into FP-4392
+ ([](https://github.com/upstars-global/front-platform-ui/commit/7b213c0))
+
+
+
+  # Conflicts:
+
+  #	src/components/types.ts
+
+  #	src/types/components/index.d.ts
+
+  #	src/types/components/types.d.ts
+* Merge pull request #65 from upstars-global/FP-4392
+ ([](https://github.com/upstars-global/front-platform-ui/commit/872b209))
+
+, closes [#65](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  FP-4392: Add UiStepperModal
+* **components:** update types definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/e5e8d3a))
+
+
+* **components:** update types definitions
+ ([](https://github.com/upstars-global/front-platform-ui/commit/7a33163))
+
+
+* **decorators:** add `fullScreenOverlay` decorator, extend story for modal stepper
+ ([](https://github.com/upstars-global/front-platform-ui/commit/52d6671))
+
+
+* **FP-4392:** add UiStepperModal component and stories
+ ([](https://github.com/upstars-global/front-platform-ui/commit/18970d8))
+
+
+* **stepper-modal:** handle `hideProgress` prop in `handleBack` method
+ ([](https://github.com/upstars-global/front-platform-ui/commit/68cacb0))
+
+
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/adf6bc0))
+
+
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/a7e1b01))
+
+
+* **FP-4392:** unify UiModal and UiStepperModal prop types by extending UiModalProps
+ ([](https://github.com/upstars-global/front-platform-ui/commit/bdf9bb4))
+
+## 1.24.0 (2026-02-03)
+
+* Merge branch 'main' into FP-3541
+ ([](https://github.com/upstars-global/front-platform-ui/commit/6174750))
+
+
+
+  # Conflicts:
+
+  #	src/components/types.ts
+
+  #	src/types/components/index.d.ts
+
+  #	src/types/components/types.d.ts
+* Merge branch 'main' into FP-3541
+ ([](https://github.com/upstars-global/front-platform-ui/commit/b6b01ab))
+
+
+
+  # Conflicts:
+
+  #	.storybook/config/uiKitConfig.ts
+
+  #	src/components/index.ts
+
+  #	src/components/types.ts
+
+  #	src/types/components/index.d.ts
+
+  #	src/types/components/types.d.ts
+* Merge pull request #64 from upstars-global/FP-3541
+ ([](https://github.com/upstars-global/front-platform-ui/commit/3c41308))
+
+, closes [#64](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  FP-3541: Add UiStepper component
+* **FP-3541:** simplify `uiClasses` computed
+ ([](https://github.com/upstars-global/front-platform-ui/commit/3bfab75))
+
+
+* **FP-3541:** update theme structure to use `states` instead of `step` for improved clarity
+ ([](https://github.com/upstars-global/front-platform-ui/commit/ff4bc12))
+
+
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/acd323b))
+
+
+* **FP-3541:** add UiStepper component
+ ([](https://github.com/upstars-global/front-platform-ui/commit/15a9cc6))
+
+## 1.23.0 (2026-01-27)
+
+* Merge branch 'main' into FP-4498
+ ([](https://github.com/upstars-global/front-platform-ui/commit/5f6fac6))
+
+
+* Merge branch 'main' into FP-4498
+ ([](https://github.com/upstars-global/front-platform-ui/commit/9312012))
+
+
+* Merge pull request #63 from upstars-global/FP-4498
+ ([](https://github.com/upstars-global/front-platform-ui/commit/1447c30))
+
+, closes [#63](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  FP 4498: Add UiScroll and fade effects into the UiModal
+* **FP-4498:** minor changes
+ ([](https://github.com/upstars-global/front-platform-ui/commit/2d5216f))
+
+
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/70bc01c))
+
+
+* **FP-4498:** enhance `UiModal` with loading, custom scroll, and infinite scroll support
+ ([](https://github.com/upstars-global/front-platform-ui/commit/d62126a))
+
+## 1.22.0 (2026-01-27)
+
+* Merge pull request #61 from upstars-global/ui-progress-bar
+ ([](https://github.com/upstars-global/front-platform-ui/commit/884699a))
+
+, closes [#61](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  feat(progress-bar): add UiProgressBar component
+* Merge remote-tracking branch 'origin/main' into ui-progress-bar
+ ([](https://github.com/upstars-global/front-platform-ui/commit/2362ea5))
+
+
+* **progress-bar:** clean up unused imports and unused code
+ ([](https://github.com/upstars-global/front-platform-ui/commit/92d4ae7))
+
+
+* **progress-bar:** clean up unused imports and unused code
+ ([](https://github.com/upstars-global/front-platform-ui/commit/b0e8037))
+
+
+* **progress-bar:** add UiProgressBar component
+ ([](https://github.com/upstars-global/front-platform-ui/commit/1672b91))
+
+## 1.21.0 (2026-01-27)
+
+* Merge branch 'main' into FP-4473
+ ([](https://github.com/upstars-global/front-platform-ui/commit/9901100))
+
+
+
+  # Conflicts:
+
+  #	pnpm-lock.yaml
+
+  #	src/components/index.ts
+
+  #	src/components/types.ts
+
+  #	src/types/components/index.d.ts
+
+  #	src/types/components/types.d.ts
+* Merge branch 'main' into FP-4473
+ ([](https://github.com/upstars-global/front-platform-ui/commit/599b004))
+
+
+
+  # Conflicts:
+
+  #	src/types/components/index.d.ts
+* Merge pull request #50 from upstars-global/dependabot/npm_and_yarn/types/node-25.0.3
+ ([](https://github.com/upstars-global/front-platform-ui/commit/07e79f1))
+
+, closes [#50](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  build(deps-dev): bump @types/node from 22.19.3 to 25.0.3
+* Merge pull request #60 from upstars-global/FP-4473
+ ([](https://github.com/upstars-global/front-platform-ui/commit/9fe7a88))
+
+, closes [#60](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  feat(FP-4473): add UiScroll
+* **FP-4473:** remove useless class from scroll theme
+ ([](https://github.com/upstars-global/front-platform-ui/commit/268f98a))
+
+
+* **FP-4473:** rename loop variable in Scroll.stories for clarity
+ ([](https://github.com/upstars-global/front-platform-ui/commit/3fde23a))
+
+
+* **FP-4473:** update UiScroll component type
+ ([](https://github.com/upstars-global/front-platform-ui/commit/cf21fe2))
+
+
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/a249935))
+
+
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/f54f2bf))
+
+
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/a970dc2))
+
+
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/d234e9e))
+
+
+* **deps-dev:** bump @types/node from 22.19.3 to 25.0.3
+ ([](https://github.com/upstars-global/front-platform-ui/commit/c2a4f00))
+
+
+
+  Bumps [@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/HEAD/types/node) from 22.19.3 to 25.0.3.
+
+  - [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
+
+  - [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/node)
+* **FP-4473:** minor changes
+ ([](https://github.com/upstars-global/front-platform-ui/commit/0c2bbcc))
+
+
+* **FP-4473:** update lock file
+ ([](https://github.com/upstars-global/front-platform-ui/commit/24aa85f))
+
+
+* **FP-4473:** add `UiScroll` component
+ ([](https://github.com/upstars-global/front-platform-ui/commit/7ca8fab))
+
 ## <small>1.20.1 (2026-01-21)</small>
 
 * Merge pull request #62 from upstars-global/update-dependencies
