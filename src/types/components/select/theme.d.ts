@@ -13,6 +13,7 @@ export type SelectUi = {
         leftSlot: string;
         invalid: string;
         hasValue: string;
+        singleOption: string;
     };
     leftSlot: string;
     dropdownIcon: string;

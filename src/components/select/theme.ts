@@ -14,6 +14,7 @@ export type SelectUi = {
     leftSlot: string
     invalid: string
     hasValue: string
+    singleOption: string
   }
   leftSlot: string
   dropdownIcon: string
@@ -42,7 +43,8 @@ const select: SelectUi = {
     textAlignCenter: 'text-center',
     leftSlot: 'pl-12',
     invalid: 'border-2',
-    hasValue: 'text-alt'
+    hasValue: 'text-alt',
+    singleOption: ''
   },
   leftSlot: 'absolute inset-y-0 left-4 flex items-center pointer-events-none',
   dropdownIcon: 'absolute inset-y-0 right-2 my-auto mx-0 pointer-events-none',

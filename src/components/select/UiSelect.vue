@@ -114,6 +114,8 @@ const isError = computed(() => props.error || slots['error-message'])
 
 const { hasSlotContent } = useHasSlot()
 
+const hasSingleOption = computed(() => props.options.length === 1)
+
 const uiClasses = computed(() => {
   const selectClasses = [theme.select?.base, appConfig.ui?.select?.select?.base, props.ui?.select?.base]
 
@@ -142,7 +144,11 @@ const uiClasses = computed(() => {
       ? [theme.select.hasValue, appConfig.ui?.select?.select?.hasValue, props.ui?.select?.hasValue]
       : []),
 
-    ...(isError.value ? [theme.select.invalid, appConfig.ui?.select?.select?.invalid, props.ui?.select?.invalid] : [])
+    ...(isError.value ? [theme.select.invalid, appConfig.ui?.select?.select?.invalid, props.ui?.select?.invalid] : []),
+
+    ...(hasSingleOption.value
+      ? [theme.select.singleOption, appConfig.ui?.select?.select?.singleOption, props.ui?.select?.singleOption]
+      : [])
   ]
 
   return {
