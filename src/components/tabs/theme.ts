@@ -5,8 +5,8 @@ const tabs = {
   container: 'flex relative rounded-6 p-1',
   content: 'w-full',
   item: {
-    base: 'flex font-regular relative outline-none py-1 px-4 cursor-pointer text-center',
-    active: '',
+    base: 'flex font-regular relative outline-none rounded-4 py-1 px-4 cursor-pointer text-center',
+    active: 'font-bold',
     disabled: 'pointer-events-none cursor-not-allowed opacity-50',
     leadingIcon: 'mr-1',
     trailingIcon: 'ml-1'
