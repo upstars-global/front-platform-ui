@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import type { UiIconName, UiTabProps } from '@src/components'
 import { emitsObserver } from '@src/stories/utils/decorators'
 import UiTabs from '@src/components/tabs/UiTabs.vue'
+import UiTab from '@src/components/tabs/UiTab.vue'
 import { ref, watch } from 'vue'
 
 const iconsMap: { name: UiIconName; tab: UiTabProps['id'] }[] = [
@@ -19,6 +20,7 @@ const items: UiTabProps[] = [
 const meta = {
   title: 'UI Kit/Tabs',
   component: UiTabs,
+  subcomponents: { UiTab },
   tags: ['autodocs'],
   decorators: [emitsObserver],
   argTypes: {
