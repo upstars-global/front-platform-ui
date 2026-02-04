@@ -70,11 +70,11 @@ const uiClasses = computed(() => {
   }
 })
 
-function setDataTestAttribute(item: UiTabProps, type: 'tab' | 'content' = 'tab') {
+function setDataTestAttribute(id: UiTabProps['id'], type: 'tab' | 'content' = 'tab') {
   const attributes = []
-  attributes.push(`${props.id}__${type}-${item.id}`)
-  if (item.isActive) {
-    attributes.push(`${props.id}__${type}-${item.id}--active`)
+  attributes.push(`${props.id}__${type}-${id}`)
+  if (modelValue.value === id) {
+    attributes.push(`${props.id}__${type}-${id}--active`)
   }
 
   return attributes.join(' ')
@@ -97,7 +97,7 @@ function handleClick(item: UiTabProps) {
             v-bind="item"
             :is-active="modelValue === item.id"
             :ui="uiClasses.item"
-            :data-test="setDataTestAttribute(item)"
+            :data-test="setDataTestAttribute(item.id)"
             @click="() => handleClick(item)"
           />
         </slot>
