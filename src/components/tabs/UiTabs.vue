@@ -108,7 +108,7 @@ function handleClick(item: UiTabProps) {
         v-if="$slots['content']"
         v-show="modelValue === item.id"
         :class="uiClasses.content"
-        :data-test="setDataTestAttribute(item, 'content')"
+        :data-test="setDataTestAttribute(item.id, 'content')"
       >
         <slot name="content" :item="item" />
       </div>
