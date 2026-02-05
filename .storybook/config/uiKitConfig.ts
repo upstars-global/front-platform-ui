@@ -148,6 +148,14 @@ export const uiKitConfig: AppConfig = {
         content: 'bg-red-500',
         text: 'text-white'
       }
+    },
+    tabs: {
+      container: 'border border-slate-300',
+      content: 'py-4',
+      item: {
+        base: 'text-slate-600 hover:text-sky-500 rounded-4',
+        active: 'font-bold text-sky-500 bg-slate-100'
+      }
     }
   }
 }
