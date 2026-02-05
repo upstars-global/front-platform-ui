@@ -210,7 +210,7 @@ const isFocused = ref(false)
 
 const handleFocus = (event: FocusEvent) => {
   isFocused.value = true
-  isRecommendationsVisible.value = Boolean(props.recommendations?.length)
+  isRecommendationsVisible.value = true
 
   emit('focus', event)
 }
