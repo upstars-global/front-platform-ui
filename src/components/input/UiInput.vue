@@ -206,13 +206,17 @@ const handleChange = (event: Event) => {
   emit('change', target.value)
 }
 
+const isFocused = ref(false)
+
 const handleFocus = (event: FocusEvent) => {
-  isRecommendationsVisible.value = true
+  isFocused.value = true
+  isRecommendationsVisible.value = Boolean(props.recommendations?.length)
 
   emit('focus', event)
 }
 
 const handleBlur = (event: FocusEvent) => {
+  isFocused.value = false
   emit('blur', event)
 }
 
@@ -222,10 +226,17 @@ const handleKeydown = (event: KeyboardEvent) => {
 
 const handleRecommendationClick = (suggestion: T) => {
   emit('update:modelValue', suggestion.value)
+  emit('change', suggestion.value)
+
   isRecommendationsVisible.value = false
+  isFocused.value = false
 }
 
 const handleClickOutside = () => {
+  if (isFocused.value) {
+    return
+  }
+
   isRecommendationsVisible.value = false
 }
 
@@ -301,7 +312,7 @@ onMounted(() => {
           </div>
         </div>
       </template>
-      <div v-if="isError" :class="uiClasses.error.content">
+      <div v-if="isError && !isRecommendationsVisible" :class="uiClasses.error.content">
         <small :class="uiClasses.error.text">
           <slot name="error-message">
             <span :data-test="`${dataTest}-error-msg`">{{ error }}</span>
