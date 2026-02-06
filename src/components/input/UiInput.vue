@@ -312,7 +312,7 @@ onMounted(() => {
           </div>
         </div>
       </template>
-      <div v-if="isError && !isRecommendationsVisible" :class="uiClasses.error.content">
+      <div v-if="isError" :class="uiClasses.error.content">
         <small :class="uiClasses.error.text">
           <slot name="error-message">
             <span :data-test="`${dataTest}-error-msg`">{{ error }}</span>
