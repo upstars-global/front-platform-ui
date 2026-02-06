@@ -50,7 +50,7 @@ export type { UiModalProps, UiModalEmits, UiModalSlots } from './modal/UiModal.v
 export type { UiModalRendererProps } from './modal-renderer/UiModalRenderer.vue';
 export type { ModalItem, ModalRendererEmits } from './modal-renderer/types';
 export type { UiScrollProps, UiScrollEmits, UiScrollSlots } from './scroll/UiScroll.vue';
-export type { UiSelectProps, SelectOption } from './select/UiSelect.vue';
+export type { UiSelectProps, UiSelectEmits, UiSelectSlots, SelectOption } from './select/UiSelect.vue';
 export type { UiStepperProps } from './stepper/UiStepper.vue';
 export type { UiStepperModalProps, UiStepperModalEmits, UiStepperModalSlots } from './stepper-modal/UiStepperModal.vue';
 export type { UiSwitchProps, UiSwitchEmits } from './switch/UiSwitch.vue';

@@ -1,6 +1,7 @@
 import type { FormElementProps, UiProp } from '../types';
 import type { UiTooltipProps } from '../tooltip/UiTooltip.vue';
 import type { SelectUi } from './theme';
+import type { Slot } from 'vue';
 export interface SelectOption {
     label: string;
     value: string | number;
@@ -14,11 +15,12 @@ export interface UiSelectProps extends FormElementProps, Partial<Pick<UiTooltipP
     subLabel?: string;
     ui?: UiProp<SelectUi>;
     selectTextAlign?: 'left' | 'center' | 'right';
+    fullWidth?: boolean;
+    size?: 'small' | 'medium';
     options?: SelectOption[];
+    autocomplete?: string;
     placeholder?: string;
     id?: string;
-    size?: 'small' | 'medium';
-    fullWidth?: boolean;
 }
 export interface UiSelectEmits {
     (event: 'update:modelValue', value: string | number): void;
@@ -27,10 +29,10 @@ export interface UiSelectEmits {
     (event: 'blur', value: FocusEvent): void;
 }
 export interface UiSelectSlots {
-    left?: () => unknown;
-    label?: () => unknown;
-    'error-message'?: () => unknown;
-    description?: () => unknown;
+    left?: Slot;
+    label?: Slot;
+    'error-message'?: Slot;
+    description?: Slot;
     option?: (props: {
         option: SelectOption;
         index: number;
@@ -51,6 +53,7 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiSele
 }>, {
     error: string;
     id: string;
+    autocomplete: string;
     options: SelectOption[];
     size: "small" | "medium";
     description: string;
