@@ -1,3 +1,14 @@
+## <small>1.25.1 (2026-02-05)</small>
+
+* Merge pull request #72 from upstars-global/modal-renderer
+ ([](https://github.com/upstars-global/front-platform-ui/commit/223a500))
+
+, closes [#72](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  refactor(modal-renderer): refactor ModalRenderer stories
+* **modal-renderer:** refactor modalManager decorator and background content generation
+ ([](https://github.com/upstars-global/front-platform-ui/commit/732a738))
+
 ## 1.25.0 (2026-02-03)
 
 * Merge branch 'main' into FP-4392

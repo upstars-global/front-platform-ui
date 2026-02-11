@@ -4,14 +4,17 @@ import { action } from 'storybook/actions'
 import UiModalRenderer from '@src/components/modal-renderer/UiModalRenderer.vue'
 import type { ModalItem } from '@src/components/modal-renderer/types'
 
-const backgroundContent = `
-  <div class="mt-8 min-h-[200vh] bg-gradient-to-b from-slate-200 to-slate-400 p-4 rounded">
-    <p class="text-slate-600 mb-4">Scroll down to test. When modal is open, scrolling should be blocked.</p>
-    <div class="sticky top-4 bg-white p-4 rounded shadow">
-      <p class="font-bold">Sticky indicator - scroll to see it move</p>
+const getBackgroundContent = (isStoryView: boolean) => {
+  const heightClass = isStoryView ? 'min-h-[200vh]' : 'min-h-[300px]'
+  return `
+    <div class="mt-8 ${heightClass} bg-gradient-to-b from-slate-200 to-slate-400 p-4 rounded">
+      <p class="text-slate-600 mb-4">Scroll down to test. When modal is open, scrolling should be blocked.</p>
+      <div class="sticky top-4 bg-white p-4 rounded shadow">
+        <p class="font-bold">Sticky indicator - scroll to see it move</p>
+      </div>
     </div>
-  </div>
-`
+  `
+}
 
 /**
  * Modal Manager Decorator
@@ -25,7 +28,7 @@ const backgroundContent = `
  * - Handles 500ms transition delay for closing
  * - Logs modal events to Storybook Actions Tab
  */
-export const modalManager: Decorator = (story) => ({
+export const modalManager: Decorator = (story, context) => ({
   setup(_, { attrs }) {
     const modals = ref<ModalItem[]>([])
     const isVisible = ref(false)
@@ -53,10 +56,12 @@ export const modalManager: Decorator = (story) => ({
     // Provide to stories
     provide('modalManager', { openModal, closeModal })
 
+    const isStoryView = context.viewMode === 'story'
+
     return () =>
       h('div', { class: 'p-8' }, [
         h(story(), attrs), // Story content (trigger buttons)
-        h('div', { innerHTML: backgroundContent }), // Background for scroll testing
+        h('div', { innerHTML: getBackgroundContent(isStoryView) }), // Background for scroll testing
         h(UiModalRenderer, {
           // Auto-rendered modal renderer
           modals: modals.value,
