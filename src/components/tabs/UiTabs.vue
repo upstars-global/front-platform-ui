@@ -98,7 +98,7 @@ function handleClick(item: UiTabProps) {
             :is-active="modelValue === item.id"
             :ui="uiClasses.item"
             :data-test="setDataTestAttribute(item.id)"
-            @click="() => handleClick(item)"
+            @click="handleClick(item)"
           />
         </slot>
       </template>
