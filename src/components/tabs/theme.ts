@@ -1,7 +1,7 @@
 import type { UiProp } from '../types'
 
 const tabs = {
-  base: 'flex flex-col relative',
+  base: 'flex flex-col items-start relative',
   container: 'flex relative rounded-6 p-1',
   content: 'w-full',
   item: {
