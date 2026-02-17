@@ -1,3 +1,50 @@
+## 1.27.0 (2026-02-17)
+
+* Merge branch 'main' into ui-tabs
+ ([](https://github.com/upstars-global/front-platform-ui/commit/ac89e32))
+
+
+* Merge branch 'main' into ui-tabs
+ ([](https://github.com/upstars-global/front-platform-ui/commit/6ed8053))
+
+
+* Merge pull request #71 from upstars-global/ui-tabs
+ ([](https://github.com/upstars-global/front-platform-ui/commit/d380216))
+
+, closes [#71](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  feat(tabs): add UiTabs and UiTab components
+* **tabs:** center-align content in tab items
+ ([](https://github.com/upstars-global/front-platform-ui/commit/d5e6923))
+
+
+* **tabs:** simplify `setDataTestAttribute` function and improve readability
+ ([](https://github.com/upstars-global/front-platform-ui/commit/4a4c564))
+
+
+* **tabs:** update theme to align tab items to the start
+ ([](https://github.com/upstars-global/front-platform-ui/commit/bfe8217))
+
+
+* **tabs:** update theme to include rounded edges and bold active state
+ ([](https://github.com/upstars-global/front-platform-ui/commit/8035851))
+
+
+* **tabs:** correct parameter in `setDataTestAttribute` function
+ ([](https://github.com/upstars-global/front-platform-ui/commit/45ccf6e))
+
+
+* **tabs:** simplify `@click` handler and remove bold style for active items
+ ([](https://github.com/upstars-global/front-platform-ui/commit/0d4004b))
+
+
+* **tabs:** add UiTabs and UiTab components with theme and story integration
+ ([](https://github.com/upstars-global/front-platform-ui/commit/69691c3))
+
+
+* **tabs:** add UiTabs and UiTab components with theme and story integration
+ ([](https://github.com/upstars-global/front-platform-ui/commit/707a31d))
+
 ## 1.26.0 (2026-02-17)
 
 * Merge branch 'main' into FP-3987
