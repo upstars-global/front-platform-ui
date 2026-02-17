@@ -11,6 +11,8 @@ export interface UiCheckboxProps extends FormElementProps {
 }
 export interface UiCheckboxEmits {
     (event: 'update:modelValue', value: boolean): void;
+    (event: 'focus', value: FocusEvent): void;
+    (event: 'blur', value: FocusEvent): void;
 }
 export interface UiCheckboxSlots {
     checkmark(): unknown;
@@ -24,10 +26,14 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiChec
 }, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
     "update:modelValue": (value: boolean) => any;
 } & {
+    blur: (value: FocusEvent) => any;
+    focus: (value: FocusEvent) => any;
     "update:modelValue": (value: boolean) => any;
 }, string, import("vue").PublicProps, Readonly<UiCheckboxProps & {
     modelValue?: boolean;
 }> & Readonly<{
+    onBlur?: ((value: FocusEvent) => any) | undefined;
+    onFocus?: ((value: FocusEvent) => any) | undefined;
     "onUpdate:modelValue"?: ((value: boolean) => any) | undefined;
 }>, {
     error: string;

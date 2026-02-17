@@ -1,16 +1,18 @@
-<script lang="ts">
-import type { ClassNameValue } from 'tailwind-merge'
+<script lang="ts" generic="T extends { value: string } = { value: string }">
 import type { FormElementProps, UiProp } from '../types'
 import type { UiTooltipProps } from '../tooltip/UiTooltip.vue'
 import type { InputUi } from './theme'
+import type { Slot } from 'vue'
 
-export interface UiInputProps extends FormElementProps, Partial<Pick<UiTooltipProps, 'offsetValue'>> {
+type UiInputPropsBase = FormElementProps & Partial<Pick<UiTooltipProps, 'offsetValue'>>
+
+export interface UiInputProps<T extends { value: string } = { value: string }> extends UiInputPropsBase {
   dataTest?: string
   modelValue?: string | undefined
   error?: string
   description?: string
   subLabel?: string
-  recommendations?: string[] | null
+  recommendations?: T[] | null
   ui?: UiProp<InputUi>
   mask?: string | Record<string, unknown>
   inputTextAlign?: 'left' | 'center' | 'right'
@@ -36,20 +38,23 @@ export interface UiInputEmits {
   (event: 'keydown', value: KeyboardEvent): void
 }
 
-export interface UiInputSlots {
-  left?: () => unknown
-  right?: () => unknown
-  label?: () => unknown
-  'error-message'?: () => unknown
-  description?: () => unknown
+export interface UiInputSlots<T extends { value: string } = { value: string }> {
+  left?: Slot
+  right?: Slot
+  label?: Slot
+  'error-message'?: Slot
+  description?: Slot
+  recommendation?: (props: { recommendation: T }) => unknown
 }
 </script>
-<script setup lang="ts">
+<script setup lang="ts" generic="T extends { value: string } = { value: string }">
+import type { ClassNameValue } from 'tailwind-merge'
 import { computed, ref, useTemplateRef, onMounted } from 'vue'
 import { useAppConfig } from '../../composables/useAppConfig'
 import { useComponentAttributes } from '../../composables/useUiClasses'
 import { prepareVariants } from '../../helpers/prepareClassNames'
 import UiTooltip from '../tooltip/UiTooltip.vue'
+import useHasSlot from '../../composables/useHasSlot'
 import theme from './theme'
 
 defineOptions({
@@ -57,7 +62,7 @@ defineOptions({
   inheritAttrs: false
 })
 
-const props = withDefaults(defineProps<UiInputProps>(), {
+const props = withDefaults(defineProps<UiInputProps<T>>(), {
   modelValue: '',
   type: 'text',
   dataTest: 'text-field',
@@ -83,7 +88,7 @@ const props = withDefaults(defineProps<UiInputProps>(), {
 })
 
 const emit = defineEmits<UiInputEmits>()
-const slots = defineSlots<UiInputSlots>()
+const slots = defineSlots<UiInputSlots<T>>()
 
 const elementId = computed(() => `label-${props.name}`)
 
@@ -111,6 +116,8 @@ const { attributes, className, mergeClasses } = useComponentAttributes(
   appConfig?.ui?.input?.strategy || props.ui?.strategy
 )
 
+const { hasSlotContent } = useHasSlot()
+
 const isError = computed(() => props.error || slots['error-message'])
 
 const uiClasses = computed(() => {
@@ -125,9 +132,13 @@ const uiClasses = computed(() => {
       ? [theme.input.textAlignCenter, appConfig.ui?.input?.input?.textAlignCenter, props.ui?.input?.textAlignCenter]
       : []),
 
-    ...(slots.left ? [theme.input.leftSlot, appConfig.ui?.input?.input?.leftSlot, props.ui?.input?.leftSlot] : []),
+    ...(hasSlotContent(slots.left)
+      ? [theme.input.leftSlot, appConfig.ui?.input?.input?.leftSlot, props.ui?.input?.leftSlot]
+      : []),
 
-    ...(slots.right ? [theme.input.rightSlot, appConfig.ui?.input?.input?.rightSlot, props.ui?.input?.rightSlot] : []),
+    ...(hasSlotContent(slots.right)
+      ? [theme.input.rightSlot, appConfig.ui?.input?.input?.rightSlot, props.ui?.input?.rightSlot]
+      : []),
 
     ...(props.disabled ? [theme.input.disabled, appConfig.ui?.input?.input?.disabled, props.ui?.input?.disabled] : []),
 
@@ -195,13 +206,17 @@ const handleChange = (event: Event) => {
   emit('change', target.value)
 }
 
+const isFocused = ref(false)
+
 const handleFocus = (event: FocusEvent) => {
+  isFocused.value = true
   isRecommendationsVisible.value = true
 
   emit('focus', event)
 }
 
 const handleBlur = (event: FocusEvent) => {
+  isFocused.value = false
   emit('blur', event)
 }
 
@@ -209,12 +224,19 @@ const handleKeydown = (event: KeyboardEvent) => {
   emit('keydown', event)
 }
 
-const handleRecommendationClick = (suggestion: string) => {
-  emit('update:modelValue', suggestion)
+const handleRecommendationClick = (suggestion: T) => {
+  emit('update:modelValue', suggestion.value)
+  emit('change', suggestion.value)
+
   isRecommendationsVisible.value = false
+  isFocused.value = false
 }
 
 const handleClickOutside = () => {
+  if (isFocused.value) {
+    return
+  }
+
   isRecommendationsVisible.value = false
 }
 
@@ -232,7 +254,14 @@ onMounted(() => {
       <span v-if="required">*</span>
       <span v-if="subLabel">{{ subLabel }}</span>
     </label>
-    <UiTooltip :ui="uiClasses.tooltip" :disabled="!isError" placement="bottom" trigger="always" :offset-value>
+    <UiTooltip
+      :ui="uiClasses.tooltip"
+      :disabled="!isError"
+      placement="bottom"
+      :fallback-placements="['bottom']"
+      trigger="always"
+      :offset-value
+    >
       <template #activator>
         <div :class="uiClasses.container" @click="handleClick">
           <div v-if="slots.left" :class="uiClasses.slotLeft">
@@ -268,11 +297,13 @@ onMounted(() => {
             <ul :data-test="`${dataTest}-recommend-list`" :class="uiClasses.recommendationsList">
               <li
                 v-for="recommendation in recommendations"
-                :key="recommendation"
+                :key="recommendation.value"
                 :class="uiClasses.recommendationsListItem"
                 @click.stop.capture="handleRecommendationClick(recommendation)"
               >
-                <span>{{ recommendation }}</span>
+                <slot name="recommendation" :recommendation>
+                  <span>{{ recommendation.value }}</span>
+                </slot>
               </li>
             </ul>
           </div>
