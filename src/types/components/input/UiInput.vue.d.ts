@@ -1,13 +1,19 @@
 import type { FormElementProps, UiProp } from '../types';
 import type { UiTooltipProps } from '../tooltip/UiTooltip.vue';
 import type { InputUi } from './theme';
-export interface UiInputProps extends FormElementProps, Partial<Pick<UiTooltipProps, 'offsetValue'>> {
+import type { Slot } from 'vue';
+type UiInputPropsBase = FormElementProps & Partial<Pick<UiTooltipProps, 'offsetValue'>>;
+export interface UiInputProps<T extends {
+    value: string;
+} = {
+    value: string;
+}> extends UiInputPropsBase {
     dataTest?: string;
     modelValue?: string | undefined;
     error?: string;
     description?: string;
     subLabel?: string;
-    recommendations?: string[] | null;
+    recommendations?: T[] | null;
     ui?: UiProp<InputUi>;
     mask?: string | Record<string, unknown>;
     inputTextAlign?: 'left' | 'center' | 'right';
@@ -29,50 +35,45 @@ export interface UiInputEmits {
     (event: 'blur', value: FocusEvent): void;
     (event: 'keydown', value: KeyboardEvent): void;
 }
-export interface UiInputSlots {
-    left?: () => unknown;
-    right?: () => unknown;
-    label?: () => unknown;
-    'error-message'?: () => unknown;
-    description?: () => unknown;
+export interface UiInputSlots<T extends {
+    value: string;
+} = {
+    value: string;
+}> {
+    left?: Slot;
+    right?: Slot;
+    label?: Slot;
+    'error-message'?: Slot;
+    description?: Slot;
+    recommendation?: (props: {
+        recommendation: T;
+    }) => unknown;
 }
 declare const _default: typeof __VLS_export;
 export default _default;
-declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiInputProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
-    change: (value: string) => any;
-    blur: (value: FocusEvent) => any;
-    focus: (value: FocusEvent) => any;
-    keydown: (value: KeyboardEvent) => any;
-    "update:modelValue": (value: string) => any;
-}, string, import("vue").PublicProps, Readonly<UiInputProps> & Readonly<{
-    onChange?: ((value: string) => any) | undefined;
-    onBlur?: ((value: FocusEvent) => any) | undefined;
-    onFocus?: ((value: FocusEvent) => any) | undefined;
-    onKeydown?: ((value: KeyboardEvent) => any) | undefined;
-    "onUpdate:modelValue"?: ((value: string) => any) | undefined;
-}>, {
-    max: number | string;
-    type: "text" | "password" | "email" | "number" | "tel" | "url" | "search" | "date";
-    error: string;
-    id: string;
-    min: number | string;
-    mask: string | Record<string, unknown>;
-    pattern: string;
-    autocomplete: string;
-    description: string;
-    step: number | string;
-    placeholder: string;
-    maxlength: number;
-    ui: UiProp<InputUi>;
-    dataTest: string;
-    modelValue: string;
-    offsetValue: number;
-    subLabel: string;
-    recommendations: string[] | null;
-    inputTextAlign: "left" | "center" | "right";
-}, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiInputSlots>;
-type __VLS_WithSlots<T, S> = T & {
-    new (): {
-        $slots: S;
-    };
+declare const __VLS_export: <T extends {
+    value: string;
+} = {
+    value: string;
+}>(__VLS_props: NonNullable<Awaited<typeof __VLS_setup>>["props"], __VLS_ctx?: __VLS_PrettifyLocal<Pick<NonNullable<Awaited<typeof __VLS_setup>>, "attrs" | "emit" | "slots">>, __VLS_exposed?: NonNullable<Awaited<typeof __VLS_setup>>["expose"], __VLS_setup?: Promise<{
+    props: import("vue").PublicProps & __VLS_PrettifyLocal<UiInputProps<T> & {
+        onChange?: ((value: string) => any) | undefined;
+        onBlur?: ((value: FocusEvent) => any) | undefined;
+        onFocus?: ((value: FocusEvent) => any) | undefined;
+        onKeydown?: ((value: KeyboardEvent) => any) | undefined;
+        "onUpdate:modelValue"?: ((value: string) => any) | undefined;
+    }> & (typeof globalThis extends {
+        __VLS_PROPS_FALLBACK: infer P;
+    } ? P : {});
+    expose: (exposed: {}) => void;
+    attrs: any;
+    slots: UiInputSlots<T>;
+    emit: UiInputEmits;
+}>) => import("vue").VNode & {
+    __ctx?: Awaited<typeof __VLS_setup>;
 };
+type __VLS_PrettifyLocal<T> = (T extends any ? {
+    [K in keyof T]: T[K];
+} : {
+    [K in keyof T as K]: T[K];
+}) & {};
