@@ -101,7 +101,7 @@
     "globals": "^17.0.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
-    "playwright": "^1.57.0",
+    "playwright": "^1.58.2",
     "postcss": "^8.5.6",
     "postcss-nested": "^7.0.2",
     "prettier": "^3.8.0",
