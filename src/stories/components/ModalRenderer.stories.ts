@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import { inject, markRaw, defineComponent, h } from 'vue'
 import UiModal from '@src/components/modal/UiModal.vue'
 import UiButton from '@src/components/button/UiButton.vue'
+import UiModalRenderer from '@src/components/modal-renderer/UiModalRenderer.vue'
+import ModalWrapper from '@src/components/modal-renderer/components/ModalWrapper.vue'
 import type { ModalItem } from '@src/components/modal-renderer/types'
 import { modalManager } from '../utils/decorators'
 
@@ -11,6 +13,9 @@ interface ModalRendererStoryArgs {
   modalProps?: Record<string, unknown>
   disableBackdropClosing?: boolean
   openMultiple?: (openModal: (config: ModalItem) => void) => void
+  // Component props (managed by decorator, not used directly)
+  modals?: ModalItem[]
+  isVisible?: boolean
 }
 
 const SampleModalContent = defineComponent({
@@ -36,8 +41,21 @@ const SampleModalContent = defineComponent({
 
 const meta = {
   title: 'UI Kit/ModalRenderer',
+  component: UiModalRenderer,
+  subcomponents: { ModalWrapper },
   decorators: [modalManager],
   tags: ['autodocs'],
+  args: {
+    modals: [],
+    isVisible: false
+  },
+  argTypes: {
+    buttonText: { control: 'text', table: { category: 'Storybook props' } },
+    modalName: { control: 'text', table: { category: 'Storybook props' } },
+    modalProps: { control: 'object', table: { category: 'Storybook props' } },
+    modals: { table: { disable: true } },
+    isVisible: { table: { disable: true } }
+  },
   parameters: {
     layout: 'fullscreen',
     docs: {
