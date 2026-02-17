@@ -20,15 +20,17 @@ import UiInput from './input/UiInput.vue'
 import UiLink from './link/UiLink.vue'
 import UiLoader from './loader/UiLoader.vue'
 import UiMenu from './menu/UiMenu.vue'
-import UiProgressBar from './progress-bar/UiProgressBar.vue'
 import UiModal from './modal/UiModal.vue'
 import UiModalRenderer from './modal-renderer/UiModalRenderer.vue'
+import UiProgressBar from './progress-bar/UiProgressBar.vue'
 import UiScroll from './scroll/UiScroll.vue'
 import UiSelect from './select/UiSelect.vue'
 import UiSkeleton from './skeleton/UiSkeleton.vue'
 import UiStepper from './stepper/UiStepper.vue'
 import UiStepperModal from './stepper-modal/UiStepperModal.vue'
 import UiSwitch from './switch/UiSwitch.vue'
+import UiTab from './tabs/UiTab.vue'
+import UiTabs from './tabs/UiTabs.vue'
 import UiTooltip from './tooltip/UiTooltip.vue'
 
 export type { UiAccordionProps, UiAccordionSlots } from './accordion/UiAccordion.vue'
@@ -47,15 +49,17 @@ export type { UiInputProps, UiInputEmits, UiInputSlots } from './input/UiInput.v
 export type { UiLinkProps, UiLinkEmits, UiLinkSlots } from './link/UiLink.vue'
 export type { UiLoaderProps } from './loader/UiLoader.vue'
 export type { UiMenuItem, UiMenuProps } from './menu/UiMenu.vue'
-export type { UiProgressBarProps, UiProgressBarSlots } from './progress-bar/UiProgressBar.vue'
 export type { UiModalProps, UiModalEmits, UiModalSlots } from './modal/UiModal.vue'
 export type { UiModalRendererProps } from './modal-renderer/UiModalRenderer.vue'
 export type { ModalItem, ModalRendererEmits } from './modal-renderer/types'
+export type { UiProgressBarProps, UiProgressBarSlots } from './progress-bar/UiProgressBar.vue'
 export type { UiScrollProps, UiScrollEmits, UiScrollSlots } from './scroll/UiScroll.vue'
 export type { UiSelectProps, UiSelectEmits, UiSelectSlots, SelectOption } from './select/UiSelect.vue'
 export type { UiStepperProps } from './stepper/UiStepper.vue'
 export type { UiStepperModalProps, UiStepperModalEmits, UiStepperModalSlots } from './stepper-modal/UiStepperModal.vue'
 export type { UiSwitchProps, UiSwitchEmits } from './switch/UiSwitch.vue'
+export type { UiTabProps } from './tabs/UiTab.vue'
+export type { UiTabsProps, UiTabsEmits, UiTabsSlots } from './tabs/UiTabs.vue'
 export type { UiTooltipProps, UiTooltipSlots } from './tooltip/UiTooltip.vue'
 export type { AppConfig as UiKitConfig } from './types'
 
@@ -77,14 +81,16 @@ export {
   UiLink,
   UiLoader,
   UiMenu,
-  UiProgressBar,
   UiModal,
   UiModalRenderer,
+  UiProgressBar,
   UiScroll,
   UiSelect,
   UiSkeleton,
   UiStepper,
   UiStepperModal,
   UiSwitch,
+  UiTab,
+  UiTabs,
   UiTooltip
 }
