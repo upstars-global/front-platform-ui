@@ -1,3 +1,78 @@
+## 1.26.0 (2026-02-17)
+
+* Merge branch 'main' into FP-3987
+ ([](https://github.com/upstars-global/front-platform-ui/commit/577b077))
+
+
+* Merge pull request #59 from upstars-global/FP-3987
+ ([](https://github.com/upstars-global/front-platform-ui/commit/caf3221))
+
+, closes [#59](https://github.com/upstars-global/front-platform-ui/issues/)
+
+  feat(FP-3987): improvements: UiInput and UiSelect
+* Merge remote-tracking branch 'origin/main' into FP-3987
+ ([](https://github.com/upstars-global/front-platform-ui/commit/87f2792))
+
+
+* Merge remote-tracking branch 'origin/main' into FP-3987
+ ([](https://github.com/upstars-global/front-platform-ui/commit/83d0756))
+
+
+* Merge remote-tracking branch 'origin/main' into FP-3987
+ ([](https://github.com/upstars-global/front-platform-ui/commit/cc1999f))
+
+
+* Merge remote-tracking branch 'origin/main' into FP-3987
+ ([](https://github.com/upstars-global/front-platform-ui/commit/3c92390))
+
+
+* **FP-3980:** import Text type from Vue
+ ([](https://github.com/upstars-global/front-platform-ui/commit/a9c9a31))
+
+
+* **FP-3987:** add singleOption style and logic for single option handling
+ ([](https://github.com/upstars-global/front-platform-ui/commit/d8e1b8c))
+
+
+* **FP-3987:** enhance focus handling and recommendation visibility logic
+ ([](https://github.com/upstars-global/front-platform-ui/commit/e46e33a))
+
+
+* **FP-3987:** eslint workaround
+ ([](https://github.com/upstars-global/front-platform-ui/commit/e870dbf))
+
+
+* **FP-3987:** export `useHasSlot` composable in index files
+ ([](https://github.com/upstars-global/front-platform-ui/commit/01053fc))
+
+
+* **FP-3987:** fix recommendations visibility
+ ([](https://github.com/upstars-global/front-platform-ui/commit/d9bd138))
+
+
+* **FP-3987:** improvements: UiInput and UiSelect
+ ([](https://github.com/upstars-global/front-platform-ui/commit/781e1a4))
+
+
+* **FP-3987:** simplify error display logic
+ ([](https://github.com/upstars-global/front-platform-ui/commit/424eac1))
+
+
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/3e60462))
+
+
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/10d6c00))
+
+
+* generate type definitions [skip ci]
+ ([](https://github.com/upstars-global/front-platform-ui/commit/68cab1f))
+
+
+* **FP-3987:** make `autocomplete` prop optional and default to `'off'` in `UiSelect` component
+ ([](https://github.com/upstars-global/front-platform-ui/commit/2e67e0a))
+
 ## <small>1.25.1 (2026-02-05)</small>
 
 * Merge pull request #72 from upstars-global/modal-renderer
