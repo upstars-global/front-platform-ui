@@ -24,6 +24,7 @@ import type { StepperUi } from './stepper/theme';
 import type { StepperModalUi } from './stepper-modal/theme';
 import type { SwitchUi } from './switch/theme';
 import type { TabsUi } from './tabs/theme';
+import type { TimerUi } from './timer/theme';
 import type { TooltipUi } from './tooltip/theme';
 export type Strategy = 'join' | 'merge';
 export type DeepPartial<T> = {
@@ -60,6 +61,7 @@ interface UiConfig {
     stepperModal?: UiProp<StepperModalUi>;
     switch?: UiProp<SwitchUi>;
     tabs?: UiProp<TabsUi>;
+    timer?: UiProp<TimerUi>;
     tooltip?: UiProp<TooltipUi>;
 }
 export interface AppConfig {
