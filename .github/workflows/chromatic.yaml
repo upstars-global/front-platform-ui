@@ -46,7 +46,13 @@ jobs:
       - name: Publish Summary
         run: echo -e "| Results | Chromatic Build |\n| --- | --- |\n| Build Results | ${{steps.chromatic.outputs.buildUrl}} |\n| Storybook Preview | ${{steps.chromatic.outputs.storybookUrl}} |\n| Component Count | ${{steps.chromatic.outputs.componentCount}} |" >> $GITHUB_STEP_SUMMARY
       - name: Comment PR
+        if: ${{ github.event_name == 'pull_request' }}
         uses: thollander/actions-comment-pull-request@v3
         with:
-          message: echo -e "| Results | Chromatic Build |  |\n| --- | --- |\n| Build Results | ${{steps.chromatic.outputs.buildUrl}} |\n| Storybook Preview | ${{steps.chromatic.outputs.storybookUrl}} |\n| Component Count | ${{steps.chromatic.outputs.componentCount}} |"
           comment-tag: execution
+          message: |
+            | Results | Chromatic Build |
+            | --- | --- |
+            | Build Results | ${{ steps.chromatic.outputs.buildUrl }} |
+            | Storybook Preview | ${{ steps.chromatic.outputs.storybookUrl }} |
+            | Component Count | ${{ steps.chromatic.outputs.componentCount }} |
