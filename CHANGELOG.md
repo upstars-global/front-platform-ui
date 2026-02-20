@@ -1,3 +1,33 @@
+## [1.28.0](https://github.com/upstars-global/front-platform-ui/compare/v1.27.0...v1.28.0) (2026-02-20)
+
+### 🚀 Features
+
+* **ci:** add summary report to Chromatic workflow
+ ([2a1cef7](https://github.com/upstars-global/front-platform-ui/commit/2a1cef73a4d86600353d3a6f4b02534337306ea5))
+
+
+* **ci:** add summary report to Chromatic workflow
+ ([6fc0aff](https://github.com/upstars-global/front-platform-ui/commit/6fc0aff0f87ccb4ce040e41dc0f3ef9a4bdfaddd))
+
+
+* **ci:** enhance Chromatic workflow with PR comments and permissions
+ ([45c0a92](https://github.com/upstars-global/front-platform-ui/commit/45c0a9229f2879fb2cfd8b1024d138394ca9f2f8))
+
+
+* **ci:** refine Chromatic workflow PR comment formatting
+ ([a863587](https://github.com/upstars-global/front-platform-ui/commit/a863587aaf285cccec12205e3dcefaa085656aa2))
+
+
+* **timer:** add UiTimer component
+ ([d4ac25e](https://github.com/upstars-global/front-platform-ui/commit/d4ac25e8d0c34d55b76eccde14e7555b08faf456))
+
+
+
+### 🔧 Maintenance
+
+* **types:** update type definitions and lockfile dependencies
+ ([9837e38](https://github.com/upstars-global/front-platform-ui/commit/9837e38b7c571464c4d0c5558e36d824d8cd009c))
+
 ## 1.27.0 (2026-02-17)
 
 * Merge branch 'main' into ui-tabs
