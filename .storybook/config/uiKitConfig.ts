@@ -1,6 +1,14 @@
 import type { AppConfig } from '@src/components/types'
+import isChromatic from 'chromatic/isChromatic'
 
 export const uiKitConfig: AppConfig = {
+  store: {
+    env: {
+      get isMockerMode() {
+        return isChromatic()
+      }
+    }
+  },
   ui: {
     accordion: {
       item: 'p-2 bg-slate-300 border-slate-300 rounded-4 cursor-pointer'

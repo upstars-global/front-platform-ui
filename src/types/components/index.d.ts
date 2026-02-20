@@ -30,6 +30,7 @@ import UiStepperModal from './stepper-modal/UiStepperModal.vue';
 import UiSwitch from './switch/UiSwitch.vue';
 import UiTab from './tabs/UiTab.vue';
 import UiTabs from './tabs/UiTabs.vue';
+import UiTimer from './timer/UiTimer.vue';
 import UiTooltip from './tooltip/UiTooltip.vue';
 export type { UiAccordionProps, UiAccordionSlots } from './accordion/UiAccordion.vue';
 export type { UiBadgeProps, UiBadgeSlots } from './badge/UiBadge.vue';
@@ -58,6 +59,7 @@ export type { UiStepperModalProps, UiStepperModalEmits, UiStepperModalSlots } fr
 export type { UiSwitchProps, UiSwitchEmits } from './switch/UiSwitch.vue';
 export type { UiTabProps } from './tabs/UiTab.vue';
 export type { UiTabsProps, UiTabsEmits, UiTabsSlots } from './tabs/UiTabs.vue';
+export type { UiTimerProps } from './timer/UiTimer.vue';
 export type { UiTooltipProps, UiTooltipSlots } from './tooltip/UiTooltip.vue';
 export type { AppConfig as UiKitConfig } from './types';
-export { UiAccordion, UiBadge, UiButton, UiCard, UiCarousel, UiCheckbox, UiChip, UiChipGroup, UiChipCarousel, UiCircleProgressBar, UiDropdown, UiIcon, UiImage, UiInput, UiLink, UiLoader, UiMenu, UiModal, UiModalRenderer, UiProgressBar, UiScroll, UiSelect, UiSkeleton, UiStepper, UiStepperModal, UiSwitch, UiTab, UiTabs, UiTooltip };
+export { UiAccordion, UiBadge, UiButton, UiCard, UiCarousel, UiCheckbox, UiChip, UiChipGroup, UiChipCarousel, UiCircleProgressBar, UiDropdown, UiIcon, UiImage, UiInput, UiLink, UiLoader, UiMenu, UiModal, UiModalRenderer, UiProgressBar, UiScroll, UiSelect, UiSkeleton, UiStepper, UiStepperModal, UiSwitch, UiTab, UiTabs, UiTimer, UiTooltip };
