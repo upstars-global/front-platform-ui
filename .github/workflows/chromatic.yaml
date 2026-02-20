@@ -12,6 +12,8 @@ jobs:
   chromatic:
     name: Run Chromatic
     runs-on: ${{ matrix.os }}
+    permissions:
+      pull-requests: write
     strategy:
       matrix:
         os: [ubuntu-latest] # macos-latest, windows-latest
@@ -42,4 +44,9 @@ jobs:
           buildCommand: pnpm run build:storybook
           outputDir: storybook-static
       - name: Publish Summary
-        run: echo -e "| Results |  |\n| --- | --- |\n| Build Results | ${{steps.chromatic.outputs.buildUrl}} |\n| Storybook Preview | ${{steps.chromatic.outputs.storybookUrl}} |\n| Component Count | ${{steps.chromatic.outputs.componentCount}} |" >> $GITHUB_STEP_SUMMARY
+        run: echo -e "| Results | Chromatic Build |\n| --- | --- |\n| Build Results | ${{steps.chromatic.outputs.buildUrl}} |\n| Storybook Preview | ${{steps.chromatic.outputs.storybookUrl}} |\n| Component Count | ${{steps.chromatic.outputs.componentCount}} |" >> $GITHUB_STEP_SUMMARY
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v3
+        with:
+          message: echo -e "| Results | Chromatic Build |  |\n| --- | --- |\n| Build Results | ${{steps.chromatic.outputs.buildUrl}} |\n| Storybook Preview | ${{steps.chromatic.outputs.storybookUrl}} |\n| Component Count | ${{steps.chromatic.outputs.componentCount}} |"
+          comment-tag: execution
