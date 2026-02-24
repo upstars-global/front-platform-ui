@@ -26,8 +26,7 @@ const badgeTimer = {
     }
   },
   timer: {
-    base: 'flex items-center',
-    day: 'mr-0.5'
+    base: 'flex items-center'
   } as TimerUi
 }
 
