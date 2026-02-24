@@ -5,6 +5,7 @@
 
 import UiAccordion from './accordion/UiAccordion.vue'
 import UiBadge from './badge/UiBadge.vue'
+import UiBadgeTimer from './badge-timer/UiBadgeTimer.vue'
 import UiButton from './button/UiButton.vue'
 import UiCard from './card/UiCard.vue'
 import UiCarousel from './carousel/UiCarousel.vue'
@@ -36,6 +37,7 @@ import UiTooltip from './tooltip/UiTooltip.vue'
 
 export type { UiAccordionProps, UiAccordionSlots } from './accordion/UiAccordion.vue'
 export type { UiBadgeProps, UiBadgeSlots } from './badge/UiBadge.vue'
+export type { UiBadgeTimerProps } from './badge-timer/UiBadgeTimer.vue'
 export type { UiButtonProps, UiButtonEmits, UiButtonSlots } from './button/UiButton.vue'
 export type { UiCardProps, UiCardSlots } from './card/UiCard.vue'
 export type { UiCarouselProps, UiCarouselEmits, UiCarouselSlots } from './carousel/UiCarousel.vue'
@@ -68,6 +70,7 @@ export type { AppConfig as UiKitConfig } from './types'
 export {
   UiAccordion,
   UiBadge,
+  UiBadgeTimer,
   UiButton,
   UiCard,
   UiCarousel,

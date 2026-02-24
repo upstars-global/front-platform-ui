@@ -1,6 +1,7 @@
 import type { ClassNameValue } from 'tailwind-merge';
 import type { AccordionUi } from './accordion/theme';
 import type { BadgeUi } from './badge/theme';
+import type { BadgeTimerUi } from './badge-timer/theme';
 import type { ButtonUi } from './button/theme';
 import type { CardUi } from './card/theme';
 import type { CarouselUi } from './carousel/theme';
@@ -36,6 +37,7 @@ export type UiProp<T> = DeepPartial<T> & {
 interface UiConfig {
     accordion?: UiProp<AccordionUi>;
     badge?: UiProp<BadgeUi>;
+    badgeTimer?: UiProp<BadgeTimerUi>;
     button?: UiProp<ButtonUi>;
     card?: UiProp<CardUi>;
     carousel?: UiProp<CarouselUi>;
