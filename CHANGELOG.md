@@ -1,3 +1,17 @@
+## [1.29.0](https://github.com/upstars-global/front-platform-ui/compare/v1.28.0...v1.29.0) (2026-02-26)
+
+### 🐛 Bug Fixes
+
+* **theme:** swap spacing classes for `day` in timer components
+ ([eaf0b89](https://github.com/upstars-global/front-platform-ui/commit/eaf0b89257d35d1b34ed3d923adb0a4ad8004355))
+
+
+
+### 🚀 Features
+
+* **badge-timer:** add new UiBadgeTimer component
+ ([d283969](https://github.com/upstars-global/front-platform-ui/commit/d2839697ee8d3fbe8899493efc2e9f9af644635d))
+
 ## [1.28.0](https://github.com/upstars-global/front-platform-ui/compare/v1.27.0...v1.28.0) (2026-02-20)
 
 ### 🚀 Features
