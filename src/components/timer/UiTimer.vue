@@ -36,6 +36,7 @@ defineOptions({
   name: 'UiTimer',
   inheritAttrs: false
 })
+defineSlots<UiTimerSlots>()
 const props = withDefaults(defineProps<UiTimerProps>(), {
   labels: () => ({
     days: '',
@@ -160,7 +161,7 @@ onBeforeUnmount(() => {
         <span>{{ days }}</span>
         <span>{{ labels.days }}</span>
       </span>
-      <span v-if="showDots" :class="uiClasses.dots">:</span>
+      <span v-if="showDots && !labels.days" :class="uiClasses.dots">:</span>
     </template>
     <template v-if="typeof labels.hours === 'string'">
       <span :class="[uiClasses.item, uiClasses.hour]">

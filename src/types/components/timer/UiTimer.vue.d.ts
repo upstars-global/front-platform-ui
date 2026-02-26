@@ -33,11 +33,7 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiTime
     };
     ui: UiProp<TimerUi>;
     showDots: boolean;
-}, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
-    leading?: (props: {}) => any;
-} & {
-    trailing?: (props: {}) => any;
-}>;
+}, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiTimerSlots>;
 type __VLS_WithSlots<T, S> = T & {
     new (): {
         $slots: S;
