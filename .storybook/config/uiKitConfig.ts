@@ -20,6 +20,26 @@ export const uiKitConfig: AppConfig = {
         md: 'text-xs'
       }
     },
+    badgeTimer: {
+      base: 'font-bold',
+      label: 'font-normal',
+      size: {
+        sm: 'text-[10px]',
+        md: 'text-xs'
+      },
+      variants: {
+        outline: 'border-slate-300',
+        soft: 'bg-slate-300'
+      },
+      indicator: {
+        variants: {
+          info: 'before:bg-sky-500',
+          error: 'before:bg-red-500',
+          success: 'before:bg-green-500',
+          warning: 'before:bg-yellow-500'
+        }
+      }
+    },
     button: {
       size: {
         xs: 'text-xs leading-4',

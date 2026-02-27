@@ -4,6 +4,7 @@
  */
 import UiAccordion from './accordion/UiAccordion.vue';
 import UiBadge from './badge/UiBadge.vue';
+import UiBadgeTimer from './badge-timer/UiBadgeTimer.vue';
 import UiButton from './button/UiButton.vue';
 import UiCard from './card/UiCard.vue';
 import UiCarousel from './carousel/UiCarousel.vue';
@@ -34,6 +35,7 @@ import UiTimer from './timer/UiTimer.vue';
 import UiTooltip from './tooltip/UiTooltip.vue';
 export type { UiAccordionProps, UiAccordionSlots } from './accordion/UiAccordion.vue';
 export type { UiBadgeProps, UiBadgeSlots } from './badge/UiBadge.vue';
+export type { UiBadgeTimerProps } from './badge-timer/UiBadgeTimer.vue';
 export type { UiButtonProps, UiButtonEmits, UiButtonSlots } from './button/UiButton.vue';
 export type { UiCardProps, UiCardSlots } from './card/UiCard.vue';
 export type { UiCarouselProps, UiCarouselEmits, UiCarouselSlots } from './carousel/UiCarousel.vue';
@@ -62,4 +64,4 @@ export type { UiTabsProps, UiTabsEmits, UiTabsSlots } from './tabs/UiTabs.vue';
 export type { UiTimerProps } from './timer/UiTimer.vue';
 export type { UiTooltipProps, UiTooltipSlots } from './tooltip/UiTooltip.vue';
 export type { AppConfig as UiKitConfig } from './types';
-export { UiAccordion, UiBadge, UiButton, UiCard, UiCarousel, UiCheckbox, UiChip, UiChipGroup, UiChipCarousel, UiCircleProgressBar, UiDropdown, UiIcon, UiImage, UiInput, UiLink, UiLoader, UiMenu, UiModal, UiModalRenderer, UiProgressBar, UiScroll, UiSelect, UiSkeleton, UiStepper, UiStepperModal, UiSwitch, UiTab, UiTabs, UiTimer, UiTooltip };
+export { UiAccordion, UiBadge, UiBadgeTimer, UiButton, UiCard, UiCarousel, UiCheckbox, UiChip, UiChipGroup, UiChipCarousel, UiCircleProgressBar, UiDropdown, UiIcon, UiImage, UiInput, UiLink, UiLoader, UiMenu, UiModal, UiModalRenderer, UiProgressBar, UiScroll, UiSelect, UiSkeleton, UiStepper, UiStepperModal, UiSwitch, UiTab, UiTabs, UiTimer, UiTooltip };

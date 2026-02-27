@@ -1,7 +1,7 @@
 const timer = {
   base: 'flex',
   item: 'flex',
-  day: '',
+  day: 'mr-0.5',
   hour: '',
   minute: '',
   second: '',
