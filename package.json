@@ -73,7 +73,7 @@
     "body-scroll-lock-upgrade": "^1.1.0",
     "@chromatic-com/storybook": "^5.0.1",
     "@commitlint/cli": "^20.4.1",
-    "@commitlint/config-conventional": "^20.4.1",
+    "@commitlint/config-conventional": "^20.4.2",
     "@eslint/js": "^10.0.1",
     "@floating-ui/vue": "^1.1.10",
     "@octokit/auth-app": "^8.2.0",
