@@ -12,6 +12,8 @@ declare const chip: {
         base: string;
         item: string;
     };
+    leadingIcon: string;
+    trailingIcon: string;
 };
 export type ChipUi = typeof chip;
 export default chip;

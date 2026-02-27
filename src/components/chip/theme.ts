@@ -11,7 +11,9 @@ const chip = {
   group: {
     base: 'flex flex-wrap gap-2',
     item: ''
-  }
+  },
+  leadingIcon: '',
+  trailingIcon: ''
 }
 
 export type ChipUi = typeof chip
