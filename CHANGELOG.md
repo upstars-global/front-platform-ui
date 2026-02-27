@@ -1,3 +1,10 @@
+## [1.30.0](https://github.com/upstars-global/front-platform-ui/compare/v1.29.0...v1.30.0) (2026-02-27)
+
+### 🚀 Features
+
+* **chip:** add support for leading and trailing icons for UiChip
+ ([bb423d8](https://github.com/upstars-global/front-platform-ui/commit/bb423d82d44eb31633b7d4936fb36c8c6b07c20a))
+
 ## [1.29.0](https://github.com/upstars-global/front-platform-ui/compare/v1.28.0...v1.29.0) (2026-02-26)
 
 ### 🐛 Bug Fixes
