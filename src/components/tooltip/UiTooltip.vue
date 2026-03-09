@@ -32,7 +32,7 @@ const props = withDefaults(defineProps<UiTooltipProps>(), {
   strategy: 'absolute',
   fallbackPlacements: () => ['top', 'bottom'],
   offsetValue: 8,
-  shiftValue: 0,
+  shiftValue: undefined,
   disabled: false,
   trigger: 'hover',
   ui: undefined
@@ -51,21 +51,31 @@ const floating = ref<HTMLElement | null>(null)
 const arrowRef = ref<HTMLElement | null>(null)
 
 const placement = computed(() => props.placement)
+const offsetValue = computed(() => props.offsetValue)
 
-const middleware = computed(() => [
-  flip({
-    fallbackPlacements: props.fallbackPlacements
-  }),
-  offset(props.offsetValue),
-  shift({
-    limiter: limitShift({
-      offset: ({ rects }) => {
-        return rects.reference.width + props.shiftValue
-      }
-    })
-  }),
-  arrow({ element: arrowRef.value, padding: 4 })
-])
+const middleware = computed(() => {
+  const array = [
+    flip({
+      fallbackPlacements: props.fallbackPlacements
+    }),
+    offset(offsetValue.value),
+    arrow({ element: arrowRef.value, padding: 4 })
+  ]
+
+  if (props.shiftValue) {
+    array.push(
+      shift({
+        limiter: limitShift({
+          offset: ({ rects }) => {
+            return rects.reference.width + (props.shiftValue ?? 0)
+          }
+        })
+      })
+    )
+  }
+
+  return array
+})
 
 const { floatingStyles, middlewareData } = useFloating(reference, floating, {
   open: isOpen.value,

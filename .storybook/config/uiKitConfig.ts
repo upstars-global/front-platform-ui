@@ -184,10 +184,6 @@ export const uiKitConfig: AppConfig = {
         base: 'text-slate-600 hover:text-sky-500 rounded-4',
         active: 'font-bold text-sky-500 bg-slate-100'
       }
-    },
-    tooltip: {
-      body: 'text-center text-white text-xs bg-slate-800',
-      arrow: 'bg-slate-800'
     }
   }
 }
