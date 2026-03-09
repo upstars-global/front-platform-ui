@@ -58,8 +58,7 @@ const middleware = computed(() => {
     flip({
       fallbackPlacements: props.fallbackPlacements
     }),
-    offset(offsetValue.value),
-    arrow({ element: arrowRef.value, padding: 4 })
+    offset(offsetValue.value)
   ]
 
   if (props.shiftValue) {
@@ -73,6 +72,8 @@ const middleware = computed(() => {
       })
     )
   }
+
+  array.push(arrow({ element: arrowRef.value, padding: 4 }))
 
   return array
 })
