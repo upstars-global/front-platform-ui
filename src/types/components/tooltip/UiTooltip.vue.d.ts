@@ -7,6 +7,7 @@ export interface UiTooltipProps {
     strategy?: Strategy;
     fallbackPlacements?: Placement[];
     offsetValue?: number;
+    shiftValue?: number;
     disabled?: boolean;
     trigger?: 'hover' | 'click' | 'always';
     ui?: UiProp<TooltipUi>;
@@ -24,6 +25,7 @@ declare const __VLS_base: import("vue").DefineComponent<UiTooltipProps, {}, {}, 
     fallbackPlacements: Placement[];
     placement: AlignedPlacement | Side;
     offsetValue: number;
+    shiftValue: number;
     trigger: "hover" | "click" | "always";
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>;
 declare const __VLS_export: __VLS_WithSlots<typeof __VLS_base, __VLS_Slots>;

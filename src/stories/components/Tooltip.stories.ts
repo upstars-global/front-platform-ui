@@ -17,6 +17,7 @@ const meta = {
       options: ['absolute', 'fixed']
     },
     offsetValue: { control: 'number' },
+    shiftValue: { control: 'number' },
     disabled: { control: 'boolean' },
     trigger: {
       control: 'select',
