@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
-import { arrow, useFloating, offset, flip, autoUpdate, shift, limitShift } from '@floating-ui/vue'
+import { arrow, useFloating, offset, flip, autoUpdate } from '@floating-ui/vue'
 import type { AlignedPlacement, Placement, Side, Strategy } from '@floating-ui/vue'
 import type { UiProp } from '../types'
 import { useComponentAttributes } from '../../composables/useUiClasses'
@@ -15,7 +15,6 @@ export interface UiTooltipProps {
   strategy?: Strategy
   fallbackPlacements?: Placement[]
   offsetValue?: number
-  shiftValue?: number
   disabled?: boolean
   trigger?: 'hover' | 'click' | 'always'
   ui?: UiProp<TooltipUi>
@@ -32,7 +31,6 @@ const props = withDefaults(defineProps<UiTooltipProps>(), {
   strategy: 'absolute',
   fallbackPlacements: () => ['top', 'bottom'],
   offsetValue: 8,
-  shiftValue: undefined,
   disabled: false,
   trigger: 'hover',
   ui: undefined
@@ -53,30 +51,13 @@ const arrowRef = ref<HTMLElement | null>(null)
 const placement = computed(() => props.placement)
 const offsetValue = computed(() => props.offsetValue)
 
-const middleware = computed(() => {
-  const array = [
-    flip({
-      fallbackPlacements: props.fallbackPlacements
-    }),
-    offset(offsetValue.value)
-  ]
-
-  if (props.shiftValue) {
-    array.push(
-      shift({
-        limiter: limitShift({
-          offset: ({ rects }) => {
-            return rects.reference.width + (props.shiftValue ?? 0)
-          }
-        })
-      })
-    )
-  }
-
-  array.push(arrow({ element: arrowRef.value, padding: 4 }))
-
-  return array
-})
+const middleware = computed(() => [
+  flip({
+    fallbackPlacements: props.fallbackPlacements
+  }),
+  offset(offsetValue.value),
+  arrow({ element: arrowRef.value, padding: 4 })
+])
 
 const { floatingStyles, middlewareData } = useFloating(reference, floating, {
   open: isOpen.value,
