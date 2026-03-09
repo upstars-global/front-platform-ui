@@ -12,6 +12,10 @@ const meta = {
       control: 'select',
       options: ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'right']
     },
+    strategy: {
+      control: 'select',
+      options: ['absolute', 'fixed']
+    },
     offsetValue: { control: 'number' },
     disabled: { control: 'boolean' },
     trigger: {
@@ -43,7 +47,7 @@ export const Common: Story = {
           <template #activator>
             <UiButton>Hover me</UiButton>
           </template>
-          <div class="py-1 px-2 rounded-2 bg-slate-800">{{ args.text }}</div>
+          <div>{{ args.text }}</div>
         </UiTooltip>
       </div>
     `
@@ -61,7 +65,7 @@ export const WithCustomContent: Story = {
           <template #activator>
             <UiButton>Hover me</UiButton>
           </template>
-          <div class="py-1 px-2 rounded-2 bg-slate-800 text-left">
+          <div class="text-left">
             <div class="font-bold">Custom Tooltip</div>
             <div class="text-xs">With multiple lines</div>
           </div>
@@ -85,7 +89,7 @@ export const ClickTrigger: Story = {
           <template #activator>
             <UiButton>Click me</UiButton>
           </template>
-          <div class="py-1 px-2 rounded-2 bg-slate-800">{{ args.text }}</div>
+          <div>{{ args.text }}</div>
         </UiTooltip>
       </div>
     `
@@ -107,7 +111,7 @@ export const Disabled: Story = {
           <template #activator>
             <UiButton>Tooltip disabled</UiButton>
           </template>
-          <div class="py-1 px-2 rounded-2 bg-slate-800">{{ args.text }}</div>
+          <div>{{ args.text }}</div>
         </UiTooltip>
       </div>
     `
@@ -129,30 +133,30 @@ export const MultiplePlacements: Story = {
           <template #activator>
             <UiButton>Top</UiButton>
           </template>
-          <div class="py-1 px-2 rounded-2 bg-slate-800">Top tooltip</div>
+          <div>Top tooltip</div>
         </UiTooltip>
-        
+
         <div class="flex gap-16">
           <UiTooltip placement="left">
             <template #activator>
               <UiButton>Left</UiButton>
             </template>
-            <div class="py-1 px-2 rounded-2 bg-slate-800">Left tooltip</div>
+            <div>Left tooltip</div>
           </UiTooltip>
-          
+
           <UiTooltip placement="right">
             <template #activator>
               <UiButton>Right</UiButton>
             </template>
-            <div class="py-1 px-2 rounded-2 bg-slate-800">Right tooltip</div>
+            <div>Right tooltip</div>
           </UiTooltip>
         </div>
-        
+
         <UiTooltip placement="bottom">
           <template #activator>
             <UiButton>Bottom</UiButton>
           </template>
-          <div class="py-1 px-2 rounded-2 bg-slate-800">Bottom tooltip</div>
+          <div>Bottom tooltip</div>
         </UiTooltip>
       </div>
     `
