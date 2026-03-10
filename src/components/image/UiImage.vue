@@ -1,5 +1,5 @@
 <script lang="ts">
-import type { UiProp } from '../types'
+import type { ImgLoading, UiProp } from '../types'
 import type { ImageUi } from './theme'
 
 export interface UiImageProps {
@@ -9,8 +9,6 @@ export interface UiImageProps {
   isLazy?: boolean
   ui?: UiProp<ImageUi>
 }
-
-type Loading = 'eager' | 'lazy'
 </script>
 
 <script setup lang="ts">
@@ -47,7 +45,7 @@ const srcset = computed(() => {
   return undefined
 })
 
-const loading = computed<Loading>(() => {
+const loading = computed<ImgLoading>(() => {
   if (isMockerMode.value) {
     return 'eager'
   }

@@ -1,7 +1,43 @@
 import type { AppConfig } from '@src/components/types'
 import isChromatic from 'chromatic/isChromatic'
+import { definePictureProvider } from '@src/utils/pictureProvider'
+
+const customPictureProvider = definePictureProvider({
+  getImage: ({ src, groupType, query, provider }) => {
+    let width = 400
+    let height = 300
+
+    if (query && query[provider]) {
+      width = parseInt(query[provider][0] ?? '') ?? width
+      height = parseInt(query[provider][1] ?? '') ?? height
+    }
+
+    return {
+      url: src,
+      sources: [
+        {
+          srcset: `https://picsum.photos/id/${groupType}/${width + 200}/${height + 200} 1x, https://picsum.photos/id/${groupType}/${(width + 200) * 2}/${(height + 200) * 2} 2x`,
+          media: '(min-width: 1024px)'
+        },
+        {
+          srcset: `https://picsum.photos/id/${groupType}/${width + 100}/${height + 100} 1x, https://picsum.photos/id/${groupType}/${(width + 100) * 2}/${(height + 100) * 2} 2x`,
+          media: '(min-width: 768px)'
+        },
+        {
+          srcset: `https://picsum.photos/id/${groupType}/${width}/${height} 1x, https://picsum.photos/id/${groupType}/${width * 2}/${height * 2} 2x`,
+          media: '(min-width: 320px)'
+        }
+      ]
+    }
+  }
+})
 
 export const uiKitConfig: AppConfig = {
+  providers: {
+    picture: {
+      custom: customPictureProvider
+    }
+  },
   store: {
     env: {
       get isMockerMode() {

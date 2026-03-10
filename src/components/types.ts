@@ -17,6 +17,7 @@ import type { LoaderUi } from './loader/theme'
 import type { MenuUi } from './menu/theme'
 import type { ModalUi } from './modal/theme'
 import type { ModalRendererUi } from './modal-renderer/theme'
+import type { PictureUi } from './picture/theme'
 import type { ProgressBarUi } from './progress-bar/theme'
 import type { ScrollUi } from './scroll/theme'
 import type { SelectUi } from './select/theme'
@@ -27,8 +28,10 @@ import type { SwitchUi } from './switch/theme'
 import type { TabsUi } from './tabs/theme'
 import type { TimerUi } from './timer/theme'
 import type { TooltipUi } from './tooltip/theme'
+import type { UiPictureProps } from './picture/UiPicture.vue'
 
 export type Strategy = 'join' | 'merge'
+export type ImgLoading = 'eager' | 'lazy'
 
 export type DeepPartial<T> = {
   [P in keyof T]?: T[P] extends object
@@ -59,6 +62,7 @@ interface UiConfig {
   menu?: UiProp<MenuUi>
   modal?: UiProp<ModalUi>
   modalRenderer?: UiProp<ModalRendererUi>
+  picture?: UiProp<PictureUi>
   progressBar?: UiProp<ProgressBarUi>
   scroll?: UiProp<ScrollUi>
   select?: UiProp<SelectUi>
@@ -79,6 +83,9 @@ export interface AppConfig {
       isMockerMode?: boolean
     }
   }
+  providers?: {
+    picture?: Record<string, () => PictureProvider>
+  }
 }
 
 export interface FormElementProps {
@@ -87,4 +94,15 @@ export interface FormElementProps {
   disabled?: boolean
   form?: string
   required?: boolean
+}
+
+interface ResolvedPicture {
+  url: string
+  sources?: Array<{ srcset: string; media: string }>
+}
+
+type ProviderGetPicture<T> = (properties: T) => ResolvedPicture
+
+export interface PictureProvider {
+  getImage: ProviderGetPicture<UiPictureProps>
 }

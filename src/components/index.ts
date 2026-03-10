@@ -23,6 +23,7 @@ import UiLoader from './loader/UiLoader.vue'
 import UiMenu from './menu/UiMenu.vue'
 import UiModal from './modal/UiModal.vue'
 import UiModalRenderer from './modal-renderer/UiModalRenderer.vue'
+import UiPicture from './picture/UiPicture.vue'
 import UiProgressBar from './progress-bar/UiProgressBar.vue'
 import UiScroll from './scroll/UiScroll.vue'
 import UiSelect from './select/UiSelect.vue'
@@ -55,6 +56,7 @@ export type { UiMenuItem, UiMenuProps } from './menu/UiMenu.vue'
 export type { UiModalProps, UiModalEmits, UiModalSlots } from './modal/UiModal.vue'
 export type { UiModalRendererProps } from './modal-renderer/UiModalRenderer.vue'
 export type { ModalItem, ModalRendererEmits } from './modal-renderer/types'
+export type { UiPictureProps, UiPictureEmits } from './picture/UiPicture.vue'
 export type { UiProgressBarProps, UiProgressBarSlots } from './progress-bar/UiProgressBar.vue'
 export type { UiScrollProps, UiScrollEmits, UiScrollSlots } from './scroll/UiScroll.vue'
 export type { UiSelectProps, UiSelectEmits, UiSelectSlots, SelectOption } from './select/UiSelect.vue'
@@ -88,6 +90,7 @@ export {
   UiMenu,
   UiModal,
   UiModalRenderer,
+  UiPicture,
   UiProgressBar,
   UiScroll,
   UiSelect,

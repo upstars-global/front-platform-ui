@@ -10,7 +10,7 @@ export interface UiImageProps {
 declare const _default: typeof __VLS_export;
 export default _default;
 declare const __VLS_export: import("vue").DefineComponent<UiImageProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<UiImageProps> & Readonly<{}>, {
+    isLazy: boolean;
     ui: UiProp<ImageUi>;
     srcRetina: string;
-    isLazy: boolean;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>;
