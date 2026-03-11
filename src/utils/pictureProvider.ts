@@ -1,9 +1,16 @@
-import type { PictureProvider } from '../components/types'
+interface ResolvedPicture {
+  url: string
+  sourceList?: Array<{ srcset: string; media: string }>
+}
 
-type Setup = PictureProvider | (() => PictureProvider)
+export interface PictureProvider<T> {
+  getPicture: (properties: T) => ResolvedPicture
+}
 
-export function definePictureProvider(setup: Setup): () => PictureProvider {
-  let result: PictureProvider
+export function definePictureProvider<T>(
+  setup: PictureProvider<T> | (() => PictureProvider<T>)
+): () => PictureProvider<T> {
+  let result: PictureProvider<T>
 
   return () => {
     if (result) {

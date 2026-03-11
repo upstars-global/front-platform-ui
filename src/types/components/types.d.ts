@@ -28,7 +28,6 @@ import type { SwitchUi } from './switch/theme';
 import type { TabsUi } from './tabs/theme';
 import type { TimerUi } from './timer/theme';
 import type { TooltipUi } from './tooltip/theme';
-import type { UiPictureProps } from './picture/UiPicture.vue';
 export type Strategy = 'join' | 'merge';
 export type ImgLoading = 'eager' | 'lazy';
 export type DeepPartial<T> = {
@@ -79,7 +78,7 @@ export interface AppConfig {
         };
     };
     providers?: {
-        picture?: Record<string, () => PictureProvider>;
+        picture?: Record<string, () => unknown>;
     };
 }
 export interface FormElementProps {
@@ -88,16 +87,5 @@ export interface FormElementProps {
     disabled?: boolean;
     form?: string;
     required?: boolean;
-}
-interface ResolvedPicture {
-    url: string;
-    sources?: Array<{
-        srcset: string;
-        media: string;
-    }>;
-}
-type ProviderGetPicture<T> = (properties: T) => ResolvedPicture;
-export interface PictureProvider {
-    getImage: ProviderGetPicture<UiPictureProps>;
 }
 export {};

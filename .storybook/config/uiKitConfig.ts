@@ -1,30 +1,30 @@
 import type { AppConfig } from '@src/components/types'
+import type { UiPictureProps } from '@src/components'
 import isChromatic from 'chromatic/isChromatic'
 import { definePictureProvider } from '@src/utils/pictureProvider'
 
-const customPictureProvider = definePictureProvider({
-  getImage: ({ src, groupType, query, provider }) => {
-    let width = 400
-    let height = 300
-
-    if (query && query[provider]) {
-      width = parseInt(query[provider][0] ?? '') ?? width
-      height = parseInt(query[provider][1] ?? '') ?? height
-    }
+const customPictureProvider = definePictureProvider<
+  UiPictureProps<{ imageId: string; sizes: string[]; queries: string[] }>
+>({
+  getPicture: ({ meta }) => {
+    const imageId = meta?.imageId ?? ''
+    const width = parseInt(meta?.sizes?.[0] ?? '') ?? 400
+    const height = parseInt(meta?.sizes?.[1] ?? '') ?? 300
+    const queries = (meta?.queries ?? []).join('&')
 
     return {
-      url: src,
-      sources: [
+      url: `https://picsum.photos/id/${imageId}/${width}/${height}?${queries}`,
+      sourceList: [
         {
-          srcset: `https://picsum.photos/id/${groupType}/${width + 200}/${height + 200} 1x, https://picsum.photos/id/${groupType}/${(width + 200) * 2}/${(height + 200) * 2} 2x`,
+          srcset: `https://picsum.photos/id/${imageId}/${width + 200}/${height + 200}?${queries}`,
           media: '(min-width: 1024px)'
         },
         {
-          srcset: `https://picsum.photos/id/${groupType}/${width + 100}/${height + 100} 1x, https://picsum.photos/id/${groupType}/${(width + 100) * 2}/${(height + 100) * 2} 2x`,
+          srcset: `https://picsum.photos/id/${imageId}/${width + 100}/${height + 100}?${queries}`,
           media: '(min-width: 768px)'
         },
         {
-          srcset: `https://picsum.photos/id/${groupType}/${width}/${height} 1x, https://picsum.photos/id/${groupType}/${width * 2}/${height * 2} 2x`,
+          srcset: `https://picsum.photos/id/${imageId}/${width}/${height}?${queries}`,
           media: '(min-width: 320px)'
         }
       ]

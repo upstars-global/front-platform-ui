@@ -1,14 +1,17 @@
 <script lang="ts">
 import type { ImgLoading, UiProp } from '../types'
+import type { PictureProvider } from '../../utils/pictureProvider'
 import type { PictureUi } from './theme'
 
-export interface UiPictureProps {
+type Provider = (() => PictureProvider<Record<string, unknown>>) | undefined
+
+export interface UiPictureProps<Metadata = Record<string, unknown>, Provider = string> {
   src: string
   alt: string
-  provider: string
+  provider?: Provider
+  meta?: Metadata
+  sources?: Array<{ srcset: string; media: string }>
   isLazy?: boolean
-  groupType?: string
-  query?: Record<string, string | string[]>
   fetchPriority?: 'high' | 'low' | 'auto'
   ui?: UiProp<PictureUi>
 }
@@ -31,8 +34,9 @@ defineOptions({
 
 const props = withDefaults(defineProps<UiPictureProps>(), {
   isLazy: true,
-  query: undefined,
-  groupType: undefined,
+  provider: 'default',
+  sources: () => [],
+  meta: undefined,
   fetchPriority: undefined,
   ui: undefined
 })
@@ -59,20 +63,27 @@ const uiClasses = computed(() => ({
   image: mergeClasses(theme.image, appConfig.ui?.picture?.image, props.ui?.image)
 }))
 
-function getProvider(name: string) {
-  const provider = appConfig?.providers?.picture?.[name]
+function getProvider() {
+  const provider = appConfig?.providers?.picture?.[props.provider] as Provider
 
   if (!provider) {
-    throw new Error('Unknown provider: ' + name)
+    console.error('Picture: unknown provider -', props.provider)
+    return
   }
 
-  return provider()
+  return provider
 }
 
+const pictureProvider = getProvider()
+
 const picture = computed(() => {
-  const provider = getProvider(props.provider)
-  const { url, sources } = provider.getImage(props)
-  return { url, sources: sources ?? [] }
+  if (!pictureProvider) {
+    return { url: props.src, sources: props.sources }
+  }
+  const { getPicture } = pictureProvider()
+  const { url, sourceList } = getPicture(props)
+
+  return { url, sources: sourceList ?? props.sources }
 })
 </script>
 
@@ -81,7 +92,7 @@ const picture = computed(() => {
     <source v-for="source in picture.sources" :key="source.media" :srcset="source.srcset" :media="source.media" />
     <img
       :class="uiClasses.image"
-      :src="src"
+      :src="picture.url"
       :alt="alt"
       :loading="loading"
       :fetchpriority="fetchPriority"
