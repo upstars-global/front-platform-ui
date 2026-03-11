@@ -12,6 +12,7 @@ declare const button: {
         secondary: string;
         tertiary: string;
         ghost: string;
+        destructive: string;
     };
     active: {
         default: string;
@@ -19,6 +20,7 @@ declare const button: {
         secondary: string;
         tertiary: string;
         ghost: string;
+        destructive: string;
     };
     states: {
         disabled: string;

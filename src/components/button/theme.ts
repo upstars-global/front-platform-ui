@@ -11,14 +11,16 @@ const button = {
     primary: '',
     secondary: '',
     tertiary: '',
-    ghost: ''
+    ghost: '',
+    destructive: ''
   },
   active: {
     default: '',
     primary: '',
     secondary: '',
     tertiary: '',
-    ghost: ''
+    ghost: '',
+    destructive: ''
   },
   states: {
     disabled: 'opacity-50 pointer-events-none cursor-not-allowed',
