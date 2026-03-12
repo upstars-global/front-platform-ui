@@ -61,6 +61,7 @@ const middleware = computed(() => [
 
 const { floatingStyles, middlewareData } = useFloating(reference, floating, {
   open: isOpen.value,
+  strategy: props.strategy,
   whileElementsMounted: autoUpdate,
   placement,
   middleware
