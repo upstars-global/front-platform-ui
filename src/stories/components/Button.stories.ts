@@ -9,7 +9,7 @@ import { ICON_SIZE_LIST } from '../config/icons'
 
 type ButtonPropsAndCustomArgs = ComponentProps<typeof UiButton> & { text?: string }
 
-const variantOptions = ['primary', 'secondary', 'tertiary', 'ghost', 'default']
+const variantOptions = ['default', 'primary', 'secondary', 'tertiary', 'ghost', 'destructive']
 const sizeOptions = ['xs', 'sm', 'md', 'default']
 
 const iconNames = Object.keys(icons).sort((a, b) => a.localeCompare(b)) as UiIconName[]
@@ -81,10 +81,10 @@ export const Variants: Story = {
       variantOptions
     }),
     template: `
-      <div class="grid grid-rows-6 gap-4">
-        <div v-for="option in options" :key="option" class="grid grid-cols-[2rem,_repeat(5,10rem)] gap-4 items-center">
-          <p class="w-6">{{ option }}</p>
-          <div v-for="variant in variantOptions" :key="variant">
+      <div class="flex gap-6">
+        <div v-for="option in options" :key="option" class="flex flex-col gap-6 justify-center items-center">
+          <p class="w-8">{{ option }}</p>
+          <div v-for="variant in variantOptions" :key="variant" class="flex items-center basis-12 shrink-0">
             <UiButton v-if="option === 'icon'" v-bind="args" class="p-2 rounded-full" size="default" :variant="variant">
               <UiIcon name="search" />
             </UiButton>
