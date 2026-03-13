@@ -76,6 +76,7 @@ export const uiKitConfig: AppConfig = {
         }
       }
     },
+    banner: {},
     button: {
       size: {
         xs: 'text-xs leading-4',
