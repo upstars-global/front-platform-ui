@@ -139,10 +139,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div :class="className" v-bind="attributes">
+  <div v-click-outside="handleClick" :class="className" v-bind="attributes">
     <div
       ref="reference"
-      v-click-outside="handleClick"
       :class="uiClasses.activator"
       @mouseenter="handleMouseEnter"
       @mouseleave="handleMouseLeave"
