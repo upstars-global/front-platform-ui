@@ -131,6 +131,12 @@ const handleClick = () => {
   }
 }
 
+const handleOutsideClick = () => {
+  if (isOpen.value && isTriggerClick.value && !props.disabled) {
+    isOpen.value = false
+  }
+}
+
 onMounted(() => {
   if (isTriggerAlways.value) {
     isOpen.value = true
@@ -139,7 +145,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div v-click-outside="handleClick" :class="className" v-bind="attributes">
+  <div v-click-outside="handleOutsideClick" :class="className" v-bind="attributes">
     <div
       ref="reference"
       :class="uiClasses.activator"
