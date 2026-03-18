@@ -76,7 +76,18 @@ export const uiKitConfig: AppConfig = {
         }
       }
     },
-    banner: {},
+    banner: {
+      buttonWrapper: {
+        variants: {
+          default: 'text-xs bg-slate-300/50'
+        }
+      },
+      wrapper: {
+        variants: {
+          default: 'h-44 md:h-64 max-w-96'
+        }
+      }
+    },
     button: {
       size: {
         xs: 'text-xs leading-4',

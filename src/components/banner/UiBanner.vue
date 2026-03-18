@@ -83,6 +83,11 @@ const uiClasses = computed(() => {
     appConfig: appConfig?.ui?.banner?.imageWrapper?.variants,
     uiProp: props.ui?.imageWrapper?.variants
   })
+  const image = prepareVariants({
+    theme: theme.image.variants,
+    appConfig: appConfig?.ui?.banner?.image?.variants,
+    uiProp: props.ui?.image?.variants
+  })
   const wrapper = prepareVariants({
     theme: theme.wrapper.variants,
     appConfig: appConfig?.ui?.banner?.wrapper?.variants,
@@ -93,6 +98,7 @@ const uiClasses = computed(() => {
     buttonWrapper: mergeClasses(buttonWrapper[props.variant]),
     content: mergeClasses(content[props.variant]),
     imageWrapper: mergeClasses(imageWrapper[props.variant]),
+    image: mergeClasses(image[props.variant]),
     wrapper: mergeClasses(wrapper[props.variant])
   }
 })
@@ -107,6 +113,8 @@ const uiClasses = computed(() => {
         </slot>
         <div v-if="button?.label" :class="uiClasses.buttonWrapper">
           <UiButton
+            class="rounded-none"
+            :style="{ fontWeight: 'inherit' }"
             variant="default"
             size="default"
             trailing-icon-name="arrowNext"
@@ -119,8 +127,8 @@ const uiClasses = computed(() => {
         </div>
       </div>
       <div :class="uiClasses.imageWrapper">
-        <UiImage v-if="image" v-bind="image" />
-        <UiPicture v-if="picture" v-bind="picture" />
+        <UiImage v-if="image" :class="uiClasses.image" v-bind="image" />
+        <UiPicture v-if="picture" :class="uiClasses.image" v-bind="picture" />
       </div>
     </div>
   </UiLink>

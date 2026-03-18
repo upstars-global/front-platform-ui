@@ -15,6 +15,11 @@ declare const banner: {
             default: string;
         };
     };
+    image: {
+        variants: {
+            default: string;
+        };
+    };
     wrapper: {
         variants: {
             default: string;
