@@ -29,7 +29,7 @@ export interface UiBannerSlots {
 }
 </script>
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 import { useAppConfig } from '../../composables/useAppConfig'
 import { useComponentAttributes } from '../../composables/useUiClasses'
 import { prepareVariants } from '../../helpers/prepareClassNames'
@@ -63,51 +63,61 @@ const { attributes, className, mergeClasses } = useComponentAttributes(
   appConfig?.ui?.banner?.strategy || props.ui?.strategy
 )
 
-const bannerRef = ref<InstanceType<typeof UiLink> | null>(null)
-console.log(bannerRef.value)
-
-const uiClasses = computed(() => {
-  const buttonWrapper = prepareVariants({
+const buttonWrapperVariants = computed(() =>
+  prepareVariants({
     theme: theme.buttonWrapper.variants,
     appConfig: appConfig?.ui?.banner?.buttonWrapper?.variants,
     uiProp: props.ui?.buttonWrapper?.variants
   })
+)
 
-  const content = prepareVariants({
+const contentVariants = computed(() =>
+  prepareVariants({
     theme: theme.content.variants,
     appConfig: appConfig?.ui?.banner?.content?.variants,
     uiProp: props.ui?.content?.variants
   })
-  const imageWrapper = prepareVariants({
+)
+
+const imageWrapperVariants = computed(() =>
+  prepareVariants({
     theme: theme.imageWrapper.variants,
     appConfig: appConfig?.ui?.banner?.imageWrapper?.variants,
     uiProp: props.ui?.imageWrapper?.variants
   })
-  const image = prepareVariants({
+)
+const imageVariants = computed(() =>
+  prepareVariants({
     theme: theme.image.variants,
     appConfig: appConfig?.ui?.banner?.image?.variants,
     uiProp: props.ui?.image?.variants
   })
-  const wrapper = prepareVariants({
+)
+const wrapperVariants = computed(() =>
+  prepareVariants({
     theme: theme.wrapper.variants,
     appConfig: appConfig?.ui?.banner?.wrapper?.variants,
     uiProp: props.ui?.wrapper?.variants
   })
+)
 
+const uiClasses = computed(() => {
   return {
-    buttonWrapper: mergeClasses(buttonWrapper[props.variant]),
-    content: mergeClasses(content[props.variant]),
-    imageWrapper: mergeClasses(imageWrapper[props.variant]),
-    image: mergeClasses(image[props.variant]),
-    wrapper: mergeClasses(wrapper[props.variant])
+    buttonWrapper: mergeClasses(buttonWrapperVariants.value[props.variant]),
+    content: mergeClasses(contentVariants.value[props.variant]),
+    imageWrapper: mergeClasses(imageWrapperVariants.value[props.variant]),
+    image: mergeClasses(imageVariants.value[props.variant]),
+    wrapper: mergeClasses(wrapperVariants.value[props.variant])
   }
 })
+
+const isContent = computed(() => Boolean(props.content) || Boolean(slots.content))
 </script>
 
 <template>
-  <UiLink ref="bannerRef" v-bind="attributes" :class="className" :to="button?.url" @click="emit('click')">
+  <UiLink v-bind="attributes" :class="className" :to="button?.url" @click="emit('click')">
     <div :class="uiClasses.wrapper" :style="{ background: backgroundColor }">
-      <div v-if="content || slots.content" :class="uiClasses.content">
+      <div v-if="isContent" :class="uiClasses.content">
         <slot name="content">
           <div data-test="banner-description" v-html="content" />
         </slot>
