@@ -1,3 +1,10 @@
+## [1.31.0](https://github.com/upstars-global/front-platform-ui/compare/v1.30.0...v1.31.0) (2026-03-12)
+
+### 🚀 Features
+
+* **button:** add destructive variant support to UiButton
+ ([693d271](https://github.com/upstars-global/front-platform-ui/commit/693d27135db102af6c6a1f390d07bf4fb353edba))
+
 ## [1.30.0](https://github.com/upstars-global/front-platform-ui/compare/v1.29.0...v1.30.0) (2026-02-27)
 
 ### 🚀 Features
