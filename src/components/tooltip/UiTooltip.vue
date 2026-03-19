@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
-import { useFloating, offset, flip, autoUpdate } from '@floating-ui/vue'
+import { arrow, useFloating, offset, flip, autoUpdate } from '@floating-ui/vue'
 import type { AlignedPlacement, Placement, Side, Strategy } from '@floating-ui/vue'
 import type { UiProp } from '../types'
 import { useComponentAttributes } from '../../composables/useUiClasses'
@@ -46,6 +46,7 @@ defineSlots<UiTooltipSlots>()
 const isOpen = ref(false)
 const reference = ref<HTMLElement | null>(null)
 const floating = ref<HTMLElement | null>(null)
+const arrowRef = ref<HTMLElement | null>(null)
 
 const placement = computed(() => props.placement)
 const offsetValue = computed(() => props.offsetValue)
@@ -54,11 +55,13 @@ const middleware = computed(() => [
   flip({
     fallbackPlacements: props.fallbackPlacements
   }),
-  offset(offsetValue.value)
+  offset(offsetValue.value),
+  arrow({ element: arrowRef.value, padding: 4 })
 ])
 
-const { floatingStyles } = useFloating(reference, floating, {
+const { floatingStyles, middlewareData } = useFloating(reference, floating, {
   open: isOpen.value,
+  strategy: props.strategy,
   whileElementsMounted: autoUpdate,
   placement,
   middleware
@@ -83,12 +86,32 @@ const uiClasses = computed(() => ({
     isOpen.value && !props.disabled
       ? [theme.bodyVisible, appConfig.ui?.tooltip?.bodyVisible, props.ui?.bodyVisible]
       : []
-  )
+  ),
+  arrow: mergeClasses(theme.arrow, appConfig.ui?.tooltip?.arrow, props.ui?.arrow)
 }))
 
 const isTriggerHover = computed(() => props.trigger === 'hover')
 const isTriggerClick = computed(() => props.trigger === 'click')
 const isTriggerAlways = computed(() => props.trigger === 'always')
+
+const arrowStyles = computed(() => {
+  const staticSide = {
+    top: 'bottom',
+    right: 'left',
+    bottom: 'top',
+    left: 'right'
+  }[placement.value.split('-')[0] as Side]
+
+  const { x: arrowX, y: arrowY } = middlewareData.value.arrow ?? {}
+
+  return {
+    left: arrowX ? `${arrowX}px` : '',
+    top: arrowY ? `${arrowY}px` : '',
+    right: '',
+    bottom: '',
+    [staticSide]: `-4px`
+  }
+})
 
 const handleMouseEnter = () => {
   if (isTriggerHover.value && !props.disabled) {
@@ -108,6 +131,12 @@ const handleClick = () => {
   }
 }
 
+const handleOutsideClick = () => {
+  if (isOpen.value && isTriggerClick.value && !props.disabled) {
+    isOpen.value = false
+  }
+}
+
 onMounted(() => {
   if (isTriggerAlways.value) {
     isOpen.value = true
@@ -116,7 +145,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div :class="className" v-bind="attributes">
+  <div v-click-outside="handleOutsideClick" :class="className" v-bind="attributes">
     <div
       ref="reference"
       :class="uiClasses.activator"
@@ -128,6 +157,7 @@ onMounted(() => {
     </div>
     <div ref="floating" :class="uiClasses.body" :style="floatingStyles">
       <slot>{{ text }}</slot>
+      <div ref="arrowRef" :class="uiClasses.arrow" :style="arrowStyles" />
     </div>
   </div>
 </template>

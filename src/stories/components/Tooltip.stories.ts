@@ -12,6 +12,10 @@ const meta = {
       control: 'select',
       options: ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'right']
     },
+    strategy: {
+      control: 'select',
+      options: ['absolute', 'fixed']
+    },
     offsetValue: { control: 'number' },
     disabled: { control: 'boolean' },
     trigger: {
@@ -25,7 +29,11 @@ const meta = {
     placement: 'top',
     offsetValue: 8,
     disabled: false,
-    trigger: 'hover'
+    trigger: 'hover',
+    ui: {
+      body: 'text-center text-white text-xs bg-slate-800',
+      arrow: 'bg-slate-800'
+    }
   }
 } satisfies Meta<typeof UiTooltip>
 
@@ -131,7 +139,7 @@ export const MultiplePlacements: Story = {
           </template>
           <div class="py-1 px-2 rounded-2 bg-slate-800">Top tooltip</div>
         </UiTooltip>
-        
+
         <div class="flex gap-16">
           <UiTooltip placement="left">
             <template #activator>
@@ -139,7 +147,7 @@ export const MultiplePlacements: Story = {
             </template>
             <div class="py-1 px-2 rounded-2 bg-slate-800">Left tooltip</div>
           </UiTooltip>
-          
+
           <UiTooltip placement="right">
             <template #activator>
               <UiButton>Right</UiButton>
@@ -147,7 +155,7 @@ export const MultiplePlacements: Story = {
             <div class="py-1 px-2 rounded-2 bg-slate-800">Right tooltip</div>
           </UiTooltip>
         </div>
-        
+
         <UiTooltip placement="bottom">
           <template #activator>
             <UiButton>Bottom</UiButton>
