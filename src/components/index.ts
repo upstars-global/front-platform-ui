@@ -6,6 +6,7 @@
 import UiAccordion from './accordion/UiAccordion.vue'
 import UiBadge from './badge/UiBadge.vue'
 import UiBadgeTimer from './badge-timer/UiBadgeTimer.vue'
+import UiBanner from './banner/UiBanner.vue'
 import UiButton from './button/UiButton.vue'
 import UiCard from './card/UiCard.vue'
 import UiCarousel from './carousel/UiCarousel.vue'
@@ -23,6 +24,7 @@ import UiLoader from './loader/UiLoader.vue'
 import UiMenu from './menu/UiMenu.vue'
 import UiModal from './modal/UiModal.vue'
 import UiModalRenderer from './modal-renderer/UiModalRenderer.vue'
+import UiPicture from './picture/UiPicture.vue'
 import UiProgressBar from './progress-bar/UiProgressBar.vue'
 import UiScroll from './scroll/UiScroll.vue'
 import UiSelect from './select/UiSelect.vue'
@@ -38,6 +40,7 @@ import UiTooltip from './tooltip/UiTooltip.vue'
 export type { UiAccordionProps, UiAccordionSlots } from './accordion/UiAccordion.vue'
 export type { UiBadgeProps, UiBadgeSlots } from './badge/UiBadge.vue'
 export type { UiBadgeTimerProps } from './badge-timer/UiBadgeTimer.vue'
+export type { UiBannerProps, UiBannerEmits, UiBannerSlots } from './banner/UiBanner.vue'
 export type { UiButtonProps, UiButtonEmits, UiButtonSlots } from './button/UiButton.vue'
 export type { UiCardProps, UiCardSlots } from './card/UiCard.vue'
 export type { UiCarouselProps, UiCarouselEmits, UiCarouselSlots } from './carousel/UiCarousel.vue'
@@ -55,6 +58,7 @@ export type { UiMenuItem, UiMenuProps } from './menu/UiMenu.vue'
 export type { UiModalProps, UiModalEmits, UiModalSlots } from './modal/UiModal.vue'
 export type { UiModalRendererProps } from './modal-renderer/UiModalRenderer.vue'
 export type { ModalItem, ModalRendererEmits } from './modal-renderer/types'
+export type { UiPictureProps, UiPictureEmits } from './picture/UiPicture.vue'
 export type { UiProgressBarProps, UiProgressBarSlots } from './progress-bar/UiProgressBar.vue'
 export type { UiScrollProps, UiScrollEmits, UiScrollSlots } from './scroll/UiScroll.vue'
 export type { UiSelectProps, UiSelectEmits, UiSelectSlots, SelectOption } from './select/UiSelect.vue'
@@ -71,6 +75,7 @@ export {
   UiAccordion,
   UiBadge,
   UiBadgeTimer,
+  UiBanner,
   UiButton,
   UiCard,
   UiCarousel,
@@ -88,6 +93,7 @@ export {
   UiMenu,
   UiModal,
   UiModalRenderer,
+  UiPicture,
   UiProgressBar,
   UiScroll,
   UiSelect,

@@ -3,3 +3,4 @@ export { useMediaQuery, mediaMaxBreakpoints } from './composables/useMediaQuery'
 export { default as useHasSlot } from './composables/useHasSlot';
 export { default as FrontPlatformUi } from './plugins/vue-plugin';
 export { useBodyScrollLock } from './composables/useBodyScrollLock';
+export { definePictureProvider } from './utils/pictureProvider';

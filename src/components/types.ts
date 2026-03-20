@@ -2,6 +2,7 @@ import type { ClassNameValue } from 'tailwind-merge'
 import type { AccordionUi } from './accordion/theme'
 import type { BadgeUi } from './badge/theme'
 import type { BadgeTimerUi } from './badge-timer/theme'
+import type { BannerUi } from './banner/theme'
 import type { ButtonUi } from './button/theme'
 import type { CardUi } from './card/theme'
 import type { CarouselUi } from './carousel/theme'
@@ -17,6 +18,7 @@ import type { LoaderUi } from './loader/theme'
 import type { MenuUi } from './menu/theme'
 import type { ModalUi } from './modal/theme'
 import type { ModalRendererUi } from './modal-renderer/theme'
+import type { PictureUi } from './picture/theme'
 import type { ProgressBarUi } from './progress-bar/theme'
 import type { ScrollUi } from './scroll/theme'
 import type { SelectUi } from './select/theme'
@@ -29,6 +31,7 @@ import type { TimerUi } from './timer/theme'
 import type { TooltipUi } from './tooltip/theme'
 
 export type Strategy = 'join' | 'merge'
+export type ImgLoading = 'eager' | 'lazy'
 
 export type DeepPartial<T> = {
   [P in keyof T]?: T[P] extends object
@@ -44,6 +47,7 @@ interface UiConfig {
   accordion?: UiProp<AccordionUi>
   badge?: UiProp<BadgeUi>
   badgeTimer?: UiProp<BadgeTimerUi>
+  banner?: UiProp<BannerUi>
   button?: UiProp<ButtonUi>
   card?: UiProp<CardUi>
   carousel?: UiProp<CarouselUi>
@@ -59,6 +63,7 @@ interface UiConfig {
   menu?: UiProp<MenuUi>
   modal?: UiProp<ModalUi>
   modalRenderer?: UiProp<ModalRendererUi>
+  picture?: UiProp<PictureUi>
   progressBar?: UiProp<ProgressBarUi>
   scroll?: UiProp<ScrollUi>
   select?: UiProp<SelectUi>
@@ -78,6 +83,9 @@ export interface AppConfig {
     env?: {
       isMockerMode?: boolean
     }
+  }
+  providers?: {
+    picture?: Record<string, () => unknown>
   }
 }
 

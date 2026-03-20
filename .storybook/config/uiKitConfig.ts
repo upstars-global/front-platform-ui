@@ -1,7 +1,43 @@
 import type { AppConfig } from '@src/components/types'
+import type { UiPictureProps } from '@src/components'
 import isChromatic from 'chromatic/isChromatic'
+import { definePictureProvider } from '@src/utils/pictureProvider'
+
+const customPictureProvider = definePictureProvider<
+  UiPictureProps<{ imageId: string; sizes: string[]; queries: string[] }>
+>({
+  getPicture: ({ meta }) => {
+    const imageId = meta?.imageId ?? ''
+    const width = parseInt(meta?.sizes?.[0] ?? '') ?? 400
+    const height = parseInt(meta?.sizes?.[1] ?? '') ?? 300
+    const queries = (meta?.queries ?? []).join('&')
+
+    return {
+      url: `https://picsum.photos/id/${imageId}/${width}/${height}?${queries}`,
+      sourceList: [
+        {
+          srcset: `https://picsum.photos/id/${imageId}/${width + 200}/${height + 200}?${queries}`,
+          media: '(min-width: 1024px)'
+        },
+        {
+          srcset: `https://picsum.photos/id/${imageId}/${width + 100}/${height + 100}?${queries}`,
+          media: '(min-width: 768px)'
+        },
+        {
+          srcset: `https://picsum.photos/id/${imageId}/${width}/${height}?${queries}`,
+          media: '(min-width: 320px)'
+        }
+      ]
+    }
+  }
+})
 
 export const uiKitConfig: AppConfig = {
+  providers: {
+    picture: {
+      custom: customPictureProvider
+    }
+  },
   store: {
     env: {
       get isMockerMode() {
@@ -37,6 +73,18 @@ export const uiKitConfig: AppConfig = {
           error: 'before:bg-red-500',
           success: 'before:bg-green-500',
           warning: 'before:bg-yellow-500'
+        }
+      }
+    },
+    banner: {
+      buttonWrapper: {
+        variants: {
+          default: 'text-xs bg-slate-300/50'
+        }
+      },
+      wrapper: {
+        variants: {
+          default: 'h-44 md:h-64 max-w-96'
         }
       }
     },

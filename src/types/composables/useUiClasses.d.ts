@@ -4,6 +4,8 @@ import type { Strategy } from '../components/types';
 export declare function useComponentAttributes(rootClassName: ClassNameValue, baseClasses?: ComputedRef<ClassNameValue>, strategy?: Strategy): {
     attributes: ComputedRef<{
         [x: string]: unknown;
+        class?: import("vue").ClassValue;
+        style?: import("vue").StyleValue;
     }>;
     className: ComputedRef<string>;
     mergeClasses: (...classList: ClassNameValue[]) => string;
