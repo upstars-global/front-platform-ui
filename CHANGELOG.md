@@ -1,3 +1,56 @@
+## [1.32.0](https://github.com/upstars-global/front-platform-ui/compare/v1.31.0...v1.32.0) (2026-03-19)
+
+### 🐛 Bug Fixes
+
+* **tooltip:** adjust arrow middleware addition in UiTooltip
+ ([9c02181](https://github.com/upstars-global/front-platform-ui/commit/9c02181943cfc608a4d7e9869de45a11f7b976fd))
+
+
+* **tooltip:** rollback theme styles for tooltip
+ ([c3808f0](https://github.com/upstars-global/front-platform-ui/commit/c3808f04419a1eae1cabac53d292894caef90565))
+
+
+* **tooltip:** update transition duration and easing for tooltip body
+ ([a6d9ff3](https://github.com/upstars-global/front-platform-ui/commit/a6d9ff3fb254c749b737ee50507eeff4f9438a1b))
+
+
+
+### 🚀 Features
+
+* **tooltip:** add arrow support to UiTooltip
+ ([a3ff9bf](https://github.com/upstars-global/front-platform-ui/commit/a3ff9bfb2ef72cc7e9331f289a8f5e38a81e62c4))
+
+
+* **tooltip:** add shift middleware support to UiTooltip
+ ([2175839](https://github.com/upstars-global/front-platform-ui/commit/2175839e0e33a2bb56158fec918817fb04edc3a9))
+
+
+* **tooltip:** add support for configurable strategy in UiTooltip
+ ([067cbfe](https://github.com/upstars-global/front-platform-ui/commit/067cbfe271f6076346f5d27548a685c201ba46a8))
+
+
+* **tooltip:** add v-click-outside directive to UiTooltip for click handling
+ ([ce329b5](https://github.com/upstars-global/front-platform-ui/commit/ce329b5859a3aaec3d990fa2741bd2063a692c6a))
+
+
+* **tooltip:** add v-click-outside directive to UiTooltip for click handling
+ ([36a82c4](https://github.com/upstars-global/front-platform-ui/commit/36a82c4bfb710df9fbef8c7a26fe8c1aef3cc394))
+
+
+* **tooltip:** add v-click-outside directive to UiTooltip for click handling
+ ([8185742](https://github.com/upstars-global/front-platform-ui/commit/8185742052dad6fb818265616a5e53a2faeb1315))
+
+
+* **tooltip:** add v-click-outside directive to UiTooltip for click handling
+ ([a640284](https://github.com/upstars-global/front-platform-ui/commit/a6402848ee3916fa3e1263ab70160346fe4401bf))
+
+
+
+### 🔨 Refactoring
+
+* **tooltip:** remove shift middleware and related props
+ ([18e8058](https://github.com/upstars-global/front-platform-ui/commit/18e80583a2871ddb0f145f2948e953b3ec4fcb42))
+
 ## [1.31.0](https://github.com/upstars-global/front-platform-ui/compare/v1.30.0...v1.31.0) (2026-03-12)
 
 ### 🚀 Features
