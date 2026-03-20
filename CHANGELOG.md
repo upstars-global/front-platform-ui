@@ -1,3 +1,40 @@
+## [1.33.0](https://github.com/upstars-global/front-platform-ui/compare/v1.32.0...v1.33.0) (2026-03-20)
+
+### 🚀 Features
+
+* **banner:** enhance UiBanner with support for gradients and image variants
+ ([6e1afd8](https://github.com/upstars-global/front-platform-ui/commit/6e1afd8f37d9724e5341b92761edbabe1687a9c0))
+
+
+* **banner:** extend UiBanner with content, button, and image support
+ ([7334fb6](https://github.com/upstars-global/front-platform-ui/commit/7334fb6b56563f6bdc3c4427a343b5e6b2287eb8))
+
+
+* **banner:** init new UiBanner component
+ ([1e4ef12](https://github.com/upstars-global/front-platform-ui/commit/1e4ef12405d94cb845192d82f561db36b3b617ed))
+
+
+* **picture:** add UiPicture component with custom provider support
+ ([e2fdc27](https://github.com/upstars-global/front-platform-ui/commit/e2fdc27242942c89d812e6f62fce9892db741dcf))
+
+
+* **picture:** enhance UiPicture with metadata and custom provider support
+ ([561d25f](https://github.com/upstars-global/front-platform-ui/commit/561d25f67309937723cd7aa0db88562780571014))
+
+
+
+### 🔧 Maintenance
+
+* **deps:** update pnpm-lock.yaml with dependency version upgrades
+ ([3353991](https://github.com/upstars-global/front-platform-ui/commit/3353991e9c37be45bf2d907aeb1d1f2954b30f3b))
+
+
+
+### 🔨 Refactoring
+
+* **banner:** simplify and optimize variant computation in UiBanner
+ ([7b1fcf8](https://github.com/upstars-global/front-platform-ui/commit/7b1fcf89e03fbcde33c09175d59bcadb7f8e51cb))
+
 ## [1.32.0](https://github.com/upstars-global/front-platform-ui/compare/v1.31.0...v1.32.0) (2026-03-19)
 
 ### 🐛 Bug Fixes
