@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --ui-header-max-width: 82.5rem; /* 1320px */
+}
+
+#storybook-docs {
+  --ui-header-max-width: 60rem;
+}
