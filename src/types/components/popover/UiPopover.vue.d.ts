@@ -5,9 +5,6 @@ export interface UiPopoverProps {
     placement?: 'bottom' | 'bottom-end' | 'bottom-start';
     ui?: UiProp<PopoverUi>;
 }
-export interface UiPopoverEmits {
-    (event: 'update:open', value: boolean): void;
-}
 export interface UiPopoverSlots {
     anchor(props: {
         isOpen: boolean;
@@ -19,11 +16,7 @@ export interface UiPopoverSlots {
 }
 declare const _default: typeof __VLS_export;
 export default _default;
-declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiPopoverProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
-    "update:open": (value: boolean) => any;
-}, string, import("vue").PublicProps, Readonly<UiPopoverProps> & Readonly<{
-    "onUpdate:open"?: ((value: boolean) => any) | undefined;
-}>, {
+declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiPopoverProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<UiPopoverProps> & Readonly<{}>, {
     offset: number;
     ui: UiProp<PopoverUi>;
     placement: "bottom" | "bottom-end" | "bottom-start";
