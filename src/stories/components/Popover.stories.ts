@@ -20,7 +20,7 @@ const meta = {
     setup: () => ({ args }),
     template: `<UiPopover v-bind="args" class="m-auto w-6">
       <template #anchor>
-        <UiIcon name="support" />
+        <UiIcon name="support" title="click me" />
       </template>
       <template #content>
         <div class="border border-slate-400 rounded-b-2 p-2 whitespace-nowrap">Popover content</div>
