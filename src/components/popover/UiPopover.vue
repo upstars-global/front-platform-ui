@@ -8,10 +8,6 @@ export interface UiPopoverProps {
   ui?: UiProp<PopoverUi>
 }
 
-export interface UiPopoverEmits {
-  (event: 'update:open', value: boolean): void
-}
-
 export interface UiPopoverSlots {
   anchor(props: { isOpen: boolean; toggleHandler: () => void }): unknown
   content(props: { hideHandler: () => void }): unknown
@@ -35,7 +31,6 @@ const props = withDefaults(defineProps<UiPopoverProps>(), {
   placement: 'bottom',
   ui: undefined
 })
-defineEmits<UiPopoverEmits>()
 const slots = defineSlots<UiPopoverSlots>()
 
 const isOpen = ref(false)
