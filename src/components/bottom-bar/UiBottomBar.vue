@@ -120,6 +120,11 @@ const uiClasses = computed(() => {
     appConfig: appConfig?.ui?.bottomBar?.item?.labelVariants,
     uiProp: props.ui?.item?.labelVariants
   })
+  const navigationStates = prepareVariants({
+    theme: theme.navigation.states.loggedIn,
+    appConfig: appConfig?.ui?.bottomBar?.navigation?.states?.loggedIn,
+    uiProp: props.ui?.navigation?.states?.loggedIn
+  })
   const navigationVariants = prepareVariants({
     theme: theme.navigation.variants,
     appConfig: appConfig?.ui?.bottomBar?.navigation?.variants,
@@ -129,6 +134,10 @@ const uiClasses = computed(() => {
   action.push(actionVariants[props.variant])
   itemLabel.push(itemLabelVariants[props.variant])
   navigation.push(navigationVariants[props.variant])
+
+  if (props.isLoggedIn) {
+    navigation.push(navigationStates[props.variant])
+  }
 
   return {
     container: mergeClasses(theme.container, appConfig?.ui?.bottomBar?.container, props.ui?.container),

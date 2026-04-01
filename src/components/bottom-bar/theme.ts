@@ -9,6 +9,14 @@ const bottomBar = {
       'component-b': '',
       'component-c': 'rounded-full p-2 min-h-12 items-stretch',
       'component-d': ''
+    },
+    states: {
+      loggedIn: {
+        'component-a': '',
+        'component-b': 'grid-cols-5 [&>*:nth-child(3)]:col-start-4 [&>*:nth-child(4)]:col-start-5',
+        'component-c': '',
+        'component-d': ''
+      }
     }
   },
   action: {
@@ -20,14 +28,14 @@ const bottomBar = {
       'component-d': 'block'
     },
     label: {
-      'component-a': 'block',
-      'component-b': 'hidden',
-      'component-c': 'block',
+      'component-a': '',
+      'component-b': 'absolute top-full',
+      'component-c': '',
       'component-d': 'hidden'
     },
     variants: {
       'component-a': '',
-      'component-b': 'px-2',
+      'component-b': 'absolute px-2 -top-2 left-1/2 -translate-x-1/2',
       'component-c': '',
       'component-d': 'px-2'
     }

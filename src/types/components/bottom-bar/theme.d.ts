@@ -10,6 +10,14 @@ declare const bottomBar: {
             'component-c': string;
             'component-d': string;
         };
+        states: {
+            loggedIn: {
+                'component-a': string;
+                'component-b': string;
+                'component-c': string;
+                'component-d': string;
+            };
+        };
     };
     action: {
         base: string;

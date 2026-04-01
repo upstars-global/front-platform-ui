@@ -90,6 +90,11 @@ export const uiKitConfig: AppConfig = {
     },
     bottomBar: {
       strategy: 'merge',
+      action: {
+        label: {
+          'component-b': 'text-[10px] font-bold text-[inherit]'
+        }
+      },
       item: {
         base: 'text-[10px] font-bold',
         badge: 'bg-green-400 text-[8px]'
@@ -103,7 +108,7 @@ export const uiKitConfig: AppConfig = {
         'component-a': 'bg-gray-400',
         'component-b': 'bg-gray-400',
         'component-c': '',
-        'component-d': 'rounded-full bg-gray-400'
+        'component-d': 'bg-gray-400'
       }
     },
     button: {
