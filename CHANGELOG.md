@@ -1,3 +1,10 @@
+## [1.34.0](https://github.com/upstars-global/front-platform-ui/compare/v1.33.0...v1.34.0) (2026-04-01)
+
+### 🚀 Features
+
+* **banner:** fix incorrect import path for UiButton component
+ ([30d4237](https://github.com/upstars-global/front-platform-ui/commit/30d4237dd61dc4bdc2251255c14bb03a74a69137))
+
 ## [1.33.0](https://github.com/upstars-global/front-platform-ui/compare/v1.32.0...v1.33.0) (2026-03-20)
 
 ### 🚀 Features
