@@ -91,12 +91,14 @@ export const uiKitConfig: AppConfig = {
     bottomBar: {
       strategy: 'merge',
       action: {
-        base: 'text-[10px] font-bold text-[inherit]',
         icon: {
           'component-b': 'text-white'
         },
         label: {
           'component-b': 'leading-4'
+        },
+        variants: {
+          'component-b': 'text-[10px] font-bold text-[inherit]'
         }
       },
       item: {
