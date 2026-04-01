@@ -29,7 +29,7 @@ const bottomBar = {
     },
     label: {
       'component-a': '',
-      'component-b': 'absolute top-full',
+      'component-b': 'absolute top-full -mt-px',
       'component-c': '',
       'component-d': 'hidden'
     },
