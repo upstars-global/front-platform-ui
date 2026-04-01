@@ -24,6 +24,12 @@ export const config = {
       },
       willChange: {
         'background-position': 'background-position'
+      },
+      zIndex: {
+        900: '900', // bottom-menu
+        999: '999', // popover
+        1005: '1005', // header
+        1010: '1010' // sidebar
       }
     },
     borderRadius: {

@@ -88,6 +88,24 @@ export const uiKitConfig: AppConfig = {
         }
       }
     },
+    bottomBar: {
+      strategy: 'merge',
+      item: {
+        base: 'text-[10px] font-bold',
+        badge: 'bg-green-400 text-[8px]'
+      },
+      navigation: {
+        variants: {
+          'component-c': 'bg-gray-400'
+        }
+      },
+      variants: {
+        'component-a': 'bg-gray-400',
+        'component-b': 'bg-gray-400',
+        'component-c': '',
+        'component-d': 'rounded-full bg-gray-400'
+      }
+    },
     button: {
       size: {
         xs: 'text-xs leading-4',
