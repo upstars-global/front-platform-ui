@@ -17,7 +17,7 @@ export interface UiBannerProps {
     ui?: UiProp<BannerUi>;
 }
 export interface UiBannerEmits {
-    (event: 'click'): void;
+    (event: 'click', value: MouseEvent): void;
 }
 export interface UiBannerSlots {
     content(): unknown;
@@ -25,9 +25,9 @@ export interface UiBannerSlots {
 declare const _default: typeof __VLS_export;
 export default _default;
 declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiBannerProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
-    click: () => any;
+    click: (value: MouseEvent) => any;
 }, string, import("vue").PublicProps, Readonly<UiBannerProps> & Readonly<{
-    onClick?: (() => any) | undefined;
+    onClick?: ((value: MouseEvent) => any) | undefined;
 }>, {
     variant: "default";
     button: BannerButton;

@@ -21,7 +21,7 @@ export interface UiBannerProps {
 }
 
 export interface UiBannerEmits {
-  (event: 'click'): void
+  (event: 'click', value: MouseEvent): void
 }
 
 export interface UiBannerSlots {
@@ -115,7 +115,7 @@ const isContent = computed(() => Boolean(props.content) || Boolean(slots.content
 </script>
 
 <template>
-  <UiLink v-bind="attributes" :class="className" :to="button?.url" @click="emit('click')">
+  <UiLink v-bind="attributes" :class="className" :to="button?.url" @click="emit('click', $event)">
     <div :class="uiClasses.wrapper" :style="{ background: backgroundColor }">
       <div v-if="isContent" :class="uiClasses.content">
         <slot name="content">

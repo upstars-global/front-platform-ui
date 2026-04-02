@@ -16,7 +16,6 @@ if (!SLACK_WEBHOOK_URL) {
 // Get the first 10 lines from CHANGELOG.md (latest updates)
 let changelog = ''
 try {
-  /* eslint-disable */
   changelog = execSync('head -n 10 CHANGELOG.md').toString().trim()
 } catch (err) {
   console.error('❌ Error reading CHANGELOG.md:', err.message)

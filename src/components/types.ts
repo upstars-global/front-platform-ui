@@ -11,6 +11,7 @@ import type { CheckboxUi } from './checkbox/theme'
 import type { ChipUi } from './chip/theme'
 import type { CircleProgressBarUi } from './circle-progress-bar/theme'
 import type { DropdownUi } from './dropdown/theme'
+import type { HeaderUi } from './header/theme'
 import type { UiIcons } from './icon/config'
 import type { ImageUi } from './image/theme'
 import type { InputUi } from './input/theme'
@@ -20,6 +21,7 @@ import type { MenuUi } from './menu/theme'
 import type { ModalUi } from './modal/theme'
 import type { ModalRendererUi } from './modal-renderer/theme'
 import type { PictureUi } from './picture/theme'
+import type { PopoverUi } from './popover/theme.ts'
 import type { ProgressBarUi } from './progress-bar/theme'
 import type { ScrollUi } from './scroll/theme'
 import type { SelectUi } from './select/theme'
@@ -57,6 +59,7 @@ interface UiConfig {
   chip?: UiProp<ChipUi>
   circleProgressBar?: UiProp<CircleProgressBarUi>
   dropdown?: UiProp<DropdownUi>
+  header?: UiProp<HeaderUi>
   icon?: { strategy?: Strategy }
   image?: UiProp<ImageUi>
   input?: UiProp<InputUi>
@@ -66,6 +69,7 @@ interface UiConfig {
   modal?: UiProp<ModalUi>
   modalRenderer?: UiProp<ModalRendererUi>
   picture?: UiProp<PictureUi>
+  popover?: UiProp<PopoverUi>
   progressBar?: UiProp<ProgressBarUi>
   scroll?: UiProp<ScrollUi>
   select?: UiProp<SelectUi>
