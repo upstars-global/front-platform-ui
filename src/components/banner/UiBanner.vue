@@ -21,7 +21,7 @@ export interface UiBannerProps {
 }
 
 export interface UiBannerEmits {
-  (event: 'click'): void
+  (event: 'click', value: MouseEvent): void
 }
 
 export interface UiBannerSlots {
@@ -54,7 +54,7 @@ const props = withDefaults(defineProps<UiBannerProps>(), {
   ui: undefined
 })
 const emit = defineEmits<UiBannerEmits>()
-const slots = defineSlots<UiBannerSlots>()
+defineSlots<UiBannerSlots>()
 
 const appConfig = useAppConfig()
 const { attributes, className, mergeClasses } = useComponentAttributes(
@@ -111,13 +111,25 @@ const uiClasses = computed(() => {
   }
 })
 
-const isContent = computed(() => Boolean(props.content) || Boolean(slots.content))
+const pictureProps = computed(() => {
+  if (!props.picture) {
+    return null
+  }
+
+  return {
+    ...props.picture,
+    ui: {
+      ...props.picture?.ui,
+      image: `${uiClasses.value.image} ${props.picture?.ui?.image ?? ''}`
+    }
+  }
+})
 </script>
 
 <template>
-  <UiLink v-bind="attributes" :class="className" :to="button?.url" @click="emit('click')">
+  <UiLink v-bind="attributes" :class="className" :to="button?.url" @click="emit('click', $event)">
     <div :class="uiClasses.wrapper" :style="{ background: backgroundColor }">
-      <div v-if="isContent" :class="uiClasses.content">
+      <div :class="uiClasses.content">
         <slot name="content">
           <div data-test="banner-description" v-html="content" />
         </slot>
@@ -132,13 +144,13 @@ const isContent = computed(() => Boolean(props.content) || Boolean(slots.content
             data-test="banner-button"
             v-bind="button"
           >
-            {{ button.label }}
+            <span v-html="button.label" />
           </UiButton>
         </div>
       </div>
       <div :class="uiClasses.imageWrapper">
         <UiImage v-if="image" :class="uiClasses.image" v-bind="image" />
-        <UiPicture v-if="picture" :class="uiClasses.image" v-bind="picture" />
+        <UiPicture v-if="pictureProps" v-bind="pictureProps" />
       </div>
     </div>
   </UiLink>
