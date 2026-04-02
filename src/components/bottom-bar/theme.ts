@@ -43,7 +43,7 @@ const bottomBar = {
   item: {
     base: 'flex flex-col items-center justify-center',
     label: '',
-    badge: 'absolute top-0 right-0 w-4 h-4',
+    badge: 'absolute -top-0.5 right-0.5 w-4 h-4',
     icon: '',
     states: {
       active: ''
