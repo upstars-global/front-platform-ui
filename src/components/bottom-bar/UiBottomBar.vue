@@ -31,10 +31,10 @@ export interface UiBottomBarProps {
 }
 
 export interface UiBottomBarEmits {
-  (event: 'click:sign-in'): void
-  (event: 'click:sign-up'): void
-  (event: 'open:sidebar'): void
-  (event: 'open:cashbox'): void
+  (event: 'click:sign-in', value: MouseEvent): void
+  (event: 'click:sign-up', value: MouseEvent): void
+  (event: 'open:sidebar', value: MouseEvent): void
+  (event: 'open:cashbox', value: MouseEvent): void
 }
 </script>
 
@@ -174,7 +174,7 @@ const uiClasses = computed(() => {
         :disabled="isLockAuthButtons"
         variant="secondary"
         data-test="bottom-bar-open-sign-in"
-        @click="emit('click:sign-in')"
+        @click="emit('click:sign-in', $event)"
       >
         <span :class="uiClasses.action.label">{{ labels.signIn }}</span>
       </UiButton>
@@ -183,7 +183,7 @@ const uiClasses = computed(() => {
         :ui="{ strategy: 'merge' }"
         :disabled="isLockAuthButtons"
         data-test="bottom-bar-open-sign-up"
-        @click="emit('click:sign-up')"
+        @click="emit('click:sign-up', $event)"
       >
         <span :class="uiClasses.action.label">{{ labels.signUp }}</span>
       </UiButton>
@@ -195,7 +195,7 @@ const uiClasses = computed(() => {
         :disabled="isLockAuthButtons"
         :ui="{ strategy: 'merge' }"
         data-test="bottom-bar-open-sign-up"
-        @click="emit('click:sign-up')"
+        @click="emit('click:sign-up', $event)"
       >
         <span :class="uiClasses.action.label">{{ labels.signUp }}</span>
       </UiButton>
@@ -204,7 +204,7 @@ const uiClasses = computed(() => {
         :class="uiClasses.action.base"
         :ui="{ strategy: 'merge' }"
         data-test="bottom-bar-open-cashbox"
-        @click="emit('open:cashbox')"
+        @click="emit('open:cashbox', $event)"
       >
         <UiIcon :class="uiClasses.action.icon" name="plus" />
         <span :class="uiClasses.action.label">{{ labels.cashbox }}</span>
@@ -227,7 +227,7 @@ const uiClasses = computed(() => {
             </div>
           </UiLink>
         </template>
-        <UiLink :class="uiClasses.item.base" data-test="bottom-bar-open-sidebar" @click="emit('open:sidebar')">
+        <UiLink :class="uiClasses.item.base" data-test="bottom-bar-open-sidebar" @click="emit('open:sidebar', $event)">
           <div :class="uiClasses.item.wrapper">
             <UiIcon :class="uiClasses.item.icon" name="more" />
             <span :class="uiClasses.item.label">{{ labels.sidebar }}</span>
