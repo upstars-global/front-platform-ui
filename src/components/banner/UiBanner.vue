@@ -33,11 +33,11 @@ import { computed } from 'vue'
 import { useAppConfig } from '../../composables/useAppConfig'
 import { useComponentAttributes } from '../../composables/useUiClasses'
 import { prepareVariants } from '../../helpers/prepareClassNames'
+import UiButton from '../button/UiButton.vue'
 import UiImage from '../image/UiImage.vue'
 import UiLink from '../link/UiLink.vue'
 import UiPicture from '../picture/UiPicture.vue'
 import theme from './theme'
-import { UiButton } from '@src/components'
 
 defineOptions({
   name: 'UiBanner',
