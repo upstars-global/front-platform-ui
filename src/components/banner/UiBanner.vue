@@ -37,7 +37,6 @@ import UiButton from '../button/UiButton.vue'
 import UiImage from '../image/UiImage.vue'
 import UiLink from '../link/UiLink.vue'
 import UiPicture from '../picture/UiPicture.vue'
-import UiButton from '../button/UiButton.vue'
 import theme from './theme'
 
 defineOptions({
