@@ -16,6 +16,7 @@ import UiChipGroup from './chip/UiChipGroup.vue'
 import UiChipCarousel from './chip/UiChipCarousel.vue'
 import UiCircleProgressBar from './circle-progress-bar/UiCircleProgressBar.vue'
 import UiDropdown from './dropdown/UiDropdown.vue'
+import UiHeader from './header/UiHeader.vue'
 import UiIcon from './icon/UiIcon.vue'
 import UiImage from './image/UiImage.vue'
 import UiInput from './input/UiInput.vue'
@@ -25,6 +26,7 @@ import UiMenu from './menu/UiMenu.vue'
 import UiModal from './modal/UiModal.vue'
 import UiModalRenderer from './modal-renderer/UiModalRenderer.vue'
 import UiPicture from './picture/UiPicture.vue'
+import UiPopover from './popover/UiPopover.vue'
 import UiProgressBar from './progress-bar/UiProgressBar.vue'
 import UiScroll from './scroll/UiScroll.vue'
 import UiSelect from './select/UiSelect.vue'
@@ -48,6 +50,7 @@ export type { UiCheckboxProps, UiCheckboxEmits, UiCheckboxSlots } from './checkb
 export type { UiChipProps, UiChipEmits, UiChipSlots } from './chip/UiChip.vue'
 export type { UiCircleProgressBarProps, UiCircleProgressBarSlots } from './circle-progress-bar/UiCircleProgressBar.vue'
 export type { UiDropdownProps, UiDropdownSlots } from './dropdown/UiDropdown.vue'
+export type { UiHeaderProps, UiHeaderEmits, UiHeaderSlots } from './header/UiHeader.vue'
 export type { UiIconProps } from './icon/UiIcon.vue'
 export type { UiIconsFill, UiIconName, UiIconsNavigation, UiIconsOutline, UiIconsSocial } from './icon/config'
 export type { UiImageProps } from './image/UiImage.vue'
@@ -59,6 +62,7 @@ export type { UiModalProps, UiModalEmits, UiModalSlots } from './modal/UiModal.v
 export type { UiModalRendererProps } from './modal-renderer/UiModalRenderer.vue'
 export type { ModalItem, ModalRendererEmits } from './modal-renderer/types'
 export type { UiPictureProps, UiPictureEmits } from './picture/UiPicture.vue'
+export type { UiPopoverProps, UiPopoverSlots } from './popover/UiPopover.vue'
 export type { UiProgressBarProps, UiProgressBarSlots } from './progress-bar/UiProgressBar.vue'
 export type { UiScrollProps, UiScrollEmits, UiScrollSlots } from './scroll/UiScroll.vue'
 export type { UiSelectProps, UiSelectEmits, UiSelectSlots, SelectOption } from './select/UiSelect.vue'
@@ -85,6 +89,7 @@ export {
   UiChipCarousel,
   UiCircleProgressBar,
   UiDropdown,
+  UiHeader,
   UiIcon,
   UiImage,
   UiInput,
@@ -94,6 +99,7 @@ export {
   UiModal,
   UiModalRenderer,
   UiPicture,
+  UiPopover,
   UiProgressBar,
   UiScroll,
   UiSelect,

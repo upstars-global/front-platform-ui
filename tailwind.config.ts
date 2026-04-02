@@ -22,8 +22,17 @@ export const config = {
           '100%': { transform: 'translateX(100%)' }
         }
       },
+      transitionTimingFunction: {
+        easing: 'cubic-bezier(0.25, 0.1, 0.25, 1.0)'
+      },
       willChange: {
         'background-position': 'background-position'
+      },
+      zIndex: {
+        900: '900', // bottom-menu
+        999: '999', // popover
+        1005: '1005', // header
+        1010: '1010' // sidebar
       }
     },
     borderRadius: {
@@ -40,6 +49,13 @@ export const config = {
       7: '1.75rem', // 28px
       8: '2rem', // 32px
       full: '9999px'
+    },
+    screens: {
+      xs: '360px',
+      sm: '480px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1440px'
     }
   },
   plugins: [uiPlugins]
