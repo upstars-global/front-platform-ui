@@ -1,3 +1,36 @@
+## [1.35.0](https://github.com/upstars-global/front-platform-ui/compare/v1.34.0...v1.35.0) (2026-04-02)
+
+### 🐛 Bug Fixes
+
+* **popover:** add missing title attribute to anchor icon
+ ([f49cd53](https://github.com/upstars-global/front-platform-ui/commit/f49cd533a8fe1b57c495ccc7fb0abbe4fb96272c))
+
+
+
+### 🚀 Features
+
+* **header:** add UiHeader and UiPopover components with full theme support
+ ([bf9a4b6](https://github.com/upstars-global/front-platform-ui/commit/bf9a4b64cbd891df52a7f48e84aa0f612aa31cf4))
+
+
+
+### 🔨 Refactoring
+
+* **banner:** remove unused UiButton import from UiBanner component
+ ([04deace](https://github.com/upstars-global/front-platform-ui/commit/04deaceb37ca54339ae4727e334fa00d834c16a8))
+
+
+* **header, banner:** update event names and types for consistency
+ ([a7ba4f2](https://github.com/upstars-global/front-platform-ui/commit/a7ba4f22af2b9d570f6f616ff34521aee0888f8d))
+
+
+* **popover:** remove unused emits and update type exports
+ ([1343f64](https://github.com/upstars-global/front-platform-ui/commit/1343f64b38b1c610b8dcd079c135e174075be2ab))
+
+
+* **popover:** remove unused emits and update type exports
+ ([4b17e7d](https://github.com/upstars-global/front-platform-ui/commit/4b17e7d67b600dd27e2c37d2ac6ad1d3c1f495b7))
+
 ## [1.34.0](https://github.com/upstars-global/front-platform-ui/compare/v1.33.0...v1.34.0) (2026-04-01)
 
 ### 🚀 Features
