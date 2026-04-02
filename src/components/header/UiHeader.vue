@@ -17,8 +17,8 @@ export interface UiHeaderProps {
 }
 
 export interface UiHeaderEmits {
-  (event: 'click-logo'): void
-  (event: 'open-chat'): void
+  (event: 'click:logo', value: MouseEvent): void
+  (event: 'open:chat'): void
 }
 
 export interface UiHeaderSlots {
@@ -166,7 +166,7 @@ const uiClasses = computed(() => {
     <slot name="top" />
     <div :class="uiClasses.wrapper" data-test="header-wrapper">
       <div :class="uiClasses.inner" data-test="header-inner" style="max-width: var(--ui-header-max-width, 100vw)">
-        <UiLink :class="uiClasses.logo" :to="logoRoute" data-test="header-logo" @click="emit('click-logo')">
+        <UiLink :class="uiClasses.logo" :to="logoRoute" data-test="header-logo" @click="emit('click:logo', $event)">
           <UiImage v-if="logo" v-bind="logo" class="w-full h-full" />
         </UiLink>
         <div v-if="isContent" :class="uiClasses.content" data-test="header-content">
@@ -178,7 +178,7 @@ const uiClasses = computed(() => {
               class="lg:hidden"
               :message-count="chatMessageCount"
               :ui="uiClasses.chatButton"
-              @click="emit('open-chat')"
+              @click="emit('open:chat')"
             />
             <UiPopover class="hidden lg:block" placement="bottom-end" :offset="12">
               <template #anchor>

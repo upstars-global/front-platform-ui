@@ -13,8 +13,8 @@ export interface UiHeaderProps {
     ui?: UiProp<HeaderUi>;
 }
 export interface UiHeaderEmits {
-    (event: 'click-logo'): void;
-    (event: 'open-chat'): void;
+    (event: 'click:logo', value: MouseEvent): void;
+    (event: 'open:chat'): void;
 }
 export interface UiHeaderSlots {
     top(): unknown;
@@ -25,11 +25,11 @@ export interface UiHeaderSlots {
 declare const _default: typeof __VLS_export;
 export default _default;
 declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiHeaderProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
-    "click-logo": () => any;
-    "open-chat": () => any;
+    "click:logo": (value: MouseEvent) => any;
+    "open:chat": () => any;
 }, string, import("vue").PublicProps, Readonly<UiHeaderProps> & Readonly<{
-    "onClick-logo"?: (() => any) | undefined;
-    "onOpen-chat"?: (() => any) | undefined;
+    "onClick:logo"?: ((value: MouseEvent) => any) | undefined;
+    "onOpen:chat"?: (() => any) | undefined;
 }>, {
     variant: "simple" | "component-a" | "component-b" | "component-c" | "component-d";
     ui: UiProp<HeaderUi>;
