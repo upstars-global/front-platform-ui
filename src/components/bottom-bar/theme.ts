@@ -36,7 +36,7 @@ const bottomBar = {
     variants: {
       'component-a': '',
       'component-b': 'absolute px-2 -top-2 left-1/2 -translate-x-1/2',
-      'component-c': 'min-w-[86px] max-w-1/3',
+      'component-c': 'shrink-0 max-w-[33%]',
       'component-d': 'px-2'
     }
   },
