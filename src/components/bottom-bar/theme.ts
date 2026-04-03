@@ -1,6 +1,6 @@
 const bottomBar = {
   base: 'backdrop-blur-xl flex flex-col items-center justify-between px-2 w-full',
-  buttonGroup: 'relative grid gap-4 grid-flow-col items-center w-full py-2',
+  buttonGroup: 'relative grid gap-4 grid-cols-2 items-center w-full py-2',
   container: 'flex gap-2 w-full py-2 items-center',
   navigation: {
     base: 'grid gap-2 grid-flow-col items-center w-full',
@@ -20,7 +20,7 @@ const bottomBar = {
     }
   },
   action: {
-    base: 'flex items-center justify-center gap-2 whitespace-nowrap',
+    base: 'flex items-center justify-center gap-2',
     icon: {
       'component-a': 'hidden',
       'component-b': 'block',
@@ -36,7 +36,7 @@ const bottomBar = {
     variants: {
       'component-a': '',
       'component-b': 'absolute px-2 -top-2 left-1/2 -translate-x-1/2',
-      'component-c': '',
+      'component-c': 'min-w-[86px] max-w-1/3',
       'component-d': 'px-2'
     }
   },
