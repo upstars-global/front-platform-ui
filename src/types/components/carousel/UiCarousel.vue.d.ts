@@ -26,9 +26,9 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiCaro
 }>, {
     autoplay: number;
     ui: UiProp<CarouselUi>;
+    navigation: Navigation;
     activeIndex: number;
     showNavigation: boolean;
-    navigation: Navigation;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiCarouselSlots>;
 type __VLS_WithSlots<T, S> = T & {
     new (): {
