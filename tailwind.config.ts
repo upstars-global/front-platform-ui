@@ -1,13 +1,13 @@
 import type { Config } from 'tailwindcss'
-import plugin from 'tailwindcss/plugin'
-import { carouselPlugin } from './src/components/carousel/tailwind.plugin'
+import plugin from 'tailwindcss/plugin.js'
+import { carouselPlugin } from './src/components/carousel/tailwind.plugin.ts'
 
 const uiPlugins = plugin((helpers) => {
   carouselPlugin.handler(helpers)
 })
 
 export const config = {
-  content: ['./src/**/*.{vue,ts,tsx,css}', './.storybook/**/*.{ts,css}'],
+  content: ['./docs/**/*.mdx', './src/**/*.{vue,ts,tsx,css}', './.storybook/**/*.{ts,css}'],
   theme: {
     extend: {
       animation: {
@@ -56,6 +56,48 @@ export const config = {
       md: '768px',
       lg: '1024px',
       xl: '1440px'
+    },
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      black: '#000000',
+      white: '#ffffff',
+      primary: {
+        10: '#7dd3fc', // sky-300
+        20: '#38bdf8', // sky-400
+        30: '#0ea5e9', // sky-500
+        40: '#0284c7', // sky-600
+        50: '#0369a1' // sky-700
+      },
+      secondary: {
+        10: '#f0abfc', // fuchsia-300
+        20: '#e879f9', // fuchsia-400
+        30: '#d946ef', // fuchsia-500
+        40: '#c026d3', // fuchsia-600
+        50: '#a21caf' // fuchsia-700
+      },
+      tertiary: {
+        10: '#9ca3af', // gray-400
+        20: '#6b7280', // gray-500
+        30: '#4b5563', // gray-600
+        40: '#374151', // gray-700
+        50: '#1f2937' // gray-800
+      },
+      error: {
+        DEFAULT: '#ef4444', // red-500
+        10: '#f87171', // red-400
+        20: '#ef4444', // red-500
+        30: '#dc2626' // red-600
+      },
+      success: {
+        DEFAULT: '#22c55e' // green-500
+      },
+      warning: {
+        DEFAULT: '#f59e0b' // amber-500
+      },
+      personal: {
+        DEFAULT: '#facc15' // yellow-400
+      }
     }
   },
   plugins: [uiPlugins]
