@@ -23,8 +23,6 @@ const meta = {
     ui: { control: 'object' }
   },
   args: {
-    button: { label: 'Click me', url: '/' },
-    content: 'Banner content',
     variant: 'default'
   },
   render: (args) => ({
@@ -41,6 +39,8 @@ type Story = StoryObj<typeof meta>
 export const Common: Story = {
   args: {
     backgroundColor: '#14b8a6',
+    button: { label: 'Click me', url: '/' },
+    content: 'Banner content',
     image: {
       src: '/assets/banner/banner-1.png',
       alt: 'banner image'
@@ -49,6 +49,35 @@ export const Common: Story = {
 }
 
 export const GradientBackground: Story = {
+  argTypes: {
+    backgroundColor: { control: 'select', options: gradients }
+  },
+  args: {
+    backgroundColor: gradients[0],
+    button: { label: 'Click me', url: '/' },
+    content: 'Banner content',
+    image: {
+      src: '/assets/banner/banner-2.png',
+      alt: 'banner image'
+    }
+  }
+}
+
+export const WithoutContent: Story = {
+  argTypes: {
+    backgroundColor: { control: 'select', options: gradients }
+  },
+  args: {
+    backgroundColor: gradients[0],
+    button: { label: 'Click me', url: '/' },
+    image: {
+      src: '/assets/banner/banner-1.png',
+      alt: 'banner image'
+    }
+  }
+}
+
+export const WithoutContentAndButton: Story = {
   argTypes: {
     backgroundColor: { control: 'select', options: gradients }
   },
