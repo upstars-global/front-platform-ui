@@ -88,6 +88,35 @@ export const uiKitConfig: AppConfig = {
         }
       }
     },
+    bottomBar: {
+      strategy: 'merge',
+      action: {
+        icon: {
+          'component-b': 'text-white'
+        },
+        label: {
+          'component-b': 'leading-4'
+        },
+        variants: {
+          'component-b': 'text-[10px] font-bold text-[inherit]'
+        }
+      },
+      item: {
+        base: 'text-[10px] font-bold',
+        badge: 'bg-green-400 text-[8px]'
+      },
+      navigation: {
+        variants: {
+          'component-c': 'bg-gray-400'
+        }
+      },
+      variants: {
+        'component-a': 'bg-gray-400',
+        'component-b': 'bg-gray-400',
+        'component-c': '',
+        'component-d': 'bg-gray-400'
+      }
+    },
     button: {
       size: {
         xs: 'text-xs leading-4',
@@ -98,7 +127,7 @@ export const uiKitConfig: AppConfig = {
         primary: 'bg-sky-500 hover:bg-sky-400 active:bg-sky-600 text-white',
         secondary: 'bg-slate-300 hover:bg-slate-200 active:bg-slate-400 text-black',
         tertiary: 'bg-transparent hover:bg-slate-200 active:bg-slate-400 shadow-button hover:shadow-none text-black',
-        ghost: 'bg-transparent text-black hover:bg-slate-200 active:bg-slate-400',
+        ghost: 'p-2 bg-transparent text-black hover:bg-slate-200 active:bg-slate-400',
         destructive: 'bg-red-500 hover:bg-red-400 active:bg-red-600 text-white'
       }
     },
@@ -144,6 +173,22 @@ export const uiKitConfig: AppConfig = {
         trail: 'stroke-indigo-300',
         line: 'stroke-indigo-500'
       }
+    },
+    header: {
+      chatButton: {
+        badge: 'bg-sky-400'
+      },
+      navigation: {
+        item: {
+          badge: 'bg-green-400',
+          states: {
+            background: 'bg-neutral-500 text-white',
+            special: 'text-red-600'
+          }
+        },
+        hiddenContent: 'bg-neutral-400'
+      },
+      wrapper: 'bg-neutral-400'
     },
     icon: { strategy: 'merge' },
     image: {

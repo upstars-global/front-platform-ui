@@ -14,7 +14,10 @@ export default [
   {
     languageOptions: {
       globals: {
+        ...globals.amd,
         ...globals.browser,
+        ...globals.es2026,
+        ...globals.node,
         process: true
       }
     }
@@ -29,6 +32,9 @@ export default [
       parserOptions: {
         parser: tsEslint.parser
       }
+    },
+    rules: {
+      'vue/no-v-html': 'off'
     }
   },
   ...storybook.configs['flat/recommended']

@@ -3,6 +3,7 @@ import type { AccordionUi } from './accordion/theme';
 import type { BadgeUi } from './badge/theme';
 import type { BadgeTimerUi } from './badge-timer/theme';
 import type { BannerUi } from './banner/theme';
+import type { BottomBarUi } from './bottom-bar/theme';
 import type { ButtonUi } from './button/theme';
 import type { CardUi } from './card/theme';
 import type { CarouselUi } from './carousel/theme';
@@ -10,6 +11,7 @@ import type { CheckboxUi } from './checkbox/theme';
 import type { ChipUi } from './chip/theme';
 import type { CircleProgressBarUi } from './circle-progress-bar/theme';
 import type { DropdownUi } from './dropdown/theme';
+import type { HeaderUi } from './header/theme';
 import type { UiIcons } from './icon/config';
 import type { ImageUi } from './image/theme';
 import type { InputUi } from './input/theme';
@@ -19,6 +21,7 @@ import type { MenuUi } from './menu/theme';
 import type { ModalUi } from './modal/theme';
 import type { ModalRendererUi } from './modal-renderer/theme';
 import type { PictureUi } from './picture/theme';
+import type { PopoverUi } from './popover/theme.ts';
 import type { ProgressBarUi } from './progress-bar/theme';
 import type { ScrollUi } from './scroll/theme';
 import type { SelectUi } from './select/theme';
@@ -42,6 +45,7 @@ interface UiConfig {
     badge?: UiProp<BadgeUi>;
     badgeTimer?: UiProp<BadgeTimerUi>;
     banner?: UiProp<BannerUi>;
+    bottomBar?: UiProp<BottomBarUi>;
     button?: UiProp<ButtonUi>;
     card?: UiProp<CardUi>;
     carousel?: UiProp<CarouselUi>;
@@ -49,6 +53,7 @@ interface UiConfig {
     chip?: UiProp<ChipUi>;
     circleProgressBar?: UiProp<CircleProgressBarUi>;
     dropdown?: UiProp<DropdownUi>;
+    header?: UiProp<HeaderUi>;
     icon?: {
         strategy?: Strategy;
     };
@@ -60,6 +65,7 @@ interface UiConfig {
     modal?: UiProp<ModalUi>;
     modalRenderer?: UiProp<ModalRendererUi>;
     picture?: UiProp<PictureUi>;
+    popover?: UiProp<PopoverUi>;
     progressBar?: UiProp<ProgressBarUi>;
     scroll?: UiProp<ScrollUi>;
     select?: UiProp<SelectUi>;
