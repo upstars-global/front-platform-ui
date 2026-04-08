@@ -1,3 +1,42 @@
+## [1.36.0](https://github.com/upstars-global/front-platform-ui/compare/v1.35.0...v1.36.0) (2026-04-03)
+
+### 🚀 Features
+
+* **bottom-bar:** add support for logged-in state variants
+ ([ac9a952](https://github.com/upstars-global/front-platform-ui/commit/ac9a9527d6eecf27635fad5ad51fae69b9383875))
+
+
+* **bottom-bar:** add UiBottomBar component with theme and storybook integration
+ ([6e9525b](https://github.com/upstars-global/front-platform-ui/commit/6e9525bfd9b106b8f79be05ec03b5b046b01c71e))
+
+
+* **bottom-bar:** add variant styling for component-b actions
+ ([77b4abd](https://github.com/upstars-global/front-platform-ui/commit/77b4abd1636dfbd3d95ce09247b7fe0e3209b4d7))
+
+
+* **bottom-bar:** adjust badge positioning for improved alignment
+ ([0db1f28](https://github.com/upstars-global/front-platform-ui/commit/0db1f281f3570561a1bb56c91b08b85b212d819a))
+
+
+* **bottom-bar:** pass MouseEvent object in emit events
+ ([e790e33](https://github.com/upstars-global/front-platform-ui/commit/e790e330a099b89004e842558a1109dda05e4696))
+
+
+* **bottom-bar:** update styles for button group and action variants
+ ([99a8ad4](https://github.com/upstars-global/front-platform-ui/commit/99a8ad4a2ea3323ad94a64d905eca9567b78740b))
+
+
+* **bottom-bar:** update styles for button group and action variants
+ ([02b7379](https://github.com/upstars-global/front-platform-ui/commit/02b7379ccdcba3f9f02a2feadbca908d4a5f6a2f))
+
+
+* **bottom-bar:** update styling for component-b actions and labels
+ ([e6194cc](https://github.com/upstars-global/front-platform-ui/commit/e6194cc69fb0266105e6b813313e23fa9ad044b0))
+
+
+* **components:** add UiBottomBar to export and types index
+ ([5f07e26](https://github.com/upstars-global/front-platform-ui/commit/5f07e26f83f743f50044303ececd4facdcb7ba89))
+
 ## [1.35.0](https://github.com/upstars-global/front-platform-ui/compare/v1.34.0...v1.35.0) (2026-04-02)
 
 ### 🐛 Bug Fixes
