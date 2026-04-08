@@ -1,3 +1,10 @@
+## [1.37.1](https://github.com/upstars-global/front-platform-ui/compare/v1.37.0...v1.37.1) (2026-04-08)
+
+### 🔨 Refactoring
+
+* **banner:** picture props and event handling
+ ([939bc38](https://github.com/upstars-global/front-platform-ui/commit/939bc38666efa49a5f54081ed4f0990339420e36))
+
 ## [1.37.0](https://github.com/upstars-global/front-platform-ui/compare/v1.36.0...v1.37.0) (2026-04-08)
 
 ### 🚀 Features
