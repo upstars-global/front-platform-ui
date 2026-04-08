@@ -1,4 +1,4 @@
-import { Meta, IconGallery, IconItem } from '@storybook/addon-docs/blocks'
+import { Meta, IconGallery, IconItem, Title, Subtitle } from '@storybook/addon-docs/blocks'
 import { icons } from '@src/components/icon/config'
 
 export const IconsList = () => {
@@ -14,7 +14,9 @@ export const IconsList = () => {
 
 <Meta title="Foundations/Icons" />
 
-# Icons
+<Title>Icons</Title>
+
+<Subtitle>List of predefined SVG icons in UI Kit</Subtitle>
 
 <IconGallery style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(164px, 1fr))' }}>
   <IconsList />

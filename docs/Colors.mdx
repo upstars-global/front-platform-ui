@@ -1,4 +1,4 @@
-import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks'
+import { Meta, ColorPalette, ColorItem, Title, Subtitle } from '@storybook/addon-docs/blocks'
 import theme from './dist/theme.config.json'
 
 export const ColorsList = () => {
@@ -7,6 +7,25 @@ export const ColorsList = () => {
   }
 
   const exclude = ['current', 'currentColor', 'transparent']
+  const mapColors = (key, value) => {
+    let result = {}
+    Object.entries(value).forEach(([k, v]) => {
+      if (parseInt(k)) {
+        result[k] = v
+      } else if (k === 'DEFAULT') {
+        result[key] = v
+      } else {
+        if (typeof v === 'string') {
+          result[`${key}-${k}`] = v
+        } else {
+          const res = mapColors(k, v)
+          result = { ...result, ...res }
+        }
+      }
+    })
+
+    return result
+  }
   const colors = Object.entries(theme.colors)
     .filter(([k]) => !exclude.includes(k))
     .map(([key, value]) => {
@@ -14,14 +33,10 @@ export const ColorsList = () => {
       if (typeof value === 'string') {
         colorSet[key] = value
       } else {
-        Object.entries(value).forEach(([k, v]) => {
-          if (parseInt(k)) {
-            colorSet[k] = v
-          } else if (k === 'DEFAULT') {
-            colorSet[key] = v
-          } else {
-            colorSet[`${key}-${k}`] = v
-          }
+        const map = mapColors(key, value)
+
+        Object.entries(map).forEach(([k, v]) => {
+          colorSet[k] = v
         })
       }
 
@@ -37,7 +52,9 @@ export const ColorsList = () => {
 
 <Meta title="Foundations/Colors" />
 
-# Colors
+<Title>Colors</Title>
+
+<Subtitle>List of predefined colors in UI Kit</Subtitle>
 
 <ColorPalette>
   <ColorsList />

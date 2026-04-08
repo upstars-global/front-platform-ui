@@ -7,7 +7,7 @@ const uiPlugins = plugin((helpers) => {
 })
 
 export const config = {
-  content: ['./docs/**/*.mdx', './src/**/*.{vue,ts,tsx,css}', './.storybook/**/*.{ts,css}'],
+  content: ['./src/**/*.{vue,ts,tsx,css}', './.storybook/**/*.{ts,css}'],
   theme: {
     extend: {
       animation: {
@@ -62,6 +62,10 @@ export const config = {
       current: 'currentColor',
       black: '#000000',
       white: '#ffffff',
+      alt: '#f7f7f7',
+      dark: '#1e293b', // slate-800
+      light: '#fcfcfc',
+      support: '#cbd5e1', // slate-300
       primary: {
         10: '#7dd3fc', // sky-300
         20: '#38bdf8', // sky-400
@@ -70,33 +74,46 @@ export const config = {
         50: '#0369a1' // sky-700
       },
       secondary: {
-        10: '#f0abfc', // fuchsia-300
-        20: '#e879f9', // fuchsia-400
-        30: '#d946ef', // fuchsia-500
-        40: '#c026d3', // fuchsia-600
-        50: '#a21caf' // fuchsia-700
+        1: '#f0abfc', // fuchsia-300
+        2: '#e879f9', // fuchsia-400
+        3: '#d946ef', // fuchsia-500
+        4: '#c026d3' // fuchsia-600
       },
       tertiary: {
-        10: '#9ca3af', // gray-400
-        20: '#6b7280', // gray-500
-        30: '#4b5563', // gray-600
-        40: '#374151', // gray-700
-        50: '#1f2937' // gray-800
+        1: '#d1d5db', // gray-300
+        2: '#9ca3af', // gray-400
+        3: '#6b7280', // gray-500
+        4: '#4b5563' // gray-600
+      },
+      backdrop: {
+        'alt-1': '#334155', // slate-700
+        'alt-2': '#475569', // slate-600
+        'alt-3': '#64748b' // slate-500
+      },
+      link: {
+        DEFAULT: '#6d28d9', // violet-700
+        active: '#7c3aed' // violet-600
+      },
+      menu: {
+        DEFAULT: '#4f46e5', // indigo-600
+        active: '#6366f1' // indigo-500
+      },
+      promo: {
+        DEFAULT: '#c084fc' // purple-400
       },
       error: {
-        DEFAULT: '#ef4444', // red-500
-        10: '#f87171', // red-400
-        20: '#ef4444', // red-500
-        30: '#dc2626' // red-600
+        10: '#ff7575',
+        20: '#f65757',
+        30: '#d04747'
       },
       success: {
-        DEFAULT: '#22c55e' // green-500
+        DEFAULT: '#20d552'
       },
       warning: {
-        DEFAULT: '#f59e0b' // amber-500
+        DEFAULT: '#ffba33'
       },
       personal: {
-        DEFAULT: '#facc15' // yellow-400
+        DEFAULT: '#ffe114'
       }
     }
   },
