@@ -1,3 +1,10 @@
+## [1.37.2](https://github.com/upstars-global/front-platform-ui/compare/v1.37.1...v1.37.2) (2026-04-09)
+
+### 🐛 Bug Fixes
+
+* **banner:** add button variants and merge strategy implementation
+ ([bfb9d37](https://github.com/upstars-global/front-platform-ui/commit/bfb9d37ee36e0fe957297afe03fab2d5ba50016a))
+
 ## [1.37.1](https://github.com/upstars-global/front-platform-ui/compare/v1.37.0...v1.37.1) (2026-04-08)
 
 ### 🔨 Refactoring

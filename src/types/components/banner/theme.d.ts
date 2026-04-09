@@ -1,5 +1,10 @@
 declare const banner: {
     base: string;
+    button: {
+        variants: {
+            default: string;
+        };
+    };
     buttonWrapper: {
         variants: {
             default: string;
