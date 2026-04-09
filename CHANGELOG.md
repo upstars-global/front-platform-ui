@@ -1,3 +1,21 @@
+## [1.37.1](https://github.com/upstars-global/front-platform-ui/compare/v1.37.0...v1.37.1) (2026-04-08)
+
+### 🔨 Refactoring
+
+* **banner:** picture props and event handling
+ ([939bc38](https://github.com/upstars-global/front-platform-ui/commit/939bc38666efa49a5f54081ed4f0990339420e36))
+
+## [1.37.0](https://github.com/upstars-global/front-platform-ui/compare/v1.36.0...v1.37.0) (2026-04-08)
+
+### 🚀 Features
+
+* **icons:** add login outline icon to assets
+ ([85a5601](https://github.com/upstars-global/front-platform-ui/commit/85a5601618c1a368beba65aa7fc7b5d964e48dea))
+
+
+* **icons:** update login icon to use currentColor and add viewBox attribute
+ ([8cb98a4](https://github.com/upstars-global/front-platform-ui/commit/8cb98a412b21d4c09e8847eb5b7d3c52a7990630))
+
 ## [1.36.0](https://github.com/upstars-global/front-platform-ui/compare/v1.35.0...v1.36.0) (2026-04-03)
 
 ### 🚀 Features
