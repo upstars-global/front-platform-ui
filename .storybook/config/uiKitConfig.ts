@@ -77,6 +77,7 @@ export const uiKitConfig: AppConfig = {
       }
     },
     banner: {
+      strategy: 'merge',
       buttonWrapper: {
         variants: {
           default: 'text-xs bg-slate-300/50'
