@@ -2,12 +2,54 @@ import type { Config } from 'tailwindcss'
 import plugin from 'tailwindcss/plugin.js'
 import { carouselPlugin } from './src/components/carousel/tailwind.plugin.ts'
 
+const typography = plugin(({ theme, addUtilities }) => {
+  // headings
+  addUtilities({
+    '.text-h1': {
+      fontSize: '1.5rem',
+      lineHeight: '1.875rem',
+      fontWeight: theme('fontWeight.bold'),
+      [`@media (min-width: ${theme('screens.md')})`]: {
+        fontSize: '2rem',
+        lineHeight: '2.5rem'
+      }
+    },
+    '.text-h2': {
+      fontSize: '1.25rem',
+      lineHeight: 'normal',
+      fontWeight: theme('fontWeight.bold'),
+      [`@media (min-width: ${theme('screens.md')})`]: {
+        fontSize: '1.5rem'
+      }
+    },
+    '.text-h3': {
+      fontSize: '1.25rem',
+      lineHeight: 'normal',
+      fontWeight: theme('fontWeight.bold')
+    },
+    '.text-h4': {
+      fontSize: '1rem',
+      lineHeight: 'normal',
+      fontWeight: theme('fontWeight.bold')
+    },
+    '.text-large': {
+      fontSize: '2rem',
+      lineHeight: '3rem',
+      fontWeight: theme('fontWeight.extrabold'),
+      [`@media (min-width: ${theme('screens.md')})`]: {
+        fontSize: '3rem',
+        lineHeight: '4.5rem'
+      }
+    }
+  })
+})
+
 const uiPlugins = plugin((helpers) => {
   carouselPlugin.handler(helpers)
 })
 
 export const config = {
-  content: ['./src/**/*.{vue,ts,tsx,css}', './.storybook/**/*.{ts,css}'],
+  content: ['./docs/**/*.mdx', './src/**/*.{vue,ts,tsx,css}', './.storybook/**/*.{ts,css}'],
   theme: {
     extend: {
       animation: {
@@ -50,19 +92,11 @@ export const config = {
       8: '2rem', // 32px
       full: '9999px'
     },
-    screens: {
-      xs: '360px',
-      sm: '480px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1440px'
-    },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
       black: '#000000',
       white: '#ffffff',
-      alt: '#f7f7f7',
       dark: '#1e293b', // slate-800
       light: '#fcfcfc',
       support: '#cbd5e1', // slate-300
@@ -115,9 +149,36 @@ export const config = {
       personal: {
         DEFAULT: '#ffe114'
       }
+    },
+    fontSize: {
+      base: ['1rem', 'inherit'],
+      copy: ['1rem', '1.5rem'],
+      'copy-l': ['1.25rem', '1.875rem'],
+      'caption-l': ['0.875rem', '1.4875rem'],
+      'caption-m': ['0.75rem', '1rem'],
+      'caption-s': [
+        '0.625rem',
+        {
+          lineHeight: '1.0625rem',
+          letterSpacing: '0.06em'
+        }
+      ],
+      pin: ['0.5rem', '1rem']
+    },
+    fontWeight: {
+      normal: '400',
+      bold: '700',
+      extrabold: '800'
+    },
+    screens: {
+      xs: '360px',
+      sm: '480px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1440px'
     }
   },
-  plugins: [uiPlugins]
+  plugins: [typography, uiPlugins]
 } satisfies Config
 
 export default config
