@@ -63,6 +63,14 @@ const { attributes, className, mergeClasses } = useComponentAttributes(
   appConfig?.ui?.banner?.strategy || props.ui?.strategy
 )
 
+const buttonVariants = computed(() =>
+  prepareVariants({
+    theme: theme.button.variants,
+    appConfig: appConfig?.ui?.banner?.button?.variants,
+    uiProp: props.ui?.button?.variants
+  })
+)
+
 const buttonWrapperVariants = computed(() =>
   prepareVariants({
     theme: theme.buttonWrapper.variants,
@@ -103,6 +111,7 @@ const wrapperVariants = computed(() =>
 
 const uiClasses = computed(() => {
   return {
+    button: mergeClasses(buttonVariants.value[props.variant]),
     buttonWrapper: mergeClasses(buttonWrapperVariants.value[props.variant]),
     content: mergeClasses(contentVariants.value[props.variant]),
     imageWrapper: mergeClasses(imageWrapperVariants.value[props.variant]),
@@ -143,6 +152,7 @@ const pictureProps = computed(() => {
             trailing-icon-size="16"
             data-test="banner-button"
             v-bind="button"
+            :ui="{ base: uiClasses.button, strategy: 'merge' }"
           >
             <span v-html="button.label" />
           </UiButton>

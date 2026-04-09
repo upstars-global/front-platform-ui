@@ -1,5 +1,10 @@
 const banner = {
   base: 'block overflow-hidden',
+  button: {
+    variants: {
+      default: 'lg:gap-2'
+    }
+  },
   buttonWrapper: {
     variants: {
       default:
