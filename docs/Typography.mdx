@@ -1,0 +1,79 @@
+import { Meta, Title } from '@storybook/addon-docs/blocks'
+import theme from './dist/theme.config.json'
+
+<Meta title="Foundations/Typography" />
+
+export const TypoList = () => {
+  const typography = {
+    family: theme.fontFamily.sans.join(', '),
+    weight: theme.fontWeight,
+    headings: ['text-large', 'text-h1', 'text-h2', 'text-h3', 'text-h4'],
+    size: Object.entries(theme.fontSize).map(([key, value]) => {
+      const size = value[0].replace('rem', '')
+      return {
+        key,
+        size,
+        fontSize: value[0],
+        lineHeight: value[1]
+      }
+    }).sort((a, b) => a.size - b.size),
+  }
+  const sampleText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <strong style={{ fontSize: '14px' }}>Weights:</strong>
+        {
+          Object.entries(typography.weight).map(([key, value]) => (<span style={{ fontSize: '14px' }}>{value} ({key})</span>))
+        }
+      </div>
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '8px',
+        padding: '32px 24px',
+        boxShadow: 'rgba(0, 0, 0, 0.1) 0px 1px 3px 0px',
+        border: '1px solid rgba(38, 74, 115, 0.15)',
+        borderRadius: '4px'
+      }}>
+        <div style={{ marginBottom: '16px' }}><strong style={{ fontSize: '14px' }}>Font-sizes:</strong></div>
+        {
+          typography.size.map((item) => {
+            return (
+              <div style={{ display: 'grid', gap: '16px', gridTemplateColumns: '120px 1fr', alignItems: 'center', fontFamily: typography.family }}>
+                <div style={{ fontSize: '14px' }}>{`text-${item.key}`}</div>
+                <div style={{ fontSize: item.fontSize, lineHeight: item.lineHeight }}>{sampleText}</div>
+              </div>
+            )
+          })
+        }
+      </div>
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '8px',
+        padding: '32px 24px',
+        boxShadow: 'rgba(0, 0, 0, 0.1) 0px 1px 3px 0px',
+        border: '1px solid rgba(38, 74, 115, 0.15)',
+        borderRadius: '4px'
+      }}>
+        <div style={{ marginBottom: '16px' }}><strong style={{ fontSize: '14px' }}>Headings:</strong></div>
+        {
+          typography.headings.map((item) => {
+            return (
+              <div style={{ display: 'grid', gap: '16px', gridTemplateColumns: '120px 1fr', alignItems: 'center', fontFamily: typography.family }}>
+                <div style={{ fontSize: '14px' }}>{item}</div>
+                <div className={`${item} sb-unstyled`}>Heading</div>
+              </div>
+            )
+          })
+        }
+      </div>
+    </div>
+  )
+}
+
+<Title>Typography</Title>
+
+<TypoList />

@@ -69,33 +69,3 @@ export const ImageIcon: Story = {
     name: { table: { disable: true } }
   }
 }
-
-const listTemplate = `
-<div class="max-w-7xl">
-  <h3 class="mb-6 uppercase">There are {{ names.length }} pre-defined SVG icons.</h3>
-  <ul class="flex flex-wrap gap-4 mt-6 text-center text-sm leading-4">
-    <li
-      v-for="name in names"
-      :key="name"
-      class="flex flex-col gap-2 items-center justify-center"
-    >
-      <div class="flex w-32 h-32 items-center justify-center rounded-xl text-slate-900 ring-1 ring-inset ring-slate-900/[0.08]">
-        <UiIcon :name="name" class="m-auto" />
-      </div>
-      <span class="text-xs">{{ name }}</span>
-    </li>
-  </ul>
-</div>
-`
-
-export const ListOfSvgIcons: Story = {
-  render: () => ({
-    components: { UiIcon },
-    setup: () => ({ names }),
-    template: listTemplate
-  }),
-  parameters: {
-    actions: { disable: true },
-    controls: { disable: true }
-  }
-}
