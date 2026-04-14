@@ -157,9 +157,9 @@ export const config = {
       'caption-l': ['0.875rem', '1.4875rem'],
       'caption-m': ['0.75rem', '1rem'],
       'caption-s': [
-        '0.625rem',
+        '0.5625rem',
         {
-          lineHeight: '1.0625rem',
+          lineHeight: '1.0125rem',
           letterSpacing: '0.06em'
         }
       ],
