@@ -54,14 +54,14 @@ const { attributes, className } = useComponentAttributes(
       uiProp: props.ui?.variants
     })
 
-    commonClasses.push(orientation[props.orientation])
-    commonClasses.push(variants[props.variant])
-
     const roundedClasses = [theme.rounded, appConfig?.ui?.card?.rounded, props.ui.rounded].filter(Boolean)
 
     if (props.isRounded) {
       commonClasses.push(roundedClasses)
     }
+
+    commonClasses.push(orientation[props.orientation])
+    commonClasses.push(variants[props.variant])
 
     return commonClasses
   }),
