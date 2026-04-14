@@ -52,7 +52,7 @@ const input: InputUi = {
   recommendationsListItem: 'relative py-3 px-4 border border-l-0 border-r-0 cursor-pointer transition-colors',
   error: {
     content: 'flex py-1 px-2 rounded-2 text-center',
-    text: 'text-xs font-bold'
+    text: 'text-caption-m font-bold'
   },
   tooltip: {},
   description: 'px-6 mt-1',

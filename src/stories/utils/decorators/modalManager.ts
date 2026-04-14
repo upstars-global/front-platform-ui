@@ -8,7 +8,7 @@ const getBackgroundContent = (isStoryView: boolean) => {
   const heightClass = isStoryView ? 'min-h-[200vh]' : 'min-h-[300px]'
   return `
     <div class="mt-8 ${heightClass} bg-gradient-to-b from-backdrop-alt-3 to-backdrop-alt-1 p-4 rounded">
-      <p class="text-backdrop-alt-2 mb-4">Scroll down to test. When modal is open, scrolling should be blocked.</p>
+      <p class="text-light mb-4">Scroll down to test. When modal is open, scrolling should be blocked.</p>
       <div class="sticky top-4 bg-white p-4 rounded shadow">
         <p class="font-bold">Sticky indicator - scroll to see it move</p>
       </div>

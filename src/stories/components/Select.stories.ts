@@ -50,7 +50,7 @@ const meta = {
     name: 'Story',
     components: { UiSelect },
     setup: () => ({ args }),
-    template: `<UiSelect v-bind="args" class="min-w-36" />`
+    template: `<UiSelect v-bind="args" class="min-w-40" />`
   })
 } satisfies Meta<typeof UiSelect>
 
