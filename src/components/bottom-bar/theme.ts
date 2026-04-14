@@ -7,7 +7,7 @@ const bottomBar = {
     variants: {
       'component-a': '',
       'component-b': '',
-      'component-c': 'rounded-full p-2 min-h-12 items-stretch',
+      'component-c': 'rounded-full p-2 min-h-12 items-stretch bg-backdrop-alt-2/80',
       'component-d': ''
     },
     states: {
@@ -29,21 +29,21 @@ const bottomBar = {
     },
     label: {
       'component-a': '',
-      'component-b': 'absolute top-full -mt-px',
+      'component-b': 'absolute top-full mt-px font-bold text-menu hover:text-menu-active',
       'component-c': '',
       'component-d': 'hidden'
     },
     variants: {
       'component-a': '',
-      'component-b': 'absolute px-2 -top-2 left-1/2 -translate-x-1/2',
+      'component-b': 'absolute px-2 -top-2 left-1/2 -translate-x-1/2 text-caption-s font-bold',
       'component-c': 'shrink-0 max-w-[33%]',
       'component-d': 'px-2'
     }
   },
   item: {
-    base: 'flex flex-col items-center justify-center',
-    label: '',
-    badge: 'absolute -top-0.5 right-0.5 w-4 h-4',
+    base: 'flex flex-col items-center justify-center text-menu hover:text-menu-active',
+    label: 'text-caption-s font-bold',
+    badge: 'absolute -top-0.5 right-0.5 w-4 h-4 bg-success text-pin',
     icon: '',
     states: {
       active: ''
@@ -57,10 +57,10 @@ const bottomBar = {
     wrapper: 'relative min-w-12 flex flex-col grow justify-center items-center'
   },
   variants: {
-    'component-a': '',
-    'component-b': '',
+    'component-a': 'bg-backdrop-alt-2/80',
+    'component-b': 'bg-backdrop-alt-2/80',
     'component-c': '',
-    'component-d': 'rounded-full'
+    'component-d': 'rounded-full bg-backdrop-alt-2/80'
   }
 }
 

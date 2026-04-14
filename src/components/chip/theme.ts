@@ -1,5 +1,5 @@
 const chip = {
-  base: 'flex items-center justify-center gap-1 py-2 px-4 text-center border rounded-6 cursor-pointer',
+  base: 'flex items-center justify-center gap-1 py-2 px-4 text-center text-caption-m border rounded-6 cursor-pointer',
   states: {
     active: '',
     special: ''

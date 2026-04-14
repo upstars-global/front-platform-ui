@@ -55,7 +55,7 @@ export const Default: Story = {
     },
     template: `
       <UiStepperModal v-bind="args" :current-step="currentStep" @back="handleCurrentStep">
-        <p class="text-slate-700">This is the modal content for step {{ currentStep }}.</p>
+        <p class="text-dark">This is the modal content for step {{ currentStep }}.</p>
       </UiStepperModal>
     `
   })
@@ -68,7 +68,7 @@ export const HiddenProgress: Story = {
     setup: () => ({ args }),
     template: `
       <UiStepperModal v-bind="args">
-        <p class="text-slate-700">Modal without progress stepper. Only title and description are shown.</p>
+        <p class="text-dark">Modal without progress stepper. Only title and description are shown.</p>
       </UiStepperModal>
     `
   }),

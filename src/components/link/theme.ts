@@ -2,7 +2,7 @@ const link = {
   base: 'cursor-pointer',
   variants: {
     default: 'no-underline',
-    primary: 'underline font-bold'
+    primary: 'underline font-bold text-link hover:text-link-active'
   }
 }
 

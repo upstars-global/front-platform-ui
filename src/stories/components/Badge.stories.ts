@@ -85,7 +85,7 @@ export const Rounded: Story = {
     text: '12',
     ui: {
       strategy: 'merge',
-      size: { default: 'w-6 h-6 text-xs' }
+      size: { default: 'w-6 h-6 text-caption-m' }
     }
   }
 }

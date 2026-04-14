@@ -32,9 +32,9 @@ export type SelectUi = {
 }
 
 const select: SelectUi = {
-  base: '',
+  base: 'text-caption-m',
   label: 'block mb-1 px-4',
-  container: 'relative',
+  container: 'relative text-support text-caption-l',
   select: {
     base: 'w-full pr-8 rounded-6 outline-none cursor-pointer appearance-none border px-4',
     sizeSmall: 'h-10',
@@ -43,16 +43,16 @@ const select: SelectUi = {
     textAlignCenter: 'text-center',
     leftSlot: 'pl-12',
     invalid: 'border-2',
-    hasValue: 'text-alt',
+    hasValue: '',
     singleOption: ''
   },
   leftSlot: 'absolute inset-y-0 left-4 flex items-center pointer-events-none',
   dropdownIcon: 'absolute inset-y-0 right-2 my-auto mx-0 pointer-events-none',
   error: {
-    content: 'flex py-1 px-2 rounded-2 text-center',
-    text: 'text-xs font-bold'
+    content: 'flex py-1 px-2 rounded-2 text-center bg-error-20 pointer-events-none',
+    text: 'text-caption-m text-white font-bold'
   },
-  description: 'px-6 mt-1',
+  description: 'text-caption-m px-6 mt-1',
   tooltip: {},
   states: {
     disabled: 'opacity-50 cursor-not-allowed pointer-events-none',

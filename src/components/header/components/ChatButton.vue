@@ -18,7 +18,7 @@ withDefaults(defineProps<ChatButtonProps>(), {
 
 <template>
   <UiButton :class="ui?.base" size="default" variant="ghost" data-test="chat-button">
-    <UiIcon name="support" />
+    <UiIcon name="support" :class="ui?.icon" />
     <UiBadge v-if="messageCount" :class="ui?.badge" size="default" variant="counter">
       {{ messageCount }}
     </UiBadge>

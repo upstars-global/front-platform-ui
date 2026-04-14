@@ -47,40 +47,23 @@ export const uiKitConfig: AppConfig = {
   },
   ui: {
     accordion: {
-      item: 'p-2 bg-slate-300 border-slate-300 rounded-4 cursor-pointer'
-    },
-    badge: {
-      size: {
-        default: 'text-[10px] tracking-wider',
-        sm: 'text-[10px]',
-        md: 'text-xs'
-      }
+      item: 'p-2 bg-support border-support rounded-4 cursor-pointer'
     },
     badgeTimer: {
-      base: 'font-bold',
-      label: 'font-normal',
-      size: {
-        sm: 'text-[10px]',
-        md: 'text-xs'
-      },
       variants: {
-        outline: 'border-slate-300',
-        soft: 'bg-slate-300'
+        outline: '!text-dark'
       },
       indicator: {
         variants: {
-          info: 'before:bg-sky-500',
-          error: 'before:bg-red-500',
-          success: 'before:bg-green-500',
-          warning: 'before:bg-yellow-500'
+          info: 'before:bg-primary-30'
         }
       }
     },
     banner: {
       strategy: 'merge',
-      buttonWrapper: {
+      content: {
         variants: {
-          default: 'text-xs bg-slate-300/50'
+          default: 'text-light'
         }
       },
       wrapper: {
@@ -93,169 +76,95 @@ export const uiKitConfig: AppConfig = {
       strategy: 'merge',
       action: {
         icon: {
-          'component-b': 'text-white'
-        },
-        label: {
-          'component-b': 'leading-4'
-        },
-        variants: {
-          'component-b': 'text-[10px] font-bold text-[inherit]'
+          'component-b': 'text-light'
         }
-      },
-      item: {
-        base: 'text-[10px] font-bold',
-        badge: 'bg-green-400 text-[8px]'
-      },
-      navigation: {
-        variants: {
-          'component-c': 'bg-gray-400'
-        }
-      },
-      variants: {
-        'component-a': 'bg-gray-400',
-        'component-b': 'bg-gray-400',
-        'component-c': '',
-        'component-d': 'bg-gray-400'
       }
     },
     button: {
-      size: {
-        xs: 'text-xs leading-4',
-        sm: 'text-sm leading-[170%]',
-        md: 'text-xl leading-[150%]'
-      },
       variants: {
-        primary: 'bg-sky-500 hover:bg-sky-400 active:bg-sky-600 text-white',
-        secondary: 'bg-slate-300 hover:bg-slate-200 active:bg-slate-400 text-black',
-        tertiary: 'bg-transparent hover:bg-slate-200 active:bg-slate-400 shadow-button hover:shadow-none text-black',
-        ghost: 'p-2 bg-transparent text-black hover:bg-slate-200 active:bg-slate-400',
-        destructive: 'bg-red-500 hover:bg-red-400 active:bg-red-600 text-white'
+        secondary: 'bg-secondary-3',
+        tertiary: 'shadow-tertiary-4 !text-tertiary-4 hover:!text-light',
+        ghost: '!text-dark hover:!text-light'
       }
     },
     card: {
       base: 'gap-4',
       variants: {
         default: '',
-        outline: 'px-4 py-6 border-slate-300',
-        soft: 'px-4 py-6 bg-slate-300',
-        subtle: 'px-4 py-6 border-slate-500 bg-slate-300'
+        soft: 'p-4 lg:p-6 bg-backdrop-alt-3',
+        outline: 'p-4 lg:p-6 rounded-4 border-tertiary-2 bg-transparent',
+        subtle: 'p-4 lg:p-6 rounded-4 border-tertiary-2 bg-backdrop-alt-3'
       },
       orientation: {
         vertical: '',
         horizontal: 'grid-cols-2 items-center'
       }
     },
-    carousel: {
-      pagination: {
-        item: 'bg-slate-300',
-        active: 'bg-sky-500'
-      }
-    },
     checkbox: {
-      base: 'text-sm',
+      strategy: 'merge',
+      base: 'text-dark',
       checkmark: {
-        container: 'p-px',
-        inner: 'border-slate-500',
-        checked: 'bg-slate-500 text-white',
-        invalid: '!border-red-500'
+        container: 'p-px'
       },
-      error: 'text-xs text-red-500'
+      error: '!text-caption-m text-error-20'
     },
     chip: {
       strategy: 'merge',
-      base: 'text-slate-900 border-slate-300 hover:bg-slate-300',
+      base: '!text-dark border-support hover:bg-support',
       states: {
-        active: 'bg-sky-500 border-sky-500 text-white',
-        special: 'bg-slate-300 hover:bg-slate-500'
+        active: 'bg-primary-30 border-primary-30 !text-white',
+        special: 'bg-support hover:bg-backdrop-alt-3'
       }
     },
     circleProgressBar: {
-      progress: {
-        trail: 'stroke-indigo-300',
-        line: 'stroke-indigo-500'
-      }
+      content: 'bg-tertiary-3/50'
     },
     header: {
       chatButton: {
-        badge: 'bg-sky-400'
+        icon: 'text-support'
       },
       navigation: {
         item: {
-          badge: 'bg-green-400',
+          badge: 'bg-success',
           states: {
-            background: 'bg-neutral-500 text-white',
-            special: 'text-red-600'
+            background: 'bg-backdrop-alt-1 text-white',
+            special: 'text-error-20'
           }
         },
-        hiddenContent: 'bg-neutral-400'
+        hiddenContent: 'bg-backdrop-alt-2'
       },
-      wrapper: 'bg-neutral-400'
+      wrapper: 'bg-backdrop-alt-2'
     },
     icon: { strategy: 'merge' },
-    image: {
-      strategy: 'merge',
-      base: ''
-    },
-    link: {
-      variants: {
-        primary: 'text-sky-500 hover:text-sky-600'
-      }
-    },
-    loader: {
-      base: 'm-0'
-    },
-    menu: {
-      base: 'bg-neutral-100',
-      item: {
-        base: 'text-sky-500 hover:text-sky-600',
-        active: 'text-violet-500 hover:text-violet-600'
-      }
-    },
+    image: { strategy: 'merge' },
+    loader: { base: 'm-0' },
+    menu: { strategy: 'merge' },
     progressBar: {
       progress: {
-        content: 'text-xs leading-4',
-        trail: 'bg-slate-300',
-        line: 'bg-sky-500'
+        content: 'text-light'
       }
     },
     modal: {
       base: 'bg-white',
       states: {
-        fullscreen: 'border-cyan-500'
+        fullscreen: 'border-primary-30'
       },
-      title: 'text-slate-900 text-base md:text-xl font-bold',
-      description: 'text-slate-600',
-      closeIcon: 'text-slate-600'
+      title: 'text-dark text-copy md:text-copy-l font-bold',
+      description: 'text-backdrop-alt-2',
+      closeIcon: 'text-backdrop-alt-2'
     },
     modalRenderer: {
       overlay: 'bg-black/50'
     },
-    skeleton: {
-      base: 'bg-slate-500'
-    },
-    stepper: {
-      states: {
-        base: 'rounded-full',
-        completed: 'bg-sky-700',
-        active: 'bg-sky-500',
-        inactive: 'bg-slate-300'
-      }
-    },
-    switch: {
-      checkmark: {
-        base: 'border-slate-500 after:bg-slate-500'
-      },
-      checked: 'border-sky-500 after:bg-sky-500'
-    },
     input: {
       input: {
-        base: 'bg-slate-100 autofill:bg-slate-50 focus:border-sky-500 border-slate-300 placeholder:text-slate-400',
-        invalid: '!border-red-500'
+        base: 'bg-light autofill:bg-slate-50 focus:border-primary-30 border-support placeholder:text-tertiary-3',
+        invalid: '!border-error-20'
       },
-      recommendationsContainer: 'border-sky-500 bg-slate-50',
-      recommendationsListItem: 'border-slate-300 hover:bg-slate-100 last:border-b-0 last:rounded-b-6',
+      recommendationsContainer: 'border-primary-30 bg-slate-50',
+      recommendationsListItem: 'border-support hover:bg-bg-light last:border-b-0 last:rounded-b-6',
       error: {
-        content: 'bg-red-500',
+        content: 'bg-error-20',
         text: 'text-white'
       },
       tooltip: {
@@ -263,22 +172,15 @@ export const uiKitConfig: AppConfig = {
       }
     },
     select: {
+      container: '!text-dark',
       select: {
-        base: 'bg-slate-100 focus:border-sky-500 border-slate-300',
-        invalid: '!border-red-500'
-      },
-      error: {
-        content: 'bg-red-500',
-        text: 'text-white'
+        base: 'bg-light focus:border-primary-30 border-support',
+        invalid: '!border-2 !border-error-20'
       }
     },
     tabs: {
-      container: 'border border-slate-300',
-      content: 'py-4',
-      item: {
-        base: 'text-slate-600 hover:text-sky-500 rounded-4',
-        active: 'font-bold text-sky-500 bg-slate-100'
-      }
+      container: 'bg-dark',
+      content: 'py-4'
     }
   }
 }

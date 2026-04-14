@@ -3,6 +3,7 @@ const switchTheme = {
   input: 'absolute opacity-0 cursor-pointer h-0 w-0',
   checkmark: {
     base: [
+      'border-tertiary-1 after:bg-tertiary-1',
       'absolute top-0 right-0 h-full w-full bg-transparent rounded-6 border-2',
       'after:absolute after:left-1 after:top-1/2 after:border-0 after:rounded-6 after:-translate-y-1/2',
       'after:transition-all after:duration-200'
@@ -13,7 +14,7 @@ const switchTheme = {
       lg: 'after:h-5 after:w-5'
     }
   },
-  checked: 'after:translate-x-[calc(100%+0.5rem)]',
+  checked: 'after:translate-x-[calc(100%+0.5rem)] border-primary-20 after:bg-primary-20',
   states: {
     disabled: 'opacity-50 pointer-events-none cursor-not-allowed'
   },

@@ -40,12 +40,12 @@ export const Slots: Story = {
     setup: () => ({ args }),
     template: `<UiProgressBar v-bind="args" class="max-w-60">
       <template #top>
-        <span class="text-xs">top slot</span>
+        <span class="text-caption-m">top slot</span>
       </template>
       <template #inside>
         <span>Progress: {{ args.progress }} / {{ args.max }}</span>
       </template>
-      <span class="text-xs">default slot</span>
+      <span class="text-caption-m">default slot</span>
     </UiProgressBar>`
   })
 }
@@ -61,7 +61,7 @@ export const VariousSizes: Story = {
     template: `<div class="flex flex-col gap-4">
       <template v-for="size in sizes" :key="size">
         <div class="flex gap-4 items-center">
-          <span class="text-xs text-neutral-700 w-5">{{ size }}</span>
+          <span class="text-caption-m text-dark w-5">{{ size }}</span>
           <UiProgressBar v-bind="args" :size="size" class="max-w-60" />
         </div>
       </template>

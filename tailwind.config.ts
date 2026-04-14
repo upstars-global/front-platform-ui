@@ -129,8 +129,8 @@ export const config = {
         active: '#7c3aed' // violet-600
       },
       menu: {
-        DEFAULT: '#4f46e5', // indigo-600
-        active: '#6366f1' // indigo-500
+        DEFAULT: '#cbd5e1', // slate-300
+        active: '#f1f5f9' // slate-100
       },
       promo: {
         DEFAULT: '#c084fc' // purple-400

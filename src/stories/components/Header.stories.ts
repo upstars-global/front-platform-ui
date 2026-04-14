@@ -70,10 +70,10 @@ const meta = {
         <div class="w-full lg:w-auto">
           <div v-if="args.isLoggedIn" :class="['flex gap-2 lg:gap-4 justify-between', args.variant === 'component-c' || args.variant === 'component-d' ? 'flex-row-reverse' : '']">
             <div :class="['flex items-center gap-2 lg:gap-4']">
-              <UiDropdown class="flex items-center py-1 px-2 border border-slate-200 rounded-4">
+              <UiDropdown class="flex items-center py-1 px-2 border border-support rounded-4">
                 <template #activator>
                   <UiButton
-                    class="text-[10px] md:text-xs leading-4 gap-0.5"
+                    class="text-caption-s md:text-caption-m leading-4 gap-0.5"
                     variant="default"
                     size="default"
                     trailing-icon-name="dropdownDown"
@@ -86,27 +86,32 @@ const meta = {
               </UiDropdown>
               <UiButton class="hidden lg:block">Deposit</UiButton>
               <UiButton v-if="args.variant === 'component-d'" class="flex lg:hidden !p-2">
-                <UiIcon name="plus" />
+                <UiIcon name="plus" class="text-support" />
               </UiButton>
             </div>
             <UiButton v-if="args.variant === 'component-a' || args.variant === 'component-c'" class="hidden lg:block" size="default" variant="ghost">
-              <UiIcon name="profile" />
+              <UiIcon name="profile" class="text-support" />
             </UiButton>
             <UiButton v-if="args.variant !== 'component-d'" size="default" variant="ghost">
-              <UiIcon name="giftBox" />
+              <UiIcon name="giftBox" class="text-support" />
             </UiButton>
             <UiButton class="hidden lg:block" size="default" variant="ghost">
-              <UiIcon name="notificationsOff" />
+              <UiIcon name="notificationsOff" class="text-support" />
             </UiButton>
           </div>
           <div v-else :class="['gap-2', args.variant === 'component-a' ? 'hidden lg:flex' : 'flex']">
-            <UiButton :variant="args.variant === 'component-c' ? 'tertiary' : 'secondary'">Log in</UiButton>
+            <template v-if="args.variant === 'component-c'">
+              <UiButton variant="tertiary" :ui="{ variants: { tertiary: '!shadow-tertiary-1 !text-tertiary-1' } }">Log in</UiButton>
+            </template>
+            <template v-else>
+              <UiButton variant="secondary">Log in</UiButton>
+            </template>
             <UiButton>Sign up</UiButton>
           </div>
         </div>
       </template>
       <template #chat-content>
-        <div class="bg-neutral-400 p-2 w-32 rounded-b-2">chat Content</div>
+        <div class="bg-tertiary-2 p-2 w-32 rounded-b-2">chat Content</div>
       </template>
     </UiHeader>`
   })

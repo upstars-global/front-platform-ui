@@ -435,7 +435,7 @@ In the `Modal.stories.ts` we had an issue with an `emitsObserver`. The story loo
 template: `
   <div class="fixed inset-0 flex items-end md:items-center justify-center bg-black/50">
     <UiModal v-bind="args">
-      <p class="text-slate-700">Modal with both title and description in the header.</p>
+      <p class="text-dark">Modal with both title and description in the header.</p>
     </UiModal>
   </div>
 `

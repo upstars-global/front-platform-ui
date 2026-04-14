@@ -12,8 +12,8 @@ const carousel = {
   pagination: {
     container: 'absolute bottom-0 w-full text-center z-10',
     inner: 'inline-flex mx-auto',
-    item: 'w-6 h-6 p-2 bg-clip-content border-0 rounded-full outline-none outline-0 appearance-none cursor-pointer',
-    active: ''
+    item: 'w-6 h-6 p-2 bg-clip-content border-0 rounded-full outline-none outline-0 appearance-none cursor-pointer bg-light',
+    active: 'bg-primary-20'
   }
 }
 

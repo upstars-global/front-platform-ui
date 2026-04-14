@@ -29,14 +29,14 @@ const meta = {
     components: { UiPicture },
     setup: () => ({ args }),
     template: `<div>
-      <div v-if="args.provider === 'custom'" class="text-xs mb-8">
+      <div v-if="args.provider === 'custom'" class="text-caption-m mb-8">
         <p>To test custom provider, use the 'meta' property:</p>
         <ul class="list-disc list-inside">
           <li>imageId — number. Represents the ID in the image URL.</li>
           <li>sizes - list of strings. width and height</li>
           <li>queries - list of strings. uses for effects, e.g. grayscale, blur</li>
         </ul>
-        <p>see <a class="underline text-blue-500" href="https://picsum.photos/" target="_blank">picsum.photos</a> for more details</p>
+        <p>see <a class="underline text-primary-40" href="https://picsum.photos/" target="_blank">picsum.photos</a> for more details</p>
       </div>
       <UiPicture v-bind="args" />
     </div>`

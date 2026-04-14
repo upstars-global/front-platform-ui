@@ -40,7 +40,7 @@ export const Default: Story = {
     setup: () => ({ args }),
     template: `
       <UiModal v-bind="args">
-        <p class="text-slate-700">This is the modal content. You can put any content here.</p>
+        <p class="text-dark">This is the modal content. You can put any content here.</p>
       </UiModal>
     `
   })
@@ -53,7 +53,7 @@ export const WithDescription: Story = {
     setup: () => ({ args }),
     template: `
       <UiModal v-bind="args">
-        <p class="text-slate-700">Modal with both title and description in the header.</p>
+        <p class="text-dark">Modal with both title and description in the header.</p>
       </UiModal>
     `
   }),
@@ -72,15 +72,15 @@ export const WithFooter: Story = {
       <UiModal v-bind="args">
         <div class="flex flex-col items-center text-center">
           <!-- Placeholder icon -->
-          <div class="size-20 rounded-2 border-2 border-dashed border-slate-600 flex items-center justify-center mb-4">
-            <span class="text-slate-600 text-2xl">✳</span>
+          <div class="size-20 rounded-2 border-2 border-dashed border-backdrop-alt-2 flex items-center justify-center mb-4">
+            <span class="text-dark text-2xl">✳</span>
           </div>
 
           <!-- Main Message -->
-          <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">Main Message</h3>
+          <h3 class="text-copy-l md:text-2xl font-bold text-dark mb-4">Main Message</h3>
 
           <!-- Detailed description -->
-          <p class="text-base text-slate-600">Detailed description of the message and instructions for actions</p>
+          <p class="text-base text-dark">Detailed description of the message and instructions for actions</p>
         </div>
 
         <template #footer="{ close }">
@@ -102,7 +102,7 @@ export const WithoutCloseButton: Story = {
     setup: () => ({ args }),
     template: `
       <UiModal v-bind="args">
-        <p class="text-slate-700">This modal has no close button. Use the button below to close.</p>
+        <p class="text-dark">This modal has no close button. Use the button below to close.</p>
 
         <template #footer="{ close }">
           <UiButton variant="primary" @click="close">Close Modal</UiButton>
@@ -124,7 +124,7 @@ export const LongContent: Story = {
     template: `
       <UiModal v-bind="args">
         <div class="space-y-4">
-          <p v-for="i in 20" :key="i" class="text-slate-700">
+          <p v-for="i in 20" :key="i" class="text-dark">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
@@ -152,13 +152,13 @@ export const CustomHeader: Story = {
           <div class="flex items-center gap-2">
             <span class="text-2xl">🎉</span>
             <div>
-              <h2 class="text-lg font-bold text-slate-900">Congratulations!</h2>
-              <p class="text-sm text-slate-600">You've completed the task</p>
+              <h2 class="text-copy-l font-bold text-dark">Congratulations!</h2>
+              <p class="text-caption-l text-dark">You've completed the task</p>
             </div>
           </div>
         </template>
 
-        <p class="text-slate-700">Your progress has been saved successfully.</p>
+        <p class="text-dark">Your progress has been saved successfully.</p>
 
         <template #footer="{ close }">
           <UiButton variant="primary" @click="close">Continue</UiButton>
@@ -176,13 +176,13 @@ export const Fullscreen: Story = {
     template: `
       <UiModal v-bind="args">
         <div class="flex flex-col items-center text-center">
-          <div class="size-20 rounded-2 border-2 border-dashed border-slate-600 flex items-center justify-center mb-4">
-            <span class="text-slate-600 text-2xl">✳</span>
+          <div class="size-20 rounded-2 border-2 border-dashed border-backdrop-alt-2 flex items-center justify-center mb-4">
+            <span class="text-dark text-[24px]">✳</span>
           </div>
 
-          <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">Fullscreen Modal</h3>
+          <h3 class="text-copy-l md:text-[24px] font-bold text-dark mb-4">Fullscreen Modal</h3>
 
-          <p class="text-base text-slate-600">This modal takes full height on mobile with a colored top border.</p>
+          <p class="text-base text-dark">This modal takes full height on mobile with a colored top border.</p>
         </div>
 
         <template #footer="{ close }">
@@ -205,7 +205,7 @@ export const Loading: Story = {
     setup: () => ({ args }),
     template: `
       <UiModal v-bind="args">
-        <p class="text-slate-700">This content will not be visible while loading.</p>
+        <p class="text-dark">This content will not be visible while loading.</p>
       </UiModal>
     `
   }),
@@ -223,7 +223,7 @@ export const NativeScroll: Story = {
     template: `
       <UiModal v-bind="args">
         <div class="space-y-4">
-          <p v-for="i in 20" :key="i" class="text-slate-700">
+          <p v-for="i in 20" :key="i" class="text-dark">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
@@ -249,7 +249,7 @@ export const InfiniteScroll: Story = {
     template: `
       <UiModal v-bind="args">
         <div class="space-y-4">
-          <p v-for="i in 30" :key="i" class="text-slate-700">
+          <p v-for="i in 30" :key="i" class="text-dark">
             Item {{ i }}: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </div>
