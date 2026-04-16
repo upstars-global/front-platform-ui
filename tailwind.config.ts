@@ -153,16 +153,16 @@ export const config = {
     fontSize: {
       base: ['1rem', 'inherit'],
       copy: ['1rem', '1.5rem'],
-      'copy-l': ['1.25rem', '1.875rem'],
-      'caption-l': ['0.875rem', '1.4875rem'],
-      'caption-m': ['0.75rem', '1rem'],
+      'copy-l': ['1.25rem', '1.875rem'], // button-md
+      'caption-l': ['0.875rem', '1.4875rem'], // caption-1, button-sm
+      'caption-m': ['0.75rem', '1rem'], // caption-2, button-xs
       'caption-s': [
         '0.5625rem',
         {
           lineHeight: '1.0125rem',
           letterSpacing: '0.06em'
         }
-      ],
+      ], // small-caption
       pin: ['0.5rem', '1rem']
     },
     fontWeight: {
