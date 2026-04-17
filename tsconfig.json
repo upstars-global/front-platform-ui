@@ -12,7 +12,7 @@
 
     "paths": {
       "@src/*": ["./src/*"]
-    },
+    }
   },
   "include": ["src/**/*", ".storybook/**/*", "./tailwind.config.ts", "./vite-env.d.ts"],
   "exclude": ["node_modules"]
