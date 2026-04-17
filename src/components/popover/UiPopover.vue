@@ -41,7 +41,7 @@ const appConfig = useAppConfig()
 const { attributes, className, mergeClasses } = useComponentAttributes(
   'ui-popover',
   computed(() => [theme.base, appConfig?.ui?.popover?.base, props.ui?.base].filter(Boolean)),
-  appConfig?.ui?.popover?.strategy || props.ui?.strategy
+  props.ui?.strategy || appConfig?.ui?.popover?.strategy
 )
 
 const placement = computed(() => props.placement)

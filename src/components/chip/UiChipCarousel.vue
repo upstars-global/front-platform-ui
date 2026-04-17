@@ -1,5 +1,4 @@
 <script setup lang="ts" generic="T extends string | number">
-import type { ClassNameValue } from 'tailwind-merge'
 import type { UiProp } from '../types'
 import type { UiChipProps } from './UiChip.vue'
 import type { ChipUi } from './theme'
@@ -21,16 +20,8 @@ const modelValue = defineModel<T>('modelValue', { required: true })
 const appConfig = useAppConfig()
 const { attributes, className, mergeClasses } = useComponentAttributes(
   'ui-chip-carousel',
-  computed(() => {
-    const commonClasses: ClassNameValue[] = [
-      theme.carousel.base,
-      appConfig.ui?.chip?.carousel?.base,
-      props.ui?.carousel?.base
-    ].filter(Boolean)
-
-    return commonClasses
-  }),
-  appConfig.ui?.chip?.strategy || props.ui?.strategy
+  computed(() => [theme.carousel.base, appConfig.ui?.chip?.carousel?.base, props.ui?.carousel?.base].filter(Boolean)),
+  props.ui?.strategy || appConfig.ui?.chip?.strategy
 )
 
 const uiClasses = computed(() => {

@@ -52,10 +52,10 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiSele
     "onUpdate:modelValue"?: ((value: string | number) => any) | undefined;
 }>, {
     error: string;
+    size: "small" | "medium";
     id: string;
     autocomplete: string;
     options: SelectOption[];
-    size: "small" | "medium";
     description: string;
     placeholder: string;
     ui: UiProp<SelectUi>;

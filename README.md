@@ -302,7 +302,7 @@ const { attributes, className, mergeClasses } = useComponentAttributes(
 
     return commonClasses
   }),
-  appConfig?.ui?.component?.strategy || props.ui?.strategy
+  props.ui?.strategy || appConfig?.ui?.component?.strategy
 )
 
 // 3. Define element-specific classes

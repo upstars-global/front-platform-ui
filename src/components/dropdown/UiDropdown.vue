@@ -1,5 +1,4 @@
 <script lang="ts">
-import type { ClassNameValue } from 'tailwind-merge'
 import type { UiProp } from '../types'
 import type { DropdownUi } from './theme'
 
@@ -36,12 +35,8 @@ const props = withDefaults(defineProps<UiDropdownProps>(), {
 const appConfig = useAppConfig()
 const { attributes, className, mergeClasses } = useComponentAttributes(
   'ui-dropdown',
-  computed(() => {
-    const commonClasses: ClassNameValue[] = [theme.base, appConfig.ui?.dropdown?.base, props.ui?.base].filter(Boolean)
-
-    return commonClasses
-  }),
-  appConfig.ui?.dropdown?.strategy || props.ui?.strategy
+  computed(() => [theme.base, appConfig.ui?.dropdown?.base, props.ui?.base].filter(Boolean)),
+  props.ui?.strategy || appConfig.ui?.dropdown?.strategy
 )
 
 const isShowFilter = ref(false)

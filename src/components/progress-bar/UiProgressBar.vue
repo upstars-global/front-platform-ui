@@ -39,12 +39,8 @@ defineSlots<UiProgressBarSlots>()
 const appConfig = useAppConfig()
 const { attributes, className, mergeClasses } = useComponentAttributes(
   'ui-progress-bar',
-  computed(() => {
-    const commonClasses = [theme.base, appConfig.ui?.progressBar?.base, props.ui?.base].filter(Boolean)
-
-    return commonClasses
-  }),
-  appConfig.ui?.progressBar?.strategy || props.ui?.strategy
+  computed(() => [theme.base, appConfig.ui?.progressBar?.base, props.ui?.base].filter(Boolean)),
+  props.ui?.strategy || appConfig.ui?.progressBar?.strategy
 )
 
 const uiClasses = computed(() => {

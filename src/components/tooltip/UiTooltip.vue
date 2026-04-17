@@ -5,7 +5,6 @@ import type { AlignedPlacement, Placement, Side, Strategy } from '@floating-ui/v
 import type { UiProp } from '../types'
 import { useComponentAttributes } from '../../composables/useUiClasses'
 import { useAppConfig } from '../../composables/useAppConfig'
-import type { ClassNameValue } from 'tailwind-merge'
 import theme from './theme'
 import type { TooltipUi } from './theme'
 
@@ -70,11 +69,8 @@ const { floatingStyles, middlewareData } = useFloating(reference, floating, {
 const appConfig = useAppConfig()
 const { attributes, className, mergeClasses } = useComponentAttributes(
   'ui-tooltip',
-  computed(() => {
-    const commonClasses: ClassNameValue[] = [theme.base, appConfig.ui?.tooltip?.base, props.ui?.base].filter(Boolean)
-    return commonClasses
-  }),
-  appConfig?.ui?.tooltip?.strategy || props.ui?.strategy
+  computed(() => [theme.base, appConfig.ui?.tooltip?.base, props.ui?.base].filter(Boolean)),
+  props.ui?.strategy || appConfig?.ui?.tooltip?.strategy
 )
 
 const uiClasses = computed(() => ({

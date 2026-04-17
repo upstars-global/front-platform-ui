@@ -58,7 +58,7 @@ const appConfig = useAppConfig()
 const { mergeClasses } = useComponentAttributes(
   'ui-stepper-modal',
   computed(() => []),
-  appConfig?.ui?.stepperModal?.strategy || props.ui?.strategy
+  props.ui?.strategy || appConfig?.ui?.stepperModal?.strategy
 )
 
 const uiClasses = computed(() => ({

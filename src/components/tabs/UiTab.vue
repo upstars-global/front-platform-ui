@@ -56,7 +56,7 @@ const { attributes, className } = useComponentAttributes(
 
     return commonClasses.filter(Boolean)
   }),
-  appConfig?.ui?.tabs?.strategy || props.ui?.strategy
+  props.ui?.strategy || appConfig?.ui?.tabs?.strategy
 )
 </script>
 

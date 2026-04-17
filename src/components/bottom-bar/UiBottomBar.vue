@@ -75,7 +75,7 @@ const { attributes, className, mergeClasses } = useComponentAttributes(
 
     return baseClasses
   }),
-  appConfig?.ui?.bottomBar?.strategy || props.ui?.strategy
+  props.ui?.strategy || appConfig?.ui?.bottomBar?.strategy
 )
 
 const uiClasses = computed(() => {

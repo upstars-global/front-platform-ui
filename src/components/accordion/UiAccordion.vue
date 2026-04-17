@@ -1,5 +1,4 @@
 <script lang="ts">
-import type { ClassNameValue } from 'tailwind-merge'
 import type { UiProp } from '../types'
 import type { UiIconName } from '../icon/config'
 import type { IconSize } from '../icon/UiIcon.vue'
@@ -43,12 +42,8 @@ const showContent = ref(props.isOpen)
 const appConfig = useAppConfig()
 const { attributes, className, mergeClasses } = useComponentAttributes(
   'ui-accordion',
-  computed(() => {
-    const commonClasses: ClassNameValue[] = [theme.base, appConfig?.ui?.accordion?.base, props.ui?.base].filter(Boolean)
-
-    return commonClasses
-  }),
-  appConfig?.ui?.accordion?.strategy || props.ui?.strategy
+  computed(() => [theme.base, appConfig?.ui?.accordion?.base, props.ui?.base].filter(Boolean)),
+  props.ui?.strategy || appConfig?.ui?.accordion?.strategy
 )
 
 const uiClasses = computed(() => {

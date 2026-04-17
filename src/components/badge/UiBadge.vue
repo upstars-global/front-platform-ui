@@ -72,7 +72,7 @@ const { attributes, className, mergeClasses } = useComponentAttributes(
 
     return commonClasses
   }),
-  appConfig?.ui?.badge?.strategy || props.ui?.strategy
+  props.ui?.strategy || appConfig?.ui?.badge?.strategy
 )
 
 const leadingIconClasses = computed(() => {

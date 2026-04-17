@@ -58,7 +58,7 @@ const appConfig = useAppConfig()
 const { attributes, className, mergeClasses } = useComponentAttributes(
   'ui-timer',
   computed(() => [theme.base, appConfig?.ui?.timer?.base, props.ui?.base].filter(Boolean)),
-  appConfig?.ui?.timer?.strategy || props.ui?.strategy
+  props.ui?.strategy || appConfig?.ui?.timer?.strategy
 )
 
 function dateFormat(value: number) {
@@ -156,28 +156,28 @@ onBeforeUnmount(() => {
 <template>
   <div v-bind="attributes" :class="className">
     <slot name="leading" />
-    <template v-if="typeof labels.days === 'string' && days">
+    <template v-if="typeof labels?.days === 'string' && days">
       <span :class="[uiClasses.item, uiClasses.day]">
         <span>{{ days }}</span>
         <span>{{ labels.days }}</span>
       </span>
       <span v-if="showDots && !labels.days" :class="uiClasses.dots">:</span>
     </template>
-    <template v-if="typeof labels.hours === 'string'">
+    <template v-if="typeof labels?.hours === 'string'">
       <span :class="[uiClasses.item, uiClasses.hour]">
         <span>{{ hours }}</span>
         <span>{{ labels.hours }}</span>
       </span>
       <span v-if="showDots" :class="uiClasses.dots">:</span>
     </template>
-    <template v-if="typeof labels.minutes === 'string'">
+    <template v-if="typeof labels?.minutes === 'string'">
       <span :class="[uiClasses.item, uiClasses.minute]">
         <span>{{ minutes }}</span>
         <span>{{ labels.minutes }}</span>
       </span>
       <span v-if="showDots" :class="uiClasses.dots">:</span>
     </template>
-    <template v-if="typeof labels.seconds === 'string'">
+    <template v-if="typeof labels?.seconds === 'string'">
       <span :class="[uiClasses.item, uiClasses.second]">
         <span>{{ seconds }}</span>
         <span>{{ labels.seconds }}</span>

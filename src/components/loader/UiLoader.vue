@@ -52,7 +52,7 @@ const { attributes, className, mergeClasses } = useComponentAttributes(
 
     return commonClasses
   }),
-  appConfig.ui?.loader?.strategy || props.ui?.strategy
+  props.ui?.strategy || appConfig.ui?.loader?.strategy
 )
 
 const uiClasses = computed(() => {
@@ -98,7 +98,7 @@ const animateTransformAttrs = computed(() => ({
         :cy="circleSize"
         fill="none"
       >
-        <animateTransform v-bind="animateTransformAttrs" :dur="`${duration * 2}s`" />
+        <animateTransform v-bind="animateTransformAttrs" :dur="`${(duration ?? 1) * 2}s`" />
       </circle>
       <circle
         :class="uiClasses.circle"
@@ -112,7 +112,7 @@ const animateTransformAttrs = computed(() => ({
         :cy="circleSize"
         fill="none"
       >
-        <animateTransform v-bind="animateTransformAttrs" :dur="`${duration * 1.5}s`" />
+        <animateTransform v-bind="animateTransformAttrs" :dur="`${(duration ?? 1) * 1.5}s`" />
       </circle>
       <circle
         :class="uiClasses.circle"

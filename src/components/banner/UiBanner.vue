@@ -60,7 +60,7 @@ const appConfig = useAppConfig()
 const { attributes, className, mergeClasses } = useComponentAttributes(
   'ui-banner',
   computed(() => [theme.base, appConfig?.ui?.banner?.base, props.ui?.base].filter(Boolean)),
-  appConfig?.ui?.banner?.strategy || props.ui?.strategy
+  props.ui?.strategy || appConfig?.ui?.banner?.strategy
 )
 
 const buttonVariants = computed(() =>

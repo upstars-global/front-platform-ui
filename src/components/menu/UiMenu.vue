@@ -1,6 +1,5 @@
 <script lang="ts">
 import type { RouteLocationRaw } from 'vue-router'
-import type { ClassNameValue } from 'tailwind-merge'
 import type { UiIconName } from '../icon/config'
 import type { UiProp } from '../types'
 import type { MenuUi } from './theme'
@@ -42,12 +41,8 @@ const router = useRouter()
 const appConfig = useAppConfig()
 const { attributes, className, mergeClasses } = useComponentAttributes(
   'ui-menu',
-  computed(() => {
-    const commonClasses: ClassNameValue[] = [theme.base, appConfig?.ui?.menu?.base, props.ui?.base].filter(Boolean)
-
-    return commonClasses
-  }),
-  appConfig?.ui?.menu?.strategy || props.ui?.strategy
+  computed(() => [theme.base, appConfig?.ui?.menu?.base, props.ui?.base].filter(Boolean)),
+  props.ui?.strategy || appConfig?.ui?.menu?.strategy
 )
 
 const uiClasses = computed(() => {

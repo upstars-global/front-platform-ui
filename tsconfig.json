@@ -13,7 +13,9 @@
 
     "paths": {
       "@src/*": ["./src/*"]
-    }
+    },
+    // temporary
+    "ignoreDeprecations": "6.0"
   },
   "include": ["src/**/*", ".storybook/**/*", "./tailwind.config.ts", "./vite-env.d.ts"],
   "exclude": ["node_modules"]

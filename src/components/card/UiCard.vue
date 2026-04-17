@@ -65,7 +65,7 @@ const { attributes, className } = useComponentAttributes(
 
     return commonClasses
   }),
-  appConfig?.ui?.card?.strategy || props.ui?.strategy
+  props.ui?.strategy || appConfig?.ui?.card?.strategy
 )
 </script>
 

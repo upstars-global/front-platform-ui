@@ -88,7 +88,7 @@ const { attributes, className, mergeClasses } = useComponentAttributes(
 
     return commonClasses
   }),
-  appConfig?.ui?.badgeTimer?.strategy || props.ui?.strategy
+  props.ui?.strategy || appConfig?.ui?.badgeTimer?.strategy
 )
 const uiClasses = computed(() => {
   const indicator: ClassNameValue = [

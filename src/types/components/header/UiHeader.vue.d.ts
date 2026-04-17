@@ -32,8 +32,8 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiHead
     "onOpen:chat"?: (() => any) | undefined;
 }>, {
     variant: "simple" | "component-a" | "component-b" | "component-c" | "component-d";
-    ui: UiProp<HeaderUi>;
     navigation: HeaderNavigationItem[];
+    ui: UiProp<HeaderUi>;
     chatMessageCount: number;
     logo: UiImageProps;
     logoRoute: RouteLocationRaw;

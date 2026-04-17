@@ -23,11 +23,11 @@ export interface UiStepperModalSlots {
 declare const _default: typeof __VLS_export;
 export default _default;
 declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiStepperModalProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {} & {
-    close: () => any;
     back: (step: number) => any;
+    close: () => any;
 }, string, import("vue").PublicProps, Readonly<UiStepperModalProps> & Readonly<{
-    onClose?: (() => any) | undefined;
     onBack?: ((step: number) => any) | undefined;
+    onClose?: (() => any) | undefined;
 }>, {
     title: string;
     role: "dialog" | "alertdialog";

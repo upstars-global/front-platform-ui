@@ -31,7 +31,7 @@ const appConfig = useAppConfig()
 const { attributes, className, mergeClasses } = useComponentAttributes(
   'ui-stepper',
   computed(() => [theme.base, appConfig?.ui?.stepper?.base, props.ui?.base].filter(Boolean)),
-  appConfig?.ui?.stepper?.strategy || props.ui?.strategy
+  props.ui?.strategy || appConfig?.ui?.stepper?.strategy
 )
 
 const uiClasses = computed(() => {

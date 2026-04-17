@@ -44,7 +44,7 @@ const { attributes, className, mergeClasses } = useComponentAttributes(
   computed(() => {
     return [theme.base, appConfig?.ui?.tabs?.base, props.ui?.base].filter(Boolean)
   }),
-  appConfig?.ui?.tabs?.strategy || props.ui?.strategy
+  props.ui?.strategy || appConfig?.ui?.tabs?.strategy
 )
 
 const uiClasses = computed(() => {

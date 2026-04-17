@@ -65,7 +65,7 @@ const { attributes, className } = useComponentAttributes(
 
     return commonClasses
   }),
-  appConfig?.ui?.link?.strategy || props.ui?.strategy
+  props.ui?.strategy || appConfig?.ui?.link?.strategy
 )
 
 const isBelongsToCurrentDomain = computed(() => {

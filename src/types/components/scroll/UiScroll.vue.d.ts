@@ -40,8 +40,8 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiScro
     overflowY: OverflowBehavior;
     visibility: ScrollbarsVisibilityBehavior;
     defer: boolean;
-    ui: UiProp<ScrollUi>;
     theme: string | null;
+    ui: UiProp<ScrollUi>;
     showNativeOverlaidScrollbars: boolean;
     autoHide: ScrollbarsAutoHideBehavior;
     autoHideDelay: number;
