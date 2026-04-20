@@ -2,7 +2,6 @@
   "extends": "@vue/tsconfig/tsconfig.dom.json",
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.tsbuildinfo",
-    "baseUrl": ".",
     "isolatedModules": true,
 
     /* Linting */
@@ -15,6 +14,6 @@
       "@src/*": ["./src/*"]
     }
   },
-  "include": ["src/**/*", ".storybook/**/*", "./vite-env.d.ts"],
+  "include": ["src/**/*", ".storybook/**/*", "./tailwind.config.ts", "./vite-env.d.ts"],
   "exclude": ["node_modules"]
 }

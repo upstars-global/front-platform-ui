@@ -31,8 +31,8 @@ const meta = {
     disabled: false,
     trigger: 'hover',
     ui: {
-      body: 'text-center text-white text-xs bg-slate-800',
-      arrow: 'bg-slate-800'
+      body: 'text-center text-light text-caption-m bg-dark',
+      arrow: 'bg-dark'
     }
   }
 } satisfies Meta<typeof UiTooltip>
@@ -51,7 +51,7 @@ export const Common: Story = {
           <template #activator>
             <UiButton>Hover me</UiButton>
           </template>
-          <div class="py-1 px-2 rounded-2 bg-slate-800">{{ args.text }}</div>
+          <div class="py-1 px-2 rounded-2 bg-dark">{{ args.text }}</div>
         </UiTooltip>
       </div>
     `
@@ -69,9 +69,9 @@ export const WithCustomContent: Story = {
           <template #activator>
             <UiButton>Hover me</UiButton>
           </template>
-          <div class="py-1 px-2 rounded-2 bg-slate-800 text-left">
+          <div class="py-1 px-2 rounded-2 bg-dark text-left">
             <div class="font-bold">Custom Tooltip</div>
-            <div class="text-xs">With multiple lines</div>
+            <div class="text-caption-m">With multiple lines</div>
           </div>
         </UiTooltip>
       </div>
@@ -93,7 +93,7 @@ export const ClickTrigger: Story = {
           <template #activator>
             <UiButton>Click me</UiButton>
           </template>
-          <div class="py-1 px-2 rounded-2 bg-slate-800">{{ args.text }}</div>
+          <div class="py-1 px-2 rounded-2 bg-dark">{{ args.text }}</div>
         </UiTooltip>
       </div>
     `
@@ -115,7 +115,7 @@ export const Disabled: Story = {
           <template #activator>
             <UiButton>Tooltip disabled</UiButton>
           </template>
-          <div class="py-1 px-2 rounded-2 bg-slate-800">{{ args.text }}</div>
+          <div class="py-1 px-2 rounded-2 bg-dark">{{ args.text }}</div>
         </UiTooltip>
       </div>
     `
@@ -137,7 +137,7 @@ export const MultiplePlacements: Story = {
           <template #activator>
             <UiButton>Top</UiButton>
           </template>
-          <div class="py-1 px-2 rounded-2 bg-slate-800">Top tooltip</div>
+          <div class="py-1 px-2 rounded-2 bg-dark">Top tooltip</div>
         </UiTooltip>
 
         <div class="flex gap-16">
@@ -145,14 +145,14 @@ export const MultiplePlacements: Story = {
             <template #activator>
               <UiButton>Left</UiButton>
             </template>
-            <div class="py-1 px-2 rounded-2 bg-slate-800">Left tooltip</div>
+            <div class="py-1 px-2 rounded-2 bg-dark">Left tooltip</div>
           </UiTooltip>
 
           <UiTooltip placement="right">
             <template #activator>
               <UiButton>Right</UiButton>
             </template>
-            <div class="py-1 px-2 rounded-2 bg-slate-800">Right tooltip</div>
+            <div class="py-1 px-2 rounded-2 bg-dark">Right tooltip</div>
           </UiTooltip>
         </div>
 
@@ -160,7 +160,7 @@ export const MultiplePlacements: Story = {
           <template #activator>
             <UiButton>Bottom</UiButton>
           </template>
-          <div class="py-1 px-2 rounded-2 bg-slate-800">Bottom tooltip</div>
+          <div class="py-1 px-2 rounded-2 bg-dark">Bottom tooltip</div>
         </UiTooltip>
       </div>
     `

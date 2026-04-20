@@ -107,7 +107,7 @@ const { attributes, className, mergeClasses } = useComponentAttributes(
 
     return commonClasses
   }),
-  appConfig?.ui?.select?.strategy || props.ui?.strategy
+  props.ui?.strategy || appConfig?.ui?.select?.strategy
 )
 
 const isError = computed(() => props.error || slots['error-message'])

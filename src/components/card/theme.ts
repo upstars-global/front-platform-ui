@@ -1,6 +1,6 @@
 const card = {
   base: 'relative grid',
-  rounded: 'rounded-6',
+  rounded: 'rounded-4',
   variants: {
     default: '',
     outline: 'bg-transparent border',

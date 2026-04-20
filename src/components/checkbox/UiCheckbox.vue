@@ -80,7 +80,7 @@ const { attributes, className, mergeClasses } = useComponentAttributes(
 
     return commonClasses
   }),
-  appConfig?.ui?.checkbox?.strategy || props.ui?.strategy
+  props.ui?.strategy || appConfig?.ui?.checkbox?.strategy
 )
 
 const isError = computed(() => props.error || slots['error-message'])

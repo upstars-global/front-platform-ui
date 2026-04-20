@@ -61,7 +61,7 @@ const { attributes, className, mergeClasses } = useComponentAttributes(
 
     return commonClasses
   }),
-  appConfig.ui?.switch?.strategy || props.ui?.strategy
+  props.ui?.strategy || appConfig.ui?.switch?.strategy
 )
 
 const uiClasses = computed(() => {

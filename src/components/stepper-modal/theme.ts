@@ -3,7 +3,7 @@ const stepperModal = {
   backIcon: 'size-6',
   titleContainer: 'flex flex-col w-full px-8',
   title: 'font-bold break-all',
-  description: 'text-xs break-all',
+  description: 'text-caption-m break-all',
   stepper: 'w-full mt-1'
 }
 

@@ -79,7 +79,7 @@ const { attributes, className } = useComponentAttributes(
   computed(() => {
     return [scrollTheme.base, appConfig?.ui?.scroll?.base, props.ui?.base].filter(Boolean)
   }),
-  appConfig?.ui?.scroll?.strategy || props.ui?.strategy
+  props.ui?.strategy || appConfig?.ui?.scroll?.strategy
 )
 
 const scrollComponentRef = useTemplateRef<InstanceType<typeof OverlayScrollbarsComponent>>('scrollElement')

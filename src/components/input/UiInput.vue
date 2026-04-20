@@ -113,7 +113,7 @@ const { attributes, className, mergeClasses } = useComponentAttributes(
 
     return commonClasses
   }),
-  appConfig?.ui?.input?.strategy || props.ui?.strategy
+  props.ui?.strategy || appConfig?.ui?.input?.strategy
 )
 
 const { hasSlotContent } = useHasSlot()

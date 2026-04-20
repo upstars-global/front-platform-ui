@@ -1,5 +1,4 @@
 <script setup lang="ts" generic="T extends string | number">
-import type { ClassNameValue } from 'tailwind-merge'
 import type { UiProp } from '../types'
 import type { UiChipProps } from './UiChip.vue'
 import type { ChipUi } from './theme'
@@ -23,16 +22,8 @@ const modelValue = defineModel<T>('modelValue', { required: true })
 const appConfig = useAppConfig()
 const { attributes, className, mergeClasses } = useComponentAttributes(
   'ui-chip-group',
-  computed(() => {
-    const commonClasses: ClassNameValue[] = [
-      theme.group.base,
-      appConfig.ui?.chip?.group?.base,
-      props.ui?.group?.base
-    ].filter(Boolean)
-
-    return commonClasses
-  }),
-  appConfig.ui?.chip?.strategy || props.ui?.strategy
+  computed(() => [theme.group.base, appConfig.ui?.chip?.group?.base, props.ui?.group?.base].filter(Boolean)),
+  props.ui?.strategy || appConfig.ui?.chip?.strategy
 )
 
 const uiClasses = computed(() => {

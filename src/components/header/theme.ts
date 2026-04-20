@@ -1,8 +1,8 @@
 const header = {
-  base: 'sticky top-0 z-1005',
+  base: 'sticky top-0 z-1005 text-support',
   chatButton: {
     base: 'relative',
-    badge: 'absolute top-0 right-0 w-4 h-4',
+    badge: 'absolute top-0 right-0 w-4 h-4 bg-primary-10',
     icon: ''
   },
   container: {

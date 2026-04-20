@@ -1,0 +1,23 @@
+import { Meta, IconGallery, IconItem, Title, Subtitle } from '@storybook/addon-docs/blocks'
+import { icons } from '@src/components/icon/config'
+
+export const IconsList = () => {
+  const names = Object.entries(icons)
+    .map(([name, icon]) => ({ name, icon }))
+    .sort((a, b) => a.name.localeCompare(b.name))
+  return names.map(({ name, icon }) => (
+    <IconItem key={name} name={name}>
+      <div dangerouslySetInnerHTML={{ __html: icon }} style={{ width: '24px', height: '24px' }} />
+    </IconItem>
+  ))
+}
+
+<Meta title="Foundations/Icons" />
+
+<Title>Icons</Title>
+
+<Subtitle>List of predefined SVG icons in UI Kit</Subtitle>
+
+<IconGallery style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(164px, 1fr))' }}>
+  <IconsList />
+</IconGallery>

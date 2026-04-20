@@ -119,9 +119,9 @@ export const WithRecommendations: Story = {
 
       return { args, modelValue, filteredRecommendations }
     },
-    template: `<UiInput 
-      v-bind="args" 
-      v-model="modelValue" 
+    template: `<UiInput
+      v-bind="args"
+      v-model="modelValue"
       :recommendations="filteredRecommendations"
     />`
   })
@@ -152,7 +152,7 @@ export const WithLeftSlot: Story = {
     setup: () => ({ args }),
     template: `<UiInput v-bind="args">
       <template #left>
-        <span class="text-gray-500">$</span>
+        <span class="text-tertiary-3">$</span>
       </template>
     </UiInput>`
   }),
@@ -173,7 +173,7 @@ export const WithRightSlot: Story = {
     setup: () => ({ args }),
     template: `<UiInput v-bind="args">
       <template #right>
-        <span class="text-gray-500">$</span>
+        <span class="text-tertiary-3">$</span>
       </template>
     </UiInput>`
   }),

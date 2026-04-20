@@ -53,7 +53,7 @@ const { attributes, className, mergeClasses } = useComponentAttributes(
   computed(() => {
     return [theme.base, appConfig?.ui?.carousel?.base, props.ui?.base].filter(Boolean)
   }),
-  appConfig?.ui?.carousel?.strategy || props.ui?.strategy
+  props.ui?.strategy || appConfig?.ui?.carousel?.strategy
 )
 
 const carouselList = ref<HTMLDivElement | null>(null)

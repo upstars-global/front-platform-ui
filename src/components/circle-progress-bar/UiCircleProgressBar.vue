@@ -48,7 +48,7 @@ const { attributes, className, mergeClasses } = useComponentAttributes(
   computed(() => {
     return [theme.base, appConfig.ui?.circleProgressBar?.base, props.ui?.base].filter(Boolean)
   }),
-  appConfig?.ui?.circleProgressBar?.strategy || props.ui?.strategy
+  props.ui?.strategy || appConfig?.ui?.circleProgressBar?.strategy
 )
 
 const uiClasses = computed(() => {

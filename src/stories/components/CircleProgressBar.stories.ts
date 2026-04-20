@@ -50,7 +50,7 @@ export const SlotContent: SlotContentStory = {
     progress: 43,
     iconName: 'support',
     ui: {
-      content: 'bg-indigo-200/50'
+      content: 'bg-tertiary-3/50'
     }
   },
   render: (args) => ({
@@ -59,7 +59,7 @@ export const SlotContent: SlotContentStory = {
     setup: () => ({ args }),
     template: `<div class="flex gap-4">
       <UiCircleProgressBar v-bind="args" v-slot="{ progress, max }">
-        <span class="text-sm text-neutral-700">{{ Math.floor(progress / max * 100) + '%' }}</span>
+        <span class="text-caption-l text-dark">{{ Math.floor(progress / max * 100) + '%' }}</span>
       </UiCircleProgressBar>
       <UiCircleProgressBar v-bind="args">
         <UiIcon :name="args.iconName" :style="{ color: args.progressColor }" />
@@ -76,7 +76,7 @@ export const VariousSizes: Story = {
   args: {
     max: 160,
     ui: {
-      content: 'bg-indigo-200/50'
+      content: 'bg-primary-10/50'
     }
   },
   render: (args) => ({
@@ -85,7 +85,7 @@ export const VariousSizes: Story = {
     setup: () => ({ args, sizes: [48, 64, 80, 96, 112, 128] }),
     template: `<div class="flex gap-4 items-center">
       <UiCircleProgressBar v-for="size in sizes" :key="size" v-bind="args" :progress="size" :size="size">
-        <span class="text-xs text-neutral-700">{{ size + 'px' }}</span>
+        <span class="text-caption-m text-dark">{{ size + 'px' }}</span>
       </UiCircleProgressBar>
     </div>`
   })

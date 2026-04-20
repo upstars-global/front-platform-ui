@@ -50,7 +50,7 @@ const meta = {
     name: 'Story',
     components: { UiSelect },
     setup: () => ({ args }),
-    template: `<UiSelect v-bind="args" />`
+    template: `<UiSelect v-bind="args" class="min-w-40" />`
   })
 } satisfies Meta<typeof UiSelect>
 
@@ -132,7 +132,7 @@ export const WithLeftSlot: Story = {
     setup: () => ({ args }),
     template: `<UiSelect v-bind="args">
       <template #left>
-        <span class="text-gray-500">🌍</span>
+        <span class="text-tertiary-3">🌍</span>
       </template>
     </UiSelect>`
   }),

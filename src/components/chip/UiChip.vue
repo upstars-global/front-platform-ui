@@ -79,7 +79,7 @@ const { attributes, className, mergeClasses } = useComponentAttributes(
 
     return commonClasses
   }),
-  appConfig.ui?.chip?.strategy || props.ui?.strategy
+  props.ui?.strategy || appConfig.ui?.chip?.strategy
 )
 
 const uiClasses = computed(() => {

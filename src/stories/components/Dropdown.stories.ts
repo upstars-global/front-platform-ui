@@ -22,10 +22,10 @@ const meta = {
       <template #activator>
         <span>Click here</span>
       </template>
-      <div class="flex flex-col bg-slate-300 rounded-4 p-2">
-        <div class="mx-2 border-b border-slate-700">Dropdown item</div>
-        <div class="mx-2 border-b border-slate-700">Dropdown item</div>
-        <div class="mx-2 border-b border-slate-700">Dropdown item</div>
+      <div class="flex flex-col bg-support rounded-4 p-2">
+        <div class="mx-2 border-b border-backdrop-alt-1">Dropdown item</div>
+        <div class="mx-2 border-b border-backdrop-alt-1">Dropdown item</div>
+        <div class="mx-2 border-b border-backdrop-alt-1">Dropdown item</div>
         <div class="mx-2">Dropdown item</div>
       </div>
     </UiDropdown>`

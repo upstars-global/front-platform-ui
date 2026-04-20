@@ -61,7 +61,7 @@ export const VariousSizes: Story = {
     template: `<div class="flex gap-4">
       <template v-for="size in sizes" :key="size">
         <div class="flex flex-col gap-4 text-center">
-          <span class="text-xs text-neutral-700">{{ size }}</span>
+          <span class="text-caption-m text-dark">{{ size }}</span>
           <UiSwitch v-bind="args" :size="size" />
         </div>
       </template>

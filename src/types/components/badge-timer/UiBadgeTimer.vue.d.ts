@@ -30,8 +30,8 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiBadg
     onFinish?: (() => any) | undefined;
 }>, {
     variant: BadgeTimerVariant;
-    label: string;
     size: BadgeTimerSize;
+    label: string;
     ui: UiProp<BadgeTimerUi>;
     indicatorType: BadgeTimerIndicatorType;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiBadgeTimerSlots>;

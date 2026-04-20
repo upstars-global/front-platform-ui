@@ -37,7 +37,7 @@ const { attributes, className } = useComponentAttributes(
     commonClasses.push(theme.gradient, appConfig?.ui?.skeleton?.gradient, props.ui?.gradient)
     return commonClasses.filter(Boolean)
   }),
-  appConfig.ui?.skeleton?.strategy || props.ui?.strategy
+  props.ui?.strategy || appConfig.ui?.skeleton?.strategy
 )
 </script>
 

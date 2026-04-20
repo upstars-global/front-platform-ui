@@ -37,7 +37,7 @@ const transitionName = computed(() => (isMobileView.value ? 'modal-mobile' : 'mo
 const { attributes, className, mergeClasses } = useComponentAttributes(
   'ui-modal-renderer',
   computed(() => [theme.base, appConfig?.ui?.modalRenderer?.base, props.ui?.base].filter(Boolean)),
-  appConfig?.ui?.modalRenderer?.strategy || props.ui?.strategy
+  props.ui?.strategy || appConfig?.ui?.modalRenderer?.strategy
 )
 
 const uiClasses = computed(() => ({

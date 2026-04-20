@@ -33,7 +33,7 @@ const appConfig = useAppConfig()
 const { attributes, className } = useComponentAttributes(
   'ui-image',
   computed(() => [theme.base, appConfig?.ui?.image?.base, props.ui?.base].filter(Boolean)),
-  appConfig?.ui?.image?.strategy || props.ui?.strategy
+  props.ui?.strategy || appConfig?.ui?.image?.strategy
 )
 
 const isMockerMode = computed(() => appConfig?.store?.env?.isMockerMode)

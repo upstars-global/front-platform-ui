@@ -6,3 +6,4 @@ pnpm-lock.yaml
 changelog-template-commit.hbs
 CHANGELOG.md
 package.json
+docs/*.mdx

@@ -36,13 +36,13 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiChip
     "onClick-leading"?: ((value: MouseEvent) => any) | undefined;
     "onClick-trailing"?: ((value: MouseEvent) => any) | undefined;
 }>, {
+    count: number;
     ui: UiProp<ChipUi>;
     trailingIconName: UiIconName;
     trailingIconSize: IconSize;
     dataTest: string;
     leadingIconName: UiIconName;
     leadingIconSize: IconSize;
-    count: number;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiChipSlots>;
 type __VLS_WithSlots<T, S> = T & {
     new (): {

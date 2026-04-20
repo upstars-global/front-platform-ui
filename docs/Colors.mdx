@@ -1,0 +1,61 @@
+import { Meta, ColorPalette, ColorItem, Title, Subtitle } from '@storybook/addon-docs/blocks'
+import theme from './dist/theme.config.json'
+
+export const ColorsList = () => {
+  if (!theme) {
+    return null;
+  }
+
+  const exclude = ['current', 'currentColor', 'transparent']
+  const mapColors = (key, value) => {
+    let result = {}
+    Object.entries(value).forEach(([k, v]) => {
+      if (parseInt(k)) {
+        result[k] = v
+      } else if (k === 'DEFAULT') {
+        result[key] = v
+      } else {
+        if (typeof v === 'string') {
+          result[`${key}-${k}`] = v
+        } else {
+          const res = mapColors(k, v)
+          result = { ...result, ...res }
+        }
+      }
+    })
+
+    return result
+  }
+  const colors = Object.entries(theme.colors)
+    .filter(([k]) => !exclude.includes(k))
+    .map(([key, value]) => {
+      const colorSet = {}
+      if (typeof value === 'string') {
+        colorSet[key] = value
+      } else {
+        const map = mapColors(key, value)
+
+        Object.entries(map).forEach(([k, v]) => {
+          colorSet[k] = v
+        })
+      }
+
+      return {
+        title: `${key.charAt(0).toUpperCase()}${key.slice(1)}`,
+        subtitle: `colors.${key}`,
+        colors: colorSet
+      }
+    })
+
+  return colors?.map((color) => (<ColorItem key={color.title} title={color.title} subtitle={color.subtitle} colors={color.colors} />))
+}
+
+<Meta title="Foundations/Colors" />
+
+<Title>Colors</Title>
+
+<Subtitle>List of predefined colors in UI Kit</Subtitle>
+
+<ColorPalette>
+  <ColorsList />
+</ColorPalette>

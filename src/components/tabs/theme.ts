@@ -1,12 +1,12 @@
 import type { UiProp } from '../types'
 
 const tabs = {
-  base: 'flex flex-col items-start relative',
-  container: 'flex relative rounded-6 p-1',
+  base: 'flex flex-col items-start relative text-menu',
+  container: 'flex relative rounded-6 p-1 border border-tertiary-3',
   content: 'w-full',
   item: {
-    base: 'flex font-regular relative outline-none rounded-4 py-1 px-4 cursor-pointer text-center justify-center',
-    active: '',
+    base: 'flex font-normal relative outline-none rounded-4 py-1 px-4 cursor-pointer text-center justify-center text-caption-l hover:text-light transition-colors duration-150 ease-easing',
+    active: 'font-bold !text-light bg-secondary-3',
     disabled: 'pointer-events-none cursor-not-allowed opacity-50',
     leadingIcon: 'mr-1',
     trailingIcon: 'ml-1'

@@ -1,6 +1,42 @@
 import { computed, useAttrs, type ComputedRef } from 'vue'
-import { twMerge, twJoin, type ClassNameValue } from 'tailwind-merge'
+import { twJoin, type ClassNameValue, extendTailwindMerge } from 'tailwind-merge'
 import type { Strategy } from '../components/types'
+
+const customTwMerge = extendTailwindMerge({
+  extend: {
+    classGroups: {
+      rounded: [
+        'rounded-none',
+        'rounded-0',
+        'rounded-0.5',
+        'rounded-1',
+        'rounded-1.5',
+        'rounded-2',
+        'rounded-3',
+        'rounded-4',
+        'rounded-5',
+        'rounded-6',
+        'rounded-7',
+        'rounded-7',
+        'rounded-full'
+      ],
+      'font-size': [
+        'text-base',
+        'text-copy',
+        'text-copy-l',
+        'text-caption-l',
+        'text-caption-m',
+        'text-caption-s',
+        'text-pin',
+        'text-large',
+        'text-h1',
+        'text-h2',
+        'text-h3',
+        'text-h4'
+      ]
+    }
+  }
+})
 
 export function useComponentAttributes(
   rootClassName: ClassNameValue,
@@ -10,7 +46,7 @@ export function useComponentAttributes(
   const attrs = useAttrs()
 
   function mergeClasses(...classList: ClassNameValue[]) {
-    const mergeFn = strategy === 'merge' ? twMerge : twJoin
+    const mergeFn = strategy === 'merge' ? customTwMerge : twJoin
 
     return mergeFn(classList)
   }

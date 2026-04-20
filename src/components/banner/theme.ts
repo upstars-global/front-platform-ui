@@ -1,14 +1,14 @@
 const banner = {
-  base: 'block overflow-hidden',
+  base: 'block overflow-hidden text-support',
   button: {
     variants: {
-      default: 'lg:gap-2'
+      default: 'lg:gap-2 text-primary-20'
     }
   },
   buttonWrapper: {
     variants: {
       default:
-        'flex gap-2 items-center backdrop-blur-md absolute bottom-0 left-0 py-2 px-4 md:px-6 rounded-es-6 rounded-se-6 font-bold cursor-pointer'
+        'flex gap-2 items-center backdrop-blur-md absolute bottom-0 left-0 py-2 px-4 md:px-6 rounded-es-6 rounded-se-6 font-bold bg-tertiary-3 text-caption-m cursor-pointer'
     }
   },
   content: {

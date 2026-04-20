@@ -61,7 +61,7 @@ const appConfig = useAppConfig()
 const { attributes, className, mergeClasses } = useComponentAttributes(
   'ui-header',
   computed(() => [theme.base, appConfig?.ui?.header?.base, props.ui?.base].filter(Boolean)),
-  appConfig?.ui?.header?.strategy || props.ui?.strategy
+  props.ui?.strategy || appConfig?.ui?.header?.strategy
 )
 
 const isContent = computed(() => Boolean(props.navigation) || Boolean(slots.content))

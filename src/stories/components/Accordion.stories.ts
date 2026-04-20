@@ -30,7 +30,7 @@ const meta = {
       <template #activator>
         <span>Accordion header</span>
       </template>
-      <div class="p-2 mt-2 bg-slate-300 border-slate-300 rounded-4">Accordion content</div>
+      <div class="p-2 mt-2 bg-support border-support rounded-4">Accordion content</div>
     </UiAccordion>
     `
   })
