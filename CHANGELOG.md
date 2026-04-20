@@ -1,3 +1,72 @@
+## [1.38.0](https://github.com/upstars-global/front-platform-ui/compare/v1.37.2...v1.38.0) (2026-04-20)
+
+### 🐛 Bug Fixes
+
+* **card:** reorder class assignments for consistency in UiCard component
+ ([fa7c9ff](https://github.com/upstars-global/front-platform-ui/commit/fa7c9ff6093d0e0f7559e5d64822b7c85a7f0fdb))
+
+
+* **scripts:** remove duplicate "run" command from Storybook scripts
+ ([7ba8a7a](https://github.com/upstars-global/front-platform-ui/commit/7ba8a7a937a26e6a55ad0d27ba625048201e3ba4))
+
+
+
+### 🚀 Features
+
+* **common:** adjusted `twMerge` to support class groups. optimized component class merging logic
+ ([56ff5d8](https://github.com/upstars-global/front-platform-ui/commit/56ff5d8ccebaa2271272d3c8cc25f1f08aa36c15))
+
+
+* **docs:** add Icon and Color documentation, update Tailwind config
+ ([518cc38](https://github.com/upstars-global/front-platform-ui/commit/518cc38e5f08a4ebbcdcdefc12bb8b9b4d10c0cb))
+
+
+* **docs:** add Typography documentation and extend Tailwind config
+ ([6bd3998](https://github.com/upstars-global/front-platform-ui/commit/6bd39985167dd7b5143de01718b942230ceadff5))
+
+
+* **docs:** enhance Icon and Color documentation, extend theme config
+ ([0d9d88b](https://github.com/upstars-global/front-platform-ui/commit/0d9d88b81591c743ab0a27c5ecf45961c7a464cd))
+
+
+* **tabs:** update font weight for tab items from regular to normal
+ ([48d2636](https://github.com/upstars-global/front-platform-ui/commit/48d2636932a2eb931df39a4ff2cb0eeeef50e40e))
+
+
+* **theme:** adjust caption-s font size and line height in Tailwind config
+ ([977c799](https://github.com/upstars-global/front-platform-ui/commit/977c799ca1c3707a373e857ffe947b4c66d25f5e))
+
+
+* **theme:** adjust UIKit class strategies and improve overrides
+ ([0f4cae2](https://github.com/upstars-global/front-platform-ui/commit/0f4cae2b6ad01c8acd1d85a2c0145f867676b208))
+
+
+* **theme:** update card rounding and add comments to font sizes
+ ([c809010](https://github.com/upstars-global/front-platform-ui/commit/c809010986b05bf48e7f12cd5aa715a4d6b572f6))
+
+
+* **theme:** update color palette and typography styles across components
+ ([9710e6e](https://github.com/upstars-global/front-platform-ui/commit/9710e6e80bfa80ee9936ac1cecdd57d264141b05))
+
+
+* **theme:** update typography styles and spacing in components
+ ([aa9a973](https://github.com/upstars-global/front-platform-ui/commit/aa9a9735a26f97a39c65c3348dbffbe9286dd00f))
+
+
+* **theme:** update UIKit class merging strategy and simplify overrides
+ ([266106f](https://github.com/upstars-global/front-platform-ui/commit/266106f13b3c6a560c2735cf9ebb1b0c7d88c0e1))
+
+
+
+### 🔧 Maintenance
+
+* **tsconfig:** clean up deprecated and temporary options
+ ([58d0d20](https://github.com/upstars-global/front-platform-ui/commit/58d0d2026113661f5f94ec031b3290205ebb974e))
+
+
+* **tsconfig:** clean up deprecated and temporary options
+ ([e7d3c3e](https://github.com/upstars-global/front-platform-ui/commit/e7d3c3ef92590edd2e0937e6a8d7a6c47b17e656))
+
 ## [1.37.2](https://github.com/upstars-global/front-platform-ui/compare/v1.37.1...v1.37.2) (2026-04-09)
 
 ### 🐛 Bug Fixes
