@@ -77,7 +77,7 @@ export const WithFooter: Story = {
           </div>
 
           <!-- Main Message -->
-          <h3 class="text-copy-l md:text-2xl font-bold text-dark mb-4">Main Message</h3>
+          <h3 class="text-body-l md:text-2xl font-bold text-dark mb-4">Main Message</h3>
 
           <!-- Detailed description -->
           <p class="text-base text-dark">Detailed description of the message and instructions for actions</p>
@@ -152,7 +152,7 @@ export const CustomHeader: Story = {
           <div class="flex items-center gap-2">
             <span class="text-2xl">🎉</span>
             <div>
-              <h2 class="text-copy-l font-bold text-dark">Congratulations!</h2>
+              <h2 class="text-body-l font-bold text-dark">Congratulations!</h2>
               <p class="text-caption-l text-dark">You've completed the task</p>
             </div>
           </div>
@@ -180,7 +180,7 @@ export const Fullscreen: Story = {
             <span class="text-dark text-[24px]">✳</span>
           </div>
 
-          <h3 class="text-copy-l md:text-[24px] font-bold text-dark mb-4">Fullscreen Modal</h3>
+          <h3 class="text-body-l md:text-[24px] font-bold text-dark mb-4">Fullscreen Modal</h3>
 
           <p class="text-base text-dark">This modal takes full height on mobile with a colored top border.</p>
         </div>

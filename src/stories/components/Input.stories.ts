@@ -152,7 +152,7 @@ export const WithLeftSlot: Story = {
     setup: () => ({ args }),
     template: `<UiInput v-bind="args">
       <template #left>
-        <span class="text-tertiary-3">$</span>
+        <span class="text-tertiary-30">$</span>
       </template>
     </UiInput>`
   }),
@@ -173,7 +173,7 @@ export const WithRightSlot: Story = {
     setup: () => ({ args }),
     template: `<UiInput v-bind="args">
       <template #right>
-        <span class="text-tertiary-3">$</span>
+        <span class="text-tertiary-30">$</span>
       </template>
     </UiInput>`
   }),

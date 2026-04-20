@@ -50,7 +50,7 @@ export const SlotContent: SlotContentStory = {
     progress: 43,
     iconName: 'support',
     ui: {
-      content: 'bg-tertiary-3/50'
+      content: 'bg-tertiary-30/50'
     }
   },
   render: (args) => ({

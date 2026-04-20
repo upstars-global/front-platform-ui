@@ -132,7 +132,7 @@ export const WithLeftSlot: Story = {
     setup: () => ({ args }),
     template: `<UiSelect v-bind="args">
       <template #left>
-        <span class="text-tertiary-3">🌍</span>
+        <span class="text-tertiary-30">🌍</span>
       </template>
     </UiSelect>`
   }),

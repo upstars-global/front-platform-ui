@@ -83,8 +83,8 @@ export const uiKitConfig: AppConfig = {
     },
     button: {
       variants: {
-        secondary: 'bg-secondary-3',
-        tertiary: 'shadow-tertiary-4 text-tertiary-4 hover:text-light',
+        secondary: 'bg-secondary-30',
+        tertiary: 'shadow-tertiary-40 text-tertiary-40 hover:text-light',
         ghost: 'text-dark hover:text-light'
       }
     },
@@ -93,8 +93,8 @@ export const uiKitConfig: AppConfig = {
       variants: {
         default: '',
         soft: 'p-4 lg:p-6 bg-backdrop-alt-3',
-        outline: 'p-4 lg:p-6 rounded-4 border-tertiary-2 bg-transparent',
-        subtle: 'p-4 lg:p-6 rounded-4 border-tertiary-2 bg-backdrop-alt-3'
+        outline: 'p-4 lg:p-6 rounded-4 border-tertiary-20 bg-transparent',
+        subtle: 'p-4 lg:p-6 rounded-4 border-tertiary-20 bg-backdrop-alt-3'
       },
       orientation: {
         vertical: '',
@@ -118,7 +118,7 @@ export const uiKitConfig: AppConfig = {
       }
     },
     circleProgressBar: {
-      content: 'bg-tertiary-3/50'
+      content: 'bg-tertiary-30/50'
     },
     header: {
       chatButton: {
@@ -150,7 +150,7 @@ export const uiKitConfig: AppConfig = {
       states: {
         fullscreen: 'border-primary-30'
       },
-      title: 'text-dark text-copy md:text-copy-l font-bold',
+      title: 'text-dark text-body md:text-body-l font-bold',
       description: 'text-backdrop-alt-2',
       closeIcon: 'text-backdrop-alt-2'
     },
@@ -160,11 +160,11 @@ export const uiKitConfig: AppConfig = {
     input: {
       strategy: 'merge',
       input: {
-        base: 'bg-light autofill:bg-slate-50 focus:border-primary-30 border-support placeholder:text-tertiary-3',
+        base: 'bg-light autofill:bg-light/50 focus:border-primary-30 border-support placeholder:text-tertiary-30',
         invalid: 'border-error-20'
       },
-      recommendationsContainer: 'border-primary-30 bg-slate-50',
-      recommendationsListItem: 'border-support hover:bg-bg-light last:border-b-0 last:rounded-b-6',
+      recommendationsContainer: 'border-primary-30 bg-light',
+      recommendationsListItem: 'border-support hover:bg-light last:border-b-0 last:rounded-b-6',
       error: {
         content: 'bg-error-20',
         text: 'text-white'

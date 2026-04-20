@@ -42,7 +42,7 @@ const meta = {
     components: { UiScroll },
     setup: () => ({ args }),
     template: `
-      <UiScroll v-bind="args" class="h-52 w-80 border border-dashed border-tertiary-3">
+      <UiScroll v-bind="args" class="h-52 w-80 border border-dashed border-tertiary-30">
         <div class="p-4">
           <p v-for="i in 20" :key="i" class="my-2">Scrollable content line {{ i }}</p>
         </div>
@@ -86,9 +86,9 @@ export const HorizontalScroll: Story = {
     components: { UiScroll },
     setup: () => ({ args }),
     template: `
-      <UiScroll v-bind="args" class="w-96 border border-dashed border-tertiary-3">
+      <UiScroll v-bind="args" class="w-96 border border-dashed border-tertiary-30">
         <div class="flex gap-4 p-4 w-max">
-          <div v-for="number in 10" :key="number" class="w-36 h-24 bg-tertiary-4 rounded-lg flex items-center justify-center">
+          <div v-for="number in 10" :key="number" class="w-36 h-24 bg-tertiary-40 rounded-lg flex items-center justify-center">
             Item {{ number }}
           </div>
         </div>
