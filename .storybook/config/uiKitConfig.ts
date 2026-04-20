@@ -50,8 +50,9 @@ export const uiKitConfig: AppConfig = {
       item: 'p-2 bg-support border-support rounded-4 cursor-pointer'
     },
     badgeTimer: {
+      strategy: 'merge',
       variants: {
-        outline: '!text-dark'
+        outline: 'text-dark'
       },
       indicator: {
         variants: {
@@ -81,10 +82,11 @@ export const uiKitConfig: AppConfig = {
       }
     },
     button: {
+      strategy: 'merge',
       variants: {
         secondary: 'bg-secondary-3',
-        tertiary: 'shadow-tertiary-4 !text-tertiary-4 hover:!text-light',
-        ghost: '!text-dark hover:!text-light'
+        tertiary: 'shadow-tertiary-4 text-tertiary-4 hover:text-light',
+        ghost: 'text-dark hover:text-light'
       }
     },
     card: {
@@ -106,13 +108,13 @@ export const uiKitConfig: AppConfig = {
       checkmark: {
         container: 'p-px'
       },
-      error: '!text-caption-m text-error-20'
+      error: 'text-caption-m text-error-20'
     },
     chip: {
       strategy: 'merge',
-      base: '!text-dark border-support hover:bg-support',
+      base: 'text-dark border-support hover:bg-support',
       states: {
-        active: 'bg-primary-30 border-primary-30 !text-white',
+        active: 'bg-primary-30 border-primary-30 text-white',
         special: 'bg-support hover:bg-backdrop-alt-3'
       }
     },
@@ -157,9 +159,10 @@ export const uiKitConfig: AppConfig = {
       overlay: 'bg-black/50'
     },
     input: {
+      strategy: 'merge',
       input: {
         base: 'bg-light autofill:bg-slate-50 focus:border-primary-30 border-support placeholder:text-tertiary-3',
-        invalid: '!border-error-20'
+        invalid: 'border-error-20'
       },
       recommendationsContainer: 'border-primary-30 bg-slate-50',
       recommendationsListItem: 'border-support hover:bg-bg-light last:border-b-0 last:rounded-b-6',
@@ -172,10 +175,11 @@ export const uiKitConfig: AppConfig = {
       }
     },
     select: {
-      container: '!text-dark',
+      strategy: 'merge',
+      container: 'text-dark',
       select: {
         base: 'bg-light focus:border-primary-30 border-support',
-        invalid: '!border-2 !border-error-20'
+        invalid: 'border-error-20'
       }
     },
     tabs: {
