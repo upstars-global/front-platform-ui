@@ -82,7 +82,6 @@ export const uiKitConfig: AppConfig = {
       }
     },
     button: {
-      strategy: 'merge',
       variants: {
         secondary: 'bg-secondary-3',
         tertiary: 'shadow-tertiary-4 text-tertiary-4 hover:text-light',
@@ -175,11 +174,10 @@ export const uiKitConfig: AppConfig = {
       }
     },
     select: {
-      strategy: 'merge',
-      container: 'text-dark',
+      container: '!text-dark',
       select: {
         base: 'bg-light focus:border-primary-30 border-support',
-        invalid: 'border-error-20'
+        invalid: '!border-error-20'
       }
     },
     tabs: {
