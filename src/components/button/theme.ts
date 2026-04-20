@@ -4,7 +4,7 @@ const button = {
     default: '',
     xs: 'py-2 px-4 text-caption-m h-8',
     sm: 'py-2 px-4 text-caption-l',
-    md: 'py-2 px-6 text-copy-l'
+    md: 'py-2 px-6 text-body-l'
   },
   variants: {
     default: '',

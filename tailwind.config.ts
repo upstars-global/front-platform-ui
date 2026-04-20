@@ -108,22 +108,12 @@ export const config = {
         50: '#0369a1' // sky-700
       },
       secondary: {
-        1: '#f0abfc', // fuchsia-300
-        2: '#e879f9', // fuchsia-400
-        3: '#d946ef', // fuchsia-500
-        4: '#c026d3', // fuchsia-600
-        //
         10: '#f0abfc', // fuchsia-300
         20: '#e879f9', // fuchsia-400
         30: '#d946ef', // fuchsia-500
         40: '#c026d3' // fuchsia-600
       },
       tertiary: {
-        1: '#d1d5db', // gray-300
-        2: '#9ca3af', // gray-400
-        3: '#6b7280', // gray-500
-        4: '#4b5563', // gray-600
-        //
         10: '#d1d5db', // gray-300
         20: '#9ca3af', // gray-400
         30: '#6b7280', // gray-500
