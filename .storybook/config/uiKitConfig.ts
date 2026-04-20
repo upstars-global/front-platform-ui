@@ -62,6 +62,11 @@ export const uiKitConfig: AppConfig = {
     },
     banner: {
       strategy: 'merge',
+      buttonWrapper: {
+        variants: {
+          default: 'bg-tertiary-30/70'
+        }
+      },
       content: {
         variants: {
           default: 'text-light'
@@ -83,9 +88,14 @@ export const uiKitConfig: AppConfig = {
     },
     button: {
       variants: {
-        secondary: 'bg-secondary-30',
-        tertiary: 'shadow-tertiary-40 text-tertiary-40 hover:text-light',
-        ghost: 'text-dark hover:text-light'
+        secondary: 'bg-secondary-30 hover:bg-secondary-20 active:bg-secondary-40',
+        tertiary: 'shadow-tertiary-40 text-tertiary-40 hover:text-light hover:bg-tertiary-20',
+        ghost: 'text-dark hover:text-light hover:bg-tertiary-20 active:bg-tertiary-30'
+      },
+      active: {
+        secondary: '!bg-secondary-40',
+        tertiary: '!bg-tertiary-10',
+        ghost: '!bg-tertiary-30'
       }
     },
     card: {
@@ -105,7 +115,8 @@ export const uiKitConfig: AppConfig = {
       strategy: 'merge',
       base: 'text-dark',
       checkmark: {
-        container: 'p-px'
+        container: 'p-px',
+        inner: 'border-tertiary-20'
       },
       error: 'text-caption-m text-error-20'
     },
@@ -118,7 +129,10 @@ export const uiKitConfig: AppConfig = {
       }
     },
     circleProgressBar: {
-      content: 'bg-tertiary-30/50'
+      content: 'bg-tertiary-30/50',
+      progress: {
+        trail: 'stroke-tertiary-30/70'
+      }
     },
     header: {
       chatButton: {
@@ -180,9 +194,22 @@ export const uiKitConfig: AppConfig = {
         invalid: '!border-error-20'
       }
     },
+    stepper: {
+      states: {
+        inactive: 'bg-secondary-40'
+      }
+    },
+    switch: {
+      checkmark: {
+        base: 'border-tertiary-10 after:bg-tertiary-10'
+      }
+    },
     tabs: {
-      container: 'bg-dark',
-      content: 'py-4'
+      container: 'bg-dark border-tertiary-30/40',
+      content: 'py-4',
+      item: {
+        active: 'bg-secondary-30'
+      }
     }
   }
 }
