@@ -9,20 +9,17 @@ const button = {
   variants: {
     default: '',
     primary: 'text-dark bg-primary-20 hover:bg-primary-30 active:bg-primary-50',
-    secondary: 'text-light hover:bg-secondary-2 active:bg-secondary-4',
-    tertiary: [
-      'text-light bg-transparent shadow-button',
-      'hover:bg-tertiary-2 hover:shadow-none active:bg-tertiary-1 active:shadow-none'
-    ].join(' '),
-    ghost: 'p-2 text-support bg-transparent hover:bg-tertiary-2 active:bg-tertiary-3',
+    secondary: 'text-light',
+    tertiary: 'text-light bg-transparent shadow-button hover:shadow-none active:shadow-none',
+    ghost: 'p-2 text-support bg-transparent',
     destructive: 'text-dark bg-error-20 hover:bg-error-10 active:bg-error-30'
   },
   active: {
     default: '',
     primary: '!bg-primary-50',
-    secondary: '!bg-secondary-4',
-    tertiary: '!bg-tertiary-1 !shadow-none',
-    ghost: '!bg-tertiary-3',
+    secondary: '',
+    tertiary: '!shadow-none',
+    ghost: '',
     destructive: '!bg-error-30'
   },
   states: {

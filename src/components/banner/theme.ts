@@ -8,7 +8,7 @@ const banner = {
   buttonWrapper: {
     variants: {
       default:
-        'flex gap-2 items-center backdrop-blur-md absolute bottom-0 left-0 py-2 px-4 md:px-6 rounded-es-6 rounded-se-6 font-bold bg-tertiary-3 text-caption-m cursor-pointer'
+        'flex gap-2 items-center backdrop-blur-md absolute bottom-0 left-0 py-2 px-4 md:px-6 rounded-es-6 rounded-se-6 font-bold text-caption-m cursor-pointer'
     }
   },
   content: {
