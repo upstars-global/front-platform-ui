@@ -88,11 +88,13 @@ export const uiKitConfig: AppConfig = {
     },
     button: {
       variants: {
+        primary: 'bg-primary-20 hover:bg-primary-30 active:bg-primary-50',
         secondary: 'bg-secondary-30 hover:bg-secondary-20 active:bg-secondary-40',
         tertiary: 'shadow-tertiary-40 text-tertiary-40 hover:text-light hover:bg-tertiary-20',
         ghost: 'text-dark hover:text-light hover:bg-tertiary-20 active:bg-tertiary-30'
       },
       active: {
+        primary: '!bg-primary-50',
         secondary: '!bg-secondary-40',
         tertiary: '!bg-tertiary-10',
         ghost: '!bg-tertiary-30'

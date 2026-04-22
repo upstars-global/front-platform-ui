@@ -8,15 +8,15 @@ const button = {
   },
   variants: {
     default: '',
-    primary: 'text-dark bg-primary-20 hover:bg-primary-30 active:bg-primary-50',
+    primary: 'text-dark',
     secondary: 'text-light',
     tertiary: 'text-light bg-transparent shadow-button hover:shadow-none active:shadow-none',
-    ghost: 'p-2 text-support bg-transparent',
+    ghost: 'p-2 text-light bg-transparent',
     destructive: 'text-dark bg-error-20 hover:bg-error-10 active:bg-error-30'
   },
   active: {
     default: '',
-    primary: '!bg-primary-50',
+    primary: '',
     secondary: '',
     tertiary: '!shadow-none',
     ghost: '',
