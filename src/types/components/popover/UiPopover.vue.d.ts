@@ -1,8 +1,11 @@
+import type { Placement, Strategy } from '@floating-ui/vue';
 import type { UiProp } from '../types';
 import type { PopoverUi } from './theme';
 export interface UiPopoverProps {
     offset?: number;
     placement?: 'bottom' | 'bottom-end' | 'bottom-start';
+    strategy?: Strategy;
+    fallbackPlacements?: Placement[];
     ui?: UiProp<PopoverUi>;
 }
 export interface UiPopoverSlots {
@@ -19,6 +22,8 @@ export default _default;
 declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiPopoverProps, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<UiPopoverProps> & Readonly<{}>, {
     offset: number;
     ui: UiProp<PopoverUi>;
+    strategy: Strategy;
+    fallbackPlacements: Placement[];
     placement: "bottom" | "bottom-end" | "bottom-start";
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiPopoverSlots>;
 type __VLS_WithSlots<T, S> = T & {
