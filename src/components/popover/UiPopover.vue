@@ -1,10 +1,13 @@
 <script lang="ts">
+import type { Placement, Strategy } from '@floating-ui/vue'
 import type { UiProp } from '../types'
 import type { PopoverUi } from './theme'
 
 export interface UiPopoverProps {
   offset?: number
   placement?: 'bottom' | 'bottom-end' | 'bottom-start'
+  strategy?: Strategy
+  fallbackPlacements?: Placement[]
   ui?: UiProp<PopoverUi>
 }
 
@@ -16,7 +19,7 @@ export interface UiPopoverSlots {
 
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { useFloating, offset as floatingOffset } from '@floating-ui/vue'
+import { useFloating, offset as floatingOffset, autoUpdate, flip, shift } from '@floating-ui/vue'
 import { useAppConfig } from '../../composables/useAppConfig'
 import { useComponentAttributes } from '../../composables/useUiClasses'
 import theme from './theme'
@@ -29,6 +32,8 @@ defineOptions({
 const props = withDefaults(defineProps<UiPopoverProps>(), {
   offset: 0,
   placement: 'bottom',
+  strategy: 'absolute',
+  fallbackPlacements: () => ['bottom'],
   ui: undefined
 })
 const slots = defineSlots<UiPopoverSlots>()
@@ -45,10 +50,18 @@ const { attributes, className, mergeClasses } = useComponentAttributes(
 )
 
 const placement = computed(() => props.placement)
-const middleware = computed(() => [floatingOffset(props.offset)])
+const middleware = computed(() => [
+  flip({
+    fallbackPlacements: props.fallbackPlacements
+  }),
+  floatingOffset(props.offset),
+  shift()
+])
 
 const { floatingStyles } = useFloating(reference, floating, {
   placement,
+  strategy: props.strategy,
+  whileElementsMounted: autoUpdate,
   middleware
 })
 
