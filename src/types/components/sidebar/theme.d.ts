@@ -2,9 +2,18 @@ declare const sidebar: {
     base: string;
     container: {
         base: string;
-        variants: {
+        side: {
             left: string;
             right: string;
+        };
+    };
+    content: {
+        base: string;
+        variants: {
+            'component-a': string;
+            'component-b': string;
+            'component-c': string;
+            'component-d': string;
         };
     };
     header: string;
@@ -26,6 +35,18 @@ declare const sidebar: {
                 background: string;
                 special: string;
             };
+            variants: {
+                'component-a': string;
+                'component-b': string;
+                'component-c': string;
+                'component-d': string;
+            };
+        };
+        variants: {
+            'component-a': string;
+            'component-b': string;
+            'component-c': string;
+            'component-d': string;
         };
     };
 };

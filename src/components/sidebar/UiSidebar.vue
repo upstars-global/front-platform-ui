@@ -54,6 +54,7 @@ const props = withDefaults(defineProps<UiSidebarProps>(), {
   closeIconName: 'close',
   closeIconSize: '24',
   side: 'right',
+  variant: 'component-a',
   ui: undefined
 })
 
@@ -76,13 +77,28 @@ const uiClasses = computed(() => {
     props.ui?.container?.base
   ].filter(Boolean)
 
-  const containerVariants = prepareVariants({
-    theme: theme.container.variants,
-    appConfig: appConfig?.ui?.sidebar?.container?.variants,
-    uiProp: props.ui?.container?.variants
+  const containerSide = prepareVariants({
+    theme: theme.container.side,
+    appConfig: appConfig?.ui?.sidebar?.container?.side,
+    uiProp: props.ui?.container?.side
   })
 
-  container.push(containerVariants[props.side])
+  container.push(containerSide[props.side])
+
+  const content: ClassNameValue = [theme.content.base, appConfig?.ui?.sidebar?.content?.base, props.ui?.content?.base]
+  const contentVariants = prepareVariants({
+    theme: theme.content.variants,
+    appConfig: appConfig?.ui?.sidebar?.content?.variants,
+    uiProp: props.ui?.content?.variants
+  })
+
+  content.push(contentVariants[props.variant])
+
+  const navigation: ClassNameValue = [
+    theme.navigation.base,
+    appConfig?.ui?.sidebar?.navigation?.base,
+    props.ui?.navigation?.base
+  ].filter(Boolean)
 
   const navigationItemStates: typeof theme.navigation.item.states = {
     active: '',
@@ -96,9 +112,31 @@ const uiClasses = computed(() => {
     uiProp: props.ui?.navigation?.item?.states
   })
 
+  const navigationVariants = prepareVariants({
+    theme: theme.navigation.variants,
+    appConfig: appConfig?.ui?.sidebar?.navigation?.variants,
+    uiProp: props.ui?.navigation?.variants
+  })
+
+  navigation.push(navigationVariants[props.variant])
+
   Object.entries(itemStates).forEach(([key, value]) => {
     navigationItemStates[key as keyof typeof theme.navigation.item.states] = mergeClasses(value)
   })
+
+  const navigationItem: ClassNameValue = [
+    theme.navigation.item.base,
+    appConfig?.ui?.sidebar?.navigation?.item?.base,
+    props.ui?.navigation?.item?.base
+  ].filter(Boolean)
+
+  const navigationItemVariants = prepareVariants({
+    theme: theme.navigation.item.variants,
+    appConfig: appConfig?.ui?.sidebar?.navigation?.item?.variants,
+    uiProp: props.ui?.navigation?.item?.variants
+  })
+
+  navigationItem.push(navigationItemVariants[props.variant])
 
   if (props.side === 'left') {
     container.push(!open.value ? '-translate-x-full' : 'translate-x-0')
@@ -109,19 +147,16 @@ const uiClasses = computed(() => {
 
   return {
     container: mergeClasses(container),
+    content: mergeClasses(content),
     header: mergeClasses(theme.header, appConfig?.ui?.sidebar?.header, props.ui?.header),
     title: mergeClasses(theme.title, appConfig?.ui?.sidebar?.title, props.ui?.title),
     closeIcon: mergeClasses(theme.closeIcon, appConfig?.ui?.sidebar?.closeIcon, props.ui?.closeIcon),
     timeSlot: mergeClasses(theme.timeSlot, appConfig?.ui?.sidebar?.timeSlot, props.ui?.timeSlot),
     overlay: mergeClasses(theme.overlay, appConfig?.ui?.sidebar?.overlay, props.ui?.overlay),
     navigation: {
-      base: mergeClasses(theme.navigation.base, appConfig?.ui?.sidebar?.navigation?.base, props.ui?.navigation?.base),
+      base: mergeClasses(navigation),
       item: {
-        base: mergeClasses(
-          theme.navigation.item.base,
-          appConfig?.ui?.sidebar?.navigation?.item?.base,
-          props.ui?.navigation?.item?.base
-        ),
+        base: mergeClasses(navigationItem),
         icon: mergeClasses(
           theme.navigation.item.icon,
           appConfig?.ui?.sidebar?.navigation?.item?.icon,
@@ -174,11 +209,12 @@ const closeSidebar = () => {
           <UiIcon :class="uiClasses.closeIcon" :name="closeIconName" :size="closeIconSize" @click="closeSidebar" />
         </slot>
       </div>
-      <UiScroll>
+      <UiScroll :class="uiClasses.content" data-test="sidebar-content">
         <slot name="content" />
         <div>
-          <SidebarNavigation v-if="navigation" :items="navigation" :ui="uiClasses.navigation" />
           <slot />
+          <!-- @vue-expect-error incorrect types -->
+          <SidebarNavigation v-if="navigation" :items="navigation" :ui="uiClasses.navigation" />
         </div>
         <slot name="footer" />
       </UiScroll>

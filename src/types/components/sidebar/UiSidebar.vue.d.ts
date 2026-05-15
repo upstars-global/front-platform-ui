@@ -36,6 +36,7 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiSide
 }> & Readonly<{
     "onUpdate:open"?: ((value: boolean) => any) | undefined;
 }>, {
+    variant: "component-a" | "component-b" | "component-c" | "component-d";
     title: string;
     navigation: SidebarNavigationItem[];
     ui: UiProp<SidebarUi>;

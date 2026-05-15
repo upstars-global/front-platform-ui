@@ -1,6 +1,6 @@
 import type { SidebarNavigationItem } from '@src/components/sidebar/components/SidebarNavigation.vue'
 
-export const SIDEBAR_NAVIGATION: SidebarNavigationItem[] = [
+export const getSidebarNavigation = (hideVip?: boolean, hideVipImage?: boolean): SidebarNavigationItem[] => [
   { route: '/sport', title: 'Sports', visibleOnlyOnXs: true, dataTest: 'sidebar-betting', icon: 'bet' },
   { route: '/', title: 'Esports', icon: 'eSport', dataTest: 'sidebar-esport' },
   { route: '/promo', title: 'Promotions', dataTest: 'sidebar-promotions', icon: 'arena' },
@@ -18,15 +18,18 @@ export const SIDEBAR_NAVIGATION: SidebarNavigationItem[] = [
     }
   },
   {
+    hide: hideVip,
     route: '/vip',
     title: 'VIP Club',
     dataTest: 'sidebar-vip-club',
     icon: 'vip',
-    image: {
-      src: 'https://placehold.co/56x56',
-      alt: 'VIP Club'
-    },
-    hasBackground: true
+    image: !hideVipImage
+      ? {
+          src: 'https://placehold.co/56x56',
+          alt: 'VIP Club'
+        }
+      : undefined,
+    hasBackground: !hideVipImage
   },
   { route: '/user', title: 'Profile', dataTest: 'sidebar-profile', icon: 'profile' },
   { route: '/faq', title: 'FAQ', dataTest: 'sidebar-faq', icon: 'faq' }

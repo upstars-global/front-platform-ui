@@ -3,7 +3,7 @@ import { ref, watch } from 'vue'
 import { emitsObserver, vueRouter } from '@src/stories/utils/decorators'
 import { UiSidebar } from '@src/components'
 import StoryPlaceholder from '@src/stories/utils/components/StoryPlaceholder.vue'
-import { SIDEBAR_NAVIGATION } from '../config/sidebar'
+import { getSidebarNavigation } from '../config/sidebar'
 
 const fullScreenOverlay: Decorator = (_story, context) => ({
   setup() {
@@ -36,7 +36,6 @@ const meta = {
   },
   args: {
     open: true,
-    navigation: SIDEBAR_NAVIGATION,
     title: 'More'
   },
   render: (args) => ({
@@ -73,24 +72,28 @@ type Story = StoryObj<typeof meta>
 
 export const ComponentA: Story = {
   args: {
+    navigation: getSidebarNavigation(),
     variant: 'component-a'
   }
 }
 
 export const ComponentB: Story = {
   args: {
-    variant: 'component-a'
+    navigation: getSidebarNavigation(true),
+    variant: 'component-b'
   }
 }
 
 export const ComponentC: Story = {
   args: {
-    variant: 'component-a'
+    navigation: getSidebarNavigation(false, true),
+    variant: 'component-c'
   }
 }
 
 export const ComponentD: Story = {
   args: {
-    variant: 'component-a'
+    navigation: getSidebarNavigation(true),
+    variant: 'component-d'
   }
 }
