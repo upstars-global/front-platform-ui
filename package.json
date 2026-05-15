@@ -71,7 +71,6 @@
     ]
   },
   "devDependencies": {
-    "body-scroll-lock-upgrade": "^1.1.0",
     "@chromatic-com/storybook": "^5.1.2",
     "@commitlint/cli": "^20.5.0",
     "@commitlint/config-conventional": "^20.5.0",
@@ -92,6 +91,7 @@
     "@vitest/coverage-v8": "^4.1.4",
     "@vue/tsconfig": "^0.9.1",
     "autoprefixer": "^10.5.0",
+    "body-scroll-lock-upgrade": "^1.1.0",
     "chromatic": "^16.3.0",
     "defu": "^6.1.7",
     "eslint": "^10.2.0",
@@ -102,6 +102,8 @@
     "globals": "^17.5.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
+    "overlayscrollbars": "^2.15.1",
+    "overlayscrollbars-vue": "^0.5.9",
     "playwright": "^1.59.1",
     "postcss": "^8.5.10",
     "postcss-nested": "^7.0.2",
@@ -123,13 +125,12 @@
     "vue-tsc": "^3.2.6",
     "vue3-mask": "upstars-global/vue3-mask#v3.1.2",
     "vue3-outside-events": "upstars-global/vue3-outside-events#v2.0.5",
-    "overlayscrollbars": "^2.15.1",
-    "overlayscrollbars-vue": "^0.5.9"
+    "vue3-touch-events": "^5.0.15"
   },
   "peerDependencies": {
-    "body-scroll-lock-upgrade": "^1.1.0",
     "@floating-ui/vue": "^1.1.9",
     "@vue/tsconfig": "^0.7.0",
+    "body-scroll-lock-upgrade": "^1.1.0",
     "defu": "^6.1.4",
     "overlayscrollbars": "^2.10.0",
     "overlayscrollbars-vue": "^0.5.9",
@@ -138,7 +139,8 @@
     "vue": "^3.5.x",
     "vue-router": "^4.5.x",
     "vue3-mask": "^3.1.2",
-    "vue3-outside-events": "^2.0.5"
+    "vue3-outside-events": "^2.0.5",
+    "vue3-touch-events": "^4.2.0"
   },
   "packageManager": "pnpm@10.17.0"
 }
