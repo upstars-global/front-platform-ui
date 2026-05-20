@@ -39,7 +39,7 @@ withDefaults(defineProps<SidebarNavigationProps>(), {
 
 <template>
   <div :class="ui?.base" data-test="sidebar-navigation">
-    <template v-for="(item, index) in items" :key="index">
+    <template v-for="(item, index) in items" :key="`sidebar-nav-item -${index}`">
       <UiLink
         v-if="!item.hide"
         :to="item.route"

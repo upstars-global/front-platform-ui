@@ -58,7 +58,7 @@ const props = withDefaults(defineProps<UiSidebarProps>(), {
   ui: undefined
 })
 
-const emit = defineEmits<UiSidebarEmits>()
+defineEmits<UiSidebarEmits>()
 const slots = defineSlots<UiSidebarSlots>()
 
 const sidebarRef = ref<HTMLElement | null>(null)
@@ -187,7 +187,6 @@ useBodyScrollLock(sidebarRef, open)
 
 const closeSidebar = () => {
   open.value = false
-  emit('update:open', false)
 }
 </script>
 

@@ -44,7 +44,6 @@ const meta = {
     setup: () => {
       const model = ref(args.open)
       const updateModel = (value?: boolean) => {
-        console.log('updateModel', value)
         model.value = value
       }
       watch(
