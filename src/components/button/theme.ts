@@ -1,5 +1,5 @@
 const button = {
-  base: 'flex gap-2 lg:gap-4 items-center justify-center cursor-pointer outline-none outline-0 border-0 font-bold rounded-6 transition',
+  base: 'flex gap-2 items-center justify-center cursor-pointer outline-none outline-0 border-0 font-bold rounded-6 transition',
   size: {
     default: '',
     xs: 'py-2 px-4 text-caption-m h-8',

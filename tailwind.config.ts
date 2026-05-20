@@ -156,13 +156,7 @@ export const config = {
       'body-l': ['1.25rem', '1.875rem'], // button-md
       'caption-l': ['0.875rem', '1.3125rem'], // ['14px', '21px'], caption-1, button-sm
       'caption-m': ['0.75rem', '1.1875rem'], // ['12px', '19px'] caption-2, button-xs
-      'caption-s': [
-        '0.625rem', // 10px
-        {
-          lineHeight: '1.0625rem', // 17px
-          letterSpacing: '0.06em'
-        }
-      ], // small-caption
+      'caption-s': ['0.625rem', '1.0625rem'], // [10px, 17px] small-caption
       pin: ['0.5rem', '1rem'] // ['8px', '16px']
     },
     fontWeight: {

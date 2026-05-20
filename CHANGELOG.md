@@ -1,3 +1,46 @@
+## [1.39.0](https://github.com/upstars-global/front-platform-ui/compare/v1.38.0...v1.39.0) (2026-05-20)
+
+### 🚀 Features
+
+* **button:** adjust primary and ghost variants, refine active styles
+ ([b66e2b2](https://github.com/upstars-global/front-platform-ui/commit/b66e2b2a3b94b9fc920cd65df1c313adc88a38fd))
+
+
+* **button:** adjust primary and ghost variants, refine active styles
+ ([062ed4f](https://github.com/upstars-global/front-platform-ui/commit/062ed4f522e7146a4aeb2dc398dcad78be30d657))
+
+
+* **button:** remove redundant `lg:gap-4` in button styles
+ ([3195ca1](https://github.com/upstars-global/front-platform-ui/commit/3195ca1dc2d32899c2ccc1186161093f1062d362))
+
+
+* **docs:** add missing keys to Typography example map iterations
+ ([54ce340](https://github.com/upstars-global/front-platform-ui/commit/54ce340be6e04a30960e31c0b9945d6503deb6a9))
+
+
+* **popover:** enhance positioning with fallback and strategy options
+ ([152a040](https://github.com/upstars-global/front-platform-ui/commit/152a04004649a3550e5ad4eef2f2ff6d7750524e))
+
+
+* **theme:** extend color palettes, refine fonts, and enhance UIKit variants
+ ([8fc9ebe](https://github.com/upstars-global/front-platform-ui/commit/8fc9ebe9d0edf204cdf370324b3d4eb4e8d117a8))
+
+
+* **theme:** refine button typography and cleanup tailwind color keys
+ ([dce19cd](https://github.com/upstars-global/front-platform-ui/commit/dce19cd7806582b430d4b948dc543508a0f4c29a))
+
+
+* **theme:** simplify `caption-s` typography definition in Tailwind config
+ ([22fcdba](https://github.com/upstars-global/front-platform-ui/commit/22fcdba141e305023d0e1914856dfb8d5d21182c))
+
+
+* **theme:** simplify component styles and remove unused color tokens
+ ([ddd23f2](https://github.com/upstars-global/front-platform-ui/commit/ddd23f2bf93489df7d47a2d5460660c5229fa295))
+
+
+* **theme:** update class tokens and adjust color/typography mappings
+ ([09125a3](https://github.com/upstars-global/front-platform-ui/commit/09125a3917519a513723f5c92cae0a43dd37ddaa))
+
 ## [1.38.0](https://github.com/upstars-global/front-platform-ui/compare/v1.37.2...v1.38.0) (2026-04-20)
 
 ### 🐛 Bug Fixes
