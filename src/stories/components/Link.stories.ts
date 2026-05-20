@@ -61,7 +61,7 @@ export const RouterLink: Story = {
   args: {
     to: '/',
     variant: 'primary',
-    activeClass: 'text-secondary-3 hover:text-secondary-4',
+    activeClass: 'text-secondary-30 hover:text-secondary-40',
     text: 'This is a router link with active state'
   }
 }

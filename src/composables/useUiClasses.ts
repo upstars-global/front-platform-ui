@@ -22,8 +22,8 @@ const customTwMerge = extendTailwindMerge({
       ],
       'font-size': [
         'text-base',
-        'text-copy',
-        'text-copy-l',
+        'text-body',
+        'text-body-l',
         'text-caption-l',
         'text-caption-m',
         'text-caption-s',

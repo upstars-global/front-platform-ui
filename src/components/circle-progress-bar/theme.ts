@@ -3,7 +3,7 @@ const circleProgressBar = {
   svg: 'relative w-full h-full z-10',
   content: 'absolute inset-0 flex items-center justify-center rounded-full',
   progress: {
-    trail: 'stroke-tertiary-2',
+    trail: '',
     line: 'stroke-personal transition-all duration-500'
   }
 }

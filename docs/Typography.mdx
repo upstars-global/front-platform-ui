@@ -25,7 +25,7 @@ export const TypoList = () => {
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
         <strong style={{ fontSize: '14px' }}>Weights:</strong>
         {
-          Object.entries(typography.weight).map(([key, value]) => (<span style={{ fontSize: '14px' }}>{value} ({key})</span>))
+          Object.entries(typography.weight).map(([key, value]) => (<span key={key} style={{ fontSize: '14px' }}>{value} ({key})</span>))
         }
       </div>
       <div style={{
@@ -41,7 +41,7 @@ export const TypoList = () => {
         {
           typography.size.map((item) => {
             return (
-              <div style={{ display: 'grid', gap: '16px', gridTemplateColumns: '120px 1fr', alignItems: 'center', fontFamily: typography.family }}>
+              <div key={item.key} style={{ display: 'grid', gap: '16px', gridTemplateColumns: '120px 1fr', alignItems: 'center', fontFamily: typography.family }}>
                 <div style={{ fontSize: '14px' }}>{`text-${item.key}`}</div>
                 <div style={{ fontSize: item.fontSize, lineHeight: item.lineHeight }}>{sampleText}</div>
               </div>
@@ -62,7 +62,7 @@ export const TypoList = () => {
         {
           typography.headings.map((item) => {
             return (
-              <div style={{ display: 'grid', gap: '16px', gridTemplateColumns: '120px 1fr', alignItems: 'center', fontFamily: typography.family }}>
+              <div key={item} style={{ display: 'grid', gap: '16px', gridTemplateColumns: '120px 1fr', alignItems: 'center', fontFamily: typography.family }}>
                 <div style={{ fontSize: '14px' }}>{item}</div>
                 <div className={`${item} sb-unstyled`}>Heading</div>
               </div>

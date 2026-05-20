@@ -101,7 +101,7 @@ const meta = {
           </div>
           <div v-else :class="['gap-2', args.variant === 'component-a' ? 'hidden lg:flex' : 'flex']">
             <template v-if="args.variant === 'component-c'">
-              <UiButton variant="tertiary" :ui="{ variants: { tertiary: '!shadow-tertiary-1 !text-tertiary-1' } }">Log in</UiButton>
+              <UiButton variant="tertiary" :ui="{ variants: { tertiary: '!shadow-tertiary-10 !text-tertiary-10' } }">Log in</UiButton>
             </template>
             <template v-else>
               <UiButton variant="secondary">Log in</UiButton>
@@ -111,7 +111,7 @@ const meta = {
         </div>
       </template>
       <template #chat-content>
-        <div class="bg-tertiary-2 p-2 w-32 rounded-b-2">chat Content</div>
+        <div class="bg-tertiary-20 p-2 w-32 rounded-b-2">chat Content</div>
       </template>
     </UiHeader>`
   })

@@ -4,7 +4,7 @@ const stepper = {
     base: 'h-1 rounded-full',
     completed: 'bg-primary-20 opacity-50',
     active: 'bg-primary-20',
-    inactive: 'bg-secondary-4'
+    inactive: ''
   }
 }
 

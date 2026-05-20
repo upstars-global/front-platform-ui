@@ -108,16 +108,16 @@ export const config = {
         50: '#0369a1' // sky-700
       },
       secondary: {
-        1: '#f0abfc', // fuchsia-300
-        2: '#e879f9', // fuchsia-400
-        3: '#d946ef', // fuchsia-500
-        4: '#c026d3' // fuchsia-600
+        10: '#f0abfc', // fuchsia-300
+        20: '#e879f9', // fuchsia-400
+        30: '#d946ef', // fuchsia-500
+        40: '#c026d3' // fuchsia-600
       },
       tertiary: {
-        1: '#d1d5db', // gray-300
-        2: '#9ca3af', // gray-400
-        3: '#6b7280', // gray-500
-        4: '#4b5563' // gray-600
+        10: '#d1d5db', // gray-300
+        20: '#9ca3af', // gray-400
+        30: '#6b7280', // gray-500
+        40: '#4b5563' // gray-600
       },
       backdrop: {
         'alt-1': '#334155', // slate-700
@@ -152,18 +152,12 @@ export const config = {
     },
     fontSize: {
       base: ['1rem', 'inherit'],
-      copy: ['1rem', '1.5rem'],
-      'copy-l': ['1.25rem', '1.875rem'], // button-md
-      'caption-l': ['0.875rem', '1.4875rem'], // caption-1, button-sm
-      'caption-m': ['0.75rem', '1rem'], // caption-2, button-xs
-      'caption-s': [
-        '0.5625rem',
-        {
-          lineHeight: '1.0125rem',
-          letterSpacing: '0.06em'
-        }
-      ], // small-caption
-      pin: ['0.5rem', '1rem']
+      body: ['1rem', '1.5rem'], // ['16px', '24px']
+      'body-l': ['1.25rem', '1.875rem'], // button-md
+      'caption-l': ['0.875rem', '1.3125rem'], // ['14px', '21px'], caption-1, button-sm
+      'caption-m': ['0.75rem', '1.1875rem'], // ['12px', '19px'] caption-2, button-xs
+      'caption-s': ['0.625rem', '1.0625rem'], // [10px, 17px] small-caption
+      pin: ['0.5rem', '1rem'] // ['8px', '16px']
     },
     fontWeight: {
       normal: '400',

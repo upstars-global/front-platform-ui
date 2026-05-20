@@ -62,6 +62,11 @@ export const uiKitConfig: AppConfig = {
     },
     banner: {
       strategy: 'merge',
+      buttonWrapper: {
+        variants: {
+          default: 'bg-tertiary-30/70'
+        }
+      },
       content: {
         variants: {
           default: 'text-light'
@@ -83,9 +88,16 @@ export const uiKitConfig: AppConfig = {
     },
     button: {
       variants: {
-        secondary: 'bg-secondary-3',
-        tertiary: 'shadow-tertiary-4 text-tertiary-4 hover:text-light',
-        ghost: 'text-dark hover:text-light'
+        primary: 'bg-primary-20 hover:bg-primary-30 active:bg-primary-50',
+        secondary: 'bg-secondary-30 hover:bg-secondary-20 active:bg-secondary-40',
+        tertiary: 'shadow-tertiary-40 text-tertiary-40 hover:text-light hover:bg-tertiary-20',
+        ghost: '!text-support hover:!text-light hover:bg-tertiary-20 active:bg-tertiary-30'
+      },
+      active: {
+        primary: '!bg-primary-50',
+        secondary: '!bg-secondary-40',
+        tertiary: '!bg-tertiary-10',
+        ghost: '!bg-tertiary-30'
       }
     },
     card: {
@@ -93,8 +105,8 @@ export const uiKitConfig: AppConfig = {
       variants: {
         default: '',
         soft: 'p-4 lg:p-6 bg-backdrop-alt-3',
-        outline: 'p-4 lg:p-6 rounded-4 border-tertiary-2 bg-transparent',
-        subtle: 'p-4 lg:p-6 rounded-4 border-tertiary-2 bg-backdrop-alt-3'
+        outline: 'p-4 lg:p-6 rounded-4 border-tertiary-20 bg-transparent',
+        subtle: 'p-4 lg:p-6 rounded-4 border-tertiary-20 bg-backdrop-alt-3'
       },
       orientation: {
         vertical: '',
@@ -105,7 +117,8 @@ export const uiKitConfig: AppConfig = {
       strategy: 'merge',
       base: 'text-dark',
       checkmark: {
-        container: 'p-px'
+        container: 'p-px',
+        inner: 'border-tertiary-20'
       },
       error: 'text-caption-m text-error-20'
     },
@@ -118,7 +131,10 @@ export const uiKitConfig: AppConfig = {
       }
     },
     circleProgressBar: {
-      content: 'bg-tertiary-3/50'
+      content: 'bg-tertiary-30/50',
+      progress: {
+        trail: 'stroke-tertiary-30/70'
+      }
     },
     header: {
       chatButton: {
@@ -150,7 +166,7 @@ export const uiKitConfig: AppConfig = {
       states: {
         fullscreen: 'border-primary-30'
       },
-      title: 'text-dark text-copy md:text-copy-l font-bold',
+      title: 'text-dark text-body md:text-body-l font-bold',
       description: 'text-backdrop-alt-2',
       closeIcon: 'text-backdrop-alt-2'
     },
@@ -160,11 +176,11 @@ export const uiKitConfig: AppConfig = {
     input: {
       strategy: 'merge',
       input: {
-        base: 'bg-light autofill:bg-slate-50 focus:border-primary-30 border-support placeholder:text-tertiary-3',
+        base: 'bg-light autofill:bg-light/50 focus:border-primary-30 border-support placeholder:text-tertiary-30',
         invalid: 'border-error-20'
       },
-      recommendationsContainer: 'border-primary-30 bg-slate-50',
-      recommendationsListItem: 'border-support hover:bg-bg-light last:border-b-0 last:rounded-b-6',
+      recommendationsContainer: 'border-primary-30 bg-light',
+      recommendationsListItem: 'border-support hover:bg-light last:border-b-0 last:rounded-b-6',
       error: {
         content: 'bg-error-20',
         text: 'text-white'
@@ -180,9 +196,22 @@ export const uiKitConfig: AppConfig = {
         invalid: '!border-error-20'
       }
     },
+    stepper: {
+      states: {
+        inactive: 'bg-secondary-40'
+      }
+    },
+    switch: {
+      checkmark: {
+        base: 'border-tertiary-10 after:bg-tertiary-10'
+      }
+    },
     tabs: {
-      container: 'bg-dark',
-      content: 'py-4'
+      container: 'bg-dark border-tertiary-30/40',
+      content: 'py-4',
+      item: {
+        active: 'bg-secondary-30'
+      }
     }
   }
 }
