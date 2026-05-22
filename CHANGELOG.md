@@ -1,3 +1,21 @@
+## [1.40.0](https://github.com/upstars-global/front-platform-ui/compare/v1.39.0...v1.40.0) (2026-05-22)
+
+### 🚀 Features
+
+* **sidebar:** add variant support and extend theming options
+ ([9317c8e](https://github.com/upstars-global/front-platform-ui/commit/9317c8e213f71afa415732a68b03a9d0dffc8fe8))
+
+
+* **sidebar:** introduce Sidebar and SidebarNavigation components
+ ([3876066](https://github.com/upstars-global/front-platform-ui/commit/3876066036fc90e369f6160c297592f5f7c58f98))
+
+
+
+### 🔨 Refactoring
+
+* **sidebar:** improve key bindings and cleanup unused code
+ ([4bdc302](https://github.com/upstars-global/front-platform-ui/commit/4bdc302be7b64b30bd9554effe8915fffaa898ae))
+
 ## [1.39.0](https://github.com/upstars-global/front-platform-ui/compare/v1.38.0...v1.39.0) (2026-05-20)
 
 ### 🚀 Features
