@@ -196,6 +196,10 @@ export const uiKitConfig: AppConfig = {
         invalid: '!border-error-20'
       }
     },
+    sidebar: {
+      strategy: 'merge',
+      overlay: 'bg-tertiary-20/50'
+    },
     stepper: {
       states: {
         inactive: 'bg-secondary-40'

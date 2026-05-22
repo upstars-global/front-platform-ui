@@ -25,6 +25,7 @@ import type { PopoverUi } from './popover/theme.ts'
 import type { ProgressBarUi } from './progress-bar/theme'
 import type { ScrollUi } from './scroll/theme'
 import type { SelectUi } from './select/theme'
+import type { SidebarUi } from './sidebar/theme'
 import type { SkeletonUi } from './skeleton/theme'
 import type { StepperUi } from './stepper/theme'
 import type { StepperModalUi } from './stepper-modal/theme'
@@ -73,6 +74,7 @@ interface UiConfig {
   progressBar?: UiProp<ProgressBarUi>
   scroll?: UiProp<ScrollUi>
   select?: UiProp<SelectUi>
+  sidebar?: UiProp<SidebarUi>
   skeleton?: UiProp<SkeletonUi>
   stepper?: UiProp<StepperUi>
   stepperModal?: UiProp<StepperModalUi>

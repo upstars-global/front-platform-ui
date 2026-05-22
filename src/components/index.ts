@@ -31,6 +31,7 @@ import UiPopover from './popover/UiPopover.vue'
 import UiProgressBar from './progress-bar/UiProgressBar.vue'
 import UiScroll from './scroll/UiScroll.vue'
 import UiSelect from './select/UiSelect.vue'
+import UiSidebar from './sidebar/UiSidebar.vue'
 import UiSkeleton from './skeleton/UiSkeleton.vue'
 import UiStepper from './stepper/UiStepper.vue'
 import UiStepperModal from './stepper-modal/UiStepperModal.vue'
@@ -68,6 +69,7 @@ export type { UiPopoverProps, UiPopoverSlots } from './popover/UiPopover.vue'
 export type { UiProgressBarProps, UiProgressBarSlots } from './progress-bar/UiProgressBar.vue'
 export type { UiScrollProps, UiScrollEmits, UiScrollSlots } from './scroll/UiScroll.vue'
 export type { UiSelectProps, UiSelectEmits, UiSelectSlots, SelectOption } from './select/UiSelect.vue'
+export type { UiSidebarProps, UiSidebarEmits, UiSidebarSlots } from './sidebar/UiSidebar.vue'
 export type { UiStepperProps } from './stepper/UiStepper.vue'
 export type { UiStepperModalProps, UiStepperModalEmits, UiStepperModalSlots } from './stepper-modal/UiStepperModal.vue'
 export type { UiSwitchProps, UiSwitchEmits } from './switch/UiSwitch.vue'
@@ -106,6 +108,7 @@ export {
   UiProgressBar,
   UiScroll,
   UiSelect,
+  UiSidebar,
   UiSkeleton,
   UiStepper,
   UiStepperModal,
