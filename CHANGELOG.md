@@ -1,3 +1,27 @@
+## [1.41.0](https://github.com/upstars-global/front-platform-ui/compare/v1.40.0...v1.41.0) (2026-05-27)
+
+### 🚀 Features
+
+* **FP-5320:** add birthdayPromo2 navigation icon
+ ([a685fb7](https://github.com/upstars-global/front-platform-ui/commit/a685fb7c51ff89cc6c7c06e5cae86b380b2e1e59))
+
+
+
+  - Adds `birthdayPromo2.svg` asset to the navigation icons directory.
+
+  - Registers and exports `birthdayPromo2` in the icon configuration.
+
+### 🔧 Maintenance
+
+* **FP-5320:** update birthdayPromo navigation icon
+ ([5fb9628](https://github.com/upstars-global/front-platform-ui/commit/5fb9628a4c63f1f7e7ca4aa61f1ed89509d47af4))
+
+
+
+  - Adds explicit `width="24"` and `height="24"` attributes to the root `<svg>` element.
+
+  - Updates the vector path data to reflect the newly designed icon.
+
 ## [1.40.0](https://github.com/upstars-global/front-platform-ui/compare/v1.39.0...v1.40.0) (2026-05-22)
 
 ### 🚀 Features
