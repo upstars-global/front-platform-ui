@@ -62,6 +62,7 @@ declare const iconsNavigation: {
     faq: string;
     giftShop: string;
     birthdayPromo: string;
+    birthdayPromo2: string;
     newYearPromo: string;
     more: string;
 };
