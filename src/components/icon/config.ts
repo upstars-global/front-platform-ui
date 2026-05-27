@@ -53,6 +53,7 @@ import withdraw from '../../assets/icons/fill/withdraw.svg?raw'
 import arena from '../../assets/icons/navigation/arena.svg?raw'
 import bet from '../../assets/icons/navigation/bet.svg?raw'
 import birthdayPromo from '../../assets/icons/navigation/birthdayPromo.svg?raw'
+import birthdayPromo2 from '../../assets/icons/navigation/birthdayPromo2.svg?raw'
 import newYearPromo from '../../assets/icons/navigation/newYearPromo.svg?raw'
 import bonuses from '../../assets/icons/navigation/bonuses.svg?raw'
 import eSport from '../../assets/icons/navigation/esport.svg?raw'
@@ -146,6 +147,7 @@ const iconsNavigation = {
   faq,
   giftShop,
   birthdayPromo,
+  birthdayPromo2,
   newYearPromo,
   more
 }
