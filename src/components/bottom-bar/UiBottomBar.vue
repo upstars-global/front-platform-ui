@@ -227,7 +227,7 @@ const uiClasses = computed(() => {
             </div>
           </UiLink>
         </template>
-        <!-- TODO: треба додати .stop модифікатор через те що сайдбар не відривається. Тригеритьтся ще один івент -->
+
         <UiLink
           :class="uiClasses.item.base"
           data-test="bottom-bar-open-sidebar"
