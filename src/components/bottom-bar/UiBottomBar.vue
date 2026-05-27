@@ -227,7 +227,12 @@ const uiClasses = computed(() => {
             </div>
           </UiLink>
         </template>
-        <UiLink :class="uiClasses.item.base" data-test="bottom-bar-open-sidebar" @click="emit('open:sidebar', $event)">
+
+        <UiLink
+          :class="uiClasses.item.base"
+          data-test="bottom-bar-open-sidebar"
+          @click.stop="emit('open:sidebar', $event)"
+        >
           <div :class="uiClasses.item.wrapper">
             <UiIcon :class="uiClasses.item.icon" name="more" />
             <span :class="uiClasses.item.label">{{ labels.sidebar }}</span>
