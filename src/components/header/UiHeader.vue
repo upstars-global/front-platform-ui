@@ -167,7 +167,8 @@ const uiClasses = computed(() => {
     <div :class="uiClasses.wrapper" data-test="header-wrapper">
       <div :class="uiClasses.inner" data-test="header-inner" style="max-width: var(--ui-header-max-width, 100vw)">
         <UiLink :class="uiClasses.logo" :to="logoRoute" data-test="header-logo" @click="emit('click:logo', $event)">
-          <UiImage v-if="logo" v-bind="logo" class="w-full h-full" />
+          <!-- TODO: прибрав класи,  бо їх треба оверрайдити -->
+          <UiImage v-if="logo" v-bind="logo" />
         </UiLink>
         <div v-if="isContent" :class="uiClasses.content" data-test="header-content">
           <HeaderNavigation v-if="navigation" :items="navigation" :ui="uiClasses.navigation" />
@@ -180,6 +181,7 @@ const uiClasses = computed(() => {
               :ui="uiClasses.chatButton"
               @click="emit('open:chat')"
             />
+            <!-- TODO: я б це огорнув б в слот, а UiPopover зробив би дефолтним значенням -->
             <UiPopover class="hidden lg:block" placement="bottom-end" :offset="12">
               <template #anchor>
                 <ChatButton :message-count="chatMessageCount" :ui="uiClasses.chatButton" />
