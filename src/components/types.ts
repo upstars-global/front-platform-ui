@@ -33,6 +33,9 @@ import type { SwitchUi } from './switch/theme'
 import type { TabsUi } from './tabs/theme'
 import type { TimerUi } from './timer/theme'
 import type { TooltipUi } from './tooltip/theme'
+import type { FileUploadUi } from './file-upload/theme'
+import type { ReviewWidgetUi } from './review-widget/theme'
+import type { FilePreviewItemUi } from './file-preview-item/theme.ts'
 
 export type Strategy = 'join' | 'merge'
 export type ImgLoading = 'eager' | 'lazy'
@@ -82,6 +85,9 @@ interface UiConfig {
   tabs?: UiProp<TabsUi>
   timer?: UiProp<TimerUi>
   tooltip?: UiProp<TooltipUi>
+  fileUpload?: UiProp<FileUploadUi>
+  reviewWidget?: UiProp<ReviewWidgetUi>
+  filePreviewItem?: UiProp<FilePreviewItemUi>
 }
 
 export interface AppConfig {

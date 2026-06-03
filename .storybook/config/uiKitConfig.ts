@@ -216,6 +216,25 @@ export const uiKitConfig: AppConfig = {
       item: {
         active: 'bg-secondary-30'
       }
+    },
+    fileUpload: {
+      description: 'mt-4'
+    },
+    reviewWidget: {
+      container: 'gap-6 bg-dark text-light p-4 rounded-4',
+      imageContainer: 'w-24 h-24',
+      contentContainer: 'gap-4',
+      actionArea: 'w-full',
+      content: 'flex flex-col gap-4'
+    },
+    filePreviewItem: {
+      container: 'p-3 w-full text-left rounded-2 border border-tertiary-20/40 bg-backdrop-alt-3/80 text-light',
+      infoContainer: 'gap-3',
+      contentContainer: 'gap-0.5',
+      fileName: 'text-caption-m',
+      fileSize: 'text-caption-m',
+      removeButton:
+        '!p-2 !bg-transparent hover:!bg-tertiary-10/20 text-error-10 rounded-full transition-colors duration-200 cursor-pointer'
     }
   }
 }
