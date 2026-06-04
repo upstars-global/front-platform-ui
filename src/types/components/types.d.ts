@@ -35,7 +35,7 @@ import type { TimerUi } from './timer/theme';
 import type { TooltipUi } from './tooltip/theme';
 import type { FileUploadUi } from './file-upload/theme';
 import type { ReviewWidgetUi } from './review-widget/theme';
-import type { FilePreviewItemUi } from './file-preview-item/theme.ts';
+import type { FilePreviewItemUi } from './file-preview-item/theme';
 export type Strategy = 'join' | 'merge';
 export type ImgLoading = 'eager' | 'lazy';
 export type DeepPartial<T> = {

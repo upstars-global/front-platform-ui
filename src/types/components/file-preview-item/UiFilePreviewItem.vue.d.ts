@@ -1,10 +1,9 @@
-import type { UiProp } from '../../components/types';
+import type { UiProp } from '../types';
 import type { FilePreviewItemUi } from './theme';
 import type { UiIconName } from '../icon/config';
 export interface UiFilePreviewItemProps {
     file: File;
     ui?: UiProp<FilePreviewItemUi>;
-    dataTest?: string;
     removeIconName?: UiIconName;
 }
 export interface UiFilePreviewItemEmits {
@@ -18,7 +17,6 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiFile
     onRemove?: (() => any) | undefined;
 }>, {
     ui: UiProp<FilePreviewItemUi>;
-    dataTest: string;
     removeIconName: UiIconName;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
     'file-size'?: (props: {

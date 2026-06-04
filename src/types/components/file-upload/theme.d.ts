@@ -1,10 +1,10 @@
-export interface FileUploadUi {
-    base?: string;
-    container?: string;
-    description?: string;
+declare const fileUpload: {
+    base: string;
+    container: string;
+    description: string;
     states: {
-        disabled?: string;
+        disabled: string;
     };
-}
-declare const _default: FileUploadUi;
-export default _default;
+};
+export type FileUploadUi = typeof fileUpload;
+export default fileUpload;

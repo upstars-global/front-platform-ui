@@ -4,13 +4,13 @@ export interface UiFileUploadProps {
     formats?: string[];
     maxSizeBytes?: number;
     disabled?: boolean;
-    dataTest?: string;
     ui?: UiProp<FileUploadUi>;
 }
-export declare enum UiFileUploadErrorType {
-    FORMAT = "format",
-    SIZE = "size"
-}
+export declare const UI_FILE_UPLOAD_ERROR_TYPE: {
+    readonly FORMAT: "format";
+    readonly SIZE: "size";
+};
+export type UiFileUploadErrorType = (typeof UI_FILE_UPLOAD_ERROR_TYPE)[keyof typeof UI_FILE_UPLOAD_ERROR_TYPE];
 export interface UiFileUploadEmits {
     error: [type: UiFileUploadErrorType, meta: {
         formats?: string[];
@@ -41,7 +41,6 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiFile
 }>, {
     disabled: boolean;
     ui: UiProp<FileUploadUi>;
-    dataTest: string;
     formats: string[];
     maxSizeBytes: number;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {

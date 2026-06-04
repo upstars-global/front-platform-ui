@@ -1,14 +1,15 @@
-import { type UiFileUploadProps } from '../../components/file-upload/UiFileUpload.vue';
-import type { UiProp } from '../../components/types';
+import type { UiProp } from '../types';
 import type { ReviewWidgetUi } from './theme';
-export declare enum UiReviewWidgetState {
-    DEFAULT = "DEFAULT",
-    FILE_SELECTED = "FILE_SELECTED",
-    UNDER_REVIEW = "UNDER_REVIEW",
-    APPROVED = "APPROVED",
-    REJECTED = "REJECTED",
-    ALREADY_CLAIMED = "ALREADY_CLAIMED"
-}
+import type { UiFileUploadProps } from '../file-upload/UiFileUpload.vue';
+export declare const UI_REVIEW_WIDGET_STATE: {
+    readonly DEFAULT: "DEFAULT";
+    readonly FILE_SELECTED: "FILE_SELECTED";
+    readonly UNDER_REVIEW: "UNDER_REVIEW";
+    readonly APPROVED: "APPROVED";
+    readonly REJECTED: "REJECTED";
+    readonly ALREADY_CLAIMED: "ALREADY_CLAIMED";
+};
+export type UiReviewWidgetState = (typeof UI_REVIEW_WIDGET_STATE)[keyof typeof UI_REVIEW_WIDGET_STATE];
 export interface UiReviewStateContent {
     image: string;
     imageAlt: string;
@@ -23,7 +24,6 @@ export type UiReviewWidgetProps = Pick<UiFileUploadProps, 'formats' | 'maxSizeBy
     state: UiReviewWidgetState;
     config: UiReviewWidgetConfig;
     ui?: UiProp<ReviewWidgetUi>;
-    dataTest?: string;
 };
 export interface UiReviewWidgetEmits {
     'contact-support': [];
@@ -35,7 +35,6 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<Pick<U
     state: UiReviewWidgetState;
     config: UiReviewWidgetConfig;
     ui?: UiProp<ReviewWidgetUi>;
-    dataTest?: string;
 } & {
     file?: File | null;
 }, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
@@ -46,7 +45,6 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<Pick<U
     state: UiReviewWidgetState;
     config: UiReviewWidgetConfig;
     ui?: UiProp<ReviewWidgetUi>;
-    dataTest?: string;
 } & {
     file?: File | null;
 }> & Readonly<{
@@ -55,7 +53,6 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<Pick<U
     "onContact-support"?: (() => any) | undefined;
 }>, {
     ui: UiProp<ReviewWidgetUi>;
-    dataTest: string;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
     image?: (props: {
         content: UiReviewStateContent;
