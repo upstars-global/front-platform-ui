@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import UiFilePreviewItem from '@src/components/file-preview-item/UiFilePreviewItem.vue'
 import { emitsObserver } from '@src/stories/utils/decorators'
 import { action } from 'storybook/actions'
+import { formatBytes } from '@src/helpers/formatBytes'
 
 const meta = {
   title: 'UI Kit/FilePreviewItem',
@@ -23,11 +24,16 @@ const meta = {
     components: { UiFilePreviewItem },
     setup: () => ({
       args,
+      formatBytes,
       onRemove: action('remove')
     }),
     template: `
       <div class="max-w-md w-full rounded-4 bg-dark p-4 text-light">
-        <UiFilePreviewItem v-bind="args" @remove="onRemove" />
+        <UiFilePreviewItem v-bind="args" @remove="onRemove">
+          <template #file-size="{ fileSize }">
+            {{ formatBytes(fileSize) }}
+          </template>
+        </UiFilePreviewItem>
       </div>
     `
   })

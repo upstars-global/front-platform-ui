@@ -141,7 +141,11 @@ const handleUpload = () => {
             {{ currentContent.description }}
           </p>
 
-          <UiFilePreviewItem v-if="fileModel" :file="fileModel" @remove="fileModel = null" />
+          <UiFilePreviewItem v-if="fileModel" :file="fileModel" @remove="fileModel = null">
+            <template #file-size="{ fileSize }">
+              <slot name="file-preview-item-file-size" :file-size />
+            </template>
+          </UiFilePreviewItem>
         </div>
       </div>
 

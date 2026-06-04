@@ -23,7 +23,6 @@ import { useComponentAttributes } from '@src/composables/useUiClasses'
 import UiIcon from '@src/components/icon/UiIcon.vue'
 import UiButton from '@src/components/button/UiButton.vue'
 import theme from './theme'
-import { formatBytes } from '@src/helpers/formatBytes'
 
 defineOptions({
   name: 'UiFilePreviewItem',
@@ -67,10 +66,6 @@ const uiClasses = computed(() => {
     removeIcon: mergeClasses(theme.removeIcon, appConfig.ui?.filePreviewItem?.removeIcon, props.ui?.removeIcon)
   }
 })
-
-const displayFileSize = computed(() => {
-  return formatBytes(props.file.size)
-})
 </script>
 
 <template>
@@ -82,7 +77,7 @@ const displayFileSize = computed(() => {
             {{ file.name }}
           </span>
           <span :class="uiClasses.fileSize">
-            {{ displayFileSize }}
+            <slot name="file-size" :file-size="file.size" />
           </span>
         </div>
       </div>

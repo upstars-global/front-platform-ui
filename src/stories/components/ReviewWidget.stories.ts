@@ -56,6 +56,9 @@ const reviewWidgetSlotsTemplate = `
   <template #file-upload-description="{ formats, maxSizeBytes }">
     {{ formats }} • Up to {{ formatBytes(maxSizeBytes) }}
   </template>
+  <template #file-preview-item-file-size="{ fileSize }">
+    {{ formatBytes(fileSize) }}
+  </template>
 `
 
 const meta = {
