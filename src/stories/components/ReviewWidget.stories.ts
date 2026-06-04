@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import UiReviewWidget, {
-  UiReviewWidgetState,
+  UI_REVIEW_WIDGET_STATE,
   type UiReviewWidgetConfig
 } from '@src/components/review-widget/UiReviewWidget.vue'
 import UiFileUpload from '@src/components/file-upload/UiFileUpload.vue'
@@ -12,35 +12,35 @@ import { formatBytes } from '@src/helpers/formatBytes'
 const defaultConfig: UiReviewWidgetConfig = {
   headerTitle: 'Free Spins for review',
   states: {
-    [UiReviewWidgetState.DEFAULT]: {
+    [UI_REVIEW_WIDGET_STATE.DEFAULT]: {
       image: '/assets/review-widget/review-bonus.svg',
       imageAlt: 'Bonus gift',
       description: 'Your 20 Free Spins await! Upload your review screenshot here'
     },
-    [UiReviewWidgetState.FILE_SELECTED]: {
+    [UI_REVIEW_WIDGET_STATE.FILE_SELECTED]: {
       image: '/assets/review-widget/review-bonus.svg',
       imageAlt: 'Bonus gift',
       description: 'Your 20 Free Spins await! Send your review screenshot here'
     },
-    [UiReviewWidgetState.UNDER_REVIEW]: {
+    [UI_REVIEW_WIDGET_STATE.UNDER_REVIEW]: {
       image: '/assets/review-widget/review-bonus.svg',
       imageAlt: 'Bonus gift',
       title: 'Your screenshot is under review',
       description: 'Please give us a bit more time — we’ll notify you once it’s processed'
     },
-    [UiReviewWidgetState.APPROVED]: {
+    [UI_REVIEW_WIDGET_STATE.APPROVED]: {
       image: '/assets/review-widget/review-bonus.svg',
       imageAlt: 'Bonus gift',
       title: 'Your screenshot approved',
       description: 'The gift has been credited — enjoy!'
     },
-    [UiReviewWidgetState.REJECTED]: {
+    [UI_REVIEW_WIDGET_STATE.REJECTED]: {
       image: '/assets/review-widget/review-bonus.svg',
       imageAlt: 'Bonus gift',
       title: 'Your screenshot not approved',
       description: 'Please check your screenshot and upload it again'
     },
-    [UiReviewWidgetState.ALREADY_CLAIMED]: {
+    [UI_REVIEW_WIDGET_STATE.ALREADY_CLAIMED]: {
       image: '/assets/review-widget/review-bonus.svg',
       imageAlt: 'Bonus gift',
       title: 'You’ve already got Free Spins',
@@ -73,7 +73,7 @@ const meta = {
   argTypes: {
     state: {
       control: 'select',
-      options: Object.values(UiReviewWidgetState)
+      options: Object.values(UI_REVIEW_WIDGET_STATE)
     },
     config: { control: 'object' },
     formats: { control: 'object' },
@@ -82,7 +82,7 @@ const meta = {
     ui: { control: 'object' }
   },
   args: {
-    state: UiReviewWidgetState.DEFAULT,
+    state: UI_REVIEW_WIDGET_STATE.DEFAULT,
     config: defaultConfig,
     formats: ['jpg', 'jpeg', 'png', 'pdf', 'heic'],
     maxSizeBytes: 20 * 1024 * 1024
@@ -117,44 +117,44 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
-    state: UiReviewWidgetState.DEFAULT
+    state: UI_REVIEW_WIDGET_STATE.DEFAULT
   }
 }
 
 export const FileSelected: Story = {
   args: {
     file: new File([new ArrayBuffer(1024 * 1024 * 8)], 'IMG_2043_12324259694.jpg', { type: 'image/jpeg' }),
-    state: UiReviewWidgetState.FILE_SELECTED
+    state: UI_REVIEW_WIDGET_STATE.FILE_SELECTED
   }
 }
 
 export const UnderReview: Story = {
   args: {
-    state: UiReviewWidgetState.UNDER_REVIEW
+    state: UI_REVIEW_WIDGET_STATE.UNDER_REVIEW
   }
 }
 
 export const Approved: Story = {
   args: {
-    state: UiReviewWidgetState.APPROVED
+    state: UI_REVIEW_WIDGET_STATE.APPROVED
   }
 }
 
 export const Rejected: Story = {
   args: {
-    state: UiReviewWidgetState.REJECTED
+    state: UI_REVIEW_WIDGET_STATE.REJECTED
   }
 }
 
 export const AlreadyClaimed: Story = {
   args: {
-    state: UiReviewWidgetState.ALREADY_CLAIMED
+    state: UI_REVIEW_WIDGET_STATE.ALREADY_CLAIMED
   }
 }
 
 export const CustomLimits: Story = {
   args: {
-    state: UiReviewWidgetState.DEFAULT,
+    state: UI_REVIEW_WIDGET_STATE.DEFAULT,
     formats: ['png', 'jpg'],
     maxSizeBytes: 5 * 1024 * 1024
   }

@@ -1,21 +1,14 @@
-export interface FilePreviewItemUi {
-  base?: string
-  container?: string
-  infoContainer?: string
-  contentContainer?: string
-  fileName?: string
-  fileSize?: string
-  removeButton?: string
-  removeIcon?: string
+const filePreviewItem = {
+  base: 'w-full',
+  container: 'flex items-center justify-between gap-2 p-3 w-full text-left rounded-2 border',
+  infoContainer: 'flex min-w-0 flex-1 items-center gap-3',
+  contentContainer: 'flex flex-1 flex-col overflow-hidden',
+  fileName: 'text-caption-m truncate',
+  fileSize: 'text-caption-s truncate',
+  removeButton: '!p-2 shrink-0 rounded-full transition-colors duration-200 cursor-pointer',
+  removeIcon: ''
 }
 
-export default {
-  base: 'w-full min-w-0',
-  container: 'flex min-w-0 items-center justify-between gap-2',
-  infoContainer: 'flex min-w-0 flex-1 items-center',
-  contentContainer: 'flex min-w-0 flex-1 flex-col overflow-hidden',
-  fileName: 'block min-w-0 truncate',
-  fileSize: 'block min-w-0 truncate',
-  removeButton: 'shrink-0',
-  removeIcon: ''
-} as FilePreviewItemUi
+export type FilePreviewItemUi = typeof filePreviewItem
+
+export default filePreviewItem

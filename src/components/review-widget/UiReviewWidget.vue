@@ -1,15 +1,18 @@
 <script lang="ts">
-import type { UiProp } from '@src/components/types'
+import type { UiProp } from '../types'
 import type { ReviewWidgetUi } from './theme'
+import type { UiFileUploadProps } from '../file-upload/UiFileUpload.vue'
 
-export enum UiReviewWidgetState {
-  DEFAULT = 'DEFAULT',
-  FILE_SELECTED = 'FILE_SELECTED',
-  UNDER_REVIEW = 'UNDER_REVIEW',
-  APPROVED = 'APPROVED',
-  REJECTED = 'REJECTED',
-  ALREADY_CLAIMED = 'ALREADY_CLAIMED'
-}
+export const UI_REVIEW_WIDGET_STATE = {
+  DEFAULT: 'DEFAULT',
+  FILE_SELECTED: 'FILE_SELECTED',
+  UNDER_REVIEW: 'UNDER_REVIEW',
+  APPROVED: 'APPROVED',
+  REJECTED: 'REJECTED',
+  ALREADY_CLAIMED: 'ALREADY_CLAIMED'
+} as const
+
+export type UiReviewWidgetState = (typeof UI_REVIEW_WIDGET_STATE)[keyof typeof UI_REVIEW_WIDGET_STATE]
 
 export interface UiReviewStateContent {
   image: string
@@ -27,7 +30,6 @@ export type UiReviewWidgetProps = Pick<UiFileUploadProps, 'formats' | 'maxSizeBy
   state: UiReviewWidgetState
   config: UiReviewWidgetConfig
   ui?: UiProp<ReviewWidgetUi>
-  dataTest?: string
 }
 
 export interface UiReviewWidgetEmits {
@@ -39,12 +41,12 @@ export interface UiReviewWidgetEmits {
 <script setup lang="ts">
 import { computed } from 'vue'
 import type { ClassNameValue } from 'tailwind-merge'
-import { useAppConfig } from '@src/composables/useAppConfig'
-import { useComponentAttributes } from '@src/composables/useUiClasses'
-import UiImage from '@src/components/image/UiImage.vue'
-import UiButton from '@src/components/button/UiButton.vue'
-import UiFileUpload, { type UiFileUploadProps } from '@src/components/file-upload/UiFileUpload.vue'
-import UiFilePreviewItem from '@src/components/file-preview-item/UiFilePreviewItem.vue'
+import { useAppConfig } from '../../composables/useAppConfig'
+import { useComponentAttributes } from '../../composables/useUiClasses'
+import UiImage from '../image/UiImage.vue'
+import UiButton from '../button/UiButton.vue'
+import UiFileUpload from '../file-upload/UiFileUpload.vue'
+import UiFilePreviewItem from '../file-preview-item/UiFilePreviewItem.vue'
 import theme from './theme'
 
 defineOptions({
@@ -53,7 +55,6 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<UiReviewWidgetProps>(), {
-  dataTest: 'review-widget',
   ui: undefined
 })
 
@@ -97,15 +98,20 @@ const currentContent = computed<UiReviewStateContent | undefined>(() => {
   return props.config.states[props.state]
 })
 
-const shouldShowUploader = computed(() => {
-  return [UiReviewWidgetState.DEFAULT, UiReviewWidgetState.FILE_SELECTED, UiReviewWidgetState.REJECTED].includes(
-    props.state
-  )
-})
+const uploaderStates: UiReviewWidgetState[] = [
+  UI_REVIEW_WIDGET_STATE.DEFAULT,
+  UI_REVIEW_WIDGET_STATE.FILE_SELECTED,
+  UI_REVIEW_WIDGET_STATE.REJECTED
+]
 
-const shouldShowContactSupport = computed(() => {
-  return [UiReviewWidgetState.UNDER_REVIEW, UiReviewWidgetState.ALREADY_CLAIMED].includes(props.state)
-})
+const contactSupportStates: UiReviewWidgetState[] = [
+  UI_REVIEW_WIDGET_STATE.UNDER_REVIEW,
+  UI_REVIEW_WIDGET_STATE.ALREADY_CLAIMED
+]
+
+const shouldShowUploader = computed(() => uploaderStates.includes(props.state))
+
+const shouldShowContactSupport = computed(() => contactSupportStates.includes(props.state))
 
 const handleContactSupport = () => {
   emit('contact-support')
@@ -119,7 +125,7 @@ const handleUpload = () => {
 </script>
 
 <template>
-  <div :class="className" v-bind="attributes" :data-test="dataTest">
+  <div :class="className" v-bind="attributes">
     <div :class="uiClasses.container">
       <h2 v-if="config.headerTitle" :class="uiClasses.headerTitle">
         {{ config.headerTitle }}

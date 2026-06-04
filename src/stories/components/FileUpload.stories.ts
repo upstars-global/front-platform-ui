@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import { action } from 'storybook/actions'
 import { ref, watch } from 'vue'
-import UiFileUpload, { UiFileUploadErrorType } from '@src/components/file-upload/UiFileUpload.vue'
+import UiFileUpload, { type UiFileUploadErrorType } from '@src/components/file-upload/UiFileUpload.vue'
 import { emitsObserver } from '@src/stories/utils/decorators'
 import { formatBytes } from '@src/helpers/formatBytes'
 

@@ -1,4 +1,5 @@
 <script lang="ts">
+import type { ClassNameValue } from 'tailwind-merge'
 import type { UiProp } from '../types'
 import type { FileUploadUi } from './theme'
 
@@ -7,14 +8,15 @@ export interface UiFileUploadProps {
   maxSizeBytes?: number
 
   disabled?: boolean
-  dataTest?: string
   ui?: UiProp<FileUploadUi>
 }
 
-export enum UiFileUploadErrorType {
-  FORMAT = 'format',
-  SIZE = 'size'
-}
+export const UI_FILE_UPLOAD_ERROR_TYPE = {
+  FORMAT: 'format',
+  SIZE: 'size'
+} as const
+
+export type UiFileUploadErrorType = (typeof UI_FILE_UPLOAD_ERROR_TYPE)[keyof typeof UI_FILE_UPLOAD_ERROR_TYPE]
 
 export interface UiFileUploadEmits {
   error: [type: UiFileUploadErrorType, meta: { formats?: string[]; maxSizeBytes?: number }]
@@ -24,8 +26,7 @@ export interface UiFileUploadEmits {
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import type { ClassNameValue } from 'tailwind-merge'
-import UiButton from '@src/components/button/UiButton.vue'
+import UiButton from '../button/UiButton.vue'
 import { useAppConfig } from '../../composables/useAppConfig'
 import { useComponentAttributes } from '../../composables/useUiClasses'
 import { prepareVariants } from '../../helpers/prepareClassNames'
@@ -40,7 +41,6 @@ const props = withDefaults(defineProps<UiFileUploadProps>(), {
   formats: () => ['jpg', 'jpeg', 'png', 'pdf', 'heic'],
   maxSizeBytes: 20 * 1024 * 1024,
   disabled: false,
-  dataTest: 'file-upload',
   ui: undefined
 })
 
@@ -118,13 +118,13 @@ const handleFileChange = (event: Event) => {
   const isFileFormatValid = isFormatValid(fileName)
 
   if (!isFileFormatValid) {
-    emit('error', UiFileUploadErrorType.FORMAT, { formats: props.formats })
+    emit('error', UI_FILE_UPLOAD_ERROR_TYPE.FORMAT, { formats: props.formats })
     target.value = ''
     return
   }
 
   if (fileSize > props.maxSizeBytes) {
-    emit('error', UiFileUploadErrorType.SIZE, { maxSizeBytes: props.maxSizeBytes })
+    emit('error', UI_FILE_UPLOAD_ERROR_TYPE.SIZE, { maxSizeBytes: props.maxSizeBytes })
     target.value = ''
     return
   }
@@ -141,7 +141,7 @@ const handleUpload = () => {
 </script>
 
 <template>
-  <div :class="className" v-bind="attributes" :data-test="dataTest">
+  <div :class="className" v-bind="attributes">
     <div :class="uiClasses.container">
       <input
         ref="fileInput"

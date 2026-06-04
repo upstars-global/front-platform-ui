@@ -1,12 +1,11 @@
 <script lang="ts">
-import type { UiProp } from '@src/components/types'
+import type { UiProp } from '../types'
 import type { FilePreviewItemUi } from './theme'
 import type { UiIconName } from '../icon/config'
 
 export interface UiFilePreviewItemProps {
   file: File
   ui?: UiProp<FilePreviewItemUi>
-  dataTest?: string
   removeIconName?: UiIconName
 }
 
@@ -17,11 +16,10 @@ export interface UiFilePreviewItemEmits {
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import type { ClassNameValue } from 'tailwind-merge'
-import { useAppConfig } from '@src/composables/useAppConfig'
-import { useComponentAttributes } from '@src/composables/useUiClasses'
-import UiIcon from '@src/components/icon/UiIcon.vue'
-import UiButton from '@src/components/button/UiButton.vue'
+import { useAppConfig } from '../../composables/useAppConfig'
+import { useComponentAttributes } from '../../composables/useUiClasses'
+import UiIcon from '../icon/UiIcon.vue'
+import UiButton from '../button/UiButton.vue'
 import theme from './theme'
 
 defineOptions({
@@ -30,7 +28,6 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<UiFilePreviewItemProps>(), {
-  dataTest: 'file-preview-item',
   ui: undefined,
   removeIconName: 'trashBin'
 })
@@ -42,7 +39,7 @@ const appConfig = useAppConfig()
 const { attributes, className, mergeClasses } = useComponentAttributes(
   'ui-file-preview-item',
   computed(() => {
-    return [theme.base, appConfig.ui?.filePreviewItem?.base, props.ui?.base].filter(Boolean) as ClassNameValue[]
+    return [theme.base, appConfig.ui?.filePreviewItem?.base, props.ui?.base].filter(Boolean)
   }),
   props.ui?.strategy || appConfig?.ui?.filePreviewItem?.strategy
 )
@@ -69,7 +66,7 @@ const uiClasses = computed(() => {
 </script>
 
 <template>
-  <div :class="className" v-bind="attributes" :data-test="dataTest">
+  <div :class="className" v-bind="attributes">
     <div :class="uiClasses.container">
       <div :class="uiClasses.infoContainer">
         <div :class="uiClasses.contentContainer">

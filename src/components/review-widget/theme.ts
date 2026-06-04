@@ -1,25 +1,16 @@
-export interface ReviewWidgetUi {
-  base?: string
-  container?: string
-  headerTitle?: string
-  imageContainer?: string
-  image?: string
-  contentContainer?: string
-  content?: string
-  title?: string
-  description?: string
-  actionArea?: string
+const reviewWidget = {
+  base: 'w-full',
+  container: 'flex flex-col items-center w-full gap-6 p-4 rounded-4',
+  headerTitle: 'text-center text-h3 font-bold',
+  imageContainer: 'flex justify-center w-24 h-24',
+  image: 'w-full h-full',
+  contentContainer: 'flex flex-col items-center text-center w-full gap-4',
+  content: 'flex flex-col gap-4',
+  title: '',
+  description: 'text-body',
+  actionArea: 'w-full'
 }
 
-export default {
-  base: 'w-full',
-  container: 'flex flex-col items-center w-full',
-  headerTitle: 'text-center',
-  imageContainer: 'flex justify-center',
-  image: 'w-full h-full',
-  contentContainer: 'flex flex-col items-center text-center w-full',
-  content: '',
-  title: '',
-  description: '',
-  actionArea: ''
-} as ReviewWidgetUi
+export type ReviewWidgetUi = typeof reviewWidget
+
+export default reviewWidget
