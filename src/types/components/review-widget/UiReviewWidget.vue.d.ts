@@ -61,6 +61,10 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<Pick<U
         content: UiReviewStateContent;
     }) => any;
 } & {
+    'file-preview-item-file-size'?: (props: {
+        fileSize: number;
+    }) => any;
+} & {
     'contact-support-button'?: (props: {}) => any;
 } & {
     'file-upload-button'?: (props: {}) => any;

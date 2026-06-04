@@ -21,6 +21,10 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiFile
     dataTest: string;
     removeIconName: UiIconName;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
+    'file-size'?: (props: {
+        fileSize: number;
+    }) => any;
+} & {
     'remove-icon'?: (props: {}) => any;
 }>;
 type __VLS_WithSlots<T, S> = T & {
