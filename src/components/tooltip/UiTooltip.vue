@@ -63,7 +63,8 @@ const { floatingStyles, middlewareData } = useFloating(reference, floating, {
   strategy: props.strategy,
   whileElementsMounted: autoUpdate,
   placement,
-  middleware
+  middleware,
+  transform: false
 })
 
 const appConfig = useAppConfig()
