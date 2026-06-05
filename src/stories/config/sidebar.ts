@@ -6,6 +6,7 @@ export const getSidebarNavigation = (hideVip?: boolean, hideVipImage?: boolean):
   { route: '/promo', title: 'Promotions', dataTest: 'sidebar-promotions', icon: 'arena' },
   { route: '/bonus', title: 'Top offers', dataTest: 'sidebar-casino-bonuses', icon: 'bonuses' },
   { route: '/gift', title: 'Gift Shop', dataTest: 'sidebar-gift-shop-active', icon: 'giftShop' },
+  { route: '/gift', title: 'Gift Shop', dataTest: 'sidebar-gift-shop-active', icon: 'giftShopFelix' },
   {
     route: '/santa',
     title: 'Santa’s Lapland',

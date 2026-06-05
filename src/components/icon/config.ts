@@ -59,6 +59,7 @@ import bonuses from '../../assets/icons/navigation/bonuses.svg?raw'
 import eSport from '../../assets/icons/navigation/esport.svg?raw'
 import faq from '../../assets/icons/navigation/faq.svg?raw'
 import giftShop from '../../assets/icons/navigation/giftShop.svg?raw'
+import giftShopFelix from '../../assets/icons/navigation/giftShopFelix.svg?raw'
 import more from '../../assets/icons/navigation/more.svg?raw'
 import pokies from '../../assets/icons/navigation/pokies.svg?raw'
 import profile from '../../assets/icons/navigation/profile.svg?raw'
@@ -146,6 +147,7 @@ const iconsNavigation = {
   profile,
   faq,
   giftShop,
+  giftShopFelix,
   birthdayPromo,
   birthdayPromo2,
   newYearPromo,
