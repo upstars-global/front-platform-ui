@@ -25,20 +25,14 @@ const defaultConfig: UiReviewWidgetConfig = {
     [UI_REVIEW_WIDGET_STATE.UNDER_REVIEW]: {
       image: '/assets/review-widget/review-bonus.svg',
       imageAlt: 'Bonus gift',
-      title: 'Your screenshot is under review',
-      description: 'Please give us a bit more time — we’ll notify you once it’s processed'
+      title: 'Your screenshot sent',
+      description: 'Review will be completed by <b>June 6, 4:20 PM</b>. We’ll notify you once it’s done.'
     },
     [UI_REVIEW_WIDGET_STATE.APPROVED]: {
       image: '/assets/review-widget/review-bonus.svg',
       imageAlt: 'Bonus gift',
       title: 'Your screenshot approved',
       description: 'The gift has been credited — enjoy!'
-    },
-    [UI_REVIEW_WIDGET_STATE.REJECTED]: {
-      image: '/assets/review-widget/review-bonus.svg',
-      imageAlt: 'Bonus gift',
-      title: 'Your screenshot not approved',
-      description: 'Please check your screenshot and upload it again'
     },
     [UI_REVIEW_WIDGET_STATE.ALREADY_CLAIMED]: {
       image: '/assets/review-widget/review-bonus.svg',
@@ -137,12 +131,6 @@ export const UnderReview: Story = {
 export const Approved: Story = {
   args: {
     state: UI_REVIEW_WIDGET_STATE.APPROVED
-  }
-}
-
-export const Rejected: Story = {
-  args: {
-    state: UI_REVIEW_WIDGET_STATE.REJECTED
   }
 }
 

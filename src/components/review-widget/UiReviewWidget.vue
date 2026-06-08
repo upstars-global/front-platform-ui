@@ -8,7 +8,6 @@ export const UI_REVIEW_WIDGET_STATE = {
   FILE_SELECTED: 'FILE_SELECTED',
   UNDER_REVIEW: 'UNDER_REVIEW',
   APPROVED: 'APPROVED',
-  REJECTED: 'REJECTED',
   ALREADY_CLAIMED: 'ALREADY_CLAIMED'
 } as const
 
@@ -98,11 +97,7 @@ const currentContent = computed<UiReviewStateContent | undefined>(() => {
   return props.config.states[props.state]
 })
 
-const uploaderStates: UiReviewWidgetState[] = [
-  UI_REVIEW_WIDGET_STATE.DEFAULT,
-  UI_REVIEW_WIDGET_STATE.FILE_SELECTED,
-  UI_REVIEW_WIDGET_STATE.REJECTED
-]
+const uploaderStates: UiReviewWidgetState[] = [UI_REVIEW_WIDGET_STATE.DEFAULT, UI_REVIEW_WIDGET_STATE.FILE_SELECTED]
 
 const contactSupportStates: UiReviewWidgetState[] = [
   UI_REVIEW_WIDGET_STATE.UNDER_REVIEW,
@@ -127,9 +122,7 @@ const handleUpload = () => {
 <template>
   <div :class="className" v-bind="attributes">
     <div :class="uiClasses.container">
-      <h2 v-if="config.headerTitle" :class="uiClasses.headerTitle">
-        {{ config.headerTitle }}
-      </h2>
+      <h2 v-if="config.headerTitle" :class="uiClasses.headerTitle" v-html="config.headerTitle" />
 
       <div v-if="currentContent" :class="uiClasses.contentContainer">
         <div :class="uiClasses.imageContainer">
@@ -139,15 +132,10 @@ const handleUpload = () => {
         </div>
 
         <div :class="uiClasses.content">
-          <h3 v-if="currentContent.title" :class="uiClasses.title">
-            {{ currentContent.title }}
-          </h3>
+          <h3 v-if="currentContent.title" :class="uiClasses.title" v-html="currentContent.title" />
+          <p v-if="currentContent.description" :class="uiClasses.description" v-html="currentContent.description" />
 
-          <p v-if="currentContent.description" :class="uiClasses.description">
-            {{ currentContent.description }}
-          </p>
-
-          <UiFilePreviewItem v-if="fileModel" :file="fileModel" @remove="fileModel = null">
+          <UiFilePreviewItem v-if="fileModel && shouldShowUploader" :file="fileModel" @remove="fileModel = null">
             <template #file-size="{ fileSize }">
               <slot name="file-preview-item-file-size" :file-size />
             </template>
