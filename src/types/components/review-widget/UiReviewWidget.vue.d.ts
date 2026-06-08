@@ -6,7 +6,6 @@ export declare const UI_REVIEW_WIDGET_STATE: {
     readonly FILE_SELECTED: "FILE_SELECTED";
     readonly UNDER_REVIEW: "UNDER_REVIEW";
     readonly APPROVED: "APPROVED";
-    readonly REJECTED: "REJECTED";
     readonly ALREADY_CLAIMED: "ALREADY_CLAIMED";
 };
 export type UiReviewWidgetState = (typeof UI_REVIEW_WIDGET_STATE)[keyof typeof UI_REVIEW_WIDGET_STATE];
