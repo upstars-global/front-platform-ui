@@ -68,7 +68,13 @@ export type { ModalItem, ModalRendererEmits } from './modal-renderer/types'
 export type { UiPictureProps, UiPictureEmits } from './picture/UiPicture.vue'
 export type { UiPopoverProps, UiPopoverSlots } from './popover/UiPopover.vue'
 export type { UiProgressBarProps, UiProgressBarSlots } from './progress-bar/UiProgressBar.vue'
-export type { UiReviewWidgetProps, UiReviewWidgetEmits } from './review-widget/UiReviewWidget.vue'
+export {
+  UI_REVIEW_WIDGET_STATE,
+  type UiReviewWidgetProps,
+  type UiReviewWidgetEmits,
+  type UiReviewWidgetState,
+  type UiReviewWidgetConfig
+} from './review-widget/UiReviewWidget.vue'
 export type { UiScrollProps, UiScrollEmits, UiScrollSlots } from './scroll/UiScroll.vue'
 export type { UiSelectProps, UiSelectEmits, UiSelectSlots, SelectOption } from './select/UiSelect.vue'
 export type { UiSidebarProps, UiSidebarEmits, UiSidebarSlots } from './sidebar/UiSidebar.vue'
