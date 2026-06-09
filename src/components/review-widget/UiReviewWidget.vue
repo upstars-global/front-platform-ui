@@ -158,19 +158,23 @@ const handleUpload = () => {
         >
           <slot name="contact-support-button" />
         </UiButton>
-        <template v-else-if="shouldShowUploader">
-          <UiFileUpload v-model:file="fileModel" :formats :max-size-bytes @upload="handleUpload">
-            <template #button>
-              <slot name="file-upload-button" />
-            </template>
-            <template #send-button>
-              <slot name="file-upload-send-button" />
-            </template>
-            <template #description="{ formats, maxSizeBytes }">
-              <slot name="file-upload-description" :formats :max-size-bytes />
-            </template>
-          </UiFileUpload>
-        </template>
+        <UiFileUpload
+          v-else-if="shouldShowUploader"
+          v-model:file="fileModel"
+          :formats
+          :max-size-bytes
+          @upload="handleUpload"
+        >
+          <template #button>
+            <slot name="file-upload-button" />
+          </template>
+          <template #send-button>
+            <slot name="file-upload-send-button" />
+          </template>
+          <template #description="{ formats, maxSizeBytes }">
+            <slot name="file-upload-description" :formats :max-size-bytes />
+          </template>
+        </UiFileUpload>
       </div>
     </div>
   </div>

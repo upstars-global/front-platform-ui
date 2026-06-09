@@ -25,7 +25,7 @@ export interface UiFileUploadEmits {
 </script>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { computed, useTemplateRef } from 'vue'
 import UiButton from '../button/UiButton.vue'
 import { useAppConfig } from '../../composables/useAppConfig'
 import { useComponentAttributes } from '../../composables/useUiClasses'
@@ -48,7 +48,7 @@ const fileModel = defineModel<File | null>('file', { default: null })
 
 const emit = defineEmits<UiFileUploadEmits>()
 
-const fileInput = ref<HTMLInputElement | null>(null)
+const fileInput = useTemplateRef('fileInput')
 
 const appConfig = useAppConfig()
 
