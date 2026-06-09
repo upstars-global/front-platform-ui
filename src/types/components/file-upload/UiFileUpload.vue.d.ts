@@ -3,6 +3,7 @@ import type { FileUploadUi } from './theme';
 export interface UiFileUploadProps {
     formats?: string[];
     maxSizeBytes?: number;
+    allowUpload?: boolean;
     disabled?: boolean;
     ui?: UiProp<FileUploadUi>;
 }
@@ -16,6 +17,7 @@ export interface UiFileUploadEmits {
         formats?: string[];
         maxSizeBytes?: number;
     }];
+    'upload-click': [];
     upload: [file: File];
 }
 declare const _default: typeof __VLS_export;
@@ -28,6 +30,7 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiFile
         maxSizeBytes?: number;
     }) => any;
     "update:file": (value: File | null) => any;
+    "upload-click": () => any;
     upload: (file: File) => any;
 }, string, import("vue").PublicProps, Readonly<UiFileUploadProps & {
     file?: File | null;
@@ -37,6 +40,7 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiFile
         maxSizeBytes?: number;
     }) => any) | undefined;
     "onUpdate:file"?: ((value: File | null) => any) | undefined;
+    "onUpload-click"?: (() => any) | undefined;
     onUpload?: ((file: File) => any) | undefined;
 }>, {
     disabled: boolean;

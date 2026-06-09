@@ -22,6 +22,7 @@ export interface UiReviewWidgetConfig {
 export type UiReviewWidgetProps = Pick<UiFileUploadProps, 'formats' | 'maxSizeBytes'> & {
     state: UiReviewWidgetState;
     config: UiReviewWidgetConfig;
+    allowUpload?: boolean;
     ui?: UiProp<ReviewWidgetUi>;
 };
 export interface UiReviewWidgetEmits {
@@ -33,6 +34,7 @@ export default _default;
 declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<Pick<UiFileUploadProps, "formats" | "maxSizeBytes"> & {
     state: UiReviewWidgetState;
     config: UiReviewWidgetConfig;
+    allowUpload?: boolean;
     ui?: UiProp<ReviewWidgetUi>;
 } & {
     file?: File | null;
@@ -43,6 +45,7 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<Pick<U
 }, string, import("vue").PublicProps, Readonly<Pick<UiFileUploadProps, "formats" | "maxSizeBytes"> & {
     state: UiReviewWidgetState;
     config: UiReviewWidgetConfig;
+    allowUpload?: boolean;
     ui?: UiProp<ReviewWidgetUi>;
 } & {
     file?: File | null;
@@ -52,6 +55,7 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<Pick<U
     "onContact-support"?: (() => any) | undefined;
 }>, {
     ui: UiProp<ReviewWidgetUi>;
+    allowUpload: boolean;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
     image?: (props: {
         content: UiReviewStateContent;
