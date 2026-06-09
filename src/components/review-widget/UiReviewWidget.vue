@@ -28,6 +28,7 @@ export interface UiReviewWidgetConfig {
 export type UiReviewWidgetProps = Pick<UiFileUploadProps, 'formats' | 'maxSizeBytes'> & {
   state: UiReviewWidgetState
   config: UiReviewWidgetConfig
+  allowUpload?: boolean
   ui?: UiProp<ReviewWidgetUi>
 }
 
@@ -54,7 +55,8 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<UiReviewWidgetProps>(), {
-  ui: undefined
+  ui: undefined,
+  allowUpload: true
 })
 
 const emit = defineEmits<UiReviewWidgetEmits>()
@@ -163,6 +165,7 @@ const handleUpload = () => {
           v-model:file="fileModel"
           :formats
           :max-size-bytes
+          :allow-upload
           @upload="handleUpload"
         >
           <template #button>

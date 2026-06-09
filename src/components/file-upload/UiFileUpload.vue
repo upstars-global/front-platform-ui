@@ -6,6 +6,7 @@ import type { FileUploadUi } from './theme'
 export interface UiFileUploadProps {
   formats?: string[]
   maxSizeBytes?: number
+  allowUpload?: boolean
 
   disabled?: boolean
   ui?: UiProp<FileUploadUi>
@@ -20,6 +21,7 @@ export type UiFileUploadErrorType = (typeof UI_FILE_UPLOAD_ERROR_TYPE)[keyof typ
 
 export interface UiFileUploadEmits {
   error: [type: UiFileUploadErrorType, meta: { formats?: string[]; maxSizeBytes?: number }]
+  'upload-click': []
   upload: [file: File]
 }
 </script>
@@ -87,9 +89,17 @@ const acceptedFileTypes = computed(() => {
 
 const displayFileFormats = computed(() => props.formats?.map((format) => format.trim().toUpperCase()).join(', ') ?? '')
 
-const openFilePicker = () => {
+const handleButtonClick = () => {
   if (props.disabled) return
 
+  emit('upload-click')
+
+  if (!props.allowUpload) return
+
+  openFilePicker()
+}
+
+const openFilePicker = () => {
   fileInput.value?.click()
 }
 
@@ -169,7 +179,7 @@ const handleUpload = () => {
         full-width
         variant="primary"
         :disabled="disabled"
-        @click="openFilePicker"
+        @click="handleButtonClick"
       >
         <slot name="button" />
       </UiButton>
