@@ -14,28 +14,27 @@ const defaultConfig: UiReviewWidgetConfig = {
   states: {
     [UI_REVIEW_WIDGET_STATE.DEFAULT]: {
       image: '/assets/review-widget/review-bonus.svg',
+      imageRetina: '/assets/review-widget/review-bonus.svg',
       imageAlt: 'Bonus gift',
       description: 'Your 20 Free Spins await! Upload your review screenshot here'
     },
-    [UI_REVIEW_WIDGET_STATE.FILE_SELECTED]: {
-      image: '/assets/review-widget/review-bonus.svg',
-      imageAlt: 'Bonus gift',
-      description: 'Your 20 Free Spins await! Send your review screenshot here'
-    },
     [UI_REVIEW_WIDGET_STATE.UNDER_REVIEW]: {
       image: '/assets/review-widget/review-bonus.svg',
+      imageRetina: '/assets/review-widget/review-bonus.svg',
       imageAlt: 'Bonus gift',
       title: 'Your screenshot sent',
       description: 'Review will be completed by <b>June 6, 4:20 PM</b>. We’ll notify you once it’s done.'
     },
     [UI_REVIEW_WIDGET_STATE.APPROVED]: {
       image: '/assets/review-widget/review-bonus.svg',
+      imageRetina: '/assets/review-widget/review-bonus.svg',
       imageAlt: 'Bonus gift',
       title: 'Your screenshot approved',
       description: 'The gift has been credited — enjoy!'
     },
     [UI_REVIEW_WIDGET_STATE.ALREADY_CLAIMED]: {
       image: '/assets/review-widget/review-bonus.svg',
+      imageRetina: '/assets/review-widget/review-bonus.svg',
       imageAlt: 'Bonus gift',
       title: 'You’ve already got Free Spins',
       description: 'You can claim them once per month'
@@ -112,13 +111,6 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   args: {
     state: UI_REVIEW_WIDGET_STATE.DEFAULT
-  }
-}
-
-export const FileSelected: Story = {
-  args: {
-    file: new File([new ArrayBuffer(1024 * 1024 * 8)], 'IMG_2043_12324259694.jpg', { type: 'image/jpeg' }),
-    state: UI_REVIEW_WIDGET_STATE.FILE_SELECTED
   }
 }
 

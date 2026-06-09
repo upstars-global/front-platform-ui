@@ -5,7 +5,6 @@ import type { UiFileUploadProps } from '../file-upload/UiFileUpload.vue'
 
 export const UI_REVIEW_WIDGET_STATE = {
   DEFAULT: 'DEFAULT',
-  FILE_SELECTED: 'FILE_SELECTED',
   UNDER_REVIEW: 'UNDER_REVIEW',
   APPROVED: 'APPROVED',
   ALREADY_CLAIMED: 'ALREADY_CLAIMED'
@@ -15,6 +14,7 @@ export type UiReviewWidgetState = (typeof UI_REVIEW_WIDGET_STATE)[keyof typeof U
 
 export interface UiReviewStateContent {
   image: string
+  imageRetina: string
   imageAlt: string
   title?: string
   description?: string
@@ -97,7 +97,7 @@ const currentContent = computed<UiReviewStateContent | undefined>(() => {
   return props.config.states[props.state]
 })
 
-const uploaderStates: UiReviewWidgetState[] = [UI_REVIEW_WIDGET_STATE.DEFAULT, UI_REVIEW_WIDGET_STATE.FILE_SELECTED]
+const uploaderStates: UiReviewWidgetState[] = [UI_REVIEW_WIDGET_STATE.DEFAULT]
 
 const contactSupportStates: UiReviewWidgetState[] = [
   UI_REVIEW_WIDGET_STATE.UNDER_REVIEW,
@@ -127,7 +127,12 @@ const handleUpload = () => {
       <div v-if="currentContent" :class="uiClasses.contentContainer">
         <div :class="uiClasses.imageContainer">
           <slot name="image" :content="currentContent">
-            <UiImage :src="currentContent.image" :alt="currentContent.imageAlt" :class="uiClasses.image" />
+            <UiImage
+              :src="currentContent.image"
+              :src-retina="currentContent.imageRetina"
+              :alt="currentContent.imageAlt"
+              :class="uiClasses.image"
+            />
           </slot>
         </div>
 
