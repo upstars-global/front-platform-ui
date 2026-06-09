@@ -3,7 +3,6 @@ import type { ReviewWidgetUi } from './theme';
 import type { UiFileUploadProps } from '../file-upload/UiFileUpload.vue';
 export declare const UI_REVIEW_WIDGET_STATE: {
     readonly DEFAULT: "DEFAULT";
-    readonly FILE_SELECTED: "FILE_SELECTED";
     readonly UNDER_REVIEW: "UNDER_REVIEW";
     readonly APPROVED: "APPROVED";
     readonly ALREADY_CLAIMED: "ALREADY_CLAIMED";
@@ -11,6 +10,7 @@ export declare const UI_REVIEW_WIDGET_STATE: {
 export type UiReviewWidgetState = (typeof UI_REVIEW_WIDGET_STATE)[keyof typeof UI_REVIEW_WIDGET_STATE];
 export interface UiReviewStateContent {
     image: string;
+    imageRetina: string;
     imageAlt: string;
     title?: string;
     description?: string;
