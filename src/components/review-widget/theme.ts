@@ -5,7 +5,7 @@ const reviewWidget = {
   imageContainer: 'flex justify-center w-24 h-24',
   image: 'w-full h-full',
   contentContainer: 'flex flex-col items-center text-center w-full gap-4',
-  content: 'flex flex-col gap-4',
+  content: 'flex flex-col gap-2',
   title: '',
   description: 'text-body',
   actionArea: 'w-full'
