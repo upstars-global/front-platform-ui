@@ -29,6 +29,7 @@ import UiModalRenderer from './modal-renderer/UiModalRenderer.vue'
 import UiPicture from './picture/UiPicture.vue'
 import UiPopover from './popover/UiPopover.vue'
 import UiProgressBar from './progress-bar/UiProgressBar.vue'
+import UiReviewWidget from './review-widget/UiReviewWidget.vue'
 import UiScroll from './scroll/UiScroll.vue'
 import UiSelect from './select/UiSelect.vue'
 import UiSidebar from './sidebar/UiSidebar.vue'
@@ -67,6 +68,7 @@ export type { ModalItem, ModalRendererEmits } from './modal-renderer/types'
 export type { UiPictureProps, UiPictureEmits } from './picture/UiPicture.vue'
 export type { UiPopoverProps, UiPopoverSlots } from './popover/UiPopover.vue'
 export type { UiProgressBarProps, UiProgressBarSlots } from './progress-bar/UiProgressBar.vue'
+export type { UiReviewWidgetProps, UiReviewWidgetEmits } from './review-widget/UiReviewWidget.vue'
 export type { UiScrollProps, UiScrollEmits, UiScrollSlots } from './scroll/UiScroll.vue'
 export type { UiSelectProps, UiSelectEmits, UiSelectSlots, SelectOption } from './select/UiSelect.vue'
 export type { UiSidebarProps, UiSidebarEmits, UiSidebarSlots } from './sidebar/UiSidebar.vue'
@@ -106,6 +108,7 @@ export {
   UiPicture,
   UiPopover,
   UiProgressBar,
+  UiReviewWidget,
   UiScroll,
   UiSelect,
   UiSidebar,
