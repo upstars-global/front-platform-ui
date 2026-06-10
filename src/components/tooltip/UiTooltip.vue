@@ -16,6 +16,7 @@ export interface UiTooltipProps {
   offsetValue?: number
   disabled?: boolean
   trigger?: 'hover' | 'click' | 'always'
+  isTransform?: boolean
   ui?: UiProp<TooltipUi>
 }
 
@@ -32,6 +33,7 @@ const props = withDefaults(defineProps<UiTooltipProps>(), {
   offsetValue: 8,
   disabled: false,
   trigger: 'hover',
+  isTransform: false,
   ui: undefined
 })
 
@@ -63,7 +65,8 @@ const { floatingStyles, middlewareData } = useFloating(reference, floating, {
   strategy: props.strategy,
   whileElementsMounted: autoUpdate,
   placement,
-  middleware
+  middleware,
+  transform: props.isTransform
 })
 
 const appConfig = useAppConfig()
