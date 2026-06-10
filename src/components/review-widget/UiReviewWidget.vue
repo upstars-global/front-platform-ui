@@ -1,7 +1,7 @@
 <script lang="ts">
 import type { UiProp } from '../types'
 import type { ReviewWidgetUi } from './theme'
-import type { UiFileUploadProps } from '../file-upload/UiFileUpload.vue'
+import type { UiFileUploadEmits, UiFileUploadError, UiFileUploadProps } from '../file-upload/UiFileUpload.vue'
 
 export const UI_REVIEW_WIDGET_STATE = {
   DEFAULT: 'DEFAULT',
@@ -25,14 +25,14 @@ export interface UiReviewWidgetConfig {
   states: Partial<Record<UiReviewWidgetState, UiReviewStateContent>>
 }
 
-export type UiReviewWidgetProps = Pick<UiFileUploadProps, 'formats' | 'maxSizeBytes'> & {
+export type UiReviewWidgetProps = Pick<UiFileUploadProps, 'formats' | 'maxSizeBytes' | 'allowUpload' | 'disabled'> & {
   state: UiReviewWidgetState
   config: UiReviewWidgetConfig
-  allowUpload?: boolean
   ui?: UiProp<ReviewWidgetUi>
 }
 
 export interface UiReviewWidgetEmits {
+  error: UiFileUploadEmits['error']
   'contact-support': []
   'upload-click': []
   upload: [file: File]
@@ -119,6 +119,10 @@ const handleUploadClick = () => {
   emit('upload-click')
 }
 
+const handleError = (error: UiFileUploadError) => {
+  emit('error', error)
+}
+
 const handleUpload = () => {
   if (fileModel.value) {
     emit('upload', fileModel.value)
@@ -168,10 +172,12 @@ const handleUpload = () => {
         <UiFileUpload
           v-else-if="shouldShowUploader"
           v-model:file="fileModel"
+          :disabled
           :formats
           :max-size-bytes
           :allow-upload
           @upload-click="handleUploadClick"
+          @error="handleError"
           @upload="handleUpload"
         >
           <template #button>

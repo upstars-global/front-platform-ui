@@ -19,8 +19,12 @@ export const UI_FILE_UPLOAD_ERROR_TYPE = {
 
 export type UiFileUploadErrorType = (typeof UI_FILE_UPLOAD_ERROR_TYPE)[keyof typeof UI_FILE_UPLOAD_ERROR_TYPE]
 
+export type UiFileUploadError =
+  | { type: 'format'; meta: { formats: string[] } }
+  | { type: 'size'; meta: { maxSizeBytes: number } }
+
 export interface UiFileUploadEmits {
-  error: [type: UiFileUploadErrorType, meta: { formats?: string[]; maxSizeBytes?: number }]
+  error: [UiFileUploadError]
   'upload-click': []
   upload: [file: File]
 }
@@ -123,19 +127,20 @@ const handleFileChange = (event: Event) => {
   }
 
   const [file] = files
-  const fileName = file.name
-  const fileSize = file.size
 
-  const isFileFormatValid = isFormatValid(fileName)
+  const isFileFormatValid = isFormatValid(file.name)
 
   if (!isFileFormatValid) {
-    emit('error', UI_FILE_UPLOAD_ERROR_TYPE.FORMAT, { formats: props.formats })
+    emit('error', { type: UI_FILE_UPLOAD_ERROR_TYPE.FORMAT, meta: { formats: props.formats } })
     target.value = ''
     return
   }
 
-  if (fileSize > props.maxSizeBytes) {
-    emit('error', UI_FILE_UPLOAD_ERROR_TYPE.SIZE, { maxSizeBytes: props.maxSizeBytes })
+  if (file.size > props.maxSizeBytes) {
+    emit('error', {
+      type: UI_FILE_UPLOAD_ERROR_TYPE.SIZE,
+      meta: { maxSizeBytes: props.maxSizeBytes }
+    })
     target.value = ''
     return
   }
