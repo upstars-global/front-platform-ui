@@ -33,6 +33,12 @@ declare const bottomBar: {
             'component-c': string;
             'component-d': string;
         };
+        imageGift: {
+            'component-a': string;
+            'component-b': string;
+            'component-c': string;
+            'component-d': string;
+        };
         variants: {
             'component-a': string;
             'component-b': string;
