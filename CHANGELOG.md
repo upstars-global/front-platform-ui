@@ -1,3 +1,10 @@
+## [1.42.0](https://github.com/upstars-global/front-platform-ui/compare/v1.41.0...v1.42.0) (2026-06-10)
+
+### 🚀 Features
+
+* **FP-5437:** add badge-status color palette
+ ([7b72082](https://github.com/upstars-global/front-platform-ui/commit/7b7208211c4e0133d8f3ada02696506feeb5be76))
+
 ## [1.41.0](https://github.com/upstars-global/front-platform-ui/compare/v1.40.0...v1.41.0) (2026-05-27)
 
 ### 🚀 Features
