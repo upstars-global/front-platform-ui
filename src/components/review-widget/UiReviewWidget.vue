@@ -34,6 +34,7 @@ export type UiReviewWidgetProps = Pick<UiFileUploadProps, 'formats' | 'maxSizeBy
 
 export interface UiReviewWidgetEmits {
   'contact-support': []
+  'upload-click': []
   upload: [file: File]
 }
 </script>
@@ -114,6 +115,10 @@ const handleContactSupport = () => {
   emit('contact-support')
 }
 
+const handleUploadClick = () => {
+  emit('upload-click')
+}
+
 const handleUpload = () => {
   if (fileModel.value) {
     emit('upload', fileModel.value)
@@ -166,6 +171,7 @@ const handleUpload = () => {
           :formats
           :max-size-bytes
           :allow-upload
+          @upload-click="handleUploadClick"
           @upload="handleUpload"
         >
           <template #button>

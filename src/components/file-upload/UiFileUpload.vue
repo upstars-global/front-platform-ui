@@ -43,6 +43,7 @@ const props = withDefaults(defineProps<UiFileUploadProps>(), {
   formats: () => ['jpg', 'jpeg', 'png', 'pdf', 'heic'],
   maxSizeBytes: 20 * 1024 * 1024,
   disabled: false,
+  allowUpload: true,
   ui: undefined
 })
 
