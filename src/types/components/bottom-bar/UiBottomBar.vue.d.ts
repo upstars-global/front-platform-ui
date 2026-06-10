@@ -49,6 +49,7 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiBott
     variant: "component-a" | "component-b" | "component-c" | "component-d";
     ui: UiProp<BottomBarUi>;
     notificationCounter: number;
+    imageGift: UiImageProps;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
     default?: (props: {}) => any;
 }>;
