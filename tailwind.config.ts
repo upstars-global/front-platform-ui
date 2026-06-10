@@ -148,6 +148,12 @@ export const config = {
       },
       personal: {
         DEFAULT: '#ffe114'
+      },
+      'badge-status': {
+        error: '#ff7575',
+        warning: '#FEC352',
+        success: '#3EDC6A',
+        info: '#DC79EB'
       }
     },
     fontSize: {

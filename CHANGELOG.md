@@ -1,3 +1,40 @@
+## [1.43.0](https://github.com/upstars-global/front-platform-ui/compare/v1.42.0...v1.43.0) (2026-06-10)
+
+### 🐛 Bug Fixes
+
+* **FP-5418:** replace giftShopFelix.svg
+ ([3cb1095](https://github.com/upstars-global/front-platform-ui/commit/3cb10958791c83bf358ed8bea4b068ef5c37a7b2))
+
+
+* **FP-5418:** update giftShopFelix icon
+ ([cb48775](https://github.com/upstars-global/front-platform-ui/commit/cb48775a3a4bcfda4663a61eed7b9dc98425f6b6))
+
+
+* **icons:** remove redundant width and height attributes from giftShopFelix svg
+ ([ff6715d](https://github.com/upstars-global/front-platform-ui/commit/ff6715d88ef228817c62e2618ae2ab35fa71b77e))
+
+
+* **icons:** update viewBox dimensions for giftShopFelix icon
+ ([5b01772](https://github.com/upstars-global/front-platform-ui/commit/5b01772b8b778d119cd1b776e91908ba9e5b7b24))
+
+
+
+### 🚀 Features
+
+* **FP-5418:** add giftShopFelix icon and update sidebar configuration
+ ([dc1b0cf](https://github.com/upstars-global/front-platform-ui/commit/dc1b0cf68eefa3954fd531b82ec4e7a1a2d97f30))
+
+
+* **FP-5418:** add new gift shop icon
+ ([a6fbb03](https://github.com/upstars-global/front-platform-ui/commit/a6fbb03a94251290ae7a8b4a5d91ca2bf2449d49))
+
+## [1.42.0](https://github.com/upstars-global/front-platform-ui/compare/v1.41.0...v1.42.0) (2026-06-10)
+
+### 🚀 Features
+
+* **FP-5437:** add badge-status color palette
+ ([7b72082](https://github.com/upstars-global/front-platform-ui/commit/7b7208211c4e0133d8f3ada02696506feeb5be76))
+
 ## [1.41.0](https://github.com/upstars-global/front-platform-ui/compare/v1.40.0...v1.41.0) (2026-05-27)
 
 ### 🚀 Features
