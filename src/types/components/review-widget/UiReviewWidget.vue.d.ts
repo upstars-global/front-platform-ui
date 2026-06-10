@@ -1,6 +1,6 @@
 import type { UiProp } from '../types';
 import type { ReviewWidgetUi } from './theme';
-import type { UiFileUploadProps } from '../file-upload/UiFileUpload.vue';
+import type { UiFileUploadEmits, UiFileUploadError, UiFileUploadProps } from '../file-upload/UiFileUpload.vue';
 export declare const UI_REVIEW_WIDGET_STATE: {
     readonly DEFAULT: "DEFAULT";
     readonly UNDER_REVIEW: "UNDER_REVIEW";
@@ -19,39 +19,39 @@ export interface UiReviewWidgetConfig {
     headerTitle: string;
     states: Partial<Record<UiReviewWidgetState, UiReviewStateContent>>;
 }
-export type UiReviewWidgetProps = Pick<UiFileUploadProps, 'formats' | 'maxSizeBytes'> & {
+export type UiReviewWidgetProps = Pick<UiFileUploadProps, 'formats' | 'maxSizeBytes' | 'allowUpload' | 'disabled'> & {
     state: UiReviewWidgetState;
     config: UiReviewWidgetConfig;
-    allowUpload?: boolean;
     ui?: UiProp<ReviewWidgetUi>;
 };
 export interface UiReviewWidgetEmits {
+    error: UiFileUploadEmits['error'];
     'contact-support': [];
     'upload-click': [];
     upload: [file: File];
 }
 declare const _default: typeof __VLS_export;
 export default _default;
-declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<Pick<UiFileUploadProps, "formats" | "maxSizeBytes"> & {
+declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<Pick<UiFileUploadProps, "disabled" | "formats" | "maxSizeBytes" | "allowUpload"> & {
     state: UiReviewWidgetState;
     config: UiReviewWidgetConfig;
-    allowUpload?: boolean;
     ui?: UiProp<ReviewWidgetUi>;
 } & {
     file?: File | null;
 }, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+    error: (args_0: UiFileUploadError) => any;
     "update:file": (value: File | null) => any;
     "upload-click": () => any;
     upload: (file: File) => any;
     "contact-support": () => any;
-}, string, import("vue").PublicProps, Readonly<Pick<UiFileUploadProps, "formats" | "maxSizeBytes"> & {
+}, string, import("vue").PublicProps, Readonly<Pick<UiFileUploadProps, "disabled" | "formats" | "maxSizeBytes" | "allowUpload"> & {
     state: UiReviewWidgetState;
     config: UiReviewWidgetConfig;
-    allowUpload?: boolean;
     ui?: UiProp<ReviewWidgetUi>;
 } & {
     file?: File | null;
 }> & Readonly<{
+    onError?: ((args_0: UiFileUploadError) => any) | undefined;
     "onUpdate:file"?: ((value: File | null) => any) | undefined;
     "onUpload-click"?: (() => any) | undefined;
     onUpload?: ((file: File) => any) | undefined;

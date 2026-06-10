@@ -12,11 +12,19 @@ export declare const UI_FILE_UPLOAD_ERROR_TYPE: {
     readonly SIZE: "size";
 };
 export type UiFileUploadErrorType = (typeof UI_FILE_UPLOAD_ERROR_TYPE)[keyof typeof UI_FILE_UPLOAD_ERROR_TYPE];
+export type UiFileUploadError = {
+    type: 'format';
+    meta: {
+        formats: string[];
+    };
+} | {
+    type: 'size';
+    meta: {
+        maxSizeBytes: number;
+    };
+};
 export interface UiFileUploadEmits {
-    error: [type: UiFileUploadErrorType, meta: {
-        formats?: string[];
-        maxSizeBytes?: number;
-    }];
+    error: [UiFileUploadError];
     'upload-click': [];
     upload: [file: File];
 }
@@ -25,20 +33,14 @@ export default _default;
 declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiFileUploadProps & {
     file?: File | null;
 }, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
-    error: (type: UiFileUploadErrorType, meta: {
-        formats?: string[];
-        maxSizeBytes?: number;
-    }) => any;
+    error: (args_0: UiFileUploadError) => any;
     "update:file": (value: File | null) => any;
     "upload-click": () => any;
     upload: (file: File) => any;
 }, string, import("vue").PublicProps, Readonly<UiFileUploadProps & {
     file?: File | null;
 }> & Readonly<{
-    onError?: ((type: UiFileUploadErrorType, meta: {
-        formats?: string[];
-        maxSizeBytes?: number;
-    }) => any) | undefined;
+    onError?: ((args_0: UiFileUploadError) => any) | undefined;
     "onUpdate:file"?: ((value: File | null) => any) | undefined;
     "onUpload-click"?: (() => any) | undefined;
     onUpload?: ((file: File) => any) | undefined;
