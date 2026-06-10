@@ -1,3 +1,25 @@
+## [1.44.0](https://github.com/upstars-global/front-platform-ui/compare/v1.43.0...v1.44.0) (2026-06-10)
+
+### 🐛 Bug Fixes
+
+* **menu:** remove redundant `sm:justify-center` from menu base style
+ ([6a89f38](https://github.com/upstars-global/front-platform-ui/commit/6a89f388b1f38a53c820a8ffbbee9d5545065b2b))
+
+
+* **tooltip:** add `transform` option to positioning configuration
+ ([b3e3b7a](https://github.com/upstars-global/front-platform-ui/commit/b3e3b7a48b512326594c8234d4d8c72fbdabd408))
+
+
+* **tooltip:** make `transform` configurable via `isTransform` prop
+ ([ddc3673](https://github.com/upstars-global/front-platform-ui/commit/ddc3673839c223f7956c64c1644d4084d7ac0e0a))
+
+
+
+### 🚀 Features
+
+* **icons:** update SVG icons to use `currentColor` for better theming
+ ([69ca472](https://github.com/upstars-global/front-platform-ui/commit/69ca47297f325c572312af2c0ea82d238d3a91c6))
+
 ## [1.43.0](https://github.com/upstars-global/front-platform-ui/compare/v1.42.0...v1.43.0) (2026-06-10)
 
 ### 🐛 Bug Fixes
