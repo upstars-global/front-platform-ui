@@ -61,6 +61,7 @@ declare const iconsNavigation: {
     profile: string;
     faq: string;
     giftShop: string;
+    giftShopFelix: string;
     birthdayPromo: string;
     birthdayPromo2: string;
     newYearPromo: string;
