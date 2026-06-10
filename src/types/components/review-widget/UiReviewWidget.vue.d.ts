@@ -27,6 +27,7 @@ export type UiReviewWidgetProps = Pick<UiFileUploadProps, 'formats' | 'maxSizeBy
 };
 export interface UiReviewWidgetEmits {
     'contact-support': [];
+    'upload-click': [];
     upload: [file: File];
 }
 declare const _default: typeof __VLS_export;
@@ -40,6 +41,7 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<Pick<U
     file?: File | null;
 }, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
     "update:file": (value: File | null) => any;
+    "upload-click": () => any;
     upload: (file: File) => any;
     "contact-support": () => any;
 }, string, import("vue").PublicProps, Readonly<Pick<UiFileUploadProps, "formats" | "maxSizeBytes"> & {
@@ -51,6 +53,7 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<Pick<U
     file?: File | null;
 }> & Readonly<{
     "onUpdate:file"?: ((value: File | null) => any) | undefined;
+    "onUpload-click"?: (() => any) | undefined;
     onUpload?: ((file: File) => any) | undefined;
     "onContact-support"?: (() => any) | undefined;
 }>, {

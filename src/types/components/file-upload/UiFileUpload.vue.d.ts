@@ -47,6 +47,7 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiFile
     ui: UiProp<FileUploadUi>;
     formats: string[];
     maxSizeBytes: number;
+    allowUpload: boolean;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
     'send-button'?: (props: {}) => any;
 } & {
