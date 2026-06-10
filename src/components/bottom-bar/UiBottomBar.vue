@@ -60,7 +60,7 @@ defineOptions({
 const props = withDefaults(defineProps<UiBottomBarProps>(), {
   variant: 'component-a',
   notificationCounter: 0,
-  UiImageProps: undefined,
+  imageGift: undefined,
   ui: () => ({ strategy: 'merge' })
 })
 const emit = defineEmits<UiBottomBarEmits>()
