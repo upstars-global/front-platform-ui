@@ -35,7 +35,6 @@ import { computed, useTemplateRef } from 'vue'
 import UiButton from '../button/UiButton.vue'
 import { useAppConfig } from '../../composables/useAppConfig'
 import { useComponentAttributes } from '../../composables/useUiClasses'
-import { prepareVariants } from '../../helpers/prepareClassNames'
 import theme from './theme'
 
 defineOptions({
@@ -62,19 +61,7 @@ const appConfig = useAppConfig()
 const { attributes, className, mergeClasses } = useComponentAttributes(
   'ui-file-upload',
   computed(() => {
-    const commonClasses: ClassNameValue[] = [theme.base, appConfig.ui?.fileUpload?.base, props.ui?.base].filter(Boolean)
-
-    const states = prepareVariants<FileUploadUi['states']>({
-      theme: theme.states,
-      appConfig: appConfig?.ui?.fileUpload?.states,
-      uiProp: props.ui?.states
-    })
-
-    if (props.disabled) {
-      commonClasses.push(states.disabled)
-    }
-
-    return commonClasses
+    return [theme.base, appConfig.ui?.fileUpload?.base, props.ui?.base].filter(Boolean) as ClassNameValue[]
   }),
   props.ui?.strategy || appConfig?.ui?.fileUpload?.strategy
 )
@@ -82,7 +69,9 @@ const { attributes, className, mergeClasses } = useComponentAttributes(
 const uiClasses = computed(() => {
   return {
     container: mergeClasses(theme.container, appConfig.ui?.fileUpload?.container, props.ui?.container),
-    description: mergeClasses(theme.description, appConfig.ui?.fileUpload?.description, props.ui?.description)
+    description: mergeClasses(theme.description, appConfig.ui?.fileUpload?.description, props.ui?.description),
+    sendButton: mergeClasses(theme.sendButton, appConfig.ui?.fileUpload?.sendButton, props.ui?.sendButton),
+    button: mergeClasses(theme.button, appConfig.ui?.fileUpload?.button, props.ui?.button)
   }
 })
 
@@ -165,26 +154,26 @@ const handleUpload = () => {
         type="file"
         class="hidden"
         :accept="acceptedFileTypes"
-        :disabled="disabled"
+        :disabled
         @change="handleFileChange"
       />
 
       <UiButton
         v-show="fileModel"
+        :class="uiClasses.sendButton"
         type="button"
-        full-width
         variant="primary"
-        :disabled="disabled"
+        :disabled
         @click="handleUpload"
       >
         <slot name="send-button" />
       </UiButton>
       <UiButton
         v-show="!fileModel"
+        :class="uiClasses.button"
         type="button"
-        full-width
         variant="primary"
-        :disabled="disabled"
+        :disabled
         @click="handleButtonClick"
       >
         <slot name="button" />
