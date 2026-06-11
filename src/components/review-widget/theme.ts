@@ -8,6 +8,7 @@ const reviewWidget = {
   content: 'flex flex-col gap-2',
   title: '',
   description: 'text-body',
+  contactSupportButton: 'w-full md:w-auto',
   filePreviewItem: 'max-w-[560px]',
   actionArea: 'w-full'
 }

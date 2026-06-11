@@ -95,7 +95,12 @@ const uiClasses = computed(() => {
       appConfig.ui?.reviewWidget?.filePreviewItem,
       props.ui?.filePreviewItem
     ),
-    actionArea: mergeClasses(theme.actionArea, appConfig.ui?.reviewWidget?.actionArea, props.ui?.actionArea)
+    actionArea: mergeClasses(theme.actionArea, appConfig.ui?.reviewWidget?.actionArea, props.ui?.actionArea),
+    contactSupportButton: mergeClasses(
+      theme.contactSupportButton,
+      appConfig.ui?.reviewWidget?.contactSupportButton,
+      props.ui?.contactSupportButton
+    )
   }
 })
 
@@ -174,9 +179,9 @@ const handleUpload = () => {
       <div v-if="shouldShowUploader || shouldShowContactSupport" :class="uiClasses.actionArea">
         <UiButton
           v-if="shouldShowContactSupport"
+          :class="uiClasses.contactSupportButton"
           type="button"
           variant="primary"
-          class="w-full"
           @click="handleContactSupport"
         >
           <slot name="contact-support-button" />
