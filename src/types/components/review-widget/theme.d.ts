@@ -8,6 +8,7 @@ declare const reviewWidget: {
     content: string;
     title: string;
     description: string;
+    contactSupportButton: string;
     filePreviewItem: string;
     actionArea: string;
 };
