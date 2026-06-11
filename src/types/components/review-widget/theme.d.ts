@@ -8,6 +8,7 @@ declare const reviewWidget: {
     content: string;
     title: string;
     description: string;
+    filePreviewItem: string;
     actionArea: string;
 };
 export type ReviewWidgetUi = typeof reviewWidget;
