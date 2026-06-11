@@ -149,7 +149,7 @@ const handleUpload = () => {
 
         <div :class="uiClasses.content">
           <h3 v-if="currentContent.title" :class="uiClasses.title" v-html="currentContent.title" />
-          <p v-if="currentContent.description" :class="uiClasses.description" v-html="currentContent.description" />
+          <span v-if="currentContent.description" :class="uiClasses.description" v-html="currentContent.description" />
 
           <UiFilePreviewItem v-if="fileModel && shouldShowUploader" :file="fileModel" @remove="fileModel = null">
             <template #file-size="{ fileSize }">

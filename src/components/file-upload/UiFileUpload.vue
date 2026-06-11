@@ -190,9 +190,9 @@ const handleUpload = () => {
         <slot name="button" />
       </UiButton>
 
-      <p :class="uiClasses.description">
+      <span :class="uiClasses.description">
         <slot name="description" :formats="displayFileFormats" :max-size-bytes />
-      </p>
+      </span>
     </div>
   </div>
 </template>
