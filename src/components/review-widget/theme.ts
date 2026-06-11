@@ -10,7 +10,7 @@ const reviewWidget = {
   description: 'text-body',
   contactSupportButton: 'w-full md:w-auto',
   filePreviewItem: 'max-w-[560px]',
-  actionArea: 'w-full'
+  actionArea: ''
 }
 
 export type ReviewWidgetUi = typeof reviewWidget
