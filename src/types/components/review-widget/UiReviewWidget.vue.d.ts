@@ -10,7 +10,7 @@ export declare const UI_REVIEW_WIDGET_STATE: {
 export type UiReviewWidgetState = (typeof UI_REVIEW_WIDGET_STATE)[keyof typeof UI_REVIEW_WIDGET_STATE];
 export interface UiReviewStateContent {
     image: string;
-    imageRetina: string;
+    imageRetina?: string;
     imageAlt: string;
     title?: string;
     description?: string;
