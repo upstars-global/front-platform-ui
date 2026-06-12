@@ -33,7 +33,7 @@ export interface UiModalSlots {
 </script>
 
 <script setup lang="ts">
-import { computed, reactive, useTemplateRef, ref, watch, nextTick, onMounted, onBeforeUnmount } from 'vue'
+import { computed, useTemplateRef, ref, watch, nextTick, onMounted, onBeforeUnmount } from 'vue'
 import { useAppConfig } from '../../composables/useAppConfig'
 import { useComponentAttributes } from '../../composables/useUiClasses'
 import { prepareVariants } from '../../helpers/prepareClassNames'
@@ -68,11 +68,6 @@ defineSlots<UiModalSlots>()
 const appConfig = useAppConfig()
 const { closeHandler: injectedClose } = useModalControls()
 
-const showFadeEffect = reactive({
-  top: false,
-  bottom: false
-})
-
 const contentFallbackRef = useTemplateRef('contentFallbackRef')
 const hasNativeScrollbar = ref(false)
 
@@ -85,6 +80,21 @@ function checkScrollbar() {
 }
 
 const FADE_THRESHOLD = 16
+const FADE_SIZE = 32
+
+// The scroll fade is a transparent mask applied to the content, not a colored overlay. It fades the
+// content itself to transparent at the scrolled edges so whatever background sits behind shows
+// through — meaning the effect is background-color agnostic and needs no --modal-fade-color.
+function buildFadeMask(top: boolean, bottom: boolean) {
+  if (!top && !bottom) return ''
+
+  const stops = [top ? 'transparent 0' : '#000 0']
+  if (top) stops.push(`#000 ${FADE_SIZE}px`)
+  if (bottom) stops.push(`#000 calc(100% - ${FADE_SIZE}px)`)
+  stops.push(bottom ? 'transparent 100%' : '#000 100%')
+
+  return `linear-gradient(to bottom, ${stops.join(', ')})`
+}
 
 function handleScroll(instance: OverlayScrollbars) {
   if (!instance) return
@@ -93,8 +103,12 @@ function handleScroll(instance: OverlayScrollbars) {
   const { scrollOffsetElement } = instance.elements()
   const { scrollTop } = scrollOffsetElement
 
-  showFadeEffect.top = scrollTop > FADE_THRESHOLD
-  showFadeEffect.bottom = overflowAmount.y - scrollTop > FADE_THRESHOLD
+  const top = scrollTop > FADE_THRESHOLD
+  const bottom = overflowAmount.y - scrollTop > FADE_THRESHOLD
+
+  const mask = buildFadeMask(top, bottom)
+  scrollOffsetElement.style.webkitMaskImage = mask
+  scrollOffsetElement.style.maskImage = mask
 }
 
 function closeHandler() {
@@ -215,13 +229,7 @@ watch(
     <UiScroll
       v-if="isCustomScroll"
       v-show="isLoaded"
-      :class="[
-        uiClasses.content,
-        {
-          'show-fade-top': showFadeEffect.top,
-          'show-fade-bottom': showFadeEffect.bottom
-        }
-      ]"
+      :class="uiClasses.content"
       overflow-x="hidden"
       overflow-y="scroll"
       auto-hide="never"
@@ -247,34 +255,6 @@ watch(
     </footer>
   </dialog>
 </template>
-
-<style>
-.show-fade-top::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: theme('spacing.8');
-  background: linear-gradient(to bottom, var(--modal-fade-color, #110e1b), transparent);
-  pointer-events: none;
-  width: calc(100% - theme('spacing.2'));
-  z-index: theme('zIndex.10');
-}
-
-.show-fade-bottom::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: theme('spacing.8');
-  background: linear-gradient(to top, var(--modal-fade-color, #110e1b), transparent);
-  pointer-events: none;
-  width: calc(100% - theme('spacing.2'));
-  z-index: theme('zIndex.10');
-}
-</style>
 
 <style scoped>
 :deep([data-overlayscrollbars-viewport~='overflowYScroll']) {
