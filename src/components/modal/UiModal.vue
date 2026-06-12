@@ -85,7 +85,7 @@ const FADE_SIZE = 32
 // The scroll fade is a transparent mask applied to the content, not a colored overlay. It fades the
 // content itself to transparent at the scrolled edges so whatever background sits behind shows
 // through — meaning the effect is background-color agnostic and needs no --modal-fade-color.
-function buildFadeMask(top: boolean, bottom: boolean) {
+function buildFadeMask(top?: boolean, bottom?: boolean) {
   if (!top && !bottom) return ''
 
   const stops = [top ? 'transparent 0' : '#000 0']
