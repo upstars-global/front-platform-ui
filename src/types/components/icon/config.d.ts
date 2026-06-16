@@ -49,6 +49,7 @@ declare const iconsFill: {
     edit: string;
     legality: string;
     withdraw: string;
+    web: string;
 };
 declare const iconsNavigation: {
     pokies: string;
