@@ -9,7 +9,8 @@ import type { HeaderUi } from './theme'
 export interface UiHeaderProps {
   chatMessageCount?: number
   isMobileChatButton?: boolean
-  logo?: UiImageProps
+  logo: UiImageProps
+  logoFull?: UiImageProps
   logoRoute?: RouteLocationRaw
   navigation?: HeaderNavigationItem[]
   variant?: 'simple' | 'component-a' | 'component-b' | 'component-c' | 'component-d'
@@ -48,7 +49,7 @@ defineOptions({
 
 const props = withDefaults(defineProps<UiHeaderProps>(), {
   chatMessageCount: 0,
-  logo: undefined,
+  logoFull: undefined,
   logoRoute: undefined,
   navigation: undefined,
   variant: 'component-a',
@@ -164,11 +165,17 @@ const uiClasses = computed(() => {
 <template>
   <div v-bind="attributes" :class="className" data-test="header">
     <slot name="top" />
+
     <div :class="uiClasses.wrapper" data-test="header-wrapper">
       <div :class="uiClasses.inner" data-test="header-inner" style="max-width: var(--ui-header-max-width, 100vw)">
         <UiLink :class="uiClasses.logo" :to="logoRoute" data-test="header-logo" @click="emit('click:logo', $event)">
-          <UiImage v-if="logo" v-bind="logo" class="w-full h-full" />
+          <template v-if="logo && logoFull">
+            <UiImage v-bind="logoFull" class="hidden lg:block w-full h-full" />
+            <UiImage v-bind="logo" class="lg:hidden w-full h-full" />
+          </template>
+          <UiImage v-else v-bind="logo" class="w-full h-full" />
         </UiLink>
+
         <div v-if="isContent" :class="uiClasses.content" data-test="header-content">
           <HeaderNavigation v-if="navigation" :items="navigation" :ui="uiClasses.navigation" />
           <div v-if="slots.content" :class="uiClasses.container" data-test="header-container">
@@ -192,6 +199,7 @@ const uiClasses = computed(() => {
         </div>
       </div>
     </div>
+
     <slot name="bottom" />
   </div>
 </template>
