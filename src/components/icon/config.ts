@@ -49,6 +49,7 @@ import user from '../../assets/icons/fill/user.svg?raw'
 import visibilityOff from '../../assets/icons/fill/visibilityOff.svg?raw'
 import visibilityOn from '../../assets/icons/fill/visibilityOn.svg?raw'
 import withdraw from '../../assets/icons/fill/withdraw.svg?raw'
+import web from '../../assets/icons/fill/web.svg?raw'
 // navigation
 import arena from '../../assets/icons/navigation/arena.svg?raw'
 import bet from '../../assets/icons/navigation/bet.svg?raw'
@@ -133,7 +134,8 @@ const iconsFill = {
   filterOutline,
   edit,
   legality,
-  withdraw
+  withdraw,
+  web
 }
 const iconsNavigation = {
   pokies,
