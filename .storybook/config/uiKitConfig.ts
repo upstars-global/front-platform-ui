@@ -216,6 +216,12 @@ export const uiKitConfig: AppConfig = {
       item: {
         active: 'bg-secondary-30'
       }
+    },
+    reviewWidget: {
+      container: 'bg-dark text-light'
+    },
+    filePreviewItem: {
+      container: 'border-tertiary-20/40 bg-backdrop-alt-3/80 text-light'
     }
   }
 }
