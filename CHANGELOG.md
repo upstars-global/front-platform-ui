@@ -1,3 +1,17 @@
+## [1.47.0](https://github.com/upstars-global/front-platform-ui/compare/v1.46.0...v1.47.0) (2026-06-17)
+
+### 🐛 Bug Fixes
+
+* **FP-5562:** make `buildFadeMask` parameters optional
+ ([a7dc176](https://github.com/upstars-global/front-platform-ui/commit/a7dc17696a5ace59ec862f65ae5c32b4a6010685))
+
+
+
+### 🚀 Features
+
+* **FP-5562:** replace CSS-based fade effect with dynamic scroll-based fade masks
+ ([0e93491](https://github.com/upstars-global/front-platform-ui/commit/0e93491886093a3c7a6e01daca00e8097da713db))
+
 ## [1.46.0](https://github.com/upstars-global/front-platform-ui/compare/v1.45.0...v1.46.0) (2026-06-17)
 
 ### 🐛 Bug Fixes
