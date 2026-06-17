@@ -1,3 +1,10 @@
+## [1.48.0](https://github.com/upstars-global/front-platform-ui/compare/v1.47.0...v1.48.0) (2026-06-17)
+
+### 🚀 Features
+
+* **FP-5418:** add outside click handling and improve slot props in `UiPopover` and `UiHeader`
+ ([a4d21c2](https://github.com/upstars-global/front-platform-ui/commit/a4d21c2f44f37545e4005d15bc11a28f2afa54f9))
+
 ## [1.47.0](https://github.com/upstars-global/front-platform-ui/compare/v1.46.0...v1.47.0) (2026-06-17)
 
 ### 🐛 Bug Fixes
