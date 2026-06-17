@@ -18,7 +18,7 @@ export interface UiPopoverSlots {
 </script>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, useTemplateRef } from 'vue'
 import { useFloating, offset as floatingOffset, autoUpdate, flip, shift } from '@floating-ui/vue'
 import { useAppConfig } from '../../composables/useAppConfig'
 import { useComponentAttributes } from '../../composables/useUiClasses'
@@ -39,6 +39,7 @@ const props = withDefaults(defineProps<UiPopoverProps>(), {
 const slots = defineSlots<UiPopoverSlots>()
 
 const isOpen = ref(false)
+const popover = useTemplateRef('popover')
 const reference = ref<HTMLDivElement | null>(null)
 const floating = ref<HTMLDivElement | null>(null)
 
@@ -79,10 +80,21 @@ const hideHandler = () => {
 const toggleHandler = () => {
   isOpen.value = !isOpen.value
 }
+
+/* Listen in the capture phase so an outside click still closes the popover even when a child
+element calls event.stopPropagation() (e.g. carousel game cards), which would otherwise prevent
+a bubbling-phase listener from ever receiving the event. */
+const handleOutsideClick = (event: MouseEvent) => {
+  if (isOpen.value && popover.value && !popover.value.contains(event.target as Node)) {
+    hideHandler()
+  }
+}
+onMounted(() => document.addEventListener('click', handleOutsideClick, true))
+onBeforeUnmount(() => document.removeEventListener('click', handleOutsideClick, true))
 </script>
 
 <template>
-  <div v-click-outside="hideHandler" v-bind="attributes" :class="className" data-test="popover">
+  <div ref="popover" v-bind="attributes" :class="className" data-test="popover">
     <div
       v-if="slots.anchor"
       ref="reference"

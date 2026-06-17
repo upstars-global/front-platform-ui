@@ -23,7 +23,7 @@ export interface UiHeaderEmits {
 
 export interface UiHeaderSlots {
   top(): unknown
-  ['chat-content'](): unknown
+  ['chat-content'](props: { hideHandler: () => void }): unknown
   content(): unknown
   bottom(): unknown
 }
@@ -184,8 +184,8 @@ const uiClasses = computed(() => {
               <template #anchor>
                 <ChatButton :message-count="chatMessageCount" :ui="uiClasses.chatButton" />
               </template>
-              <template #content>
-                <slot name="chat-content" />
+              <template #content="{ hideHandler }">
+                <slot name="chat-content" :hide-handler="hideHandler" />
               </template>
             </UiPopover>
           </div>
