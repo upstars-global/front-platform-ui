@@ -33,6 +33,12 @@ const bottomBar = {
       'component-c': '',
       'component-d': 'hidden'
     },
+    imageGift: {
+      'component-a': 'w-6 h-6',
+      'component-b': '',
+      'component-c': 'w-6 h-6',
+      'component-d': ''
+    },
     variants: {
       'component-a': '',
       'component-b': 'absolute px-2 -top-2 left-1/2 -translate-x-1/2 text-caption-s font-bold',

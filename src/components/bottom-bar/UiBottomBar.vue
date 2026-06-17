@@ -4,6 +4,7 @@ import type { ClassNameValue } from 'tailwind-merge'
 import type { UiProp } from '../types'
 import type { UiIconName } from '../icon/config'
 import type { BottomBarUi } from './theme'
+import type { UiImageProps } from '../image/UiImage.vue'
 
 interface BottomBarNavigationItem {
   id: string
@@ -27,6 +28,7 @@ export interface UiBottomBarProps {
   isLockAuthButtons?: boolean
   notificationCounter?: number
   isLoggedIn?: boolean
+  imageGift?: UiImageProps
   ui?: UiProp<BottomBarUi>
 }
 
@@ -45,6 +47,7 @@ import { useComponentAttributes } from '../../composables/useUiClasses'
 import { prepareVariants } from '../../helpers/prepareClassNames'
 import UiBadge from '../badge/UiBadge.vue'
 import UiButton from '../button/UiButton.vue'
+import UiImage from '../image/UiImage.vue'
 import UiIcon from '../icon/UiIcon.vue'
 import UiLink from '../link/UiLink.vue'
 import theme from './theme'
@@ -57,6 +60,7 @@ defineOptions({
 const props = withDefaults(defineProps<UiBottomBarProps>(), {
   variant: 'component-a',
   notificationCounter: 0,
+  imageGift: undefined,
   ui: () => ({ strategy: 'merge' })
 })
 const emit = defineEmits<UiBottomBarEmits>()
@@ -105,6 +109,11 @@ const uiClasses = computed(() => {
     appConfig: appConfig?.ui?.bottomBar?.action?.icon,
     uiProp: props.ui?.action?.icon
   })
+  const actionImageGiftVariants = prepareVariants({
+    theme: theme.action.imageGift,
+    appConfig: appConfig?.ui?.bottomBar?.action?.imageGift,
+    uiProp: props.ui?.action?.imageGift
+  })
   const actionLabelVariants = prepareVariants({
     theme: theme.action.label,
     appConfig: appConfig?.ui?.bottomBar?.action?.label,
@@ -145,7 +154,8 @@ const uiClasses = computed(() => {
     action: {
       base: mergeClasses(action),
       icon: mergeClasses(actionIconVariants[props.variant]),
-      label: mergeClasses(actionLabelVariants[props.variant])
+      label: mergeClasses(actionLabelVariants[props.variant]),
+      imageGift: mergeClasses(actionImageGiftVariants[props.variant])
     },
     item: {
       base: mergeClasses(theme.item.base, appConfig?.ui?.bottomBar?.item?.base, props.ui?.item?.base),
@@ -186,6 +196,9 @@ const uiClasses = computed(() => {
         @click="emit('click:sign-up', $event)"
       >
         <span :class="uiClasses.action.label">{{ labels.signUp }}</span>
+        <template v-if="imageGift?.src" #trailing>
+          <UiImage v-bind="imageGift" :class="uiClasses.action.imageGift" />
+        </template>
       </UiButton>
     </div>
     <div :class="uiClasses.container" data-test="bottom-bar-container">
@@ -198,6 +211,9 @@ const uiClasses = computed(() => {
         @click="emit('click:sign-up', $event)"
       >
         <span :class="uiClasses.action.label">{{ labels.signUp }}</span>
+        <template v-if="imageGift?.src" #trailing>
+          <UiImage v-bind="imageGift" :class="uiClasses.action.imageGift" />
+        </template>
       </UiButton>
       <UiButton
         v-show="isLoggedIn"
