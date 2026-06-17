@@ -1,3 +1,17 @@
+## [1.46.0](https://github.com/upstars-global/front-platform-ui/compare/v1.45.0...v1.46.0) (2026-06-17)
+
+### 🐛 Bug Fixes
+
+* **FP-5405:** rename `UiImageProps` prop to `imageGift` in `UiBottomBar`
+ ([34d8380](https://github.com/upstars-global/front-platform-ui/commit/34d838083b83158810f8f494f431f79e19a9c6f8))
+
+
+
+### 🚀 Features
+
+* **FP-5405:** add `imageGift` prop, update theme, and integrate `UiImage` in `UiBottomBar`
+ ([b0fbac2](https://github.com/upstars-global/front-platform-ui/commit/b0fbac22a5fb5cc03b2054c281b956ae48c0238a))
+
 ## [1.45.0](https://github.com/upstars-global/front-platform-ui/compare/v1.44.0...v1.45.0) (2026-06-16)
 
 ### 🚀 Features
