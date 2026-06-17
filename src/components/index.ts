@@ -17,6 +17,8 @@ import UiChipGroup from './chip/UiChipGroup.vue'
 import UiChipCarousel from './chip/UiChipCarousel.vue'
 import UiCircleProgressBar from './circle-progress-bar/UiCircleProgressBar.vue'
 import UiDropdown from './dropdown/UiDropdown.vue'
+import UiFileUpload from './file-upload/UiFileUpload.vue'
+import UiFilePreviewItem from './file-preview-item/UiFilePreviewItem.vue'
 import UiHeader from './header/UiHeader.vue'
 import UiIcon from './icon/UiIcon.vue'
 import UiImage from './image/UiImage.vue'
@@ -29,6 +31,7 @@ import UiModalRenderer from './modal-renderer/UiModalRenderer.vue'
 import UiPicture from './picture/UiPicture.vue'
 import UiPopover from './popover/UiPopover.vue'
 import UiProgressBar from './progress-bar/UiProgressBar.vue'
+import UiReviewWidget from './review-widget/UiReviewWidget.vue'
 import UiScroll from './scroll/UiScroll.vue'
 import UiSelect from './select/UiSelect.vue'
 import UiSidebar from './sidebar/UiSidebar.vue'
@@ -53,6 +56,14 @@ export type { UiCheckboxProps, UiCheckboxEmits, UiCheckboxSlots } from './checkb
 export type { UiChipProps, UiChipEmits, UiChipSlots } from './chip/UiChip.vue'
 export type { UiCircleProgressBarProps, UiCircleProgressBarSlots } from './circle-progress-bar/UiCircleProgressBar.vue'
 export type { UiDropdownProps, UiDropdownSlots } from './dropdown/UiDropdown.vue'
+export {
+  UI_FILE_UPLOAD_ERROR_TYPE,
+  type UiFileUploadProps,
+  type UiFileUploadEmits,
+  type UiFileUploadError,
+  type UiFileUploadErrorType
+} from './file-upload/UiFileUpload.vue'
+export type { UiFilePreviewItemProps, UiFilePreviewItemEmits } from './file-preview-item/UiFilePreviewItem.vue'
 export type { UiHeaderProps, UiHeaderEmits, UiHeaderSlots } from './header/UiHeader.vue'
 export type { UiIconProps } from './icon/UiIcon.vue'
 export type { UiIconsFill, UiIconName, UiIconsNavigation, UiIconsOutline, UiIconsSocial } from './icon/config'
@@ -67,6 +78,13 @@ export type { ModalItem, ModalRendererEmits } from './modal-renderer/types'
 export type { UiPictureProps, UiPictureEmits } from './picture/UiPicture.vue'
 export type { UiPopoverProps, UiPopoverSlots } from './popover/UiPopover.vue'
 export type { UiProgressBarProps, UiProgressBarSlots } from './progress-bar/UiProgressBar.vue'
+export {
+  UI_REVIEW_WIDGET_STATE,
+  type UiReviewWidgetProps,
+  type UiReviewWidgetEmits,
+  type UiReviewWidgetState,
+  type UiReviewWidgetConfig
+} from './review-widget/UiReviewWidget.vue'
 export type { UiScrollProps, UiScrollEmits, UiScrollSlots } from './scroll/UiScroll.vue'
 export type { UiSelectProps, UiSelectEmits, UiSelectSlots, SelectOption } from './select/UiSelect.vue'
 export type { UiSidebarProps, UiSidebarEmits, UiSidebarSlots } from './sidebar/UiSidebar.vue'
@@ -94,6 +112,8 @@ export {
   UiChipCarousel,
   UiCircleProgressBar,
   UiDropdown,
+  UiFileUpload,
+  UiFilePreviewItem,
   UiHeader,
   UiIcon,
   UiImage,
@@ -106,6 +126,7 @@ export {
   UiPicture,
   UiPopover,
   UiProgressBar,
+  UiReviewWidget,
   UiScroll,
   UiSelect,
   UiSidebar,

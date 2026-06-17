@@ -1,3 +1,81 @@
+## [1.45.0](https://github.com/upstars-global/front-platform-ui/compare/v1.44.0...v1.45.0) (2026-06-16)
+
+### 🚀 Features
+
+* **FP-5420:** add allowUpload prop to UiFileUpload and upload-click event to UiReviewWidget
+ ([727184e](https://github.com/upstars-global/front-platform-ui/commit/727184ee09a7b138b48258fc0c3b8a9312ac9b58))
+
+
+* **FP-5420:** add contactSupportButton styling to review widget
+ ([1dbdc53](https://github.com/upstars-global/front-platform-ui/commit/1dbdc53aa5f176185466171b48e62a70b6e86bd9))
+
+
+* **FP-5420:** add ReviewWidget
+ ([85fe552](https://github.com/upstars-global/front-platform-ui/commit/85fe552126c9b0879c042c6ec8e1528a58539b9e))
+
+
+* **FP-5420:** add UiReviewWidget component and its type definitions
+ ([9e4b47b](https://github.com/upstars-global/front-platform-ui/commit/9e4b47b6a2739966ea9dadb2fefc69defe6223d3))
+
+
+* **FP-5420:** adjust content gap in review widget
+ ([71699f3](https://github.com/upstars-global/front-platform-ui/commit/71699f3cef89a209b7fe7b90a77b5179c3c6e50e))
+
+
+* **FP-5420:** component exports
+ ([2b653ec](https://github.com/upstars-global/front-platform-ui/commit/2b653ec62dcf02e7b14357e9aa55ac3d07459d9e))
+
+
+* **FP-5420:** enhance file upload component with upload click event and allow upload prop
+ ([62f80a5](https://github.com/upstars-global/front-platform-ui/commit/62f80a520fe9926e65592d8f5567133099c250dc))
+
+
+* **FP-5420:** make imageRetina property optional in UiReviewStateContent interface
+ ([b3c0ca1](https://github.com/upstars-global/front-platform-ui/commit/b3c0ca1c33671ffef11a44e1fcbd853b08fdb818))
+
+
+* **FP-5420:** remove actionArea styling
+ ([1201e71](https://github.com/upstars-global/front-platform-ui/commit/1201e712660b5fc582de30124a6eac56b20089fe))
+
+
+* **FP-5420:** remove FILE_SELECTED state and add imageRetina property to review widget
+ ([c715dae](https://github.com/upstars-global/front-platform-ui/commit/c715dae61120ad3a0d21e4ff37277b7bdd2b69d0))
+
+
+* **FP-5420:** remove REJECTED state from review widget and update story content
+ ([64ee84a](https://github.com/upstars-global/front-platform-ui/commit/64ee84a6de60a05c4bcedcf25a63a504c08f8885))
+
+
+* **FP-5420:** replace file size display with slot for custom formatting
+ ([2b63d64](https://github.com/upstars-global/front-platform-ui/commit/2b63d644d838cec3470fdc81cea5086fdb03cd13))
+
+
+* **FP-5420:** small fixes
+ ([b9115fb](https://github.com/upstars-global/front-platform-ui/commit/b9115fbaf1a2cd6b937da7767039600c2290e375))
+
+
+* **FP-5420:** update styles in file preview item and improve file input handling in UiFileUpload
+ ([4bc9932](https://github.com/upstars-global/front-platform-ui/commit/4bc9932ac48c2487f9ffe254e833ba74ff5fbe12))
+
+
+* **FP-5420:** update UI component themes and types
+ ([cee4b5d](https://github.com/upstars-global/front-platform-ui/commit/cee4b5d7a8739f8c874647d8df59c9b3f87034d3))
+
+
+* **FP-5420:** update UiReviewWidget exports to include additional type definitions
+ ([854648a](https://github.com/upstars-global/front-platform-ui/commit/854648a1065f1670caa5dcc3156d18b01529f9e9))
+
+
+* **UiFileUpload:** change description element from paragraph to span
+ ([e12592f](https://github.com/upstars-global/front-platform-ui/commit/e12592f829cc733e1ce8776c5247ae113defd866))
+
+
+
+### 📖 Documentation
+
+* **FP-5420:** add Visual Regression Testing section to README
+ ([0da6eac](https://github.com/upstars-global/front-platform-ui/commit/0da6eac40364d1fb57950ae6392dc6e4fad66582))
+
 ## [1.44.0](https://github.com/upstars-global/front-platform-ui/compare/v1.43.0...v1.44.0) (2026-06-10)
 
 ### 🐛 Bug Fixes

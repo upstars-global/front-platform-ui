@@ -13,6 +13,7 @@ A modern Vue 3 UI component library built with TypeScript, Tailwind CSS, and Vit
   - [Component Structure](#component-structure)
   - [Component File Structure](#component-file-structure)
   - [Creating a New Component](#creating-a-new-component)
+  - [Visual Regression Testing (Chromatic)](#visual-regression-testing-chromatic)
   - [Component Architecture](#component-architecture)
     - [Core Composables](#core-composables)
     - [Class Merging Pattern](#class-merging-pattern)
@@ -173,9 +174,31 @@ const slots = defineSlots<UiComponentSlots>()
    Create `src/stories/components/YourComponent.stories.ts`
 
 5. **Build types**:
+
    ```bash
    pnpm run build:types
    ```
+
+6. **Review Chromatic snapshots** (see [Visual Regression Testing](#visual-regression-testing-chromatic)):
+   After opening a PR, check visual changes in Chromatic, accept intentional updates, or fix regressions before merge.
+
+### Visual Regression Testing (Chromatic)
+
+[Chromatic](https://www.chromatic.com/) runs on every pull request that changes `src/**` or `docs/**` (see [`.github/workflows/chromatic.yaml`](.github/workflows/chromatic.yaml)). It captures Storybook snapshots and compares them to the baseline on `main`.
+
+**When you need to review snapshots**
+
+- Adding a new component or Storybook story
+- Changing component layout, styles, or default themes
+- Updating Storybook decorators, `uiKitConfig`, or shared story wrappers
+
+**How to review**
+
+1. Open your pull request on GitHub.
+2. Find the **Chromatic** comment posted by CI (table with **Build Results** and **Storybook Preview** links).
+   - **Build Results** — open the Chromatic build, review changed snapshots, and **Accept** changes that match your intent or **Deny** and fix the UI/story if something regressed.
+   - **Storybook Preview** — optional link to browse the built Storybook for that commit.
+3. The same links are also listed in the **Run Chromatic** job summary on the PR checks tab.
 
 ### Component Architecture
 
