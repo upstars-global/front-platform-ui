@@ -19,7 +19,9 @@ export interface UiHeaderEmits {
 }
 export interface UiHeaderSlots {
     top(): unknown;
-    ['chat-content'](): unknown;
+    ['chat-content'](props: {
+        hideHandler: () => void;
+    }): unknown;
     content(): unknown;
     bottom(): unknown;
 }

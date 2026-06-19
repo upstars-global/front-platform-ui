@@ -2,6 +2,7 @@ import type { RouteLocationRaw } from 'vue-router';
 import type { UiProp } from '../types';
 import type { UiIconName } from '../icon/config';
 import type { BottomBarUi } from './theme';
+import type { UiImageProps } from '../image/UiImage.vue';
 interface BottomBarNavigationItem {
     id: string;
     label: string;
@@ -23,6 +24,7 @@ export interface UiBottomBarProps {
     isLockAuthButtons?: boolean;
     notificationCounter?: number;
     isLoggedIn?: boolean;
+    imageGift?: UiImageProps;
     ui?: UiProp<BottomBarUi>;
 }
 export interface UiBottomBarEmits {
@@ -47,6 +49,7 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiBott
     variant: "component-a" | "component-b" | "component-c" | "component-d";
     ui: UiProp<BottomBarUi>;
     notificationCounter: number;
+    imageGift: UiImageProps;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, {
     default?: (props: {}) => any;
 }>;

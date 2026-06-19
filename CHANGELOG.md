@@ -1,3 +1,38 @@
+## [1.48.0](https://github.com/upstars-global/front-platform-ui/compare/v1.47.0...v1.48.0) (2026-06-17)
+
+### 🚀 Features
+
+* **FP-5418:** add outside click handling and improve slot props in `UiPopover` and `UiHeader`
+ ([a4d21c2](https://github.com/upstars-global/front-platform-ui/commit/a4d21c2f44f37545e4005d15bc11a28f2afa54f9))
+
+## [1.47.0](https://github.com/upstars-global/front-platform-ui/compare/v1.46.0...v1.47.0) (2026-06-17)
+
+### 🐛 Bug Fixes
+
+* **FP-5562:** make `buildFadeMask` parameters optional
+ ([a7dc176](https://github.com/upstars-global/front-platform-ui/commit/a7dc17696a5ace59ec862f65ae5c32b4a6010685))
+
+
+
+### 🚀 Features
+
+* **FP-5562:** replace CSS-based fade effect with dynamic scroll-based fade masks
+ ([0e93491](https://github.com/upstars-global/front-platform-ui/commit/0e93491886093a3c7a6e01daca00e8097da713db))
+
+## [1.46.0](https://github.com/upstars-global/front-platform-ui/compare/v1.45.0...v1.46.0) (2026-06-17)
+
+### 🐛 Bug Fixes
+
+* **FP-5405:** rename `UiImageProps` prop to `imageGift` in `UiBottomBar`
+ ([34d8380](https://github.com/upstars-global/front-platform-ui/commit/34d838083b83158810f8f494f431f79e19a9c6f8))
+
+
+
+### 🚀 Features
+
+* **FP-5405:** add `imageGift` prop, update theme, and integrate `UiImage` in `UiBottomBar`
+ ([b0fbac2](https://github.com/upstars-global/front-platform-ui/commit/b0fbac22a5fb5cc03b2054c281b956ae48c0238a))
+
 ## [1.45.0](https://github.com/upstars-global/front-platform-ui/compare/v1.44.0...v1.45.0) (2026-06-16)
 
 ### 🚀 Features
