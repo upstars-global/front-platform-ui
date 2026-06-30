@@ -192,7 +192,7 @@ const closeSidebar = () => {
 
 <template>
   <div v-bind="attributes" :class="className">
-    <div :class="uiClasses.overlay" />
+    <div v-if="open" :class="uiClasses.overlay" />
     <div
       ref="sidebarRef"
       v-click-outside="closeSidebar"
