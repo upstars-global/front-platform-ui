@@ -1,3 +1,14 @@
+## [1.49.0](https://github.com/upstars-global/front-platform-ui/compare/v1.48.0...v1.49.0) (2026-06-30)
+
+### 🚀 Features
+
+* **FP-5568:** add support for `logoFull` in `UiHeader` component
+ ([5f8ec16](https://github.com/upstars-global/front-platform-ui/commit/5f8ec16c02ed5c1b487a2dc4ab274927df07cf07))
+
+
+* **FP-5568:** extend `UiHeader` with configurable `logo` states and styles
+ ([7bef803](https://github.com/upstars-global/front-platform-ui/commit/7bef8039568a554cb0335565939d33b89b93816f))
+
 ## [1.48.0](https://github.com/upstars-global/front-platform-ui/compare/v1.47.0...v1.48.0) (2026-06-17)
 
 ### 🚀 Features
