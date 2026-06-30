@@ -26,7 +26,12 @@ declare const header: {
             simple: string;
         };
     };
-    logo: string;
+    logo: {
+        base: string;
+        image: string;
+        full: string;
+        compact: string;
+    };
     navigation: {
         base: string;
         container: string;

@@ -26,7 +26,12 @@ const header = {
       simple: 'flex'
     }
   },
-  logo: 'flex items-center h-10 w-24 cursor-pointer',
+  logo: {
+    base: 'flex items-center h-10 w-24 cursor-pointer',
+    image: 'w-full h-full',
+    full: 'hidden lg:block',
+    compact: 'lg:hidden'
+  },
   navigation: {
     base: 'hidden lg:flex h-full',
     container: 'flex gap-6 w-full',

@@ -6,7 +6,8 @@ import type { HeaderUi } from './theme';
 export interface UiHeaderProps {
     chatMessageCount?: number;
     isMobileChatButton?: boolean;
-    logo?: UiImageProps;
+    logo: UiImageProps;
+    logoFull?: UiImageProps;
     logoRoute?: RouteLocationRaw;
     navigation?: HeaderNavigationItem[];
     variant?: 'simple' | 'component-a' | 'component-b' | 'component-c' | 'component-d';
@@ -37,7 +38,7 @@ declare const __VLS_export: __VLS_WithSlots<import("vue").DefineComponent<UiHead
     navigation: HeaderNavigationItem[];
     ui: UiProp<HeaderUi>;
     chatMessageCount: number;
-    logo: UiImageProps;
+    logoFull: UiImageProps;
     logoRoute: RouteLocationRaw;
 }, {}, {}, {}, string, import("vue").ComponentProvideOptions, false, {}, any>, UiHeaderSlots>;
 type __VLS_WithSlots<T, S> = T & {
